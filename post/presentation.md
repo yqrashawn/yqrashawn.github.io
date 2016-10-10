@@ -458,3 +458,234 @@ alias gfbf='git flow bugfix finish'
 
 ![GitKraken 界面](./img/GitKraken.png)
 
+---
+## 日常使用流程
+
+​    最后总结一下日常使用时的流程.
+
+​    假设我们要创建一个项目记录我今天吃了什么.
+
+---
+```
+~/workspace ❯❯❯ mkdir food                                       新建food文件夹
+~/workspace ❯❯❯ cd food                                          进入'food
+~/w/food ❯❯❯ git init                                            初始化
+Initialized empty Git repository in /Users/Rashawn/workspace/food/.git/
+~/w/food ❯❯❯ echo '我吃了西瓜' > food.txt                        新建'food.txt'并输入吃了西瓜  
+~/w/food ❯❯❯ ls                                                  文件夹多了food.txt
+food.txt
+~/w/food ❯❯❯ git status --short                                  查看状态
+?? food.txt                                                      有一个没有被跟踪的文件
+~/w/food ❯❯❯ head food.txt                                       显示文件内容
+我吃了西瓜
+~/w/food ❯❯❯ git add food.txt                                    把文件加入暂存区
+~/w/food ❯❯❯ git commit -m '提交西瓜'                            提交该次改动
+[master (root-commit) e2b968e] 提交西瓜
+ 1 file changed, 1 insertion(+)
+ create mode 100644 food.txt
+~/w/food ❯❯❯ git status
+On branch master
+nothing to commit, working tree clean
+```
+
+---
+```
+~/w/food ❯❯❯ echo '我吃了苹果' >> food.txt  
+~/w/food ❯❯❯ head food.txt  
+我吃了西瓜
+我吃了苹果
+~/w/food ❯❯❯ git add food.txt  
+~/w/food ❯❯❯ git status --short  
+M  food.txt
+~/w/food ❯❯❯ git commit -m '提交苹果'  
+[master 162f6d2] 提交苹果
+ 1 file changed, 1 insertion(+)
+~/w/food ❯❯❯ git status
+On branch master
+nothing to commit, working tree clean
+```
+
+---
+​    这时, 我们使用一下git flow.
+
+```
+~/w/food ❯❯❯ git flow init  
+
+Which branch should be used for bringing forth production releases?
+   - master
+Branch name for production releases: [master]
+Branch name for "next release" development: [develop] dev
+
+How to name your supporting branch prefixes?
+Feature branches? [feature/]
+Bugfix branches? [bugfix/]
+Release branches? [release/]
+Hotfix branches? [hotfix/]
+Support branches? [support/]
+Version tag prefix? [] version
+Hooks and filters directory? [/Users/Rashawn/workspace/food/.git/hooks]
+```
+
+---
+​    可以看到这时git flow初始化时的选项, 它会询问你各个功能分支的名字和存放hooks的地址, 一般情况可以全部选择默认. 当初始化完成后, git flow会自动切换到develop分支.
+
+​    现在我们要增加一个新的功能, 让文件能够记录我干了什么.
+
+---
+```
+~/w/food ❯❯❯ git branch  
+* dev
+  master
+~/w/food ❯❯❯ git flow feature start whatIveDone dev  
+  Switched to a new branch 'feature/whatIveDone'
+
+Summary of actions:
+- A new branch 'feature/whatIveDone' was created, based on 'dev'
+- You are now on branch 'feature/whatIveDone'
+
+Now, start committing on your feature. When done, use:
+
+     git flow feature finish whatIveDone
+```
+
+---
+```
+~/w/food ❯❯❯ git branch  
+  dev
+* feature/whatIveDone
+  master  
+~/w/food ❯❯❯ echo '我在睡觉' > do.txt  
+~/w/food ❯❯❯ git status --short  
+?? do.txt
+~/w/food ❯❯❯ git add do.txt  
+~/w/food ❯❯❯ git status --short  
+A  do.txt
+~/w/food ❯❯❯ git commit -m '提交睡觉'  
+[feature/whatIveDone c65087d] 提交睡觉
+ 1 file changed, 1 insertion(+)
+ create mode 100644 do.txt
+~/w/food ❯❯❯ git status --short  
+On branch feature/whatIveDone
+nothing to commit, working tree clean
+```
+
+---
+​    这时我们加在新的`feature/whatIveDone`分支新建了一个`do.txt`文件, 并记录了'我在睡觉'. 现在我们完成了这个功能, 要将其合并回develop分支.
+
+```
+~/w/food ❯❯❯ git flow feature finish  
+Switched to branch 'dev'
+Updating 162f6d2..c65087d
+Fast-forward
+ do.txt | 1 +
+ 1 file changed, 1 insertion(+)
+ create mode 100644 do.txt
+Deleted branch feature/whatIveDone (was c65087d).
+
+Summary of actions:
+- The feature branch 'feature/whatIveDone' was merged into 'dev'
+- Feature branch 'feature/whatIveDone' has been locally deleted
+- You are now on branch 'dev'
+~/w/food ❯❯❯ git branch  
+* dev
+  master
+~/w/food ❯❯❯ head do.txt  
+我在睡觉
+```
+
+---
+​    这时我们已经回到了develop分支, 并且`do.txt`也已经合并进来了. git flow的其他功能的使用方法相同.
+
+​    我们现在想将它放到远程仓库, 这样其他人也可以记录他们吃了啥, 干了啥. 首先我们新建一个远程仓库得到它的地址. `http://111.111.111.111:3000/zhangyuxiao/food-do.git`.
+
+```
+~/w/food ❯❯❯ git remote add origin http://111.111.111.111:3000/zhangyuxiao/food-do.git
+```
+
+---
+​    在push之前我们需要把`dev`分支的内容合并到`master`分支.
+
+```
+~/w/food ❯❯❯ git branch  
+* dev
+  master
+~/w/food ❯❯❯ git checkout master  
+Switched to branch 'master'
+~/w/food ❯❯❯ git merge dev  
+Updating 162f6d2..c65087d
+Fast-forward
+ do.txt | 1 +
+ 1 file changed, 1 insertion(+)
+ create mode 100644 do.txt
+~/w/food ❯❯❯ git status  
+On branch master
+nothing to commit, working tree clean
+```
+
+---
+​    这时我们已经把`dev`分支开发的内容同步到了`master`了.
+
+```
+~/w/food ❯❯❯ git push -u origin master  
+Counting objects: 9, done.
+Delta compression using up to 8 threads.
+Compressing objects: 100% (4/4), done.
+Writing objects: 100% (9/9), 757 bytes | 0 bytes/s, done.
+Total 9 (delta 0), reused 0 (delta 0)
+To http://111.111.111.111:3000/zhangyuxiao/food-do.git
+ * [new branch]      master -> master
+Branch master set up to track remote branch master from origin.
+```
+
+---
+​    这里需要注意的是, **第一次推送时, 本地的`master`分支并不知道自己track的是远端的哪个分支,** 所以需要使用`-u`或`—set-upstream`将本地的`master`和`origin/master`绑定.
+
+​    现在另一个用户要更新自己的状态到该项目.
+
+---
+```
+~/workspace ❯❯❯ git clone http://111.111.111.111:3000/zhangyuxiao/food-do.git                           
+Cloning into 'food-do'...
+remote: Counting objects: 9, done.
+remote: Compressing objects: 100% (4/4), done.
+remote: Total 9 (delta 0), reused 0 (delta 0)
+Unpacking objects: 100% (9/9), done.
+~/w/food-do ❯❯❯ git branch  
+* master
+~/w/food-do ❯❯❯ echo '我在睡觉'
+~/w/food-do ❯❯❯ echo '我也吃了苹果' >> food.txt  
+~/w/food-do ❯❯❯ head food.txt  
+我吃了西瓜
+我吃了苹果
+我也吃了苹果
+~/w/food-do ❯❯❯ git status --short  
+ M food.txt
+ ```
+ 
+ ---
+ ```
+~/w/food-do ❯❯❯ git add food.txt  
+~/w/food-do ❯❯❯ git status --short  
+M  food.txt
+~/w/food-do ❯❯❯ git commit -m '提交也吃了苹果'  
+[master c1fde84] 提交也吃了苹果
+ 1 file changed, 1 insertion(+)
+~/w/food-do ❯❯❯ git status
+On branch master
+Your branch is ahead of 'origin/master' by 1 commit.
+  (use "git push" to publish your local commits)
+nothing to commit, working tree clean
+~/w/food-do ❯❯❯ git push -u origin master  
+Counting objects: 3, done.
+Delta compression using up to 8 threads.
+Compressing objects: 100% (3/3), done.
+Writing objects: 100% (3/3), 326 bytes | 0 bytes/s, done.
+Total 3 (delta 0), reused 0 (delta 0)
+To http://111.111.111.111:3000/zhangyuxiao/food-do.git
+   c65087d..c1fde84  master -> master
+```
+
+---
+​    上面的指令为另一个用户clone该项目后在`food.txt`文件中加入'我也吃了苹果', 加入暂存区并提交, push.
+
+---
