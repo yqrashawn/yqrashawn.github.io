@@ -656,12 +656,12 @@ git checkout --theirs --</pre><h4><a name='header-c100' class='md-header-anchor 
 我改的代码
 =======
 别人改的代码
-&gt;&gt;&gt;&gt;&gt;&gt;&gt; bd00d06d0ceb39365f6b3cadd8bfbbc639ce23d6</pre><p>​    不论我们用什么方法或工具解决冲突, 最后代码要改成这个样子</p><pre class='md-fences mock-cm' style='display:block;position:relative'>我改的代码</pre><p>​    或者这个样子</p><pre class='md-fences mock-cm' style='display:block;position:relative'>别人改的代码</pre><p>​    不然正常代码里多出来<code>&lt;&lt;&lt;&lt;&lt;&lt;</code>这个东西, 肯定报错.</p><p>​    解决冲突的工具所做的只是把不同部分代码高亮为不同的颜色, 并提供一些选择某一代码块的按钮或方法. 工具在后面讲.</p><h4><a name='header-c126' class='md-header-anchor '></a>树冲突</h4><p>​    两个用户同时改变了文件树, Git可以检测出, 比如两人同时把文件a.js改为b.js和c.js, Git是可以检测出的. </p><h3><a name='header-c129' class='md-header-anchor '></a>远程仓库</h3><p>    前面差不多总结了git在本地使用的方法, 下面讲远程仓库的使用. Git与远程仓库传输数据时有四种协议, 常用的为HTTP协议和SSH协议.<br/></p><p>    <code>http://111.111.111.111:3000/haha/git-tutorial.git</code>为HTTP协议.</p><p>    <code>git@111.111.111.111:haha/git-tutorial.git</code>为SSH协议.</p><p>    如果是公开的项目, 使用HTTP协议和SSH协议拉取时都不会有认证问题, 但推送时会出现认证授权问题, HTTP认证会要求用户输入用户名和密码, 而SSH认证时会访问用户的私钥与用户之前上传的公钥匹配. 可以说HTTP协议的适用范围最广, GitHub也推荐用户使用HTTP协议. </p><p>    如果使用HTTP协议时被要求每次推送都输入密码, Windows用户可以通过配置Git的凭证管理工具保存凭证, 只需要在命令行输入<code>git config --global credential.helper wincred</code>即可调用Windos的凭证管理工具来管理Git的认证凭证. 在macOS下使用<code>git config --global credential.helper osxkeychain</code>来调用macOS的keychain管理凭证.</p><p>    另外, GitHub的GUI客户端以及许多第三方客户端都会安装凭证管理工具或自动链接系统凭证管理工具.</p><h3><a name='header-c197' class='md-header-anchor '></a>git remote</h3><pre class='md-fences mock-cm' style='display:block;position:relative'>git remote                                            显示所有远程仓库
+&gt;&gt;&gt;&gt;&gt;&gt;&gt; bd00d06d0ceb39365f6b3cadd8bfbbc639ce23d6</pre><p>​    不论我们用什么方法或工具解决冲突, 最后代码要改成这个样子</p><pre class='md-fences mock-cm' style='display:block;position:relative'>我改的代码</pre><p>​    或者这个样子</p><pre class='md-fences mock-cm' style='display:block;position:relative'>别人改的代码</pre><p>​    不然正常代码里多出来<code>&lt;&lt;&lt;&lt;&lt;&lt;</code>这个东西, 肯定报错.</p><p>​    解决冲突的工具所做的只是把不同部分代码高亮为不同的颜色, 并提供一些选择某一代码块的按钮或方法. 工具在后面讲.</p><h4><a name='header-c126' class='md-header-anchor '></a>树冲突</h4><p>​    两个用户同时改变了文件树, Git可以检测出, 比如两人同时把文件a.js改为b.js和c.js, Git是可以检测出的. </p><h3><a name='header-c129' class='md-header-anchor '></a>远程仓库</h3><p>​    前面差不多总结了git在本地使用的方法, 下面讲远程仓库的使用. Git与远程仓库传输数据时有四种协议, 常用的为HTTP协议和SSH协议.<br/></p><p>​    <code>http://111.111.111.111:3000/haha/git-tutorial.git</code>为HTTP协议.</p><p>​    <code>git@111.111.111.111:haha/git-tutorial.git</code>为SSH协议.</p><p>​    如果是公开的项目, 使用HTTP协议和SSH协议拉取时都不会有认证问题, 但推送时会出现认证授权问题, HTTP认证会要求用户输入用户名和密码, 而SSH认证时会访问用户的私钥与用户之前上传的公钥匹配. 可以说HTTP协议的适用范围最广, GitHub也推荐用户使用HTTP协议. </p><p>​    如果使用HTTP协议时被要求每次推送都输入密码, Windows用户可以通过配置Git的凭证管理工具保存凭证, 只需要在命令行输入<code>git config --global credential.helper wincred</code>即可调用Windos的凭证管理工具来管理Git的认证凭证. 在macOS下使用<code>git config --global credential.helper osxkeychain</code>来调用macOS的keychain管理凭证.</p><p>​    另外, GitHub的GUI客户端以及许多第三方客户端都会安装凭证管理工具或自动链接系统凭证管理工具.</p><h3><a name='header-c142' class='md-header-anchor '></a>git remote</h3><pre class='md-fences mock-cm' style='display:block;position:relative'>git remote  
 git remote add 远程仓库名 远程仓库URL                    添加新的远程仓库
 git remote rename 要修改的远程仓库名 新远程仓库名          重命名远程仓库
-git remove 远程仓库名                                   删除远程仓库</pre><h3><a name='header-c202' class='md-header-anchor '></a> 其他命令</h3><p>    其他的命令都不太常用常用的只有一两条.</p><h4><a name='header-c213' class='md-header-anchor '></a>git push</h4><pre class='md-fences mock-cm' style='display:block;position:relative'>git push 远程仓库名 远程分支名                            推送本地已经提交的代码到指定远程分支                                           </pre><h4><a name='header-c218' class='md-header-anchor '></a>git fetch</h4><pre class='md-fences mock-cm' style='display:block;position:relative'>git fetch                                              获取对应远程仓库的数据且不合并
-git fetch --all                                        获取所有远程仓库的数据且不合并</pre><h4><a name='header-c225' class='md-header-anchor '></a>git pull</h4><pre class='md-fences mock-cm' style='display:block;position:relative'>git pull 远程仓库名 远程分支名                             获取对应远程分支数据并合并
-git pull 实际上就是 git fetch加git merge</pre><p></p><h2><a name='header-c244' class='md-header-anchor '></a>如何高效使用Git</h2><p>    常用的工具自然要高效使用. Git的高效使用涉及config, hooks, alias, 分支管理模型, 第三方工具等.</p><h3><a name='header-c258' class='md-header-anchor '></a>git config</h3><p>    前面提到了基础的git config, 但要高效使用Git, 需要增加更多的配置.</p><p>    在Git的使用过程中不难注意到, 当我们在 origin/master, 分支下使用<code>git push</code>, <code>git pull</code>命令时, 不需要写远程仓库名和分支名也可正确的push和pull. 但在其他分支下时, 就会看到这样的提示</p><pre class='md-fences mock-cm' style='display:block;position:relative'>There is no tracking information for the current branch.
+git remove 远程仓库名                                   删除远程仓库</pre><h3><a name='header-c144' class='md-header-anchor '></a>其他命令</h3><p>​    其他的命令都不太常用常用的只有一两条.</p><h4><a name='header-c147' class='md-header-anchor '></a>git push</h4><pre class='md-fences mock-cm' style='display:block;position:relative'>git push 远程仓库名 远程分支名                            推送本地已经提交的代码到指定远程分支  </pre><h4><a name='header-c149' class='md-header-anchor '></a>git fetch</h4><pre class='md-fences mock-cm' style='display:block;position:relative'>git fetch                                              获取对应远程仓库的数据且不合并
+git fetch --all                                        获取所有远程仓库的数据且不合并</pre><h4><a name='header-c151' class='md-header-anchor '></a>git pull</h4><pre class='md-fences mock-cm' style='display:block;position:relative'>git pull 远程仓库名 远程分支名                             获取对应远程分支数据并合并
+git pull 实际上就是 git fetch加git merge</pre><p></p><h2><a name='header-c155' class='md-header-anchor '></a>如何高效使用Git</h2><p>​    常用的工具自然要高效使用. Git的高效使用涉及config, hooks, alias, 分支管理模型, 第三方工具等.</p><h3><a name='header-c158' class='md-header-anchor '></a>git config</h3><p>​    前面提到了基础的git config, 但要高效使用Git, 需要增加更多的配置.</p><p>​    在Git的使用过程中不难注意到, 当我们在 origin/master, 分支下使用<code>git push</code>, <code>git pull</code>命令时, 不需要写远程仓库名和分支名也可正确的push和pull. 但在其他分支下时, 就会看到这样的提示</p><pre class='md-fences mock-cm' style='display:block;position:relative'>There is no tracking information for the current branch.
 Please specify which branch you want to merge with.
 See git-pull(1) for details.
 
@@ -669,13 +669,13 @@ See git-pull(1) for details.
 
 If you wish to set tracking information for this branch you can do so with:
 
-    git branch --set-upstream-to=origin/&lt;branch&gt; bimsop</pre><p>    在我们init或clone某个项目时, Git会自动初始化master分支并track远端的origin/master分支, 这时使用push和pull命令时就会与默认远端分支交换数据.</p><p>    所以我们只需要运行提示最下面给出的命令即可.</p><p>    比如, 上面的情况需要输入命令<code>git branch —set-upstream-to=origin/bimsop bimsop</code>, 这样每次执行命令时可以快很多.</p><p>    这时如果查看项目根目录下的<code>.git/config</code>文件, 会发现多出了下面三行.</p><pre class='md-fences mock-cm' style='display:block;position:relative'>[branch &quot;bimsop&quot;]
+    git branch --set-upstream-to=origin/&lt;branch&gt; bimsop</pre><p>​    在我们init或clone某个项目时, Git会自动初始化master分支并track远端的origin/master分支, 这时使用push和pull命令时就会与默认远端分支交换数据.</p><p>​    所以我们只需要运行提示最下面给出的命令即可.</p><p>​    比如, 上面的情况需要输入命令<code>git branch —set-upstream-to=origin/bimsop bimsop</code>, 这样每次执行命令时可以快很多.</p><p>​    这时如果查看项目根目录下的<code>.git/config</code>文件, 会发现多出了下面三行.</p><pre class='md-fences mock-cm' style='display:block;position:relative'>[branch &quot;bimsop&quot;]
 	remote = origin
-	merge = refs/heads/bimsop</pre><p>    这就表明本地的bimsop分支track的是origin远程仓库的bimsop分支.</p><h3><a name='header-c314' class='md-header-anchor '></a>hooks</h3><p>    由于Git特性, 我们可能会希望在push代码前或pull代码后自动化的执行某些脚本或程序, Git提供的hooks可以方便做到这点.</p><p>    查看项目目录<code>.git/hooks</code>目录下可以看到, 很多<code>.sample</code>文件, 其使用方法也很简单, 这里拿<code>post-merge</code>举例. 假设项目的代码需要在每次pull或merge以后编译一次来更新源码. 可以新建一个名为<code>post-merge</code>的文件, 内容为:</p><pre class='md-fences mock-cm' style='display:block;position:relative'>#!/bin/sh
+	merge = refs/heads/bimsop</pre><p>​    这就表明本地的bimsop分支track的是origin远程仓库的bimsop分支.</p><h3><a name='header-c175' class='md-header-anchor '></a>hooks</h3><p>​    由于Git特性, 我们可能会希望在push代码前或pull代码后自动化的执行某些脚本或程序, Git提供的hooks可以方便做到这点.</p><p>​    查看项目目录<code>.git/hooks</code>目录下可以看到, 很多<code>.sample</code>文件, 其使用方法也很简单, 这里拿<code>post-merge</code>举例. 假设项目的代码需要在每次pull或merge以后编译一次来更新源码. 可以新建一个名为<code>post-merge</code>的文件, 内容为:</p><pre class='md-fences mock-cm' style='display:block;position:relative'>#!/bin/sh
 
 #编译代码的指令
 webpack
-#语法为 shell script</pre><p>    这样就会在每次pull和merge后重新编译一次代码. 需要注意的是, 需要把该文件权限改为可执行文件. Windos下可以直接写一个bat脚本然后在<code>post-merge</code>文件中执行bat脚本.</p><p>    其他hooks设置都比较类似, 还可以设置每次commit的提交信息, 比如有的时间管理程序就会记录用户编辑每个文件的时间然后在<code>commit-msg</code>使用shell script把用户的工作时间记录在提交信息中.</p><h3><a name='header-c345' class='md-header-anchor '></a>alias</h3><p>    alias意为别名, 类似于Windos中的快捷方式. 比如设置<code>git</code>的别名为<code>g</code>, 那在命令行中输入<code>git push</code>时, 可以简写为<code>g push</code>.</p><p>    <a href='https://git-scm.com/book/en/v2/Git-Basics-Git-Aliases'>Git提供了别名功能,</a> 运行<code>git config --global alias.co checkout</code>后, 就可以用<code>git co</code>来代替<code>git checkout</code>.</p><p>    另一种使用别名的方式是在使用的shell(理解为命令行工具)中设置别名.</p><p>    例如, 我使用的是Zsh, 可以直接在Zsh的配置文件中设置别名, 也可以使用Zsh插件<a href='https://github.com/sorin-ionescu/prezto'>prezto</a>,里面的<a href='https://github.com/sorin-ionescu/prezto/tree/master/modules/git'>Git module</a>. 提供了比较方便和较为通用的别名. 也可以自己做一些修改. 下面列出了一些比较常用的.</p><pre class='md-fences mock-cm' style='display:block;position:relative'>alias gc=&#39;git commit --all -m&#39;
+#语法为 shell script</pre><p>​    这样就会在每次pull和merge后重新编译一次代码. 需要注意的是, 需要把该文件权限改为可执行文件. Windos下可以直接写一个bat脚本然后在<code>post-merge</code>文件中执行bat脚本.</p><p>​    其他hooks设置都比较类似, 还可以设置每次commit的提交信息, 比如有的时间管理程序就会记录用户编辑每个文件的时间然后在<code>commit-msg</code>使用shell script把用户的工作时间记录在提交信息中.</p><h3><a name='header-c185' class='md-header-anchor '></a>alias</h3><p>​    alias意为别名, 类似于Windos中的快捷方式. 比如设置<code>git</code>的别名为<code>g</code>, 那在命令行中输入<code>git push</code>时, 可以简写为<code>g push</code>.</p><p>​    <a href='https://git-scm.com/book/en/v2/Git-Basics-Git-Aliases'>Git提供了别名功能,</a> 运行<code>git config --global alias.co checkout</code>后, 就可以用<code>git co</code>来代替<code>git checkout</code>.</p><p>​    另一种使用别名的方式是在使用的shell(理解为命令行工具)中设置别名.</p><p>​    例如, 我使用的是Zsh, 可以直接在Zsh的配置文件中设置别名, 也可以使用Zsh插件<a href='https://github.com/sorin-ionescu/prezto'>prezto</a>,里面的<a href='https://github.com/sorin-ionescu/prezto/tree/master/modules/git'>Git module</a>. 提供了比较方便和较为通用的别名. 也可以自己做一些修改. 下面列出了一些比较常用的.</p><pre class='md-fences mock-cm' style='display:block;position:relative'>alias gc=&#39;git commit --all -m&#39;
 alias gca=&#39;git commit --all&#39;
 alias gcaa=&#39;git commit --verbose --all&#39;
 alias gcm=&#39;git commit --message&#39;
@@ -691,33 +691,178 @@ alias gfm=&#39;git pull&#39;
 alias gfr=&#39;git pull --rebase&#39;
 alias gws=&#39;git status --ignore-submodules=${_git_status_ignore_submodules} --short&#39;
 alias gs=&#39;git stash&#39;
-alias gsa=&#39;git stash apply&#39;</pre><p>    <a href='https://github.com/yqrashawn/prezto/blob/master/modules/git/alias.zsh'>点击查看全部</a>.</p><h3><a name='header-c385' class='md-header-anchor '></a>Git flow(分支管理模型)</h3><p>    <a href='http://jeffkreeftmeijer.com/2010/why-arent-you-using-git-flow/'>Git flow</a>是一套比较成熟的分支管理模型, 其有<a href='https://github.com/nvie/gitflow'>相应的命令行工具</a>, 也有很多GUI工具支持. Git flow的原理很简单, 就是在不同的分支做不同的事情.</p><p>    一个项目, 在master分支发布重大版本, Develop为开发分支, 所有开发以Develop分支为基准. 配有三种临时性分支: feature分支, fixbug分支, release分支.</p><p>    feature分支. 项目增加新功能时, 从Develop新建feature分支开发新功能, 完成后合并回Develop分支. 这样其他人开发其他功能或者修理bug时不会因未开发完成的push而出错.</p><p>    fixbug分支. 发现bug后需要修改代码, 从发现bug的分支新建出fixbug分支修复bug, 完成后合并回去.</p><p>    release分支, 完成一个版本后, 在发布前新建release分支进行测试, 测试完成后发布.</p><p><img src='./img/gitflow.gif' alt='Git flow 图示' /></p><h4><a name='header-c423' class='md-header-anchor '></a>Git flow 命令行工具</h4><p>     <a href='https://github.com/nvie/gitflow'>该工具</a>可以方便的实现Git flow模型. </p><pre class='md-fences mock-cm' style='display:block;position:relative'>git flow init                                                在该项目初始化Git flow
+alias gsa=&#39;git stash apply&#39;</pre><p>​    <a href='https://github.com/yqrashawn/prezto/blob/master/modules/git/alias.zsh'>点击查看全部</a>.</p><h3><a name='header-c197' class='md-header-anchor '></a>Git flow(分支管理模型)</h3><p>​    <a href='http://jeffkreeftmeijer.com/2010/why-arent-you-using-git-flow/'>Git flow</a>是一套比较成熟的分支管理模型, 其有<a href='https://github.com/nvie/gitflow'>相应的命令行工具</a>, 也有很多GUI工具支持. Git flow的原理很简单, 就是在不同的分支做不同的事情.</p><p>​    一个项目, 在master分支发布重大版本, Develop为开发分支, 所有开发以Develop分支为基准. 配有三种临时性分支: feature分支, fixbug分支, release分支.</p><p>​    feature分支. 项目增加新功能时, 从Develop新建feature分支开发新功能, 完成后合并回Develop分支. 这样其他人开发其他功能或者修理bug时不会因未开发完成的push而出错.</p><p>​    fixbug分支. 发现bug后需要修改代码, 从发现bug的分支新建出fixbug分支修复bug, 完成后合并回去.</p><p>​    release分支, 完成一个版本后, 在发布前新建release分支进行测试, 测试完成后发布.</p><p><img src='./img/gitflow.gif' alt='Git flow 图示' /></p><h4><a name='header-c210' class='md-header-anchor '></a>Git flow 命令行工具</h4><p>​     <a href='https://github.com/nvie/gitflow'>该工具</a>可以方便的实现Git flow模型. </p><pre class='md-fences mock-cm' style='display:block;position:relative'>git flow init                                                在该项目初始化Git flow
 git flow feature start feature分支名 从哪个分支创建             新建feature分支并checkout
 git flow feature finish feature分支名                         删除feature分支并merge
-git flow hotfix start hotfix分支名 从哪个分支创建             
-git flow hotfix finish hotfix分支名                         
-git flow release start release分支名 从哪个分支创建             
-git flow release finish release分支名                         
+git flow hotfix start hotfix分支名 从哪个分支创建  
+git flow hotfix finish hotfix分支名  
+git flow release start release分支名 从哪个分支创建  
+git flow release finish release分支名  
+也可以设置别名方便使用
+alias gff=&#39;git flow feature
+alias gffs=&#39;git flow feature start
+alias gfff=&#39;git flow feature finish
+alias gffp=&#39;git flow feature publish
+alias gfft=&#39;git flow feature track
+alias gffd=&#39;git flow feature diff
+alias gffr=&#39;git flow feature rebase
+alias gffc=&#39;git flow feature checkout
+alias gffd=&#39;git flow feature delete
+alias gfb=&#39;git flow  bugfix
+alias gfbs=&#39;git flow bugfix start
+alias gfbf=&#39;git flow bugfix finish
+alias gfbp=&#39;git flow bugfix publish
+alias gfbt=&#39;git flow bugfix track
+alias gfbd=&#39;git flow bugfix diff
+alias gfbr=&#39;git flow bugfix rebase
+alias gfbc=&#39;git flow bugfix pull
+alias gfbd=&#39;git flow bugfix delete</pre><h3><a name='header-c215' class='md-header-anchor '></a>第三方工具</h3><p>​    第三方工具分为GUI界面和CLI界面. 如果要提高效率, 建议只有在操作历史文件和分支时使用第三方工具可以提高效率, 在日常的操作中其实不太需要第三方工具.</p><h4><a name='header-c218' class='md-header-anchor '></a>tig</h4><p>​    CLI工具<code>tig</code>的做的不错, 但是操作方式基于VIM, 不易使用. 长得这样子:</p><p><img src='./img/tig.png' alt='tig 界面' /></p><h4><a name='header-c223' class='md-header-anchor '></a>Tower</h4><p>​    最开始用的就是这个, 所以感觉比较好用, 功能比较全面, 继承了Git flow, 功能很强大. 且刚推出了Windows的Beta版本. 但没有提供merge工具.界面:</p><p><img src='./img/Tower.png' alt='Tower 界面' /></p><h4><a name='header-c228' class='md-header-anchor '></a>SourceTree</h4><p>​    功能略弱于Tower, 使用方便. 主要问题是第一次安装需要登录, 而国内不方便登录. 且预览大文件容易卡住.界面:</p><p><img src='./img/SourceTree.png' alt='SourceTree 界面' /></p><h4><a name='header-c233' class='md-header-anchor '></a>GitKraken</h4><p>​    比较新的一个客户端, 做的很漂亮. 免费版功能强大, 自带merge工具, 预览大文件相当快. 唯一的缺点是没用习惯. 界面:</p><p><img src='./img/GitKraken.png' alt='GitKraken 界面' /></p><h2><a name='header-c238' class='md-header-anchor '></a>日常使用流程</h2><p>​    最后总结一下日常使用时的流程.</p><p>​    假设我们要创建一个项目记录我今天吃了什么.</p><pre class='md-fences mock-cm' style='display:block;position:relative'>~/workspace ❯❯❯ mkdir food                                       新建food文件夹
+~/workspace ❯❯❯ cd food                                          进入&#39;food
+~/w/food ❯❯❯ git init                                            初始化
+Initialized empty Git repository in /Users/Rashawn/workspace/food/.git/
+~/w/food ❯❯❯ echo &#39;我吃了西瓜&#39; &gt; food.txt                        新建&#39;food.txt&#39;并输入吃了西瓜  
+~/w/food ❯❯❯ ls                                                  文件夹多了food.txt
+food.txt
+~/w/food ❯❯❯ git status --short                                  查看状态
+?? food.txt                                                      有一个没有被跟踪的文件
+~/w/food ❯❯❯ head food.txt                                       显示文件内容
+我吃了西瓜
+~/w/food ❯❯❯ git add food.txt                                    把文件加入暂存区
+~/w/food ❯❯❯ git commit -m &#39;提交西瓜&#39;                            提交该次改动
+[master (root-commit) e2b968e] 提交西瓜
+ 1 file changed, 1 insertion(+)
+ create mode 100644 food.txt
+~/w/food ❯❯❯ git status
+On branch master
+nothing to commit, working tree clean
+~/w/food ❯❯❯ echo &#39;我吃了苹果&#39; &gt;&gt; food.txt  
+~/w/food ❯❯❯ head food.txt  
+我吃了西瓜
+我吃了苹果
+~/w/food ❯❯❯ git add food.txt  
+~/w/food ❯❯❯ git status --short  
+M  food.txt
+~/w/food ❯❯❯ git commit -m &#39;提交苹果&#39;  
+[master 162f6d2] 提交苹果
+ 1 file changed, 1 insertion(+)
+~/w/food ❯❯❯ git status
+On branch master
+nothing to commit, working tree clean</pre><p>​    这时, 我们使用一下git flow.</p><pre class='md-fences mock-cm' style='display:block;position:relative'>~/w/food ❯❯❯ git flow init  
 
-#也可以设置别名方便使用
-alias gff=&#39;git flow feature&#39;
-alias gffs=&#39;git flow feature start&#39;
-alias gfff=&#39;git flow feature finish&#39;
-alias gffp=&#39;git flow feature publish&#39;
-alias gfft=&#39;git flow feature track&#39;
-alias gffd=&#39;git flow feature diff&#39;
-alias gffr=&#39;git flow feature rebase&#39;
-alias gffc=&#39;git flow feature checkout&#39;
-alias gffd=&#39;git flow feature delete&#39;
-alias gfb=&#39;git flow  bugfix&#39;
-alias gfbs=&#39;git flow bugfix start&#39;
-alias gfbf=&#39;git flow bugfix finish&#39;
-alias gfbp=&#39;git flow bugfix publish&#39;
-alias gfbt=&#39;git flow bugfix track&#39;
-alias gfbd=&#39;git flow bugfix diff&#39;
-alias gfbr=&#39;git flow bugfix rebase&#39;
-alias gfbc=&#39;git flow bugfix pull&#39;
-alias gfbd=&#39;git flow bugfix delete&#39;
-</pre><h3><a name='header-c436' class='md-header-anchor '></a>第三方工具</h3><p>    第三方工具分为GUI界面和CLI界面. 如果要提高效率, 建议只有在操作历史文件和分支时使用第三方工具可以提高效率, 在日常的操作中其实不太需要第三方工具.</p><h4><a name='header-c465' class='md-header-anchor '></a>tig</h4><p>    CLI工具<code>tig</code>的做的不错, 但是操作方式基于VIM, 不易使用. 长得这样子:</p><p><img src='./img/tig.png' alt='tig 界面' /></p><h4><a name='header-c471' class='md-header-anchor '></a>Tower</h4><p>    最开始用的就是这个, 所以感觉比较好用, 功能比较全面, 继承了Git flow, 功能很强大. 且刚推出了Windows的Beta版本. 但没有提供merge工具.界面:</p><p><img src='./img/Tower.png' alt='Tower 界面' /></p><h4><a name='header-c485' class='md-header-anchor '></a>SourceTree</h4><p>    功能略弱于Tower, 使用方便. 主要问题是第一次安装需要登录, 而国内不方便登录. 且预览大文件容易卡住.界面:</p><p><img src='./img/SourceTree.png' alt='SourceTree 界面' /></p><h4><a name='header-c510' class='md-header-anchor '></a>GitKraken</h4><p>    比较新的一个客户端, 做的很漂亮. 免费版功能强大, 自带merge工具, 预览大文件相当快. 唯一的缺点是没用习惯. 界面:</p><p><img src='./img/GitKraken.png' alt='GitKraken 界面' /></p><p></p></div>
+Which branch should be used for bringing forth production releases?
+   - master
+Branch name for production releases: [master]
+Branch name for &quot;next release&quot; development: [develop] dev
+
+How to name your supporting branch prefixes?
+Feature branches? [feature/]
+Bugfix branches? [bugfix/]
+Release branches? [release/]
+Hotfix branches? [hotfix/]
+Support branches? [support/]
+Version tag prefix? [] version
+Hooks and filters directory? [/Users/Rashawn/workspace/food/.git/hooks]</pre><p>​    可以看到这时git flow初始化时的选项, 它会询问你各个功能分支的名字和存放hooks的地址, 一般情况可以全部选择默认. 当初始化完成后, git flow会自动切换到develop分支.</p><p>​    现在我们要增加一个新的功能, 让文件能够记录我干了什么.</p><pre class='md-fences mock-cm' style='display:block;position:relative'>~/w/food ❯❯❯ git branch  
+* dev
+  master
+~/w/food ❯❯❯ git flow feature start whatIveDone dev  
+  Switched to a new branch &#39;feature/whatIveDone&#39;
+
+Summary of actions:
+- A new branch &#39;feature/whatIveDone&#39; was created, based on &#39;dev&#39;
+- You are now on branch &#39;feature/whatIveDone&#39;
+
+Now, start committing on your feature. When done, use:
+
+     git flow feature finish whatIveDone
+
+~/w/food ❯❯❯ git branch  
+  dev
+* feature/whatIveDone
+  master  
+~/w/food ❯❯❯ echo &#39;我在睡觉&#39; &gt; do.txt  
+~/w/food ❯❯❯ git status --short  
+?? do.txt
+~/w/food ❯❯❯ git add do.txt  
+~/w/food ❯❯❯ git status --short  
+A  do.txt
+~/w/food ❯❯❯ git commit -m &#39;提交睡觉&#39;  
+[feature/whatIveDone c65087d] 提交睡觉
+ 1 file changed, 1 insertion(+)
+ create mode 100644 do.txt
+~/w/food ❯❯❯ git status --short  
+On branch feature/whatIveDone
+nothing to commit, working tree clean</pre><p>​    这时我们加在新的<code>feature/whatIveDone</code>分支新建了一个<code>do.txt</code>文件, 并记录了&#39;我在睡觉&#39;. 现在我们完成了这个功能, 要将其合并回develop分支.</p><pre class='md-fences mock-cm' style='display:block;position:relative'>~/w/food ❯❯❯ git flow feature finish  
+Switched to branch &#39;dev&#39;
+Updating 162f6d2..c65087d
+Fast-forward
+ do.txt | 1 +
+ 1 file changed, 1 insertion(+)
+ create mode 100644 do.txt
+Deleted branch feature/whatIveDone (was c65087d).
+
+Summary of actions:
+- The feature branch &#39;feature/whatIveDone&#39; was merged into &#39;dev&#39;
+- Feature branch &#39;feature/whatIveDone&#39; has been locally deleted
+- You are now on branch &#39;dev&#39;
+~/w/food ❯❯❯ git branch  
+* dev
+  master
+~/w/food ❯❯❯ head do.txt  
+我在睡觉</pre><p>​    这时我们已经回到了develop分支, 并且<code>do.txt</code>也已经合并进来了. git flow的其他功能的使用方法相同.</p><p>​    我们现在想将它放到远程仓库, 这样其他人也可以记录他们吃了啥, 干了啥. 首先我们新建一个远程仓库得到它的地址. <code>http://111.111.111.111:3000/zhangyuxiao/food-do.git</code>.</p><pre class='md-fences mock-cm' style='display:block;position:relative'>~/w/food ❯❯❯ git remote add origin http://111.111.111.111:3000/zhangyuxiao/food-do.git</pre><p>​    在push之前我们需要把<code>dev</code>分支的内容合并到<code>master</code>分支.</p><pre class='md-fences mock-cm' style='display:block;position:relative'>~/w/food ❯❯❯ git branch  
+* dev
+  master
+~/w/food ❯❯❯ git checkout master  
+Switched to branch &#39;master&#39;
+~/w/food ❯❯❯ git merge dev  
+Updating 162f6d2..c65087d
+Fast-forward
+ do.txt | 1 +
+ 1 file changed, 1 insertion(+)
+ create mode 100644 do.txt
+~/w/food ❯❯❯ git status  
+On branch master
+nothing to commit, working tree clean</pre><p>​    这时我们已经把<code>dev</code>分支开发的内容同步到了<code>master</code>了.</p><pre class='md-fences mock-cm' style='display:block;position:relative'>~/w/food ❯❯❯ git push -u origin master  
+Counting objects: 9, done.
+Delta compression using up to 8 threads.
+Compressing objects: 100% (4/4), done.
+Writing objects: 100% (9/9), 757 bytes | 0 bytes/s, done.
+Total 9 (delta 0), reused 0 (delta 0)
+To http://111.111.111.111:3000/zhangyuxiao/food-do.git
+ * [new branch]      master -&gt; master
+Branch master set up to track remote branch master from origin.</pre><p>​    这里需要注意的是, <strong>第一次推送时, 本地的<code>master</code>分支并不知道自己track的是远端的哪个分支,</strong> 所以需要使用<code>-u</code>或<code>—set-upstream</code>将本地的<code>master</code>和<code>origin/master</code>绑定.</p><p>​    现在另一个用户要更新自己的状态到该项目.</p><pre class='md-fences mock-cm' style='display:block;position:relative'>~/workspace ❯❯❯ git clone http://111.111.111.111:3000/zhangyuxiao/food-do.git                           
+Cloning into &#39;food-do&#39;...
+remote: Counting objects: 9, done.
+remote: Compressing objects: 100% (4/4), done.
+remote: Total 9 (delta 0), reused 0 (delta 0)
+Unpacking objects: 100% (9/9), done.
+~/w/food-do ❯❯❯ git branch  
+* master
+~/w/food-do ❯❯❯ echo &#39;我在睡觉&#39;
+~/w/food-do ❯❯❯ echo &#39;我也吃了苹果&#39; &gt;&gt; food.txt  
+~/w/food-do ❯❯❯ head food.txt  
+我吃了西瓜
+我吃了苹果
+我也吃了苹果
+~/w/food-do ❯❯❯ git status --short  
+ M food.txt
+~/w/food-do ❯❯❯ git add food.txt  
+~/w/food-do ❯❯❯ git status --short  
+M  food.txt
+~/w/food-do ❯❯❯ git commit -m &#39;提交也吃了苹果&#39;  
+[master c1fde84] 提交也吃了苹果
+ 1 file changed, 1 insertion(+)
+~/w/food-do ❯❯❯ git status
+On branch master
+Your branch is ahead of &#39;origin/master&#39; by 1 commit.
+  (use &quot;git push&quot; to publish your local commits)
+nothing to commit, working tree clean
+~/w/food-do ❯❯❯ git push -u origin master  
+Counting objects: 3, done.
+Delta compression using up to 8 threads.
+Compressing objects: 100% (3/3), done.
+Writing objects: 100% (3/3), 326 bytes | 0 bytes/s, done.
+Total 3 (delta 0), reused 0 (delta 0)
+To http://111.111.111.111:3000/zhangyuxiao/food-do.git
+   c65087d..c1fde84  master -&gt; master</pre><p>​    上面的指令为另一个用户clone该项目后在<code>food.txt</code>文件中加入&#39;我也吃了苹果&#39;, 加入暂存区并提交, push.</p></div>
 </body>
 </html>
