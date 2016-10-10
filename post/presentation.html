@@ -539,19 +539,19 @@ alias gfbf='git flow bugfix finish'
 
 ---
 ```
-~/workspace ❯❯❯ mkdir food                                       新建food文件夹
-~/workspace ❯❯❯ cd food                                          进入'food
-~/w/food ❯❯❯ git init                                            初始化
+~/workspace ❯❯❯ mkdir food                          新建food文件夹
+~/workspace ❯❯❯ cd food                             进入'food
+~/w/food ❯❯❯ git init                               初始化
 Initialized empty Git repository in /Users/Rashawn/workspace/food/.git/
-~/w/food ❯❯❯ echo '我吃了西瓜' > food.txt                        新建'food.txt'并输入吃了西瓜  
-~/w/food ❯❯❯ ls                                                  文件夹多了food.txt
+~/w/food ❯❯❯ echo '我吃了西瓜' > food.txt           新建'food.txt'并输入吃了西瓜  
+~/w/food ❯❯❯ ls                                     文件夹多了food.txt
 food.txt
-~/w/food ❯❯❯ git status --short                                  查看状态
-?? food.txt                                                      有一个没有被跟踪的文件
-~/w/food ❯❯❯ head food.txt                                       显示文件内容
+~/w/food ❯❯❯ git status --short                     查看状态
+?? food.txt                                         有一个没有被跟踪的文件
+~/w/food ❯❯❯ head food.txt                          显示文件内容
 我吃了西瓜
-~/w/food ❯❯❯ git add food.txt                                    把文件加入暂存区
-~/w/food ❯❯❯ git commit -m '提交西瓜'                            提交该次改动
+~/w/food ❯❯❯ git add food.txt                       把文件加入暂存区
+~/w/food ❯❯❯ git commit -m '提交西瓜'               提交该次改动
 [master (root-commit) e2b968e] 提交西瓜
  1 file changed, 1 insertion(+)
  create mode 100644 food.txt
@@ -761,6 +761,7 @@ To http://111.111.111.111:3000/zhangyuxiao/food-do.git
 ​    上面的指令为另一个用户clone该项目后在`food.txt`文件中加入'我也吃了苹果', 加入暂存区并提交, push.
 
 ---
+
 		</textarea>
 		<script src="http://gnab.github.io/remark/downloads/remark-latest.min.js"></script>
 		<script>
