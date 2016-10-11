@@ -669,7 +669,7 @@ See git-pull(1) for details.
 
 If you wish to set tracking information for this branch you can do so with:
 
-    git branch --set-upstream-to=origin/&lt;branch&gt; bimsop</pre><p>​    在我们init或clone某个项目时, Git会自动初始化master分支并track远端的origin/master分支, 这时使用push和pull命令时就会与默认远端分支交换数据.</p><p>​    所以我们只需要运行提示最下面给出的命令即可.</p><p>​    比如, 上面的情况需要输入命令<code>git branch —set-upstream-to=origin/bimsop bimsop</code>, 这样每次执行命令时可以快很多.</p><p>​    这时如果查看项目根目录下的<code>.git/config</code>文件, 会发现多出了下面三行.</p><pre class='md-fences mock-cm' style='display:block;position:relative'>[branch &quot;bimsop&quot;]
+    git branch --set-upstream-to=origin/&lt;branch&gt; bimsop</pre><p>​    在我们clone某个项目时, Git会自动初始化master分支并track远端的origin/master分支, 这时使用push和pull命令时就会与默认远端分支交换数据.</p><p>​    所以我们只需要运行提示最下面给出的命令即可.</p><p>​    比如, 上面的情况需要输入命令<code>git branch —set-upstream-to=origin/bimsop bimsop</code>, 这样每次执行命令时可以快很多.</p><p>​    这时如果查看项目根目录下的<code>.git/config</code>文件, 会发现多出了下面三行.</p><pre class='md-fences mock-cm' style='display:block;position:relative'>[branch &quot;bimsop&quot;]
 	remote = origin
 	merge = refs/heads/bimsop</pre><p>​    这就表明本地的bimsop分支track的是origin远程仓库的bimsop分支.</p><h3><a name='header-c175' class='md-header-anchor '></a>hooks</h3><p>​    由于Git特性, 我们可能会希望在push代码前或pull代码后自动化的执行某些脚本或程序, Git提供的hooks可以方便做到这点.</p><p>​    查看项目目录<code>.git/hooks</code>目录下可以看到, 很多<code>.sample</code>文件, 其使用方法也很简单, 这里拿<code>post-merge</code>举例. 假设项目的代码需要在每次pull或merge以后编译一次来更新源码. 可以新建一个名为<code>post-merge</code>的文件, 内容为:</p><pre class='md-fences mock-cm' style='display:block;position:relative'>#!/bin/sh
 
