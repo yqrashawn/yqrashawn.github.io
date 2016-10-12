@@ -82,7 +82,7 @@ namy.19@gmail.com
 ---
 ​    `git branch`列出所有分支列表和当前所在分支, `-a`列表包含远程分支.
 
-​    `git branch -b 分支名字`能够新建分支.
+​    `git checkout -b 分支名字`能够新建分支.
 
 ​    `git branch -d 分支名字`能够删除分支, 但删除前Git会检查该分支是否完全合并到已存在的分支中(fully merged). 使用`-D`不会进行此项检查.
 
