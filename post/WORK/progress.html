@@ -2,15 +2,15 @@
 <html lang="en">
 <head>
 <title></title>
-<!-- 2017-01-04 Wed 13:41 -->
+<!-- 2017-01-04 Wed 14:32 -->
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <meta name="generator" content="Org-mode">
 <meta name="author" content="yqrashawn">
 
-<link  href="./bootstrap.min.css" rel="stylesheet">
-<script src="./jquery.min.js"></script>
-<script src="./bootstrap.min.js"></script>
+<link  href="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/3.3.5/css/bootstrap.min.css" rel="stylesheet">
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/3.3.5/js/bootstrap.min.js"></script>
 <style type="text/css">
 /* org mode styles on top of twbs */
 
@@ -282,6 +282,12 @@ $(function() {
 </tr>
 
 <tr>
+<td class="text-left">&#xa0;</td>
+<td class="text-left">no byteStride</td>
+<td class="text-left">byteStride<sup><a id="fnr.6" name="fnr.6" class="footref" href="#fn.6">6</a></sup></td>
+</tr>
+
+<tr>
 <td class="text-left">bufferViews</td>
 <td class="text-left">name</td>
 <td class="text-left">no name</td>
@@ -301,14 +307,14 @@ $(function() {
 
 <tr>
 <td class="text-left">nodes</td>
-<td class="text-left">rac nodes<sup><a id="fnr.6" name="fnr.6" class="footref" href="#fn.6">6</a></sup></td>
-<td class="text-left">buggy nodes<sup><a id="fnr.7" name="fnr.7" class="footref" href="#fn.7">7</a></sup></td>
+<td class="text-left">rac nodes<sup><a id="fnr.7" name="fnr.7" class="footref" href="#fn.7">7</a></sup></td>
+<td class="text-left">buggy nodes<sup><a id="fnr.8" name="fnr.8" class="footref" href="#fn.8">8</a></sup></td>
 </tr>
 
 <tr>
 <td class="text-left">cameras</td>
-<td class="text-left">cm0<sup><a id="fnr.8" name="fnr.8" class="footref" href="#fn.8">8</a></sup></td>
-<td class="text-left">defaultCamera<sup><a id="fnr.9" name="fnr.9" class="footref" href="#fn.9">9</a></sup></td>
+<td class="text-left">cm0<sup><a id="fnr.9" name="fnr.9" class="footref" href="#fn.9">9</a></sup></td>
+<td class="text-left">defaultCamera<sup><a id="fnr.10" name="fnr.10" class="footref" href="#fn.10">10</a></sup></td>
 </tr>
 
 <tr>
@@ -332,13 +338,13 @@ $(function() {
 <tr>
 <td class="text-left">&#xa0;</td>
 <td class="text-left">no ambient, emission</td>
-<td class="text-left">yes<sup><a id="fnr.10" name="fnr.10" class="footref" href="#fn.10">10</a></sup></td>
+<td class="text-left">yes<sup><a id="fnr.11" name="fnr.11" class="footref" href="#fn.11">11</a></sup></td>
 </tr>
 
 <tr>
 <td class="text-left">&#xa0;</td>
-<td class="text-left">diffuse, source other file<sup><a id="fnr.11" name="fnr.11" class="footref" href="#fn.11">11</a></sup></td>
-<td class="text-left">diffuse<sup><a id="fnr.12" name="fnr.12" class="footref" href="#fn.12">12</a></sup></td>
+<td class="text-left">diffuse, source other file<sup><a id="fnr.12" name="fnr.12" class="footref" href="#fn.12">12</a></sup></td>
+<td class="text-left">diffuse<sup><a id="fnr.13" name="fnr.13" class="footref" href="#fn.13">13</a></sup></td>
 </tr>
 
 <tr>
@@ -481,7 +487,30 @@ rac extras
 </pre>
 </div></div>
 
-<div class="footdef"><sup><a id="fn.6" name="fn.6" class="footnum" href="#fnr.6">6</a></sup> <p class="footpara">
+<div class="footdef"><sup><a id="fn.6" name="fn.6" class="footnum" href="#fnr.6">6</a></sup> <div class="org-src-container">
+
+<pre class="src src-json"><span style="color: #3a81c3; font-weight: bold;">"accessor_100"</span>: {
+  <span style="color: #3a81c3; font-weight: bold;">"bufferView"</span>: <span style="color: #2d9574;">"bufferView_2768"</span>,
+  <span style="color: #3a81c3; font-weight: bold;">"byteOffset"</span>: <span style="color: #4e3163;">1455144</span>,
+  <span style="color: #3a81c3; font-weight: bold;">"byteStride"</span>: <span style="color: #4e3163;">12</span>,
+  <span style="color: #3a81c3; font-weight: bold;">"componentType"</span>: <span style="color: #4e3163;">5126</span>,
+  <span style="color: #3a81c3; font-weight: bold;">"count"</span>: <span style="color: #4e3163;">3258</span>,
+  <span style="color: #3a81c3; font-weight: bold;">"max"</span>: [
+    <span style="color: #4e3163;">1</span>,
+    <span style="color: #4e3163;">1</span>,
+    <span style="color: #4e3163;">1</span>
+  ],
+  <span style="color: #3a81c3; font-weight: bold;">"min"</span>: [
+    -<span style="color: #4e3163;">1</span>,
+    -<span style="color: #4e3163;">1</span>,
+    -<span style="color: #4e3163;">1</span>
+  ],
+  <span style="color: #3a81c3; font-weight: bold;">"type"</span>: <span style="color: #2d9574;">"VEC3"</span>
+},
+</pre>
+</div></div>
+
+<div class="footdef"><sup><a id="fn.7" name="fn.7" class="footnum" href="#fnr.7">7</a></sup> <p class="footpara">
 rac nodes
 </p>
 <div class="org-src-container">
@@ -503,7 +532,7 @@ rac nodes
 </pre>
 </div></div>
 
-<div class="footdef"><sup><a id="fn.7" name="fn.7" class="footnum" href="#fnr.7">7</a></sup> <p class="footpara">
+<div class="footdef"><sup><a id="fn.8" name="fn.8" class="footnum" href="#fnr.8">8</a></sup> <p class="footpara">
 buggy nodes
 </p>
 <div class="org-src-container">
@@ -538,7 +567,7 @@ buggy nodes
 </pre>
 </div></div>
 
-<div class="footdef"><sup><a id="fn.8" name="fn.8" class="footnum" href="#fnr.8">8</a></sup> <p class="footpara">
+<div class="footdef"><sup><a id="fn.9" name="fn.9" class="footnum" href="#fnr.9">9</a></sup> <p class="footpara">
 rac cameras
 </p>
 <div class="org-src-container">
@@ -550,7 +579,7 @@ rac cameras
 </pre>
 </div></div>
 
-<div class="footdef"><sup><a id="fn.9" name="fn.9" class="footnum" href="#fnr.9">9</a></sup> <p class="footpara">
+<div class="footdef"><sup><a id="fn.10" name="fn.10" class="footnum" href="#fnr.10">10</a></sup> <p class="footpara">
 buggy cameras
 </p>
 <div class="org-src-container">
@@ -570,7 +599,7 @@ buggy cameras
 </pre>
 </div></div>
 
-<div class="footdef"><sup><a id="fn.10" name="fn.10" class="footnum" href="#fnr.10">10</a></sup> <p class="footpara">
+<div class="footdef"><sup><a id="fn.11" name="fn.11" class="footnum" href="#fnr.11">11</a></sup> <p class="footpara">
 buggy materials {ambient emission}
 </p>
 <div class="org-src-container">
@@ -580,7 +609,7 @@ buggy materials {ambient emission}
 </pre>
 </div></div>
 
-<div class="footdef"><sup><a id="fn.11" name="fn.11" class="footnum" href="#fnr.11">11</a></sup> <p class="footpara">
+<div class="footdef"><sup><a id="fn.12" name="fn.12" class="footnum" href="#fnr.12">12</a></sup> <p class="footpara">
 rac diffuse
 </p>
 <div class="org-src-container">
@@ -597,7 +626,7 @@ rac diffuse
 </pre>
 </div></div>
 
-<div class="footdef"><sup><a id="fn.12" name="fn.12" class="footnum" href="#fnr.12">12</a></sup> <p class="footpara">
+<div class="footdef"><sup><a id="fn.13" name="fn.13" class="footnum" href="#fnr.13">13</a></sup> <p class="footpara">
 buggy diffuse
 </p>
 <div class="org-src-container">
@@ -622,7 +651,7 @@ buggy diffuse
 </div></div></div>
 <footer id="postamble" class="">
 <div><p class="author">Author: yqrashawn</p>
-<p class="date">Created: 2017-01-04 Wed 13:41</p>
+<p class="date">Created: 2017-01-04 Wed 14:32</p>
 <p class="creator"><a href="http://www.gnu.org/software/emacs/">Emacs</a> 25.1.1 (<a href="http://orgmode.org">Org-mode</a> 9.0.1)</p>
 </div>
 </footer>
