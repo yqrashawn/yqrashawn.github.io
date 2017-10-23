@@ -1,0 +1,54 @@
+==================================================================
+https://keybase.io/rashawn
+--------------------------------------------------------------------
+
+I hereby claim:
+
+  * I am an admin of http://yqrashawn.com
+  * I am rashawn (https://keybase.io/rashawn) on keybase.
+  * I have a public key ASBYrE004mZ6HUdPdCSkjI6uYuUX33lqQMtcVH2q2H6lDAo
+
+To do so, I am signing this object:
+
+{
+    "body": {
+        "key": {
+            "eldest_kid": "012058ac4d34e2667a1d474f7424a48c8eae62e517df796a40cb5c547daad87ea50c0a",
+            "host": "keybase.io",
+            "kid": "012058ac4d34e2667a1d474f7424a48c8eae62e517df796a40cb5c547daad87ea50c0a",
+            "uid": "9bc534c589bc68df4f95f70067d44e19",
+            "username": "rashawn"
+        },
+        "service": {
+            "hostname": "yqrashawn.com",
+            "protocol": "http:"
+        },
+        "type": "web_service_binding",
+        "version": 1
+    },
+    "client": {
+        "name": "keybase.io go client",
+        "version": "1.0.18"
+    },
+    "ctime": 1486690237,
+    "expire_in": 504576000,
+    "merkle_root": {
+        "ctime": 1486690226,
+        "hash": "7f1900146eb8a31425d838c05fa9db3054a051906a6736ba60cb55403b3dace24a3c146ecfab12984cc50a1c75a75225d57a04d6224d80579543832ecb189880",
+        "seqno": 865165
+    },
+    "prev": "a238c8cea3b7431ea87caff2991db3109f0d7a237725c93c31e600d4b5d6b3fe",
+    "seqno": 7,
+    "tag": "signature"
+}
+
+which yields the signature:
+
+hKRib2R5hqhkZXRhY2hlZMOpaGFzaF90eXBlCqNrZXnEIwEgWKxNNOJmeh1HT3QkpIyOrmLlF995akDLXFR9qth+pQwKp3BheWxvYWTFAvN7ImJvZHkiOnsia2V5Ijp7ImVsZGVzdF9raWQiOiIwMTIwNThhYzRkMzRlMjY2N2ExZDQ3NGY3NDI0YTQ4YzhlYWU2MmU1MTdkZjc5NmE0MGNiNWM1NDdkYWFkODdlYTUwYzBhIiwiaG9zdCI6ImtleWJhc2UuaW8iLCJraWQiOiIwMTIwNThhYzRkMzRlMjY2N2ExZDQ3NGY3NDI0YTQ4YzhlYWU2MmU1MTdkZjc5NmE0MGNiNWM1NDdkYWFkODdlYTUwYzBhIiwidWlkIjoiOWJjNTM0YzU4OWJjNjhkZjRmOTVmNzAwNjdkNDRlMTkiLCJ1c2VybmFtZSI6InJhc2hhd24ifSwic2VydmljZSI6eyJob3N0bmFtZSI6InlxcmFzaGF3bi5jb20iLCJwcm90b2NvbCI6Imh0dHA6In0sInR5cGUiOiJ3ZWJfc2VydmljZV9iaW5kaW5nIiwidmVyc2lvbiI6MX0sImNsaWVudCI6eyJuYW1lIjoia2V5YmFzZS5pbyBnbyBjbGllbnQiLCJ2ZXJzaW9uIjoiMS4wLjE4In0sImN0aW1lIjoxNDg2NjkwMjM3LCJleHBpcmVfaW4iOjUwNDU3NjAwMCwibWVya2xlX3Jvb3QiOnsiY3RpbWUiOjE0ODY2OTAyMjYsImhhc2giOiI3ZjE5MDAxNDZlYjhhMzE0MjVkODM4YzA1ZmE5ZGIzMDU0YTA1MTkwNmE2NzM2YmE2MGNiNTU0MDNiM2RhY2UyNGEzYzE0NmVjZmFiMTI5ODRjYzUwYTFjNzVhNzUyMjVkNTdhMDRkNjIyNGQ4MDU3OTU0MzgzMmVjYjE4OTg4MCIsInNlcW5vIjo4NjUxNjV9LCJwcmV2IjoiYTIzOGM4Y2VhM2I3NDMxZWE4N2NhZmYyOTkxZGIzMTA5ZjBkN2EyMzc3MjVjOTNjMzFlNjAwZDRiNWQ2YjNmZSIsInNlcW5vIjo3LCJ0YWciOiJzaWduYXR1cmUifaNzaWfEQNkMkH092SgtXMf2ZERcCfjUlKwv5mg1utnRK7FUfzNXLe4C4Kai38VOf9fsK7CoVnUVkKwfAzofzho1hr7kHQOoc2lnX3R5cGUgpGhhc2iCpHR5cGUIpXZhbHVlxCCFSSgpkWUKXwfPq0u+eaACjlzrw4vSbH5Ue8aUk/BFYaN0YWfNAgKndmVyc2lvbgE=
+
+And finally, I am proving ownership of this host by posting or
+appending to this document.
+
+View my publicly-auditable identity here: https://keybase.io/rashawn
+
+==================================================================
