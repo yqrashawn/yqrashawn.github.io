@@ -1,4 +1,4 @@
-* DONE Placeholder: About                                   :blog:lb_persistent:
+* DONE About                                             :blog:lb_persistent:
 CLOSED: [2017-10-21 Sun 10:48]
 :PROPERTIES:
 :CREATED:  [2017-10-21 Sun 10:48]
