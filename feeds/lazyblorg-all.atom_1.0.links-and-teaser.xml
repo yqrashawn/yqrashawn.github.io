@@ -1,0 +1,104 @@
+<?xml version='1.0' encoding='UTF-8'?>
+<feed xmlns="http://www.w3.org/2005/Atom"
+      xmlns:thr="http://purl.org/syndication/thread/1.0"
+      xml:lang="en-us">
+  <link rel="self" href="http://yqrashawn.com/feeds/lazyblorg-all.atom_1.0.links-and-teaser.xml" />
+  <title type="text">infin</title>
+  <id>http://yqrashawn.com/</id>
+  <link href="http://yqrashawn.com" />
+  <icon>/favicon.ico</icon>
+  <updated>2017-10-29T14:15:23+08:00</updated>
+  <author>
+    <name>yqrashawn</name>
+  </author>
+  <subtitle type="text">infin</subtitle>
+  <rights>All content written by yqrashawn</rights>
+  <generator uri='https://github.com/novoid/lazyblorg'>Generated from Org-mode source code using lazyblorg which is written in Python. Industrial-strength technology, baby.</generator>
+<!-- ############################################################################################# -->
+<entry>
+    <title type="text">Thought about company knowledge database</title>
+    <link href='http://yqrashawn.com/2017/10/28/company-knowledge-database' />
+    <published>2017-10-28T23:55:00+08:00</published>
+    <updated>2017-10-28T23:56:00+08:00</updated>
+    <category scheme='http://yqrashawn.com/tags/thoughts' term='thoughts' />
+    <summary type='xhtml'>
+<div xmlns='http://www.w3.org/1999/xhtml'>
+<p>
+
+Discussed a lot with my colleague today, mainly about problems we are facing and problems our company are facing. There one specific problem caused the majority of other problems. That's why our friends don't have time to learn new things, or why they won't spend time on improving their skill and knowledge while they do feel they need to.
+
+</p>
+
+
+<p>
+
+In a word, they lack something to invoke their interests for the entry of the adventure to more unknown.
+
+</p>
+
+
+<p>
+
+For me, I subscribe blogs using RSS. Those blogs are found through my daily question solving or discussing with other developers in open source communities. So I'm totally into these articles and they bring me new things every week, new things that I don't know that don't know. That's the most important thing that one needs when is buried in daily routine.
+
+</p>
+
+
+<p>
+
+So maybe a company knowledge database can solve this problem. A database that everyone can contribute to and everyone can vote for his/her favorites. Thus, I write this down so that I may build one for my company.
+
+</p>
+</div>
+    </summary>
+    <id>http://yqrashawn.com/2017/10/28/company-knowledge-database-from-feed-with-teaser</id>
+</entry>
+<!-- ############################################################################################# -->
+<entry>
+    <title type="text">Halt and Catch Fire</title>
+    <link href='http://yqrashawn.com/2017/10/22/after-watching-halt-and-catch-fire' />
+    <published>2017-10-22T08:51:00+08:00</published>
+    <updated>2017-10-28T23:38:00+08:00</updated>
+    <category scheme='http://yqrashawn.com/tags/watching' term='watching' />
+    <summary type='xhtml'>
+<div xmlns='http://www.w3.org/1999/xhtml'>
+<p>
+
+Just finish the Halt and Catch Fire, really great show. It makes me think about that everyone is full of story in their life, amazing to others but definitely not to themselves, like Joe in the series.
+
+</p>
+
+
+<p>
+
+It's just that I think Joe is "right" in some way. The right is some kind of his every desicion of fresh start, it's so decisive. It makes the character fear nothing. He desires success so much but go through his failer and go for the fresh start so quick. But on the other hand, he is so emotional, about his failer, about Gordon's die.
+
+</p>
+
+
+<p>
+
+These characters normaly can't be on the same person. Maybe that's why it makes me think Joe is "right".
+
+</p>
+</div>
+    </summary>
+    <id>http://yqrashawn.com/2017/10/22/after-watching-halt-and-catch-fire-from-feed-with-teaser</id>
+</entry>
+<!-- ############################################################################################# -->
+<entry>
+    <title type="text">About</title>
+    <link href='http://yqrashawn.com/about' />
+    <published>2017-10-21T10:48:00+08:00</published>
+    <updated>2017-10-21T10:48:00+08:00</updated>
+    <summary type='xhtml'>
+<div xmlns='http://www.w3.org/1999/xhtml'>
+<p>
+
+Blog about coding and every other things in daily life.
+
+</p>
+</div>
+    </summary>
+    <id>http://yqrashawn.com/about-from-feed-with-teaser</id>
+</entry></feed>
