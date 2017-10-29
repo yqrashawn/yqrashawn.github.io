@@ -26,3 +26,5 @@ one needs when is buried in daily routine.
 
 So maybe a company knowledge database can solve this problem. A database that
 everyone can contribute to and everyone can vote for his/her favorites.
+Thus, I write this down so that I may build one for my company.
+
