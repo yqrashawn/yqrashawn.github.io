@@ -2,12 +2,12 @@
 <feed xmlns="http://www.w3.org/2005/Atom"
       xmlns:thr="http://purl.org/syndication/thread/1.0"
       xml:lang="en-us">
-  <link rel="self" href="http://yqrashawn.com/feeds/lazyblorg-all.atom_1.0.links-only.xml" />
+  <link rel="self" href="http:http://yqrashawn.com/feeds/lazyblorg-all.atom_1.0.links-only.xml" />
   <title type="text">infin</title>
-  <id>http://yqrashawn.com/</id>
-  <link href="http://yqrashawn.com" />
+  <id>http:http://yqrashawn.com/</id>
+  <link href="http:http://yqrashawn.com" />
   <icon>/favicon.ico</icon>
-  <updated>2017-10-29T13:16:37+08:00</updated>
+  <updated>2017-10-29T13:22:17+08:00</updated>
   <author>
     <name>yqrashawn</name>
   </author>
@@ -17,26 +17,26 @@
 <!-- ############################################################################################# -->
 <entry>
     <title type="text">Thought about company knowledge database</title>
-    <link href='http://yqrashawn.com/2017/10/28/company-knowledge-database' />
+    <link href='http:http://yqrashawn.com/2017/10/28/company-knowledge-database' />
     <published>2017-10-28T23:55:00+08:00</published>
     <updated>2017-10-28T23:56:00+08:00</updated>
-    <category scheme='http://yqrashawn.com/tags/company' term='company' />
-    <id>http://yqrashawn.com/2017/10/28/company-knowledge-database-from-feed-with-links</id>
+    <category scheme='http:http://yqrashawn.com/tags/company' term='company' />
+    <id>http:http://yqrashawn.com/2017/10/28/company-knowledge-database-from-feed-with-links</id>
 </entry>
 <!-- ############################################################################################# -->
 <entry>
     <title type="text">Halt and Catch Fire</title>
-    <link href='http://yqrashawn.com/2017/10/22/after-watching-halt-and-catch-fire' />
+    <link href='http:http://yqrashawn.com/2017/10/22/after-watching-halt-and-catch-fire' />
     <published>2017-10-22T08:51:00+08:00</published>
     <updated>2017-10-28T23:38:00+08:00</updated>
-    <category scheme='http://yqrashawn.com/tags/watching' term='watching' />
-    <id>http://yqrashawn.com/2017/10/22/after-watching-halt-and-catch-fire-from-feed-with-links</id>
+    <category scheme='http:http://yqrashawn.com/tags/watching' term='watching' />
+    <id>http:http://yqrashawn.com/2017/10/22/after-watching-halt-and-catch-fire-from-feed-with-links</id>
 </entry>
 <!-- ############################################################################################# -->
 <entry>
     <title type="text">Placeholder: About</title>
-    <link href='http://yqrashawn.com/about' />
+    <link href='http:http://yqrashawn.com/about' />
     <published>2017-10-21T10:48:00+08:00</published>
     <updated>2017-10-21T10:48:00+08:00</updated>
-    <id>http://yqrashawn.com/about-from-feed-with-links</id>
+    <id>http:http://yqrashawn.com/about-from-feed-with-links</id>
 </entry></feed>
