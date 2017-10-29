@@ -29,6 +29,7 @@ not happen). If you have any problems or ideas, please [[https://github.com/yqra
 dotfile repo. And you can also check [[https://github.com/pqrs-org/KE-complex_modifications][Ke-complex_modifications]] official repo for
 more rules and discussion.
 
+-----
 - Alfred Mode (z)
   - Press z down then click other keys to trigger Alfred workflow
   - This mode severely relays on Alfred Workflow, links of workflow will update later.
