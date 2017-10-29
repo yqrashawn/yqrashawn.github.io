@@ -1,0 +1,13 @@
+* DONE Placeholder: About                                   :blog:lb_persistent:
+CLOSED: [2017-10-21 Sun 10:48]
+:PROPERTIES:
+:CREATED:  [2017-10-21 Sun 10:48]
+:END:
+:LOGBOOK:
+- State "DONE"       from "NEXT"       [2017-10-21 Sun 10:48]
+:END:
+:PROPERTIES:
+:CREATED:  [2017-10-21 Sun 10:48]
+:ID: 2017-10-21-about
+:END:
+
