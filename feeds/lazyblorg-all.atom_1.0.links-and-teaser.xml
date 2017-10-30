@@ -7,7 +7,7 @@
   <id>http://yqrashawn.com/</id>
   <link href="http://yqrashawn.com" />
   <icon>/favicon.ico</icon>
-  <updated>2017-10-29T21:47:55+08:00</updated>
+  <updated>2017-10-30T15:44:21+08:00</updated>
   <author>
     <name>yqrashawn</name>
   </author>
@@ -58,45 +58,6 @@ Here is these configurations. Please note that I update my configurations everyd
 </entry>
 <!-- ############################################################################################# -->
 <entry>
-    <title type="text">Thought about company knowledge database</title>
-    <link href='http://yqrashawn.com/2017/10/28/company-knowledge-database' />
-    <published>2017-10-28T23:55:00+08:00</published>
-    <updated>2017-10-28T23:56:00+08:00</updated>
-    <category scheme='http://yqrashawn.com/tags/thoughts' term='thoughts' />
-    <summary type='xhtml'>
-<div xmlns='http://www.w3.org/1999/xhtml'>
-<p>
-
-Discussed a lot with my colleague today, mainly about problems we are facing and problems our company are facing. There one specific problem caused the majority of other problems. That's why our friends don't have time to learn new things, or why they won't spend time on improving their skill and knowledge while they do feel they need to.
-
-</p>
-
-
-<p>
-
-In a word, they lack something to invoke their interests for the entry of the adventure to more unknown.
-
-</p>
-
-
-<p>
-
-For me, I subscribe blogs using RSS. Those blogs are found through my daily question solving or discussing with other developers in open source communities. So I'm totally into these articles and they bring me new things every week, new things that I don't know that don't know. That's the most important thing that one needs when is buried in daily routine.
-
-</p>
-
-
-<p>
-
-So maybe a company knowledge database can solve this problem. A database that everyone can contribute to and everyone can vote for his/her favorites. Thus, I write this down so that I may build one for my company.
-
-</p>
-</div>
-    </summary>
-    <id>http://yqrashawn.com/2017/10/28/company-knowledge-database-from-feed-with-teaser</id>
-</entry>
-<!-- ############################################################################################# -->
-<entry>
     <title type="text">Halt and Catch Fire</title>
     <link href='http://yqrashawn.com/2017/10/22/after-watching-halt-and-catch-fire' />
     <published>2017-10-22T08:51:00+08:00</published>
@@ -143,4 +104,25 @@ Blog about coding and every other things in daily life.
 </div>
     </summary>
     <id>http://yqrashawn.com/about-from-feed-with-teaser</id>
+</entry>
+<!-- ############################################################################################# -->
+<entry>
+    <title type="text">Git 指南</title>
+    <link href='http://yqrashawn.com/2016/10/09/git-tutorial' />
+    <published>2016-10-09T15:19:00+08:00</published>
+    <updated>2016-10-09T15:19:00+08:00</updated>
+    <category scheme='http://yqrashawn.com/tags/coding' term='coding' />
+    <category scheme='http://yqrashawn.com/tags/git' term='git' />
+    <category scheme='http://yqrashawn.com/tags/tool' term='tool' />
+    <category scheme='http://yqrashawn.com/tags/chinese' term='chinese' />
+    <summary type='xhtml'>
+<div xmlns='http://www.w3.org/1999/xhtml'>
+<p>
+
+公司内部分享大纲.
+
+</p>
+</div>
+    </summary>
+    <id>http://yqrashawn.com/2016/10/09/git-tutorial-from-feed-with-teaser</id>
 </entry></feed>

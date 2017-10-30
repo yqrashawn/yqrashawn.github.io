@@ -1,4 +1,4 @@
-** DONE Thought about company knowledge database              :blog:thoughts:
+** DONE Thought about company knowledge database      :blog:thoughts:hidden:
 CLOSED: [2017-10-28 Sat 23:55]
 :PROPERTIES:
 :ID:       2017-10-28-company-knowledge-database

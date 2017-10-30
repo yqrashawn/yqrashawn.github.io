@@ -92,3 +92,5 @@ more rules and discussion.
   - Left option to f18 when pressed alone, trigger context
   - Right option to f17 when pressed alone
   - Right command to f16 when pressed alone
+  - Right command to command+tab when pressed alone
+
