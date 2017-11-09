@@ -16,9 +16,8 @@ I [[https://github.com/pqrs-org/KE-complex_modifications/pull/162][merged]] my p
 several days ago. You can import my personal rules [[https://pqrs-org.github.io/KE-complex_modifications/][here]]. To achieve efficiency,
 I use karabiner with [[https://www.alfredapp.com/][Alfred]] mainly through [[https://www.alfredapp.com/help/workflows/triggers/external/][alfred workflow external trigger]] and
 [[https://developer.apple.com/legacy/library/documentation/Darwin/Reference/ManPages/man1/osascript.1.html][osascript]] (command line tool for calling AppleScript code).
-
-Here is these configurations. Please note that I update my configurations
-everyday. So I  can't keep this post up to date. The key here is to introduce a
+Here are these configurations. Please note that I update my configurations every
+day. So I  can't keep this post up to date. The key here is to introduce a
 system for launching apps, invoking scripts and all stuffs that can be done with
 shell (everything). When you can get anything you want with few key strokes, *it
 feels great*.
@@ -26,7 +25,7 @@ feels great*.
 [[https://www.dropbox.com/s/qepdfdu0djyed7v/workflows.zip?dl=0][Download all my workflow from dropbox]], please contact [[https://github.com/yqrashawn][me]] when this link broken. I
 may update this post for each specific config if I have time in the future (may
 not happen). If you have any problems or ideas, please [[https://github.com/yqrashawn/yqdotfiles/issues/new][open an issue]] in my
-dotfile repo. And you can also check [[https://github.com/pqrs-org/KE-complex_modifications][Ke-complex_modifications]] official repo for
+dotfile repo. And you can also check [[https://github.com/pqrs-org/KE-complex_modifications][KE-complex_modifications]] official repo for
 more rules and discussion.
 
 -----

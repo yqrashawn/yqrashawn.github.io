@@ -7,7 +7,7 @@
   <id>http://yqrashawn.com/</id>
   <link href="http://yqrashawn.com" />
   <icon>/favicon.ico</icon>
-  <updated>2017-10-30T15:44:21+08:00</updated>
+  <updated>2017-11-09T21:56:00+08:00</updated>
   <author>
     <name>yqrashawn</name>
   </author>
@@ -35,21 +35,14 @@ This post are descriptions and tutorial of my <a href="https://github.com/yqrash
 
 <p>
 
-I <a href="https://github.com/pqrs-org/KE-complex_modifications/pull/162">merged</a> my personal <a href="https://github.com/tekezo/Karabiner-Elements">Karabiner Elements</a> configuration into the <a href="https://github.com/pqrs-org/KE-complex_modifications">official repo</a> several days ago. You can import my personal rules <a href="https://pqrs-org.github.io/KE-complex_modifications/">here</a>. To achieve efficiency, I use karabiner with <a href="https://www.alfredapp.com/">Alfred</a> mainly through <a href="https://www.alfredapp.com/help/workflows/triggers/external/">alfred workflow external trigger</a> and <a href="https://developer.apple.com/legacy/library/documentation/Darwin/Reference/ManPages/man1/osascript.1.html">osascript</a> (command line tool for calling AppleScript code).
+I <a href="https://github.com/pqrs-org/KE-complex_modifications/pull/162">merged</a> my personal <a href="https://github.com/tekezo/Karabiner-Elements">Karabiner Elements</a> configuration into the <a href="https://github.com/pqrs-org/KE-complex_modifications">official repo</a> several days ago. You can import my personal rules <a href="https://pqrs-org.github.io/KE-complex_modifications/">here</a>. To achieve efficiency, I use karabiner with <a href="https://www.alfredapp.com/">Alfred</a> mainly through <a href="https://www.alfredapp.com/help/workflows/triggers/external/">alfred workflow external trigger</a> and <a href="https://developer.apple.com/legacy/library/documentation/Darwin/Reference/ManPages/man1/osascript.1.html">osascript</a> (command line tool for calling AppleScript code). Here are these configurations. Please note that I update my configurations every day. So I  can't keep this post up to date. The key here is to introduce a system for launching apps, invoking scripts and all stuffs that can be done with shell (everything). When you can get anything you want with few key strokes, <b>it feels great</b>.
 
 </p>
 
 
 <p>
 
-Here is these configurations. Please note that I update my configurations everyday. So I  can't keep this post up to date. The key here is to introduce a system for launching apps, invoking scripts and all stuffs that can be done with shell (everything). When you can get anything you want with few key strokes, <b>it feels great</b>.
-
-</p>
-
-
-<p>
-
-<a href="https://www.dropbox.com/s/qepdfdu0djyed7v/workflows.zip?dl=0">Download all my workflow from dropbox</a>, please contact <a href="https://github.com/yqrashawn">me</a> when this link broken. I may update this post for each specific config if I have time in the future (may not happen). If you have any problems or ideas, please <a href="https://github.com/yqrashawn/yqdotfiles/issues/new">open an issue</a> in my dotfile repo. And you can also check <a href="https://github.com/pqrs-org/KE-complex_modifications">Ke-complex_modifications</a> official repo for more rules and discussion.
+<a href="https://www.dropbox.com/s/qepdfdu0djyed7v/workflows.zip?dl=0">Download all my workflow from dropbox</a>, please contact <a href="https://github.com/yqrashawn">me</a> when this link broken. I may update this post for each specific config if I have time in the future (may not happen). If you have any problems or ideas, please <a href="https://github.com/yqrashawn/yqdotfiles/issues/new">open an issue</a> in my dotfile repo. And you can also check <a href="https://github.com/pqrs-org/KE-complex_modifications">KE-complex_modifications</a> official repo for more rules and discussion.
 
 </p>
 </div>
@@ -65,21 +58,14 @@ This post are descriptions and tutorial of my <a href="https://github.com/yqrash
 
 <p>
 
-I <a href="https://github.com/pqrs-org/KE-complex_modifications/pull/162">merged</a> my personal <a href="https://github.com/tekezo/Karabiner-Elements">Karabiner Elements</a> configuration into the <a href="https://github.com/pqrs-org/KE-complex_modifications">official repo</a> several days ago. You can import my personal rules <a href="https://pqrs-org.github.io/KE-complex_modifications/">here</a>. To achieve efficiency, I use karabiner with <a href="https://www.alfredapp.com/">Alfred</a> mainly through <a href="https://www.alfredapp.com/help/workflows/triggers/external/">alfred workflow external trigger</a> and <a href="https://developer.apple.com/legacy/library/documentation/Darwin/Reference/ManPages/man1/osascript.1.html">osascript</a> (command line tool for calling AppleScript code).
+I <a href="https://github.com/pqrs-org/KE-complex_modifications/pull/162">merged</a> my personal <a href="https://github.com/tekezo/Karabiner-Elements">Karabiner Elements</a> configuration into the <a href="https://github.com/pqrs-org/KE-complex_modifications">official repo</a> several days ago. You can import my personal rules <a href="https://pqrs-org.github.io/KE-complex_modifications/">here</a>. To achieve efficiency, I use karabiner with <a href="https://www.alfredapp.com/">Alfred</a> mainly through <a href="https://www.alfredapp.com/help/workflows/triggers/external/">alfred workflow external trigger</a> and <a href="https://developer.apple.com/legacy/library/documentation/Darwin/Reference/ManPages/man1/osascript.1.html">osascript</a> (command line tool for calling AppleScript code). Here are these configurations. Please note that I update my configurations every day. So I  can't keep this post up to date. The key here is to introduce a system for launching apps, invoking scripts and all stuffs that can be done with shell (everything). When you can get anything you want with few key strokes, <b>it feels great</b>.
 
 </p>
 
 
 <p>
 
-Here is these configurations. Please note that I update my configurations everyday. So I  can't keep this post up to date. The key here is to introduce a system for launching apps, invoking scripts and all stuffs that can be done with shell (everything). When you can get anything you want with few key strokes, <b>it feels great</b>.
-
-</p>
-
-
-<p>
-
-<a href="https://www.dropbox.com/s/qepdfdu0djyed7v/workflows.zip?dl=0">Download all my workflow from dropbox</a>, please contact <a href="https://github.com/yqrashawn">me</a> when this link broken. I may update this post for each specific config if I have time in the future (may not happen). If you have any problems or ideas, please <a href="https://github.com/yqrashawn/yqdotfiles/issues/new">open an issue</a> in my dotfile repo. And you can also check <a href="https://github.com/pqrs-org/KE-complex_modifications">Ke-complex_modifications</a> official repo for more rules and discussion.
+<a href="https://www.dropbox.com/s/qepdfdu0djyed7v/workflows.zip?dl=0">Download all my workflow from dropbox</a>, please contact <a href="https://github.com/yqrashawn">me</a> when this link broken. I may update this post for each specific config if I have time in the future (may not happen). If you have any problems or ideas, please <a href="https://github.com/yqrashawn/yqdotfiles/issues/new">open an issue</a> in my dotfile repo. And you can also check <a href="https://github.com/pqrs-org/KE-complex_modifications">KE-complex_modifications</a> official repo for more rules and discussion.
 
 </p>
 
@@ -186,7 +172,7 @@ Just finish the Halt and Catch Fire, really great show. It makes me think about 
 
 <p>
 
-It's just that I think Joe is "right" in some way. The right is some kind of his every desicion of fresh start, it's so decisive. It makes the character fear nothing. He desires success so much but go through his failer and go for the fresh start so quick. But on the other hand, he is so emotional, about his failer, about Gordon's die.
+It's just that I think Joe is "right" in some way. The right is some kind of his every decision of fresh start, it's so decisive. It makes the character fear nothing. He desires success so much but go through his failer and go for the fresh start so quick. But on the other hand, he is so emotional, about his failer, about Gordon's die.
 
 </p>
 
@@ -209,7 +195,7 @@ Just finish the Halt and Catch Fire, really great show. It makes me think about 
 
 <p>
 
-It's just that I think Joe is "right" in some way. The right is some kind of his every desicion of fresh start, it's so decisive. It makes the character fear nothing. He desires success so much but go through his failer and go for the fresh start so quick. But on the other hand, he is so emotional, about his failer, about Gordon's die.
+It's just that I think Joe is "right" in some way. The right is some kind of his every decision of fresh start, it's so decisive. It makes the character fear nothing. He desires success so much but go through his failer and go for the fresh start so quick. But on the other hand, he is so emotional, about his failer, about Gordon's die.
 
 </p>
 
