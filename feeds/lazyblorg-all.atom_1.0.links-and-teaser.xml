@@ -7,7 +7,7 @@
   <id>http://yqrashawn.com/</id>
   <link href="http://yqrashawn.com" />
   <icon>/favicon.ico</icon>
-  <updated>2017-11-09T22:00:16+08:00</updated>
+  <updated>2017-11-10T00:14:45+08:00</updated>
   <author>
     <name>yqrashawn</name>
   </author>
@@ -47,11 +47,13 @@ When I restructure my zsh configurations, I find the z-shell works fine with wit
 
 
 	  <div class="example_code">
-	  <pre>if [ -n "$INSIDE_EMACS" ]; then
+	  <pre>
+    <code>if [ -n "$INSIDE_EMACS" ]; then
     ...
   else
     ...
-fi	  </pre>
+fi    </code>
+	  </pre>
     </div>
 
 

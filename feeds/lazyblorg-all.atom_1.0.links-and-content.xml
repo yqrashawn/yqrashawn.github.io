@@ -7,7 +7,7 @@
   <id>http://yqrashawn.com/</id>
   <link href="http://yqrashawn.com" />
   <icon>/favicon.ico</icon>
-  <updated>2017-11-09T22:00:16+08:00</updated>
+  <updated>2017-11-10T00:14:45+08:00</updated>
   <author>
     <name>yqrashawn</name>
   </author>
@@ -47,11 +47,13 @@ When I restructure my zsh configurations, I find the z-shell works fine with wit
 
 
 	  <div class="example_code">
-	  <pre>if [ -n "$INSIDE_EMACS" ]; then
+	  <pre>
+    <code>if [ -n "$INSIDE_EMACS" ]; then
     ...
   else
     ...
-fi	  </pre>
+fi    </code>
+	  </pre>
     </div>
 
 
@@ -93,11 +95,13 @@ When I restructure my zsh configurations, I find the z-shell works fine with wit
 
 
 	  <div class="example_code">
-	  <pre>if [ -n "$INSIDE_EMACS" ]; then
+	  <pre>
+    <code>if [ -n "$INSIDE_EMACS" ]; then
     ...
   else
     ...
-fi	  </pre>
+fi    </code>
+	  </pre>
     </div>
 
 
@@ -446,14 +450,16 @@ Git诞生于2005年. 基于对Linux内核进行维护的需求, Linux的作者�
 
 
 	  <div class="example_code">
-	  <pre>#初次设置
+	  <pre>
+    <code>#初次设置
 git config --global user.name "yqrashawn"
 git config --global user.email "namy.19@gmail.com"
 #再次查看
 git config --global user.name
 yqrashawn
 git config --global user.email
-namy.19@gmail.com	  </pre>
+namy.19@gmail.com    </code>
+	  </pre>
     </div>
 
 
@@ -465,9 +471,11 @@ namy.19@gmail.com	  </pre>
 
 
 	  <div class="example_code">
-	  <pre>[user]
+	  <pre>
+    <code>[user]
 name = yqrashawn
-email = namy.19@gmail.com	  </pre>
+email = namy.19@gmail.com    </code>
+	  </pre>
     </div>
 
 
@@ -499,7 +507,8 @@ Git的分支比较容易理解, *<b>当两个人修改同一个文件时, 可能
 
 
 	  <div class="example_code">
-	  <pre>:|
+	  <pre>
+    <code>:|
 :**   6050cc2 Merge branch 'zprezto' of              A2
 :|\
 :| |
@@ -511,7 +520,8 @@ Git的分支比较容易理解, *<b>当两个人修改同一个文件时, 可能
 :|/
 :|
 :**   a772860 Merge branch 'zprezto' of              A1
-:|	  </pre>
+:|    </code>
+	  </pre>
     </div>
 
 
@@ -581,7 +591,8 @@ Git中的HEAD指针指向当前工作区域所在的分支.
 
 
 	  <div class="example_code">
-	  <pre>A  "Git \346\214\207\345\215\227.md"  新增, 已暂存
+	  <pre>
+    <code>A  "Git \346\214\207\345\215\227.md"  新增, 已暂存
 D  haha                               从记录中删除(与上一次Commit相比)
 AM 123                                暂存后修改
 M "Git.md"                           修改且未暂存(与上一次Commit相比)
@@ -589,7 +600,8 @@ M "Git2.md"                            修改且已暂存(与上一次Commit相�
 MM "Git3.md"                          修改暂存后再修改(与上一次Commit相比)
 UU "Git4.md"                          冲突
 ?? hhhhh                              未记录且未忽略
-还有许多其他的状态 如 AD, MD等.	  </pre>
+还有许多其他的状态 如 AD, MD等.    </code>
+	  </pre>
     </div>
 
 
@@ -716,10 +728,12 @@ UU "Git4.md"                          冲突
 
 
 	  <div class="example_code">
-	  <pre>假设现在位于master分支, 要合并hotfix分支
+	  <pre>
+    <code>假设现在位于master分支, 要合并hotfix分支
 git merge master
 出现了冲突, 要选择hotfix分支, 抛弃master分支的修改, 则使用
-git checkout --theirs --	  </pre>
+git checkout --theirs --    </code>
+	  </pre>
     </div>
 
 
@@ -774,11 +788,13 @@ git checkout --theirs --	  </pre>
 
 
 	  <div class="example_code">
-	  <pre>&lt;&lt;&lt;&lt;&lt;&lt;&lt; HEAD
+	  <pre>
+    <code>&lt;&lt;&lt;&lt;&lt;&lt;&lt; HEAD
 我改的代码
 =======
 别人改的代码
-&gt;&gt;&gt;&gt;&gt;&gt;&gt; bd00d06d0ceb39365f6b3cadd8bfbbc639ce23d6	  </pre>
+&gt;&gt;&gt;&gt;&gt;&gt;&gt; bd00d06d0ceb39365f6b3cadd8bfbbc639ce23d6    </code>
+	  </pre>
     </div>
 
 
@@ -790,7 +806,9 @@ git checkout --theirs --	  </pre>
 
 
 	  <div class="example_code">
-	  <pre>我改的代码	  </pre>
+	  <pre>
+    <code>我改的代码    </code>
+	  </pre>
     </div>
 
 
@@ -802,7 +820,9 @@ git checkout --theirs --	  </pre>
 
 
 	  <div class="example_code">
-	  <pre>别人改的代码	  </pre>
+	  <pre>
+    <code>别人改的代码    </code>
+	  </pre>
     </div>
 
 
@@ -879,10 +899,12 @@ git checkout --theirs --	  </pre>
 
 
 	  <div class="example_code">
-	  <pre>git remote
+	  <pre>
+    <code>git remote
 git remote add 远程仓库名 远程仓库URL                    添加新的远程仓库
 git remote rename 要修改的远程仓库名 新远程仓库名          重命名远程仓库
-git remove 远程仓库名                                   删除远程仓库	  </pre>
+git remove 远程仓库名                                   删除远程仓库    </code>
+	  </pre>
     </div>
 
 
@@ -900,7 +922,9 @@ git remove 远程仓库名                                   删除远程仓库	
 
 
 	  <div class="example_code">
-	  <pre>git push 远程仓库名 远程分支名                            推送本地已经提交的代码到指定远程分支	  </pre>
+	  <pre>
+    <code>git push 远程仓库名 远程分支名                            推送本地已经提交的代码到指定远程分支    </code>
+	  </pre>
     </div>
 
 
@@ -908,8 +932,10 @@ git remove 远程仓库名                                   删除远程仓库	
 
 
 	  <div class="example_code">
-	  <pre>git fetch                                              获取对应远程仓库的数据且不合并
-git fetch --all                                        获取所有远程仓库的数据且不合并	  </pre>
+	  <pre>
+    <code>git fetch                                              获取对应远程仓库的数据且不合并
+git fetch --all                                        获取所有远程仓库的数据且不合并    </code>
+	  </pre>
     </div>
 
 
@@ -917,8 +943,10 @@ git fetch --all                                        获取所有远程仓库�
 
 
 	  <div class="example_code">
-	  <pre>git pull 远程仓库名 远程分支名                             获取对应远程分支数据并合并
-git pull 实际上就是 git fetch加git merge	  </pre>
+	  <pre>
+    <code>git pull 远程仓库名 远程分支名                             获取对应远程分支数据并合并
+git pull 实际上就是 git fetch加git merge    </code>
+	  </pre>
     </div>
 
 
@@ -950,7 +978,8 @@ git pull 实际上就是 git fetch加git merge	  </pre>
 
 
 	  <div class="example_code">
-	  <pre>There is no tracking information for the current branch.
+	  <pre>
+    <code>There is no tracking information for the current branch.
 Please specify which branch you want to merge with.
 See git-pull(1) for details.
 
@@ -958,7 +987,8 @@ git pull &lt;remote&gt; &lt;branch&gt;
 
 If you wish to set tracking information for this branch you can do so with:
 
-git branch --set-upstream-to=origin/&lt;branch&gt; bimsop	  </pre>
+git branch --set-upstream-to=origin/&lt;branch&gt; bimsop    </code>
+	  </pre>
     </div>
 
 
@@ -991,9 +1021,11 @@ git branch --set-upstream-to=origin/&lt;branch&gt; bimsop	  </pre>
 
 
 	  <div class="example_code">
-	  <pre>[branch "bimsop"]
+	  <pre>
+    <code>[branch "bimsop"]
 remote = origin
-merge = refs/heads/bimsop	  </pre>
+merge = refs/heads/bimsop    </code>
+	  </pre>
     </div>
 
 
@@ -1022,11 +1054,13 @@ merge = refs/heads/bimsop	  </pre>
 
 
 	  <div class="example_code">
-	  <pre>#!/bin/sh
+	  <pre>
+    <code>#!/bin/sh
 
 #编译代码的指令
 webpack
-#语法为 shell script	  </pre>
+#语法为 shell script    </code>
+	  </pre>
     </div>
 
 
@@ -1076,7 +1110,8 @@ alias意为别名, 类似于Windos中的快捷方式. 比如设置 <code>git</co
 
 
 	  <div class="example_code">
-	  <pre>alias gc='git commit --all -m'
+	  <pre>
+    <code>alias gc='git commit --all -m'
 alias gca='git commit --all'
 alias gcaa='git commit --verbose --all'
 alias gcm='git commit --message'
@@ -1092,7 +1127,8 @@ alias gfm='git pull'
 alias gfr='git pull --rebase'
 alias gws='git status --ignore-submodules=${_git_status_ignore_submodules} --short'
 alias gs='git stash'
-alias gsa='git stash apply'	  </pre>
+alias gsa='git stash apply'    </code>
+	  </pre>
     </div>
 
 
@@ -1152,7 +1188,8 @@ release分支, 完成一个版本后, 在发布前新建release分支进行测�
 
 
 	  <div class="example_code">
-	  <pre>git flow init                                                在该项目初始化Git flow
+	  <pre>
+    <code>git flow init                                                在该项目初始化Git flow
 git flow feature start feature分支名 从哪个分支创建             新建feature分支并checkout
 git flow feature finish feature分支名                         删除feature分支并merge
 git flow hotfix start hotfix分支名 从哪个分支创建
@@ -1177,7 +1214,8 @@ alias gfbt='git flow bugfix track
 alias gfbd='git flow bugfix diff
 alias gfbr='git flow bugfix rebase
 alias gfbc='git flow bugfix pull
-alias gfbd='git flow bugfix delete	  </pre>
+alias gfbd='git flow bugfix delete    </code>
+	  </pre>
     </div>
 
 
@@ -1249,7 +1287,8 @@ CLI工具 <code>tig</code>  的做的不错, 但是操作方式基于VIM, 不易
 
 
 	  <div class="example_code">
-	  <pre>~/workspace ❯❯❯ mkdir food                                       新建food文件夹
+	  <pre>
+    <code>~/workspace ❯❯❯ mkdir food                                       新建food文件夹
 ~/workspace ❯❯❯ cd food                                          进入'food
 ~/w/food ❯❯❯ git init                                            初始化
 Initialized empty Git repository in /Users/Rashawn/workspace/food/.git/
@@ -1280,7 +1319,8 @@ M  food.txt
 1 file changed, 1 insertion(+)
 ~/w/food ❯❯❯ git status
 On branch master
-nothing to commit, working tree clean	  </pre>
+nothing to commit, working tree clean    </code>
+	  </pre>
     </div>
 
 
@@ -1292,7 +1332,8 @@ nothing to commit, working tree clean	  </pre>
 
 
 	  <div class="example_code">
-	  <pre>~/w/food ❯❯❯ git flow init
+	  <pre>
+    <code>~/w/food ❯❯❯ git flow init
 
 Which branch should be used for bringing forth production releases?
 - master
@@ -1306,7 +1347,8 @@ Release branches? [release/]
 Hotfix branches? [hotfix/]
 Support branches? [support/]
 Version tag prefix? [] version
-Hooks and filters directory? [/Users/Rashawn/workspace/food/.git/hooks]	  </pre>
+Hooks and filters directory? [/Users/Rashawn/workspace/food/.git/hooks]    </code>
+	  </pre>
     </div>
 
 
@@ -1325,7 +1367,8 @@ Hooks and filters directory? [/Users/Rashawn/workspace/food/.git/hooks]	  </pre>
 
 
 	  <div class="example_code">
-	  <pre>~/w/food ❯❯❯ git branch
+	  <pre>
+    <code>~/w/food ❯❯❯ git branch
 dev
 master
 ~/w/food ❯❯❯ git flow feature start whatIveDone dev
@@ -1355,7 +1398,8 @@ A  do.txt
 create mode 100644 do.txt
 ~/w/food ❯❯❯ git status --short
 On branch feature/whatIveDone
-nothing to commit, working tree clean	  </pre>
+nothing to commit, working tree clean    </code>
+	  </pre>
     </div>
 
 
@@ -1367,7 +1411,8 @@ nothing to commit, working tree clean	  </pre>
 
 
 	  <div class="example_code">
-	  <pre>~/w/food ❯❯❯ git flow feature finish
+	  <pre>
+    <code>~/w/food ❯❯❯ git flow feature finish
 Switched to branch 'dev'
 Updating 162f6d2..c65087d
 Fast-forward
@@ -1384,7 +1429,8 @@ Summary of actions:
 dev
 master
 ~/w/food ❯❯❯ head do.txt
-我在睡觉	  </pre>
+我在睡觉    </code>
+	  </pre>
     </div>
 
 
@@ -1403,7 +1449,9 @@ master
 
 
 	  <div class="example_code">
-	  <pre>~/w/food ❯❯❯ git remote add origin http://111.111.111.111:3000/yqrashawn/food-do.git	  </pre>
+	  <pre>
+    <code>~/w/food ❯❯❯ git remote add origin http://111.111.111.111:3000/yqrashawn/food-do.git    </code>
+	  </pre>
     </div>
 
 
@@ -1415,7 +1463,8 @@ master
 
 
 	  <div class="example_code">
-	  <pre>~/w/food ❯❯❯ git branch
+	  <pre>
+    <code>~/w/food ❯❯❯ git branch
 dev
 master
 ~/w/food ❯❯❯ git checkout master
@@ -1428,7 +1477,8 @@ do.txt | 1 +
 create mode 100644 do.txt
 ~/w/food ❯❯❯ git status
 On branch master
-nothing to commit, working tree clean	  </pre>
+nothing to commit, working tree clean    </code>
+	  </pre>
     </div>
 
 
@@ -1440,7 +1490,8 @@ nothing to commit, working tree clean	  </pre>
 
 
 	  <div class="example_code">
-	  <pre>~/w/food ❯❯❯ git push -u origin master
+	  <pre>
+    <code>~/w/food ❯❯❯ git push -u origin master
 Counting objects: 9, done.
 Delta compression using up to 8 threads.
 Compressing objects: 100% (4/4), done.
@@ -1448,7 +1499,8 @@ Writing objects: 100% (9/9), 757 bytes | 0 bytes/s, done.
 Total 9 (delta 0), reused 0 (delta 0)
 To http://111.111.111.111:3000/yqrashawn/food-do.git
 [new branch]      master -&gt; master
-Branch master set up to track remote branch master from origin.	  </pre>
+Branch master set up to track remote branch master from origin.    </code>
+	  </pre>
     </div>
 
 
@@ -1467,7 +1519,8 @@ Branch master set up to track remote branch master from origin.	  </pre>
 
 
 	  <div class="example_code">
-	  <pre>~/workspace ❯❯❯ git clone http://111.111.111.111:3000/yqrashawn/food-do.git
+	  <pre>
+    <code>~/workspace ❯❯❯ git clone http://111.111.111.111:3000/yqrashawn/food-do.git
 Cloning into 'food-do'...
 remote: Counting objects: 9, done.
 remote: Compressing objects: 100% (4/4), done.
@@ -1500,7 +1553,8 @@ Compressing objects: 100% (3/3), done.
 Writing objects: 100% (3/3), 326 bytes | 0 bytes/s, done.
 Total 3 (delta 0), reused 0 (delta 0)
 To http://111.111.111.111:3000/yqrashawn/food-do.git
-c65087d..c1fde84  master -&gt; master	  </pre>
+c65087d..c1fde84  master -&gt; master    </code>
+	  </pre>
     </div>
 
 
