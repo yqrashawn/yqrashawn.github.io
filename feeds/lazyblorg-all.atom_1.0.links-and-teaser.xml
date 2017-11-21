@@ -7,7 +7,7 @@
   <id>http://yqrashawn.com/</id>
   <link href="http://yqrashawn.com" />
   <icon>/favicon.ico</icon>
-  <updated>2017-10-29T14:15:23+08:00</updated>
+  <updated>2017-11-10T00:14:45+08:00</updated>
   <author>
     <name>yqrashawn</name>
   </author>
@@ -16,42 +16,97 @@
   <generator uri='https://github.com/novoid/lazyblorg'>Generated from Org-mode source code using lazyblorg which is written in Python. Industrial-strength technology, baby.</generator>
 <!-- ############################################################################################# -->
 <entry>
-    <title type="text">Thought about company knowledge database</title>
-    <link href='http://yqrashawn.com/2017/10/28/company-knowledge-database' />
-    <published>2017-10-28T23:55:00+08:00</published>
-    <updated>2017-10-28T23:56:00+08:00</updated>
-    <category scheme='http://yqrashawn.com/tags/thoughts' term='thoughts' />
+    <title type="text">Use zsh in emacs</title>
+    <link href='http://yqrashawn.com/2017/11/09/use-zsh-in-emacs' />
+    <published>2017-11-09T21:55:00+08:00</published>
+    <updated>2017-11-09T21:55:00+08:00</updated>
+    <category scheme='http://yqrashawn.com/tags/shell' term='shell' />
+    <category scheme='http://yqrashawn.com/tags/zsh' term='zsh' />
+    <category scheme='http://yqrashawn.com/tags/emacs' term='emacs' />
     <summary type='xhtml'>
 <div xmlns='http://www.w3.org/1999/xhtml'>
 <p>
 
-Discussed a lot with my colleague today, mainly about problems we are facing and problems our company are facing. There one specific problem caused the majority of other problems. That's why our friends don't have time to learn new things, or why they won't spend time on improving their skill and knowledge while they do feel they need to.
+I used to use vim with tmux in a terminal emulator. After changing to emacs. It didn't take much time for me to realize that emacs in GUI works better.
 
 </p>
 
 
 <p>
 
-In a word, they lack something to invoke their interests for the entry of the adventure to more unknown.
+The problem is I still want the old behavior. I tried about three times using my zsh shell in emacs. I'm not here telling those failed attempts. I want to write it down because of a recent discovery.
 
 </p>
 
 
 <p>
 
-For me, I subscribe blogs using RSS. Those blogs are found through my daily question solving or discussing with other developers in open source communities. So I'm totally into these articles and they bring me new things every week, new things that I don't know that don't know. That's the most important thing that one needs when is buried in daily routine.
+When I restructure my zsh configurations, I find the z-shell works fine with with zero config. That's when I finally discover that it's the plugins and configurations that make zsh and emacs incompatible. What's more, I find these lines. They must come from some emacs package's readme instruction. The original one is telling zsh don't do something when it's in emacs.
+
+</p>
+
+
+	  <div class="example_code">
+	  <pre>
+    <code>if [ -n "$INSIDE_EMACS" ]; then
+    ...
+  else
+    ...
+fi    </code>
+	  </pre>
+    </div>
+
+
+<p>
+
+So I thought, I can just use these line with my zsh configuration(<a href="https://github.com/sorin-ionescu/prezto">prezto</a>). It works fine now after some little test. It turns out the default <a href="https://github.com/zsh-users/zsh-completions">zsh-autocompletion</a> is not playing well with emacs. I use the <code>if...else</code> code telling zsh don't load autosugestion while in emacs. And everything is fine now.
 
 </p>
 
 
 <p>
 
-So maybe a company knowledge database can solve this problem. A database that everyone can contribute to and everyone can vote for his/her favorites. Thus, I write this down so that I may build one for my company.
+That's it. Maybe I'll dig in for getting autocompletion back in emacs someday.
 
 </p>
 </div>
     </summary>
-    <id>http://yqrashawn.com/2017/10/28/company-knowledge-database-from-feed-with-teaser</id>
+    <id>http://yqrashawn.com/2017/11/09/use-zsh-in-emacs-from-feed-with-teaser</id>
+</entry>
+<!-- ############################################################################################# -->
+<entry>
+    <title type="text">My Karabiner Elements configuration</title>
+    <link href='http://yqrashawn.com/2017/10/29/my-karabiner-configuration' />
+    <published>2017-10-29T20:45:00+08:00</published>
+    <updated>2017-10-29T20:45:00+08:00</updated>
+    <category scheme='http://yqrashawn.com/tags/coding' term='coding' />
+    <category scheme='http://yqrashawn.com/tags/tool' term='tool' />
+    <category scheme='http://yqrashawn.com/tags/efficient' term='efficient' />
+    <category scheme='http://yqrashawn.com/tags/karabiner' term='karabiner' />
+    <summary type='xhtml'>
+<div xmlns='http://www.w3.org/1999/xhtml'>
+<p>
+
+This post are descriptions and tutorial of my <a href="https://github.com/yqrashawn/yqdotfiles/blob/master/.config/karabiner/karabiner.json">personal KE complex modification</a>.
+
+</p>
+
+
+<p>
+
+I <a href="https://github.com/pqrs-org/KE-complex_modifications/pull/162">merged</a> my personal <a href="https://github.com/tekezo/Karabiner-Elements">Karabiner Elements</a> configuration into the <a href="https://github.com/pqrs-org/KE-complex_modifications">official repo</a> several days ago. You can import my personal rules <a href="https://pqrs-org.github.io/KE-complex_modifications/">here</a>. To achieve efficiency, I use karabiner with <a href="https://www.alfredapp.com/">Alfred</a> mainly through <a href="https://www.alfredapp.com/help/workflows/triggers/external/">alfred workflow external trigger</a> and <a href="https://developer.apple.com/legacy/library/documentation/Darwin/Reference/ManPages/man1/osascript.1.html">osascript</a> (command line tool for calling AppleScript code). Here are these configurations. Please note that I update my configurations every day. So I  can't keep this post up to date. The key here is to introduce a system for launching apps, invoking scripts and all stuffs that can be done with shell (everything). When you can get anything you want with few key strokes, <b>it feels great</b>.
+
+</p>
+
+
+<p>
+
+<a href="https://www.dropbox.com/s/qepdfdu0djyed7v/workflows.zip?dl=0">Download all my workflow from dropbox</a>, please contact <a href="https://github.com/yqrashawn">me</a> when this link broken. I may update this post for each specific config if I have time in the future (may not happen). If you have any problems or ideas, please <a href="https://github.com/yqrashawn/yqdotfiles/issues/new">open an issue</a> in my dotfile repo. And you can also check <a href="https://github.com/pqrs-org/KE-complex_modifications">KE-complex_modifications</a> official repo for more rules and discussion.
+
+</p>
+</div>
+    </summary>
+    <id>http://yqrashawn.com/2017/10/29/my-karabiner-configuration-from-feed-with-teaser</id>
 </entry>
 <!-- ############################################################################################# -->
 <entry>
@@ -71,14 +126,14 @@ Just finish the Halt and Catch Fire, really great show. It makes me think about 
 
 <p>
 
-It's just that I think Joe is "right" in some way. The right is some kind of his every desicion of fresh start, it's so decisive. It makes the character fear nothing. He desires success so much but go through his failer and go for the fresh start so quick. But on the other hand, he is so emotional, about his failer, about Gordon's die.
+It's just that I think Joe is "right" in some way. The right is some kind of his every decision of fresh start, it's so decisive. It makes the character fear nothing. He desires success so much but go through his failer and go for the fresh start so quick. But on the other hand, he is so emotional, about his failer, about Gordon's die.
 
 </p>
 
 
 <p>
 
-These characters normaly can't be on the same person. Maybe that's why it makes me think Joe is "right".
+These characters normally can't be on the same person. Maybe that's why it makes me think Joe is "right".
 
 </p>
 </div>
@@ -101,4 +156,25 @@ Blog about coding and every other things in daily life.
 </div>
     </summary>
     <id>http://yqrashawn.com/about-from-feed-with-teaser</id>
+</entry>
+<!-- ############################################################################################# -->
+<entry>
+    <title type="text">Git 指南</title>
+    <link href='http://yqrashawn.com/2016/10/09/git-tutorial' />
+    <published>2016-10-09T15:19:00+08:00</published>
+    <updated>2016-10-09T15:19:00+08:00</updated>
+    <category scheme='http://yqrashawn.com/tags/coding' term='coding' />
+    <category scheme='http://yqrashawn.com/tags/git' term='git' />
+    <category scheme='http://yqrashawn.com/tags/tool' term='tool' />
+    <category scheme='http://yqrashawn.com/tags/chinese' term='chinese' />
+    <summary type='xhtml'>
+<div xmlns='http://www.w3.org/1999/xhtml'>
+<p>
+
+公司内部分享大纲.
+
+</p>
+</div>
+    </summary>
+    <id>http://yqrashawn.com/2016/10/09/git-tutorial-from-feed-with-teaser</id>
 </entry></feed>

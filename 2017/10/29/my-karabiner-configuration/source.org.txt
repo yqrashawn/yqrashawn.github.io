@@ -1,0 +1,95 @@
+** DONE My Karabiner Elements configuration :blog:coding:tool:efficient:karabiner:
+CLOSED: [2017-10-29 Sun 20:45]
+:PROPERTIES:
+:CREATED:  [2017-10-29 Sun 17:01]
+:ID:       2017-10-29-my-karabiner-configuration
+:END:
+:LOGBOOK:
+- State "DONE"       from "STARTED"    [2017-10-29 Sun 20:45]
+- State "STARTED"    from "DONE"       [2017-10-29 Sun 19:29]
+- State "TODO"       from "STARTED"    [2017-10-29 Sun 19:29]
+:END:
+
+This post are descriptions and tutorial of my [[https://github.com/yqrashawn/yqdotfiles/blob/master/.config/karabiner/karabiner.json][personal KE complex modification]].
+
+I [[https://github.com/pqrs-org/KE-complex_modifications/pull/162][merged]] my personal [[https://github.com/tekezo/Karabiner-Elements][Karabiner Elements]] configuration into the [[https://github.com/pqrs-org/KE-complex_modifications][official repo]]
+several days ago. You can import my personal rules [[https://pqrs-org.github.io/KE-complex_modifications/][here]]. To achieve efficiency,
+I use karabiner with [[https://www.alfredapp.com/][Alfred]] mainly through [[https://www.alfredapp.com/help/workflows/triggers/external/][alfred workflow external trigger]] and
+[[https://developer.apple.com/legacy/library/documentation/Darwin/Reference/ManPages/man1/osascript.1.html][osascript]] (command line tool for calling AppleScript code).
+Here are these configurations. Please note that I update my configurations every
+day. So I  can't keep this post up to date. The key here is to introduce a
+system for launching apps, invoking scripts and all stuffs that can be done with
+shell (everything). When you can get anything you want with few key strokes, *it
+feels great*.
+
+[[https://www.dropbox.com/s/qepdfdu0djyed7v/workflows.zip?dl=0][Download all my workflow from dropbox]], please contact [[https://github.com/yqrashawn][me]] when this link broken. I
+may update this post for each specific config if I have time in the future (may
+not happen). If you have any problems or ideas, please [[https://github.com/yqrashawn/yqdotfiles/issues/new][open an issue]] in my
+dotfile repo. And you can also check [[https://github.com/pqrs-org/KE-complex_modifications][KE-complex_modifications]] official repo for
+more rules and discussion.
+
+-----
+- Alfred Mode (z)
+  - Press z down then click other keys to trigger Alfred workflow
+  - This mode severely relays on Alfred Workflow, links of workflow will update later.
+    - y: Hyper + = trigger youdao workflow
+    - j: Search github
+    - tab: Switch to chosen iTerm session
+    - x: Kill process
+    - t: Launch Tower.app with chosen repo
+    - b: Switch chosen to browser tab
+    - r: Open recent download file
+    - l: Trigger Alfred File Action in Finder.app
+    - l: Trigger devtool in browsers
+    - o: Copy selection into emacs for temp edit
+    - p: Paste the saved temp buffer back
+    - ;: Open localhost with entered port number
+    - q: Use Keyboard Maestro record macro
+    - ]: Play last macro once
+
+- yq Launch Mode (w)
+  - Press w down then click other keys to bring application to front.
+  - Press w down then press [ down to enter second level of this mode.
+  - This mode severely relays on Alfred Workflow, links of workflow will update later.
+    - j: iTerm
+    - k: Emacs
+    - l: Google Chrome
+    - c: Safari
+    - m: Mail
+    - t: Tower
+    - b: BearyChat
+    - v: WeChat
+    - [r: Reeder
+
+- Quick Insert Mode (period)
+  - Press period down then click other keys to insert or trigger workflow.
+  - Press period down then press comma down to enter second level of this mode.
+  - Some rules in this mode need to use with some specific emacs key-bindings.
+    - tab: control+tab emacs:(switch-to-second-most-recent-buffer)
+    - comma+tab: control+tab emacs:(switch-to-third-most-recent-buffer)
+    - a: insert ~/
+    - s: insert .*
+    - slash: insert ./
+    - q: insert {
+    - comma+q: insert }
+    - e: insert (
+    - r: insert )
+    - g: command+control+k alfred clipboard
+    - d: command+control+d Mac OS define
+
+- Slash Mode (period)
+  - Press period down then click other keys to insert or trigger workflow.
+    - tab: command+tab switch to previous application
+
+- Other modifications
+  - Mainly bind option and command keys to function keys, and then use with other applications.
+  - MINILA modification aiming to make it more like HHKB.
+  - Modifications with keyboard name in their descriptions can't work on other keyboard.
+  - Caps Lock to escape when pressed alone and to control as modifier key
+  - Control to escape when pressed alone on HHKB and MINILA
+  - Left command to f19 when pressed alone, trigger alfred
+  - Left option to f18 when pressed alone, trigger context
+  - Right option to f17 when pressed alone
+  - Right command to f16 when pressed alone
+  - Right command to command+tab when pressed alone
+

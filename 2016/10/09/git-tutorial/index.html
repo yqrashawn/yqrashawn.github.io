@@ -1,381 +1,127 @@
-<?xml version='1.0' encoding='UTF-8'?>
-<feed xmlns="http://www.w3.org/2005/Atom"
-      xmlns:thr="http://purl.org/syndication/thread/1.0"
-      xml:lang="en-us">
-  <link rel="self" href="http://yqrashawn.com/feeds/lazyblorg-all.atom_1.0.links-and-content.xml" />
-  <title type="text">infin</title>
-  <id>http://yqrashawn.com/</id>
-  <link href="http://yqrashawn.com" />
-  <icon>/favicon.ico</icon>
-  <updated>2017-11-10T00:14:45+08:00</updated>
-  <author>
-    <name>yqrashawn</name>
-  </author>
-  <subtitle type="text">infin</subtitle>
-  <rights>All content written by yqrashawn</rights>
-  <generator uri='https://github.com/novoid/lazyblorg'>Generated from Org-mode source code using lazyblorg which is written in Python. Industrial-strength technology, baby.</generator>
-<!-- ############################################################################################# -->
-<entry>
-    <title type="text">Use zsh in emacs</title>
-    <link href='http://yqrashawn.com/2017/11/09/use-zsh-in-emacs' />
-    <published>2017-11-09T21:55:00+08:00</published>
-    <updated>2017-11-09T21:55:00+08:00</updated>
-    <category scheme='http://yqrashawn.com/tags/shell' term='shell' />
-    <category scheme='http://yqrashawn.com/tags/zsh' term='zsh' />
-    <category scheme='http://yqrashawn.com/tags/emacs' term='emacs' />
-    <summary type='xhtml'>
-<div xmlns='http://www.w3.org/1999/xhtml'>
-<p>
+  <!DOCTYPE html>
+  <html xmlns="http://www.w3.org/1999/xhtml">
+  <head>
+  <meta charset="UTF-8">
 
-I used to use vim with tmux in a terminal emulator. After changing to emacs. It didn't take much time for me to realize that emacs in GUI works better.
+  <meta name="author" content="yqrashawn" />
+  <meta name="generator" content="lazyblorg" />
+  <meta name="description" content="Git 指南" />
+  <meta name="orgmode-id" content="2016-10-09-git-tutorial" />
 
-</p>
+  <meta name="twitter:card" content="summary" />
+  <meta name="twitter:site" content="@yqrashawn" />
+  <meta name="twitter:creator" content="@yqrashawn" />
+  <meta name="twitter:title" content="infin" />
+  <meta name="twitter:description" content="Git 指南" />
+  <meta name="twitter:image" content="//yqrashawn.com/public/img/YQ_logo.png" />
 
+  <meta property="og:type" content="article" />
+  <meta property="og:title" content="infin" />
+  <meta property="og:description" content="Git 指南" />
+  <meta property="og:image" content="//yqrashawn.com/public/img/YQ_logo.png" />
+  <meta property="og:site_name" content="infin - Web-page of yqrashawn">
+  <meta property="article:published_time" content="2016-10-09T15:19+08:00" />
+  <meta property="article:author" content="yqrashawn" />
 
-<p>
+  <link rel="stylesheet" title="infin Standard CSS Style"
+        href="//yqrashawn.com/public/css/YQ.css" type="text/css" media="screen"  />
 
-The problem is I still want the old behavior. I tried about three times using my zsh shell in emacs. I'm not here telling those failed attempts. I want to write it down because of a recent discovery.
+  <link rel="alternate" type="application/atom+xml"
+        title="infin (links only)" href="//yqrashawn.com/feeds/lazyblorg-all.atom_1.0.links-only.xml" />
+  <link rel="alternate" type="application/atom+xml"
+        title="infin (article teasers)" href="//yqrashawn.com/feeds/lazyblorg-all.atom_1.0.links-and-teaser.xml" />
+  <link rel="alternate" type="application/atom+xml"
+        title="infin (full content)" href="//yqrashawn.com/feeds/lazyblorg-all.atom_1.0.links-and-content.xml" />
+  <script type="text/javascript" src="//yqrashawn.com/public/js/highlight.pack.js"></script>
+  <script type="text/javascript" src="//yqrashawn.com/public/js/menu.js"></script>
 
-</p>
+  <!-- WARNING: This page is written in HTML5 and might not be displayed correctly in old browsers. -->
 
+      <!-- link rel="stylesheet" type="text/css" href="../../../../style.css" / -->
+      <title>Git 指南</title>
 
-<p>
-
-When I restructure my zsh configurations, I find the z-shell works fine with with zero config. That's when I finally discover that it's the plugins and configurations that make zsh and emacs incompatible. What's more, I find these lines. They must come from some emacs package's readme instruction. The original one is telling zsh don't do something when it's in emacs.
-
-</p>
+  </head>  <body>
 
 
-	  <div class="example_code">
-	  <pre>
-    <code>if [ -n "$INSIDE_EMACS" ]; then
-    ...
-  else
-    ...
-fi    </code>
-	  </pre>
+
+	<header>
+
+	  <nav class="temporal-article-header-nav">
+	    <span class="breadcrumbs">
+	      <a href="../../../../">infin</a><span style="padding-top:1em;">&nbsp;&nbsp;&nbsp;&nbsp;&raquo;
+	      <a href="../../../">2016</a>&nbsp;&ndash;&nbsp;<a href="../../">10</a>&nbsp;&ndash;&nbsp;<a href="../">09</a></span>
+	    </span>
+	  </nav>
+	  <aside class="common-tags">
+	    <ul>
+                <li><a class="usertag" href="//yqrashawn.com/tags/coding/">coding</a></li>
+                <li><a class="usertag" href="//yqrashawn.com/tags/git/">git</a></li>
+                <li><a class="usertag" href="//yqrashawn.com/tags/tool/">tool</a></li>
+                <li><a class="usertag" href="//yqrashawn.com/tags/chinese/">chinese</a></li>
+	    </ul>
+	  </aside>
+
+	  <h1 class="common-article-header-title">Git 指南</h1>
+
+	</header>
+
+  
+  <div class="menu-espanso">
+    <div id="menu-group">
+      <div id="menu" class="menu">
+      <div id="menu-in" class="menu-in"></div>
+      </div>
+      <span class="menu-closer"></span>
+      <span class="linee linea1"></span>
+      <span class="linee linea2"></span>
+      <span class="linee linea3"></span>
     </div>
+    <div class="voci-menu">
+      <ul>
+         <a id="show-sidebar-text" href="#show-sidebar">Show Sidebar</a>
+         <div class="sidebar toggle-sidebar">
 
 
-<p>
-
-So I thought, I can just use these line with my zsh configuration(<a href="https://github.com/sorin-ionescu/prezto">prezto</a>). It works fine now after some little test. It turns out the default <a href="https://github.com/zsh-users/zsh-completions">zsh-autocompletion</a> is not playing well with emacs. I use the <code>if...else</code> code telling zsh don't load autosugestion while in emacs. And everything is fine now.
-
-</p>
-
-
-<p>
-
-That's it. Maybe I'll dig in for getting autocompletion back in emacs someday.
-
-</p>
-</div>
-    </summary>    <content type='xhtml'>
-      <div xmlns='http://www.w3.org/1999/xhtml'>
-	
-<p>
-
-I used to use vim with tmux in a terminal emulator. After changing to emacs. It didn't take much time for me to realize that emacs in GUI works better.
-
-</p>
-
-
-<p>
-
-The problem is I still want the old behavior. I tried about three times using my zsh shell in emacs. I'm not here telling those failed attempts. I want to write it down because of a recent discovery.
-
-</p>
-
-
-<p>
-
-When I restructure my zsh configurations, I find the z-shell works fine with with zero config. That's when I finally discover that it's the plugins and configurations that make zsh and emacs incompatible. What's more, I find these lines. They must come from some emacs package's readme instruction. The original one is telling zsh don't do something when it's in emacs.
-
-</p>
-
-
-	  <div class="example_code">
-	  <pre>
-    <code>if [ -n "$INSIDE_EMACS" ]; then
-    ...
-  else
-    ...
-fi    </code>
-	  </pre>
+           <ul>
+           <li><a href="../../../../about">About</a></li>
+           <li><a href="//duckduckgo.com/?q=site%3A+yqrashawn.com+++">Search infin</li>
+           <li>Subscribe</li>
+               <ul>
+               <li><span style="font-size:small"><a href="//yqrashawn.com/feeds/lazyblorg-all.atom_1.0.links-only.xml">links only</a> (most reliable)</span></li>
+               <li><span style="font-size:small"><a href="//yqrashawn.com/feeds/lazyblorg-all.atom_1.0.links-and-teaser.xml">article teaser</a></span></li>
+               <li><span style="font-size:small"><a href="//yqrashawn.com/feeds/lazyblorg-all.atom_1.0.links-and-content.xml">full content</a></span></li>
+               </ul>
+           <li id="top-tags">Top <a href="//yqrashawn.com/tags/">tags</a>:</li>
+               <ul class="top-tags-list">
+                     
+              <li><a class="usertag" href="//yqrashawn.com/tags/tool">tool</a> (2)</li>
+              <li><a class="usertag" href="//yqrashawn.com/tags/coding">coding</a> (2)</li>
+              <li><a class="usertag" href="//yqrashawn.com/tags/shell">shell</a> (1)</li>
+              <li><a class="usertag" href="//yqrashawn.com/tags/chinese">chinese</a> (1)</li>
+              <li><a class="usertag" href="//yqrashawn.com/tags/watching">watching</a> (1)</li>
+              <li><a class="usertag" href="//yqrashawn.com/tags/efficient">efficient</a> (1)</li>
+              <li><a class="usertag" href="//yqrashawn.com/tags/git">git</a> (1)</li>
+              <li><a class="usertag" href="//yqrashawn.com/tags/emacs">emacs</a> (1)</li>
+              <li><a class="usertag" href="//yqrashawn.com/tags/karabiner">karabiner</a> (1)</li>
+              <li><a class="usertag" href="//yqrashawn.com/tags/zsh">zsh</a> (1)</li>
+               </ul>
+           </ul>
+         </div>
+      </ul>
     </div>
+  </div>
 
 
-<p>
 
-So I thought, I can just use these line with my zsh configuration(<a href="https://github.com/sorin-ionescu/prezto">prezto</a>). It works fine now after some little test. It turns out the default <a href="https://github.com/zsh-users/zsh-completions">zsh-autocompletion</a> is not playing well with emacs. I use the <code>if...else</code> code telling zsh don't load autosugestion while in emacs. And everything is fine now.
+  <article class="common-article">
 
-</p>
-
-
-<p>
-
-That's it. Maybe I'll dig in for getting autocompletion back in emacs someday.
-
-</p>
-
-      </div>
-    </content>
-    <id>http://yqrashawn.com/2017/11/09/use-zsh-in-emacs-from-feed-with-content</id>
-</entry>
-<!-- ############################################################################################# -->
-<entry>
-    <title type="text">My Karabiner Elements configuration</title>
-    <link href='http://yqrashawn.com/2017/10/29/my-karabiner-configuration' />
-    <published>2017-10-29T20:45:00+08:00</published>
-    <updated>2017-10-29T20:45:00+08:00</updated>
-    <category scheme='http://yqrashawn.com/tags/coding' term='coding' />
-    <category scheme='http://yqrashawn.com/tags/tool' term='tool' />
-    <category scheme='http://yqrashawn.com/tags/efficient' term='efficient' />
-    <category scheme='http://yqrashawn.com/tags/karabiner' term='karabiner' />
-    <summary type='xhtml'>
-<div xmlns='http://www.w3.org/1999/xhtml'>
-<p>
-
-This post are descriptions and tutorial of my <a href="https://github.com/yqrashawn/yqdotfiles/blob/master/.config/karabiner/karabiner.json">personal KE complex modification</a>.
-
-</p>
-
-
-<p>
-
-I <a href="https://github.com/pqrs-org/KE-complex_modifications/pull/162">merged</a> my personal <a href="https://github.com/tekezo/Karabiner-Elements">Karabiner Elements</a> configuration into the <a href="https://github.com/pqrs-org/KE-complex_modifications">official repo</a> several days ago. You can import my personal rules <a href="https://pqrs-org.github.io/KE-complex_modifications/">here</a>. To achieve efficiency, I use karabiner with <a href="https://www.alfredapp.com/">Alfred</a> mainly through <a href="https://www.alfredapp.com/help/workflows/triggers/external/">alfred workflow external trigger</a> and <a href="https://developer.apple.com/legacy/library/documentation/Darwin/Reference/ManPages/man1/osascript.1.html">osascript</a> (command line tool for calling AppleScript code). Here are these configurations. Please note that I update my configurations every day. So I  can't keep this post up to date. The key here is to introduce a system for launching apps, invoking scripts and all stuffs that can be done with shell (everything). When you can get anything you want with few key strokes, <b>it feels great</b>.
-
-</p>
-
-
-<p>
-
-<a href="https://www.dropbox.com/s/qepdfdu0djyed7v/workflows.zip?dl=0">Download all my workflow from dropbox</a>, please contact <a href="https://github.com/yqrashawn">me</a> when this link broken. I may update this post for each specific config if I have time in the future (may not happen). If you have any problems or ideas, please <a href="https://github.com/yqrashawn/yqdotfiles/issues/new">open an issue</a> in my dotfile repo. And you can also check <a href="https://github.com/pqrs-org/KE-complex_modifications">KE-complex_modifications</a> official repo for more rules and discussion.
-
-</p>
-</div>
-    </summary>    <content type='xhtml'>
-      <div xmlns='http://www.w3.org/1999/xhtml'>
-	
-<p>
-
-This post are descriptions and tutorial of my <a href="https://github.com/yqrashawn/yqdotfiles/blob/master/.config/karabiner/karabiner.json">personal KE complex modification</a>.
-
-</p>
-
-
-<p>
-
-I <a href="https://github.com/pqrs-org/KE-complex_modifications/pull/162">merged</a> my personal <a href="https://github.com/tekezo/Karabiner-Elements">Karabiner Elements</a> configuration into the <a href="https://github.com/pqrs-org/KE-complex_modifications">official repo</a> several days ago. You can import my personal rules <a href="https://pqrs-org.github.io/KE-complex_modifications/">here</a>. To achieve efficiency, I use karabiner with <a href="https://www.alfredapp.com/">Alfred</a> mainly through <a href="https://www.alfredapp.com/help/workflows/triggers/external/">alfred workflow external trigger</a> and <a href="https://developer.apple.com/legacy/library/documentation/Darwin/Reference/ManPages/man1/osascript.1.html">osascript</a> (command line tool for calling AppleScript code). Here are these configurations. Please note that I update my configurations every day. So I  can't keep this post up to date. The key here is to introduce a system for launching apps, invoking scripts and all stuffs that can be done with shell (everything). When you can get anything you want with few key strokes, <b>it feels great</b>.
-
-</p>
-
-
-<p>
-
-<a href="https://www.dropbox.com/s/qepdfdu0djyed7v/workflows.zip?dl=0">Download all my workflow from dropbox</a>, please contact <a href="https://github.com/yqrashawn">me</a> when this link broken. I may update this post for each specific config if I have time in the future (may not happen). If you have any problems or ideas, please <a href="https://github.com/yqrashawn/yqdotfiles/issues/new">open an issue</a> in my dotfile repo. And you can also check <a href="https://github.com/pqrs-org/KE-complex_modifications">KE-complex_modifications</a> official repo for more rules and discussion.
-
-</p>
-
-<div class="orgmode-hr" ></div>
-<ul>
-<li>Alfred Mode (z)
-<ul>
-<li>Press z down then click other keys to trigger Alfred workflow</li>
-<li>This mode severely relays on Alfred Workflow, links of workflow will update later.
-<ul>
-<li>y: Hyper + = trigger youdao workflow</li>
-<li>j: Search github</li>
-<li>tab: Switch to chosen iTerm session</li>
-<li>x: Kill process</li>
-<li>t: Launch Tower.app with chosen repo</li>
-<li>b: Switch chosen to browser tab</li>
-<li>r: Open recent download file</li>
-<li>l: Trigger Alfred File Action in Finder.app</li>
-<li>l: Trigger devtool in browsers</li>
-<li>o: Copy selection into emacs for temp edit</li>
-<li>p: Paste the saved temp buffer back</li>
-<li>;: Open localhost with entered port number</li>
-<li>q: Use Keyboard Maestro record macro</li>
-<li>]: Play last macro once</li>
-</ul></li>
-</ul></li>
-<li>yq Launch Mode (w)
-<ul>
-<li>Press w down then click other keys to bring application to front.</li>
-<li>Press w down then press [ down to enter second level of this mode.</li>
-<li>This mode severely relays on Alfred Workflow, links of workflow will update later.
-<ul>
-<li>j: iTerm</li>
-<li>k: Emacs</li>
-<li>l: Google Chrome</li>
-<li>c: Safari</li>
-<li>m: Mail</li>
-<li>t: Tower</li>
-<li>b: BearyChat</li>
-<li>v: WeChat</li>
-<li>[r: Reeder</li>
-</ul></li>
-</ul></li>
-<li>Quick Insert Mode (period)
-<ul>
-<li>Press period down then click other keys to insert or trigger workflow.</li>
-<li>Press period down then press comma down to enter second level of this mode.</li>
-<li>Some rules in this mode need to use with some specific emacs key-bindings.
-<ul>
-<li>tab: control+tab emacs:(switch-to-second-most-recent-buffer)</li>
-<li>comma+tab: control+tab emacs:(switch-to-third-most-recent-buffer)</li>
-<li>a: insert ~/</li>
-<li>s: insert .*</li>
-<li>slash: insert ./</li>
-<li>q: insert {</li>
-<li>comma+q: insert }</li>
-<li>e: insert (</li>
-<li>r: insert )</li>
-<li>g: command+control+k alfred clipboard</li>
-<li>d: command+control+d Mac OS define</li>
-</ul></li>
-</ul></li>
-<li>Slash Mode (period)
-<ul>
-<li>Press period down then click other keys to insert or trigger workflow.
-<ul>
-<li>tab: command+tab switch to previous application</li>
-</ul></li>
-</ul></li>
-<li>Other modifications
-<ul>
-<li>Mainly bind option and command keys to function keys, and then use with other applications.</li>
-<li>MINILA modification aiming to make it more like HHKB.</li>
-<li>Modifications with keyboard name in their descriptions can't work on other keyboard.</li>
-<li>Caps Lock to escape when pressed alone and to control as modifier key</li>
-<li>Control to escape when pressed alone on HHKB and MINILA</li>
-<li>Left command to f19 when pressed alone, trigger alfred</li>
-<li>Left option to f18 when pressed alone, trigger context</li>
-<li>Right option to f17 when pressed alone</li>
-<li>Right command to f16 when pressed alone</li>
-<li>Right command to command+tab when pressed alone</li>
-</ul></li>
-</ul>
-
-      </div>
-    </content>
-    <id>http://yqrashawn.com/2017/10/29/my-karabiner-configuration-from-feed-with-content</id>
-</entry>
-<!-- ############################################################################################# -->
-<entry>
-    <title type="text">Halt and Catch Fire</title>
-    <link href='http://yqrashawn.com/2017/10/22/after-watching-halt-and-catch-fire' />
-    <published>2017-10-22T08:51:00+08:00</published>
-    <updated>2017-10-28T23:38:00+08:00</updated>
-    <category scheme='http://yqrashawn.com/tags/watching' term='watching' />
-    <summary type='xhtml'>
-<div xmlns='http://www.w3.org/1999/xhtml'>
-<p>
-
-Just finish the Halt and Catch Fire, really great show. It makes me think about that everyone is full of story in their life, amazing to others but definitely not to themselves, like Joe in the series.
-
-</p>
-
-
-<p>
-
-It's just that I think Joe is "right" in some way. The right is some kind of his every decision of fresh start, it's so decisive. It makes the character fear nothing. He desires success so much but go through his failer and go for the fresh start so quick. But on the other hand, he is so emotional, about his failer, about Gordon's die.
-
-</p>
-
-
-<p>
-
-These characters normally can't be on the same person. Maybe that's why it makes me think Joe is "right".
-
-</p>
-</div>
-    </summary>    <content type='xhtml'>
-      <div xmlns='http://www.w3.org/1999/xhtml'>
-	
-<p>
-
-Just finish the Halt and Catch Fire, really great show. It makes me think about that everyone is full of story in their life, amazing to others but definitely not to themselves, like Joe in the series.
-
-</p>
-
-
-<p>
-
-It's just that I think Joe is "right" in some way. The right is some kind of his every decision of fresh start, it's so decisive. It makes the character fear nothing. He desires success so much but go through his failer and go for the fresh start so quick. But on the other hand, he is so emotional, about his failer, about Gordon's die.
-
-</p>
-
-
-<p>
-
-These characters normally can't be on the same person. Maybe that's why it makes me think Joe is "right".
-
-</p>
-
-      </div>
-    </content>
-    <id>http://yqrashawn.com/2017/10/22/after-watching-halt-and-catch-fire-from-feed-with-content</id>
-</entry>
-<!-- ############################################################################################# -->
-<entry>
-    <title type="text">About</title>
-    <link href='http://yqrashawn.com/about' />
-    <published>2017-10-21T10:48:00+08:00</published>
-    <updated>2017-10-21T10:48:00+08:00</updated>
-    <summary type='xhtml'>
-<div xmlns='http://www.w3.org/1999/xhtml'>
-<p>
-
-Blog about coding and every other things in daily life.
-
-</p>
-</div>
-    </summary>    <content type='xhtml'>
-      <div xmlns='http://www.w3.org/1999/xhtml'>
-	
-<p>
-
-Blog about coding and every other things in daily life.
-
-</p>
-
-      </div>
-    </content>
-    <id>http://yqrashawn.com/about-from-feed-with-content</id>
-</entry>
-<!-- ############################################################################################# -->
-<entry>
-    <title type="text">Git 指南</title>
-    <link href='http://yqrashawn.com/2016/10/09/git-tutorial' />
-    <published>2016-10-09T15:19:00+08:00</published>
-    <updated>2016-10-09T15:19:00+08:00</updated>
-    <category scheme='http://yqrashawn.com/tags/coding' term='coding' />
-    <category scheme='http://yqrashawn.com/tags/git' term='git' />
-    <category scheme='http://yqrashawn.com/tags/tool' term='tool' />
-    <category scheme='http://yqrashawn.com/tags/chinese' term='chinese' />
-    <summary type='xhtml'>
-<div xmlns='http://www.w3.org/1999/xhtml'>
 <p>
 
 公司内部分享大纲.
 
 </p>
-</div>
-    </summary>    <content type='xhtml'>
-      <div xmlns='http://www.w3.org/1999/xhtml'>
-	
-<p>
-
-公司内部分享大纲.
-
-</p>
-
 <div class="orgmode-hr" ></div>
-
 	  <header><h3 class="section-title">Git 是什么</h3></header>
-
 
 <p>
 
@@ -383,9 +129,7 @@ Git是一个版本管理的工具或系统. 需要注意的是, *<b>它是一个
 
 </p>
 
-
 	  <header><h3 class="section-title">Git 简史</h3></header>
-
 
 <p>
 
@@ -393,9 +137,7 @@ Git诞生于2005年. 基于对Linux内核进行维护的需求, Linux的作者�
 
 </p>
 
-
 	  <header><h3 class="section-title">Git 原理</h3></header>
-
 
 <p>
 
@@ -403,13 +145,11 @@ Git诞生于2005年. 基于对Linux内核进行维护的需求, Linux的作者�
 
 </p>
 
-
 <p>
 
 可以简单认为Git是一个基于数据库的文件系统, 或者直接理解为一个小巧而快速的数据库. 文件从创建到逐步完善过程中产生的每个版本的文件, 都以快照的形式保存在数据库. 这个数据库位于每个项目的  <code>.git/objects</code>  文件夹中.
 
 </p>
-
 
 <p>
 
@@ -417,13 +157,11 @@ Git诞生于2005年. 基于对Linux内核进行维护的需求, Linux的作者�
 
 </p>
 
-
 <p>
 
 <a href="https://www.v2ex.com/t/120979">讨论:如何真正理解"Git 保存的是文件快照"这一句话?</a>
 
 </p>
-
 
 <p>
 
@@ -431,23 +169,19 @@ Git诞生于2005年. 基于对Linux内核进行维护的需求, Linux的作者�
 
 </p>
 
-
 <p>
 
 <a href="http://gitready.com/beginner/2009/02/17/how-git-stores-your-data.html">了解更多.</a>
 
 </p>
 
-
 	  <header><h4 class="section-title">配置Git</h4></header>
-
 
 <p>
 
 初次使用Git需要配置的基本信息是 <code>name</code>  跟 <code>email</code>  两个字段, 因为我们需要让Git知道是谁提交了修改. 可以使用 <code>git config</code>  命令修改.
 
 </p>
-
 
 	  <div class="example_code">
 	  <pre>
@@ -462,13 +196,11 @@ namy.19@gmail.com    </code>
 	  </pre>
     </div>
 
-
 <p>
 
 也可以在 <code>$HOME</code>  处的 <code>.gitconfig</code>  文件处设置, 该文件是Git的全局配置文件, 每个项目下的 <code>.git/config</code>  文件中可以用相同的语法在本项目范围内覆盖该设置, 全局设置文件内容如下.
 
 </p>
-
 
 	  <div class="example_code">
 	  <pre>
@@ -478,16 +210,13 @@ email = namy.19@gmail.com    </code>
 	  </pre>
     </div>
 
-
 <p>
 
 该文件是Git的global配置, 每个项目中也可以单独配置, 配置文件在 <code>projectDir/.git/config</code>  .
 
 </p>
 
-
 	  <header><h3 class="section-title">开始使用Git</h3></header>
-
 
 <p>
 
@@ -495,16 +224,13 @@ email = namy.19@gmail.com    </code>
 
 </p>
 
-
 	  <header><h4 class="section-title">Git 分支(branch)</h4></header>
-
 
 <p>
 
 Git的分支比较容易理解, *<b>当两个人修改同一个文件时, 可能会出现冲突, 正常的做法是, 两个人把该文件各复制一份到自己电脑上修改, 改好以后两个人坐一起讨论一下, 把修改好的两个文件合起来. 这就是一个简单的分支概念,</b>*
 
 </p>
-
 
 	  <div class="example_code">
 	  <pre>
@@ -524,13 +250,11 @@ Git的分支比较容易理解, *<b>当两个人修改同一个文件时, 可能
 	  </pre>
     </div>
 
-
 <p>
 
 如上面的例子, 两个分支从A1点这个版本分出, 左边分支更改了一次文件(C11), 右边的分支更改了两次(C21, C22), 在两个人更改后在A2出又合并为同一分支.
 
 </p>
-
 
 <p>
 
@@ -538,13 +262,11 @@ Git的分支比较容易理解, *<b>当两个人修改同一个文件时, 可能
 
 </p>
 
-
 <p>
 
 <code>git checkout -b 分支名字</code>  能够新建分支.
 
 </p>
-
 
 <p>
 
@@ -552,16 +274,13 @@ Git的分支比较容易理解, *<b>当两个人修改同一个文件时, 可能
 
 </p>
 
-
 <p>
 
 <code>git branch --no-merge</code>  查看尚未被合并的分支.
 
 </p>
 
-
 	  <header><h4 class="section-title">HEAD</h4></header>
-
 
 <p>
 
@@ -569,9 +288,7 @@ Git中的HEAD指针指向当前工作区域所在的分支.
 
 </p>
 
-
 	  <header><h4 class="section-title">git init</h4></header>
-
 
 <p>
 
@@ -579,16 +296,13 @@ Git中的HEAD指针指向当前工作区域所在的分支.
 
 </p>
 
-
 	  <header><h4 class="section-title">git status</h4></header>
-
 
 <p>
 
-<code>git status</code>  是Git中常用的命令, 可以项目文件的状态, 使用 <code>git status &#8212;short</code>  可以省去一些不必要的提示. 它返回的信息标识除了不同状态的文件.
+<code>git status</code>  是Git中常用的命令, 可以项目文件的状态, 使用 <code>git status &mdash;short</code>  可以省去一些不必要的提示. 它返回的信息标识除了不同状态的文件.
 
 </p>
-
 
 	  <div class="example_code">
 	  <pre>
@@ -604,16 +318,13 @@ UU "Git4.md"                          冲突
 	  </pre>
     </div>
 
-
 <p>
 
 状态符占两位, 左边一位表示已暂存的状态, 右边一位表示工作区的状态(暂存区, 工作区后面讲).
 
 </p>
 
-
 	  <header><h4 class="section-title">工作区, 暂存区, 已提交区</h4></header>
-
 
 <p>
 
@@ -621,26 +332,21 @@ UU "Git4.md"                          冲突
 
 </p>
 
-
 <p>
 
 工作区的内容提交到暂存区使用 <code>git add</code>  命令, 暂存区提交到已提交区使用 <code>git commit</code>  命令.
 
 </p>
 
-
 	  <header><h4 class="section-title">git add</h4></header>
-
 
 <p>
 
-<code>git add</code>  较为常用, 平时可以使用 <code>git add &#8212;patch</code>  命令来交互的将修改添加到暂存区.
+<code>git add</code>  较为常用, 平时可以使用 <code>git add &mdash;patch</code>  命令来交互的将修改添加到暂存区.
 
 </p>
 
-
 	  <header><h4 class="section-title">git commit</h4></header>
-
 
 <p>
 
@@ -648,40 +354,33 @@ UU "Git4.md"                          冲突
 
 </p>
 
-
 <p>
 
-更方便的方法是 <code>git commit &#8212;verbose &#8212;all</code>  , 这里的 <code>&#8212;all</code>  指提交所有暂存区的内容,  <code>&#8212;verbose</code>  则可以调用 <code>git config</code>  中的编辑器显示提交的内容, 并输入提交信息(该选项与 <code>&#8212;all</code>  一同使用会显示所有要提交的改动, 会在有大文件改动时运行缓慢).
+更方便的方法是 <code>git commit &mdash;verbose &mdash;all</code>  , 这里的 <code>&mdash;all</code>  指提交所有暂存区的内容,  <code>&mdash;verbose</code>  则可以调用 <code>git config</code>  中的编辑器显示提交的内容, 并输入提交信息(该选项与 <code>&mdash;all</code>  一同使用会显示所有要提交的改动, 会在有大文件改动时运行缓慢).
 
 </p>
 
-
 <p>
 
-工作中如果保证自己提交的信息不需要二次确认时, 可直接使用 <code>git commit &#8212;all -m</code>  来提交.
+工作中如果保证自己提交的信息不需要二次确认时, 可直接使用 <code>git commit &mdash;all -m</code>  来提交.
 
 </p>
 
-
 <p>
 
-可以使用 <code>git commit --amend --reuse-message HEAD &#8212;all</code>  来将改动不大的修改合并到上一次commit中. 去掉 <code>--reuse-message</code>  可以重新写commit message.
+可以使用 <code>git commit --amend --reuse-message HEAD &mdash;all</code>  来将改动不大的修改合并到上一次commit中. 去掉 <code>--reuse-message</code>  可以重新写commit message.
 
 </p>
-
 
 	  <header><h4 class="section-title">git rm</h4></header>
 
-
 <p>
 
-用于移除对文件的管理(untrack), 一般使用 <code>git rm &#8212;cache ./path/to/file</code>  来移除对文件的跟踪,  <code>&#8212;cache</code>  的作用是解除跟踪但不删除文件. 解除跟踪的文件在 <code>git status</code>  中的状态为 <code>??</code>  .
+用于移除对文件的管理(untrack), 一般使用 <code>git rm &mdash;cache ./path/to/file</code>  来移除对文件的跟踪,  <code>&mdash;cache</code>  的作用是解除跟踪但不删除文件. 解除跟踪的文件在 <code>git status</code>  中的状态为 <code>??</code>  .
 
 </p>
 
-
 	  <header><h4 class="section-title">.gitignore</h4></header>
-
 
 <p>
 
@@ -689,9 +388,7 @@ UU "Git4.md"                          冲突
 
 </p>
 
-
 	  <header><h4 class="section-title">git reset</h4></header>
-
 
 <p>
 
@@ -699,12 +396,9 @@ UU "Git4.md"                          冲突
 
 </p>
 
-
 	  <header><h4 class="section-title">git checkout</h4></header>
 
-
 	  <header><h5 class="section-title">git checkout 管理工作区</h5></header>
-
 
 <p>
 
@@ -712,20 +406,17 @@ UU "Git4.md"                          冲突
 
 </p>
 
-
 <p>
 
-可以方便的使用 <code>git checkout &#8212;patch</code>  来交互(二次确认)地抛弃本地修改.
+可以方便的使用 <code>git checkout &mdash;patch</code>  来交互(二次确认)地抛弃本地修改.
 
 </p>
 
-
 <p>
 
-当有冲突产生时, 可以使用 <code>git checkout --ours &#8212;</code>  和 <code>git checkout --theirs &#8212;</code>  来直接选择应用某一版本, 抛弃另一版本. 该方法需谨慎使用, 使用频率不高.
+当有冲突产生时, 可以使用 <code>git checkout --ours &mdash;</code>  和 <code>git checkout --theirs &mdash;</code>  来直接选择应用某一版本, 抛弃另一版本. 该方法需谨慎使用, 使用频率不高.
 
 </p>
-
 
 	  <div class="example_code">
 	  <pre>
@@ -736,9 +427,7 @@ git checkout --theirs --    </code>
 	  </pre>
     </div>
 
-
 	  <header><h5 class="section-title">git checkout 切换分支</h5></header>
-
 
 <p>
 
@@ -746,9 +435,7 @@ git checkout --theirs --    </code>
 
 </p>
 
-
 	  <header><h4 class="section-title">git merge</h4></header>
-
 
 <p>
 
@@ -756,9 +443,7 @@ git checkout --theirs --    </code>
 
 </p>
 
-
 	  <header><h4 class="section-title">冲突</h4></header>
-
 
 <p>
 
@@ -766,9 +451,7 @@ git checkout --theirs --    </code>
 
 </p>
 
-
 	  <header><h5 class="section-title">逻辑冲突</h5></header>
-
 
 <p>
 
@@ -776,16 +459,13 @@ git checkout --theirs --    </code>
 
 </p>
 
-
 	  <header><h5 class="section-title">内容冲突</h5></header>
-
 
 <p>
 
 不同用户修改了同一文件同一区域, Git可以检测出. 在检测出该类冲突后, 冲突文件的冲突位置会被Git更改为下面的样子.
 
 </p>
-
 
 	  <div class="example_code">
 	  <pre>
@@ -797,13 +477,11 @@ git checkout --theirs --    </code>
 	  </pre>
     </div>
 
-
 <p>
 
 不论我们用什么方法或工具解决冲突, 最后代码要改成这个样子
 
 </p>
-
 
 	  <div class="example_code">
 	  <pre>
@@ -811,13 +489,11 @@ git checkout --theirs --    </code>
 	  </pre>
     </div>
 
-
 <p>
 
 或者这个样子
 
 </p>
-
 
 	  <div class="example_code">
 	  <pre>
@@ -825,13 +501,11 @@ git checkout --theirs --    </code>
 	  </pre>
     </div>
 
-
 <p>
 
 不然正常代码里多出来 <code>&lt;&lt;&lt;&lt;&lt;&lt;</code>  这个东西, 肯定报错.
 
 </p>
-
 
 <p>
 
@@ -839,9 +513,7 @@ git checkout --theirs --    </code>
 
 </p>
 
-
 	  <header><h5 class="section-title">树冲突</h5></header>
-
 
 <p>
 
@@ -849,9 +521,7 @@ git checkout --theirs --    </code>
 
 </p>
 
-
 	  <header><h4 class="section-title">远程仓库</h4></header>
-
 
 <p>
 
@@ -859,13 +529,11 @@ git checkout --theirs --    </code>
 
 </p>
 
-
 <p>
 
 ​ <code><a href</code>"http://111.111.111.111:3000/haha/git-tutorial.git=">http://111.111.111.111:3000/haha/git-tutorial.git=</a> 为HTTP协议.
 
 </p>
-
 
 <p>
 
@@ -873,13 +541,11 @@ git checkout --theirs --    </code>
 
 </p>
 
-
 <p>
 
 ​ 如果是公开的项目, 使用HTTP协议和SSH协议拉取时都不会有认证问题, 但推送时会出现认证授权问题, HTTP认证会要求用户输入用户名和密码, 而SSH认证时会访问用户的私钥与用户之前上传的公钥匹配. 可以说HTTP协议的适用范围最广, GitHub也推荐用户使用HTTP协议.
 
 </p>
-
 
 <p>
 
@@ -887,16 +553,13 @@ git checkout --theirs --    </code>
 
 </p>
 
-
 <p>
 
 ​ 另外, GitHub的GUI客户端以及许多第三方客户端都会安装凭证管理工具或自动链接系统凭证管理工具.
 
 </p>
 
-
 	  <header><h4 class="section-title">git remote</h4></header>
-
 
 	  <div class="example_code">
 	  <pre>
@@ -907,9 +570,7 @@ git remove 远程仓库名                                   删除远程仓库 
 	  </pre>
     </div>
 
-
 	  <header><h4 class="section-title">其他命令</h4></header>
-
 
 <p>
 
@@ -917,9 +578,7 @@ git remove 远程仓库名                                   删除远程仓库 
 
 </p>
 
-
 	  <header><h5 class="section-title">git push</h5></header>
-
 
 	  <div class="example_code">
 	  <pre>
@@ -927,9 +586,7 @@ git remove 远程仓库名                                   删除远程仓库 
 	  </pre>
     </div>
 
-
 	  <header><h5 class="section-title">git fetch</h5></header>
-
 
 	  <div class="example_code">
 	  <pre>
@@ -938,9 +595,7 @@ git fetch --all                                        获取所有远程仓库�
 	  </pre>
     </div>
 
-
 	  <header><h5 class="section-title">git pull</h5></header>
-
 
 	  <div class="example_code">
 	  <pre>
@@ -949,9 +604,7 @@ git pull 实际上就是 git fetch加git merge    </code>
 	  </pre>
     </div>
 
-
 	  <header><h3 class="section-title">如何高效使用Git</h3></header>
-
 
 <p>
 
@@ -959,9 +612,7 @@ git pull 实际上就是 git fetch加git merge    </code>
 
 </p>
 
-
 	  <header><h4 class="section-title">git config</h4></header>
-
 
 <p>
 
@@ -969,13 +620,11 @@ git pull 实际上就是 git fetch加git merge    </code>
 
 </p>
 
-
 <p>
 
 在Git的使用过程中不难注意到, 当我们在 origin/master, 分支下使用 <code>git push</code>  ,  <code>git pull</code>  命令时, 不需要写远程仓库名和分支名也可正确的push和pull. 但在其他分支下时, 就会看到这样的提示
 
 </p>
-
 
 	  <div class="example_code">
 	  <pre>
@@ -991,13 +640,11 @@ git branch --set-upstream-to=origin/&lt;branch&gt; bimsop    </code>
 	  </pre>
     </div>
 
-
 <p>
 
 在我们clone某个项目时, Git会自动初始化master分支并track远端的origin/master分支, 这时使用push和pull命令时就会与默认远端分支交换数据.
 
 </p>
-
 
 <p>
 
@@ -1005,20 +652,17 @@ git branch --set-upstream-to=origin/&lt;branch&gt; bimsop    </code>
 
 </p>
 
-
 <p>
 
-比如, 上面的情况需要输入命令 =git branch &#8212;set-upstream-to=origin/bimsop bimsop=  , 这样每次执行命令时可以快很多.
+比如, 上面的情况需要输入命令 =git branch &mdash;set-upstream-to=origin/bimsop bimsop=  , 这样每次执行命令时可以快很多.
 
 </p>
-
 
 <p>
 
 这时如果查看项目根目录下的 <code>.git/config</code>  文件, 会发现多出了下面三行.
 
 </p>
-
 
 	  <div class="example_code">
 	  <pre>
@@ -1028,16 +672,13 @@ merge = refs/heads/bimsop    </code>
 	  </pre>
     </div>
 
-
 <p>
 
 这就表明本地的bimsop分支track的是origin远程仓库的bimsop分支.
 
 </p>
 
-
 	  <header><h4 class="section-title">hooks</h4></header>
-
 
 <p>
 
@@ -1045,13 +686,11 @@ merge = refs/heads/bimsop    </code>
 
 </p>
 
-
 <p>
 
 查看项目目录 <code>.git/hooks</code>  目录下可以看到, 很多 <code>.sample</code>  文件, 其使用方法也很简单, 这里拿 <code>post-merge</code>  举例. 假设项目的代码需要在每次pull或merge以后编译一次来更新源码. 可以新建一个名为 <code>post-merge</code>  的文件, 内容为:
 
 </p>
-
 
 	  <div class="example_code">
 	  <pre>
@@ -1063,13 +702,11 @@ webpack
 	  </pre>
     </div>
 
-
 <p>
 
 这样就会在每次pull和merge后重新编译一次代码. 需要注意的是, 需要把该文件权限改为可执行文件. Windos下可以直接写一个bat脚本然后在 <code>post-merge</code>  文件中执行bat脚本.
 
 </p>
-
 
 <p>
 
@@ -1077,9 +714,7 @@ webpack
 
 </p>
 
-
 	  <header><h4 class="section-title">alias</h4></header>
-
 
 <p>
 
@@ -1087,13 +722,11 @@ alias意为别名, 类似于Windos中的快捷方式. 比如设置 <code>git</co
 
 </p>
 
-
 <p>
 
 <a href="https://git-scm.com/book/en/v2/Git-Basics-Git-Aliases">Git提供了别名功能,</a> 运行 <code>git config --global alias.co checkout</code>  后, 就可以用 <code>git co</code>  来代替 <code>git checkout</code>  .
 
 </p>
-
 
 <p>
 
@@ -1101,13 +734,11 @@ alias意为别名, 类似于Windos中的快捷方式. 比如设置 <code>git</co
 
 </p>
 
-
 <p>
 
 例如, 我使用的是Zsh, 可以直接在Zsh的配置文件中设置别名, 也可以使用Zsh插件<a href="https://github.com/sorin-ionescu/prezto">prezto</a>,里面的<a href="https://github.com/sorin-ionescu/prezto/tree/master/modules/git">Git module</a>. 提供了比较方便和较为通用的别名. 也可以自己做一些修改. 下面列出了一些比较常用的.
 
 </p>
-
 
 	  <div class="example_code">
 	  <pre>
@@ -1131,16 +762,13 @@ alias gsa='git stash apply'    </code>
 	  </pre>
     </div>
 
-
 <p>
 
 <a href="https://github.com/yqrashawn/prezto/blob/master/modules/git/alias.zsh">点击查看全部</a>.
 
 </p>
 
-
 	  <header><h4 class="section-title">Git flow(分支管理模型)</h4></header>
-
 
 <p>
 
@@ -1148,13 +776,11 @@ alias gsa='git stash apply'    </code>
 
 </p>
 
-
 <p>
 
 一个项目, 在master分支发布重大版本, Develop为开发分支, 所有开发以Develop分支为基准. 配有三种临时性分支: feature分支, fixbug分支, release分支.
 
 </p>
-
 
 <p>
 
@@ -1162,13 +788,11 @@ feature分支. 项目增加新功能时, 从Develop新建feature分支开发新�
 
 </p>
 
-
 <p>
 
 fixbug分支. 发现bug后需要修改代码, 从发现bug的分支新建出fixbug分支修复bug, 完成后合并回去.
 
 </p>
-
 
 <p>
 
@@ -1176,16 +800,13 @@ release分支, 完成一个版本后, 在发布前新建release分支进行测�
 
 </p>
 
-
 	  <header><h5 class="section-title">Git flow 命令行工具</h5></header>
-
 
 <p>
 
 <a href="https://github.com/nvie/gitflow">该工具</a>可以方便的实现Git flow模型.
 
 </p>
-
 
 	  <div class="example_code">
 	  <pre>
@@ -1218,9 +839,7 @@ alias gfbd='git flow bugfix delete    </code>
 	  </pre>
     </div>
 
-
 	  <header><h4 class="section-title">第三方工具</h4></header>
-
 
 <p>
 
@@ -1228,9 +847,7 @@ alias gfbd='git flow bugfix delete    </code>
 
 </p>
 
-
 	  <header><h5 class="section-title">tig</h5></header>
-
 
 <p>
 
@@ -1238,9 +855,7 @@ CLI工具 <code>tig</code>  的做的不错, 但是操作方式基于VIM, 不易
 
 </p>
 
-
 	  <header><h5 class="section-title">Tower</h5></header>
-
 
 <p>
 
@@ -1248,9 +863,7 @@ CLI工具 <code>tig</code>  的做的不错, 但是操作方式基于VIM, 不易
 
 </p>
 
-
 	  <header><h5 class="section-title">SourceTree</h5></header>
-
 
 <p>
 
@@ -1258,9 +871,7 @@ CLI工具 <code>tig</code>  的做的不错, 但是操作方式基于VIM, 不易
 
 </p>
 
-
 	  <header><h5 class="section-title">GitKraken</h5></header>
-
 
 <p>
 
@@ -1268,9 +879,7 @@ CLI工具 <code>tig</code>  的做的不错, 但是操作方式基于VIM, 不易
 
 </p>
 
-
 	  <header><h3 class="section-title">日常使用流程</h3></header>
-
 
 <p>
 
@@ -1278,13 +887,11 @@ CLI工具 <code>tig</code>  的做的不错, 但是操作方式基于VIM, 不易
 
 </p>
 
-
 <p>
 
 假设我们要创建一个项目记录我今天吃了什么.
 
 </p>
-
 
 	  <div class="example_code">
 	  <pre>
@@ -1323,13 +930,11 @@ nothing to commit, working tree clean    </code>
 	  </pre>
     </div>
 
-
 <p>
 
 这时, 我们使用一下git flow.
 
 </p>
-
 
 	  <div class="example_code">
 	  <pre>
@@ -1351,20 +956,17 @@ Hooks and filters directory? [/Users/Rashawn/workspace/food/.git/hooks]    </cod
 	  </pre>
     </div>
 
-
 <p>
 
 可以看到这时git flow初始化时的选项, 它会询问你各个功能分支的名字和存放hooks的地址, 一般情况可以全部选择默认. 当初始化完成后, git flow会自动切换到develop分支.
 
 </p>
 
-
 <p>
 
 现在我们要增加一个新的功能, 让文件能够记录我干了什么.
 
 </p>
-
 
 	  <div class="example_code">
 	  <pre>
@@ -1402,13 +1004,11 @@ nothing to commit, working tree clean    </code>
 	  </pre>
     </div>
 
-
 <p>
 
 这时我们加在新的 <code>feature/whatIveDone</code>  分支新建了一个 <code>do.txt</code>  文件, 并记录了'我在睡觉'. 现在我们完成了这个功能, 要将其合并回develop分支.
 
 </p>
-
 
 	  <div class="example_code">
 	  <pre>
@@ -1433,13 +1033,11 @@ master
 	  </pre>
     </div>
 
-
 <p>
 
 这时我们已经回到了develop分支, 并且 <code>do.txt</code> 也已经合并进来了. git flow的其他功能的使用方法相同.
 
 </p>
-
 
 <p>
 
@@ -1447,20 +1045,17 @@ master
 
 </p>
 
-
 	  <div class="example_code">
 	  <pre>
     <code>~/w/food ❯❯❯ git remote add origin http://111.111.111.111:3000/yqrashawn/food-do.git    </code>
 	  </pre>
     </div>
 
-
 <p>
 
 在push之前我们需要把 <code>dev</code>  分支的内容合并到 <code>master</code>  分支.
 
 </p>
-
 
 	  <div class="example_code">
 	  <pre>
@@ -1481,13 +1076,11 @@ nothing to commit, working tree clean    </code>
 	  </pre>
     </div>
 
-
 <p>
 
 这时我们已经把 <code>dev</code> 分支开发的内容同步到了 <code>master</code> 了.
 
 </p>
-
 
 	  <div class="example_code">
 	  <pre>
@@ -1503,20 +1096,17 @@ Branch master set up to track remote branch master from origin.    </code>
 	  </pre>
     </div>
 
-
 <p>
 
-这里需要注意的是, *<b>第一次推送时, 本地的 <code>master</code>  分支并不知道自己track的是远端的哪个分支,</b>* 所以需要使用 <code>-u</code>  或 <code>&#8212;set-upstream</code>  将本地的 <code>master</code>  和 <code>origin/master</code> 绑定.
+这里需要注意的是, *<b>第一次推送时, 本地的 <code>master</code>  分支并不知道自己track的是远端的哪个分支,</b>* 所以需要使用 <code>-u</code>  或 <code>&mdash;set-upstream</code>  将本地的 <code>master</code>  和 <code>origin/master</code> 绑定.
 
 </p>
-
 
 <p>
 
 现在另一个用户要更新自己的状态到该项目.
 
 </p>
-
 
 	  <div class="example_code">
 	  <pre>
@@ -1557,14 +1147,52 @@ c65087d..c1fde84  master -&gt; master    </code>
 	  </pre>
     </div>
 
-
 <p>
 
 上面的指令为另一个用户clone该项目后在 <code>food.txt</code>  文件中加入'我也吃了苹果', 加入暂存区并提交, push.
 
 </p>
 
-      </div>
-    </content>
-    <id>http://yqrashawn.com/2016/10/09/git-tutorial-from-feed-with-content</id>
-</entry></feed>
+
+  </article>
+	  <aside class="published-on">
+	    Published on <time datetime="2016-10-09T15:19+08:00">2016-10-09T15:19</time>
+	  </aside>
+
+   <p class="email-comment">
+      <a href="mailto:namy.19@gmail.com?subject=2016-10-09-git-tutorial%20comment:%20&body=Please%20do%20not%20remove%20'2016-10-09-git-tutorial%20comment:'%20in%20subject%20and%20please%20tell%20me%20whether%20or%20not%20it%20is%20OK%20to%20add%20your%20comment%20and%2For%20your%20email%20address%20to%20the%20blog%20entry!">Comment via email</a> or via <a href="//disqus.com">Disqus</a> comments below:
+   </p>
+
+    <div id="disqus_thread"></div>
+    <div id="disqus_loader" style="text-align: center">
+      <!-- stolen from http://blog.yjl.im/2012/04/let-your-readers-decide-when-to-load.html -->
+      <button onclick="load_disqus()">Load Disqus Comments</button>
+      <script>
+        function load_disqus()
+        {
+          var dsq = document.createElement('script');
+          dsq.type = 'text/javascript';
+          dsq.async = true;
+          dsq.src = "//yqrashawn.disqus.com/embed.js";
+          var disqus_identifier = '2016-10-09-git-tutorial';
+          (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
+          var ldr = document.getElementById('disqus_loader');
+          ldr.parentNode.removeChild(ldr);
+        }
+      </script>
+    </div>
+    <noscript>Please enable JavaScript to view the <a href="//disqus.com/?ref_noscript">Disqus comments.</a></noscript>
+
+    <footer>
+      <p><i><a href="../../../../about">infin</a></i> is authored in <a href="//orgmode.org">Org-mode</a> and generated by <a href="https://github.com/novoid/lazyblorg">lazyblorg</a>
+
+	 	&nbsp;&bull;&nbsp; <a href="//github.com/yqrashawn">Github</a>
+
+	 	&nbsp;&bull;&nbsp; <a href="mailto:namy.19@gmail.com">Mail</a>
+
+	 	&nbsp;&bull;&nbsp; <a href="https://web.archive.org/web/*/yqrashawn.com/2016/10/09/git-tutorial/">Archive</a>
+      </p>
+    </footer>
+
+  </body>
+</html>

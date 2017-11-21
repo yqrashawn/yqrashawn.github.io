@@ -5,22 +5,22 @@
 
   <meta name="author" content="yqrashawn" />
   <meta name="generator" content="lazyblorg" />
-  <meta name="description" content="Thought about company knowledge database" />
-  <meta name="orgmode-id" content="2017-10-28-company-knowledge-database" />
+  <meta name="description" content="Use zsh in emacs" />
+  <meta name="orgmode-id" content="2017-10-31-use-zsh-in-emacs" />
 
   <meta name="twitter:card" content="summary" />
   <meta name="twitter:site" content="@yqrashawn" />
   <meta name="twitter:creator" content="@yqrashawn" />
   <meta name="twitter:title" content="infin" />
-  <meta name="twitter:description" content="Thought about company knowledge database" />
+  <meta name="twitter:description" content="Use zsh in emacs" />
   <meta name="twitter:image" content="//yqrashawn.com/public/img/YQ_logo.png" />
 
   <meta property="og:type" content="article" />
   <meta property="og:title" content="infin" />
-  <meta property="og:description" content="Thought about company knowledge database" />
+  <meta property="og:description" content="Use zsh in emacs" />
   <meta property="og:image" content="//yqrashawn.com/public/img/YQ_logo.png" />
   <meta property="og:site_name" content="infin - Web-page of yqrashawn">
-  <meta property="article:published_time" content="2017-10-28T23:55+08:00" />
+  <meta property="article:published_time" content="2017-11-09T21:55+08:00" />
   <meta property="article:author" content="yqrashawn" />
 
   <link rel="stylesheet" title="infin Standard CSS Style"
@@ -38,7 +38,7 @@
   <!-- WARNING: This page is written in HTML5 and might not be displayed correctly in old browsers. -->
 
       <!-- link rel="stylesheet" type="text/css" href="../../../../style.css" / -->
-      <title>Thought about company knowledge database</title>
+      <title>Use zsh in emacs</title>
 
   </head>  <body>
 
@@ -49,17 +49,18 @@
 	  <nav class="temporal-article-header-nav">
 	    <span class="breadcrumbs">
 	      <a href="../../../../">infin</a><span style="padding-top:1em;">&nbsp;&nbsp;&nbsp;&nbsp;&raquo;
-	      <a href="../../../">2017</a>&nbsp;&ndash;&nbsp;<a href="../../">10</a>&nbsp;&ndash;&nbsp;<a href="../">28</a></span>
+	      <a href="../../../">2017</a>&nbsp;&ndash;&nbsp;<a href="../../">11</a>&nbsp;&ndash;&nbsp;<a href="../">09</a></span>
 	    </span>
 	  </nav>
 	  <aside class="common-tags">
 	    <ul>
-                <li><a class="usertag" href="//yqrashawn.com/tags/thoughts/">thoughts</a></li>
-                <li><a class="usertag" href="//yqrashawn.com/tags/hidden/">hidden</a></li>
+                <li><a class="usertag" href="//yqrashawn.com/tags/shell/">shell</a></li>
+                <li><a class="usertag" href="//yqrashawn.com/tags/zsh/">zsh</a></li>
+                <li><a class="usertag" href="//yqrashawn.com/tags/emacs/">emacs</a></li>
 	    </ul>
 	  </aside>
 
-	  <h1 class="common-article-header-title">Thought about company knowledge database</h1>
+	  <h1 class="common-article-header-title">Use zsh in emacs</h1>
 
 	</header>
 
@@ -115,36 +116,52 @@
 
 <p>
 
-Discussed a lot with my colleague today, mainly about problems we are facing and problems our company are facing. There one specific problem caused the majority of other problems. That's why our friends don't have time to learn new things, or why they won't spend time on improving their skill and knowledge while they do feel they need to.
+I used to use vim with tmux in a terminal emulator. After changing to emacs. It didn't take much time for me to realize that emacs in GUI works better.
 
 </p>
 
 <p>
 
-In a word, they lack something to invoke their interests for the entry of the adventure to more unknown.
+The problem is I still want the old behavior. I tried about three times using my zsh shell in emacs. I'm not here telling those failed attempts. I want to write it down because of a recent discovery.
 
 </p>
 
 <p>
 
-For me, I subscribe blogs using RSS. Those blogs are found through my daily question solving or discussing with other developers in open source communities. So I'm totally into these articles, and they bring me new things every week, new things that I don't know that don't know. That's the most important thing that one needs when is buried in daily routine.
+When I restructure my zsh configurations, I find the z-shell works fine with with zero config. That's when I finally discover that it's the plugins and configurations that make zsh and emacs incompatible. What's more, I find these lines. They must come from some emacs package's readme instruction. The original one is telling zsh don't do something when it's in emacs.
+
+</p>
+
+	  <div class="example_code">
+	  <pre>
+    <code>if [ -n "$INSIDE_EMACS" ]; then
+    ...
+  else
+    ...
+fi    </code>
+	  </pre>
+    </div>
+
+<p>
+
+So I thought, I can just use these line with my zsh configuration(<a href="https://github.com/sorin-ionescu/prezto">prezto</a>). It works fine now after some little test. It turns out the default <a href="https://github.com/zsh-users/zsh-completions">zsh-autocompletion</a> is not playing well with emacs. I use the <code>if...else</code> code telling zsh don't load autosugestion while in emacs. And everything is fine now.
 
 </p>
 
 <p>
 
-So maybe a company knowledge database can solve this problem. A database that everyone can contribute to and everyone can vote for his/her favorites. Thus, I write this down so that I may build one for my company.
+That's it. Maybe I'll dig in for getting autocompletion back in emacs someday.
 
 </p>
 
 
   </article>
 	  <aside class="published-on">
-	    Published on <time datetime="2017-10-28T23:55+08:00">2017-10-28T23:55</time>
+	    Published on <time datetime="2017-11-09T21:55+08:00">2017-11-09T21:55</time>
 	  </aside>
 
    <p class="email-comment">
-      <a href="mailto:namy.19@gmail.com?subject=2017-10-28-company-knowledge-database%20comment:%20&body=Please%20do%20not%20remove%20'2017-10-28-company-knowledge-database%20comment:'%20in%20subject%20and%20please%20tell%20me%20whether%20or%20not%20it%20is%20OK%20to%20add%20your%20comment%20and%2For%20your%20email%20address%20to%20the%20blog%20entry!">Comment via email</a> or via <a href="//disqus.com">Disqus</a> comments below:
+      <a href="mailto:namy.19@gmail.com?subject=2017-10-31-use-zsh-in-emacs%20comment:%20&body=Please%20do%20not%20remove%20'2017-10-31-use-zsh-in-emacs%20comment:'%20in%20subject%20and%20please%20tell%20me%20whether%20or%20not%20it%20is%20OK%20to%20add%20your%20comment%20and%2For%20your%20email%20address%20to%20the%20blog%20entry!">Comment via email</a> or via <a href="//disqus.com">Disqus</a> comments below:
    </p>
 
     <div id="disqus_thread"></div>
@@ -158,7 +175,7 @@ So maybe a company knowledge database can solve this problem. A database that ev
           dsq.type = 'text/javascript';
           dsq.async = true;
           dsq.src = "//yqrashawn.disqus.com/embed.js";
-          var disqus_identifier = '2017-10-28-company-knowledge-database';
+          var disqus_identifier = '2017-10-31-use-zsh-in-emacs';
           (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
           var ldr = document.getElementById('disqus_loader');
           ldr.parentNode.removeChild(ldr);
@@ -174,7 +191,7 @@ So maybe a company knowledge database can solve this problem. A database that ev
 
 	 	&nbsp;&bull;&nbsp; <a href="mailto:namy.19@gmail.com">Mail</a>
 
-	 	&nbsp;&bull;&nbsp; <a href="https://web.archive.org/web/*/yqrashawn.com/2017/10/28/company-knowledge-database/">Archive</a>
+	 	&nbsp;&bull;&nbsp; <a href="https://web.archive.org/web/*/yqrashawn.com/2017/11/09/use-zsh-in-emacs/">Archive</a>
       </p>
     </footer>
 

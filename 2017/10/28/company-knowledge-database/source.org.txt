@@ -1,4 +1,4 @@
-** DONE Thought about company knowledge database              :blog:thoughts:
+** DONE Thought about company knowledge database      :blog:thoughts:hidden:
 CLOSED: [2017-10-28 Sat 23:55]
 :PROPERTIES:
 :ID:       2017-10-28-company-knowledge-database
@@ -20,9 +20,11 @@ adventure to more unknown.
 
 For me, I subscribe blogs using RSS. Those blogs are found through my daily
 question solving or discussing with other developers in open source communities.
-So I'm totally into these articles and they bring me new things every week, new
+So I'm totally into these articles, and they bring me new things every week, new
 things that I don't know that don't know. That's the most important thing that
 one needs when is buried in daily routine.
 
 So maybe a company knowledge database can solve this problem. A database that
 everyone can contribute to and everyone can vote for his/her favorites.
+Thus, I write this down so that I may build one for my company.
+
