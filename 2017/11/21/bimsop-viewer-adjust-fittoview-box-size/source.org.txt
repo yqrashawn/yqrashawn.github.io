@@ -1,0 +1,20 @@
+CLOSED: [2017-11-21 Tue 22:01]
+:PROPERTIES:
+:CREATED:  <2017-11-21 Tue 22:01>
+:ID:       2017-11-21-bimsop-viewer-adjust-fittoview-box-size
+:END:
+:LOGBOOK:
+- State "DONE"       from "TODO"       [2017-11-21 Tue 22:01]
+:END:
+
+viewer 的 ~fitToView~ 功能默认可以将视图缩放至 *刚好* 包含未被隐藏的图元, 但是某些需求可能需要
+调整这一效果, 比如需要多出一些空白的空间让用户能够更舒适的浏览.
+
+~Bimsop.Viewing.Navigation.FIT_TO_VIEW_BOUNDS_SCALE~ 一值可以控制fitToView时未隐藏
+部分的包围盒大小, 该值为1时为默认大小, 即 *刚好* 包含未隐藏图元, 该值越大, 则包围盒越大, 屏幕四周
+给出的空白区域越大.
+
+给定值需在(0,+∞)之间. 设为0时不起作用. 更改后在下次调用fitToView时生效, 随时可以改动. 示例:
+#+BEGIN_SRC javascript
+Bimsop.Viewing.Navigation.FIT_TO_VIEW_BOUNDS_SCALE = 1.5
+#+END_SRC

@@ -5,22 +5,22 @@
 
   <meta name="author" content="yqrashawn" />
   <meta name="generator" content="lazyblorg" />
-  <meta name="description" content="Thought about company knowledge database" />
-  <meta name="orgmode-id" content="2017-10-28-company-knowledge-database" />
+  <meta name="description" content="bimsop viewer 修改fitToView缩放距离" />
+  <meta name="orgmode-id" content="2017-11-21-bimsop-viewer-adjust-fittoview-box-size" />
 
   <meta name="twitter:card" content="summary" />
   <meta name="twitter:site" content="@yqrashawn" />
   <meta name="twitter:creator" content="@yqrashawn" />
   <meta name="twitter:title" content="infin" />
-  <meta name="twitter:description" content="Thought about company knowledge database" />
+  <meta name="twitter:description" content="bimsop viewer 修改fitToView缩放距离" />
   <meta name="twitter:image" content="//yqrashawn.com/public/img/YQ_logo.png" />
 
   <meta property="og:type" content="article" />
   <meta property="og:title" content="infin" />
-  <meta property="og:description" content="Thought about company knowledge database" />
+  <meta property="og:description" content="bimsop viewer 修改fitToView缩放距离" />
   <meta property="og:image" content="//yqrashawn.com/public/img/YQ_logo.png" />
   <meta property="og:site_name" content="infin - Web-page of yqrashawn">
-  <meta property="article:published_time" content="2017-10-28T23:55+08:00" />
+  <meta property="article:published_time" content="2017-11-21T22:01+08:00" />
   <meta property="article:author" content="yqrashawn" />
 
   <link rel="stylesheet" title="infin Standard CSS Style"
@@ -38,7 +38,7 @@
   <!-- WARNING: This page is written in HTML5 and might not be displayed correctly in old browsers. -->
 
       <!-- link rel="stylesheet" type="text/css" href="../../../../style.css" / -->
-      <title>Thought about company knowledge database</title>
+      <title>bimsop viewer 修改fitToView缩放距离</title>
 
   </head>  <body>
 
@@ -49,17 +49,20 @@
 	  <nav class="temporal-article-header-nav">
 	    <span class="breadcrumbs">
 	      <a href="../../../../">infin</a><span style="padding-top:1em;">&nbsp;&nbsp;&nbsp;&nbsp;&raquo;
-	      <a href="../../../">2017</a>&nbsp;&ndash;&nbsp;<a href="../../">10</a>&nbsp;&ndash;&nbsp;<a href="../">28</a></span>
+	      <a href="../../../">2017</a>&nbsp;&ndash;&nbsp;<a href="../../">11</a>&nbsp;&ndash;&nbsp;<a href="../">21</a></span>
 	    </span>
 	  </nav>
 	  <aside class="common-tags">
 	    <ul>
-                <li><a class="usertag" href="//yqrashawn.com/tags/thoughts/">thoughts</a></li>
+                <li><a class="usertag" href="//yqrashawn.com/tags/api/">api</a></li>
                 <li><a class="usertag" href="//yqrashawn.com/tags/hidden/">hidden</a></li>
+                <li><a class="usertag" href="//yqrashawn.com/tags/chinese/">chinese</a></li>
+                <li><a class="usertag" href="//yqrashawn.com/tags/documentation/">documentation</a></li>
+                <li><a class="usertag" href="//yqrashawn.com/tags/company/">company</a></li>
 	    </ul>
 	  </aside>
 
-	  <h1 class="common-article-header-title">Thought about company knowledge database</h1>
+	  <h1 class="common-article-header-title">bimsop viewer 修改fitToView缩放距离</h1>
 
 	</header>
 
@@ -115,36 +118,36 @@
 
 <p>
 
-Discussed a lot with my colleague today, mainly about problems we are facing and problems our company are facing. There one specific problem caused the majority of other problems. That's why our friends don't have time to learn new things, or why they won't spend time on improving their skill and knowledge while they do feel they need to.
+viewer 的 <code>fitToView</code> 功能默认可以将视图缩放至 <b>刚好</b> 包含未被隐藏的图元, 但是某些需求可能需要 调整这一效果, 比如需要多出一些空白的空间让用户能够更舒适的浏览.
 
 </p>
 
 <p>
 
-In a word, they lack something to invoke their interests for the entry of the adventure to more unknown.
+<code>Bimsop.Viewing.Navigation.FIT_TO_VIEW_BOUNDS_SCALE</code> 一值可以控制fitToView时未隐藏 部分的包围盒大小, 该值为1时为默认大小, 即 <b>刚好</b> 包含未隐藏图元, 该值越大, 则包围盒越大, 屏幕四周 给出的空白区域越大.
 
 </p>
 
 <p>
 
-For me, I subscribe blogs using RSS. Those blogs are found through my daily question solving or discussing with other developers in open source communities. So I'm totally into these articles, and they bring me new things every week, new things that I don't know that don't know. That's the most important thing that one needs when is buried in daily routine.
+给定值需在(0,+∞)之间. 设为0时不起作用. 更改后在下次调用fitToView时生效, 随时可以改动. 示例:
 
 </p>
 
-<p>
-
-So maybe a company knowledge database can solve this problem. A database that everyone can contribute to and everyone can vote for his/her favorites. Thus, I write this down so that I may build one for my company.
-
-</p>
+	  <div class="example_code">
+	  <pre>
+    <code>Bimsop.Viewing.Navigation.FIT_TO_VIEW_BOUNDS_SCALE = 1.5    </code>
+	  </pre>
+    </div>
 
 
   </article>
 	  <aside class="published-on">
-	    Published on <time datetime="2017-10-28T23:55+08:00">2017-10-28T23:55</time>
+	    Published on <time datetime="2017-11-21T22:01+08:00">2017-11-21T22:01</time>
 	  </aside>
 
    <p class="email-comment">
-      <a href="mailto:namy.19@gmail.com?subject=2017-10-28-company-knowledge-database%20comment:%20&body=Please%20do%20not%20remove%20'2017-10-28-company-knowledge-database%20comment:'%20in%20subject%20and%20please%20tell%20me%20whether%20or%20not%20it%20is%20OK%20to%20add%20your%20comment%20and%2For%20your%20email%20address%20to%20the%20blog%20entry!">Comment via email</a> or via <a href="//disqus.com">Disqus</a> comments below:
+      <a href="mailto:namy.19@gmail.com?subject=2017-11-21-bimsop-viewer-adjust-fittoview-box-size%20comment:%20&body=Please%20do%20not%20remove%20'2017-11-21-bimsop-viewer-adjust-fittoview-box-size%20comment:'%20in%20subject%20and%20please%20tell%20me%20whether%20or%20not%20it%20is%20OK%20to%20add%20your%20comment%20and%2For%20your%20email%20address%20to%20the%20blog%20entry!">Comment via email</a> or via <a href="//disqus.com">Disqus</a> comments below:
    </p>
 
     <div id="disqus_thread"></div>
@@ -158,7 +161,7 @@ So maybe a company knowledge database can solve this problem. A database that ev
           dsq.type = 'text/javascript';
           dsq.async = true;
           dsq.src = "//yqrashawn.disqus.com/embed.js";
-          var disqus_identifier = '2017-10-28-company-knowledge-database';
+          var disqus_identifier = '2017-11-21-bimsop-viewer-adjust-fittoview-box-size';
           (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
           var ldr = document.getElementById('disqus_loader');
           ldr.parentNode.removeChild(ldr);
@@ -174,7 +177,7 @@ So maybe a company knowledge database can solve this problem. A database that ev
 
 	 	&nbsp;&bull;&nbsp; <a href="mailto:namy.19@gmail.com">Mail</a>
 
-	 	&nbsp;&bull;&nbsp; <a href="https://web.archive.org/web/*/yqrashawn.com/2017/10/28/company-knowledge-database/">Archive</a>
+	 	&nbsp;&bull;&nbsp; <a href="https://web.archive.org/web/*/yqrashawn.com/2017/11/21/bimsop-viewer-adjust-fittoview-box-size/">Archive</a>
       </p>
     </footer>
 
