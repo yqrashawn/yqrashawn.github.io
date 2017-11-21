@@ -7,13 +7,142 @@
   <id>http://yqrashawn.com/</id>
   <link href="http://yqrashawn.com" />
   <icon>/favicon.ico</icon>
-  <updated>2017-11-21T21:13:54+08:00</updated>
+  <updated>2017-11-21T21:48:35+08:00</updated>
   <author>
     <name>yqrashawn</name>
   </author>
   <subtitle type="text">infin</subtitle>
   <rights>All content written by yqrashawn</rights>
   <generator uri='https://github.com/novoid/lazyblorg'>Generated from Org-mode source code using lazyblorg which is written in Python. Industrial-strength technology, baby.</generator>
+<!-- ############################################################################################# -->
+<entry>
+    <title type="text">bimsop viewer 修改被隐藏(isolate)图元透明度</title>
+    <link href='http://yqrashawn.com/2017/11/21/bimsop-viewer-adjust-opacity' />
+    <published>2017-11-21T21:41:00+08:00</published>
+    <updated>2017-11-21T21:47:00+08:00</updated>
+    <category scheme='http://yqrashawn.com/tags/chinese' term='chinese' />
+    <category scheme='http://yqrashawn.com/tags/documentation' term='documentation' />
+    <category scheme='http://yqrashawn.com/tags/tutorial' term='tutorial' />
+    <category scheme='http://yqrashawn.com/tags/company' term='company' />
+    <summary type='xhtml'>
+<div xmlns='http://www.w3.org/1999/xhtml'>
+<p>
+
+viewer 可以在其设置中让被隐藏的节点半透明显示而不是完全隐藏, 半透明的透明度可以通过API调节.
+
+</p>
+
+
+<p>
+
+半透明效果(Ghosting)可以通过已有方法切换两种预设的颜色值.
+
+</p>
+
+
+	  <div class="example_code">
+	  <pre>
+    <code>viewer.impl.setGhostingBrightness(true); // 使用深色半透明
+viewer.impl.setGhostingBrightness(false); // 使用浅色半透明    </code>
+	  </pre>
+    </div>
+
+
+<figure class="image-center">
+<img src="http://yqrashawn.com/2017/11/21/bimsop-viewer-adjust-opacity/http://yqrashawn.com/2017/11/21/bimsop-viewer-adjust-opacity/2017-11-21_bimsop-viewer-ghosting-bright%20-%20scaled%20width%20200.png" alt="" width="200" />
+<figcaption>亮色ghosting效果</figcaption>
+</figure>
+
+
+<figure class="image-center">
+<img src="http://yqrashawn.com/2017/11/21/bimsop-viewer-adjust-opacity/http://yqrashawn.com/2017/11/21/bimsop-viewer-adjust-opacity/2017-11-21_bimsop-viewer-ghosting-dark%20-%20scaled%20width%20200.png" alt="" width="200" />
+<figcaption>暗色ghosting效果</figcaption>
+</figure>
+
+
+<p>
+
+也可以通过修改ghosting材质或材质颜色直接修改ghosting效果.
+
+</p>
+
+
+	  <div class="example_code">
+	  <pre>
+    <code>viewer.impl.fadeMaterial.color = new THREE.Color(0x999999); // 设置材质颜色
+viewer.impl.fadeMaterial.needsUpdate = true; // 修改材质后需要设置其needsUpdate为true    </code>
+	  </pre>
+    </div>
+
+
+<p>
+
+更多关于材质信息可参考threejs官网<a href="https://threejs.org/docs/index.html#api/materials/Material">文档</a>和<a href="https://threejs.org/examples/?q=material#webgl_materials">示例</a>.
+
+</p>
+</div>
+    </summary>    <content type='xhtml'>
+      <div xmlns='http://www.w3.org/1999/xhtml'>
+	
+<p>
+
+viewer 可以在其设置中让被隐藏的节点半透明显示而不是完全隐藏, 半透明的透明度可以通过API调节.
+
+</p>
+
+
+<p>
+
+半透明效果(Ghosting)可以通过已有方法切换两种预设的颜色值.
+
+</p>
+
+
+	  <div class="example_code">
+	  <pre>
+    <code>viewer.impl.setGhostingBrightness(true); // 使用深色半透明
+viewer.impl.setGhostingBrightness(false); // 使用浅色半透明    </code>
+	  </pre>
+    </div>
+
+
+<figure class="image-center">
+<img src="http://yqrashawn.com/2017/11/21/bimsop-viewer-adjust-opacity/http://yqrashawn.com/2017/11/21/bimsop-viewer-adjust-opacity/2017-11-21_bimsop-viewer-ghosting-bright%20-%20scaled%20width%20200.png" alt="" width="200" />
+<figcaption>亮色ghosting效果</figcaption>
+</figure>
+
+
+<figure class="image-center">
+<img src="http://yqrashawn.com/2017/11/21/bimsop-viewer-adjust-opacity/http://yqrashawn.com/2017/11/21/bimsop-viewer-adjust-opacity/2017-11-21_bimsop-viewer-ghosting-dark%20-%20scaled%20width%20200.png" alt="" width="200" />
+<figcaption>暗色ghosting效果</figcaption>
+</figure>
+
+
+<p>
+
+也可以通过修改ghosting材质或材质颜色直接修改ghosting效果.
+
+</p>
+
+
+	  <div class="example_code">
+	  <pre>
+    <code>viewer.impl.fadeMaterial.color = new THREE.Color(0x999999); // 设置材质颜色
+viewer.impl.fadeMaterial.needsUpdate = true; // 修改材质后需要设置其needsUpdate为true    </code>
+	  </pre>
+    </div>
+
+
+<p>
+
+更多关于材质信息可参考threejs官网<a href="https://threejs.org/docs/index.html#api/materials/Material">文档</a>和<a href="https://threejs.org/examples/?q=material#webgl_materials">示例</a>.
+
+</p>
+
+      </div>
+    </content>
+    <id>http://yqrashawn.com/2017/11/21/bimsop-viewer-adjust-opacity-from-feed-with-content</id>
+</entry>
 <!-- ############################################################################################# -->
 <entry>
     <title type="text">Use zsh in emacs</title>
