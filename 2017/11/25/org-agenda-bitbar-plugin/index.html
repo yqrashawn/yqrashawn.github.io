@@ -202,6 +202,21 @@ agenda_custome_command = 'B'    </code>
 
 <p>
 
+The problem of using <code>--batch</code> is to <a href="https://emacs.stackexchange.com/questions/5451/how-do-i-force-kill-emacs/5456">really kill emacs</a>.
+
+</p>
+
+	  <div class="example_code">
+	  <pre>
+    <code># function to REALLY kill emacs
+# for spacemacs user use (spacemacs/kill-emacs)
+# kill_emacs_function = '(spacemacs/kill-emacs)'
+kill_emacs_function = '(let (kill-emacs-hook) (kill-emacs))'    </code>
+	  </pre>
+    </div>
+
+<p>
+
 You can also change colors of filter line and lines with priority.
 
 </p>

@@ -7,7 +7,7 @@
   <id>http://yqrashawn.com/</id>
   <link href="http://yqrashawn.com" />
   <icon>/favicon.ico</icon>
-  <updated>2017-11-25T21:45:27+08:00</updated>
+  <updated>2017-11-25T22:12:01+08:00</updated>
   <author>
     <name>yqrashawn</name>
   </author>
@@ -139,6 +139,23 @@ And also the agenda custom command key, you may in your configuration file, you 
 	  <pre>
     <code># the agenda custome command which brings the agenda view that you want to export
 agenda_custome_command = 'B'    </code>
+	  </pre>
+    </div>
+
+
+<p>
+
+The problem of using <code>--batch</code> is to <a href="https://emacs.stackexchange.com/questions/5451/how-do-i-force-kill-emacs/5456">really kill emacs</a>.
+
+</p>
+
+
+	  <div class="example_code">
+	  <pre>
+    <code># function to REALLY kill emacs
+# for spacemacs user use (spacemacs/kill-emacs)
+# kill_emacs_function = '(spacemacs/kill-emacs)'
+kill_emacs_function = '(let (kill-emacs-hook) (kill-emacs))'    </code>
 	  </pre>
     </div>
 
