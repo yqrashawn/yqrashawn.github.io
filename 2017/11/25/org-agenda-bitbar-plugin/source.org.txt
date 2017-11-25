@@ -54,6 +54,14 @@ agenda_directory = "#{Dir.home}/agendas/work/"
 agenda_name = 'todos.txt'
 #+END_SRC
 
+And also the agenda custom command key, you may in your configuration file, you
+can find your setting using ~(describe-variable 'org-agenda-custom-commands)~.
+
+#+BEGIN_SRC ruby
+# the agenda custome command which brings the agenda view that you want to export
+agenda_custome_command = 'B'
+#+END_SRC
+
 You can also change colors of filter line and lines with priority.
 
 #+BEGIN_SRC ruby

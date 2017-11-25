@@ -7,7 +7,7 @@
   <id>http://yqrashawn.com/</id>
   <link href="http://yqrashawn.com" />
   <icon>/favicon.ico</icon>
-  <updated>2017-11-25T18:07:56+08:00</updated>
+  <updated>2017-11-25T21:45:27+08:00</updated>
   <author>
     <name>yqrashawn</name>
   </author>
@@ -124,6 +124,21 @@ For using this plugin. You need to specify <code>agenda_directory</code> ~agenda
     <code># Change to your todo directory path
 agenda_directory = "#{Dir.home}/agendas/work/"
 agenda_name = 'todos.txt'    </code>
+	  </pre>
+    </div>
+
+
+<p>
+
+And also the agenda custom command key, you may in your configuration file, you can find your setting using <code>(describe-variable 'org-agenda-custom-commands)</code>.
+
+</p>
+
+
+	  <div class="example_code">
+	  <pre>
+    <code># the agenda custome command which brings the agenda view that you want to export
+agenda_custome_command = 'B'    </code>
 	  </pre>
     </div>
 
