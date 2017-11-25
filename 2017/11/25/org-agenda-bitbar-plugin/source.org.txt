@@ -77,11 +77,11 @@ tag_indicator = 'Headlines with TAGS match: '
 
 *** limitation
 
-Current version don't support ~agenda-view~ when you add, say
+Current version don't support ~agenda-view~ when you add, say you add the below
+code in the chosen ~org-agenda-custom-commands~.
 
 #+BEGIN_SRC lisp
 (agenda ((org-agenda-ndays 7)))
 #+END_SRC
 
-in ~org-agenda-custom-commands~.
 
