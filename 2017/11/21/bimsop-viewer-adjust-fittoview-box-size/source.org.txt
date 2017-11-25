@@ -18,3 +18,6 @@ viewer 的 ~fitToView~ 功能默认可以将视图缩放至 *刚好* 包含未�
 #+BEGIN_SRC javascript
 Bimsop.Viewing.Navigation.FIT_TO_VIEW_BOUNDS_SCALE = 1.5
 #+END_SRC
+
+# Local Variables:
+# eval: (add-hook 'org-insert-heading-hook 'sr-org-id-insert-maybe)
