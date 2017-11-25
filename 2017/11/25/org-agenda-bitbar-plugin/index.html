@@ -5,22 +5,22 @@
 
   <meta name="author" content="yqrashawn" />
   <meta name="generator" content="lazyblorg" />
-  <meta name="description" content="Halt and Catch Fire" />
-  <meta name="orgmode-id" content="2017-10-22-after-watching-halt-and-catch-fire" />
+  <meta name="description" content="org-agenda bitbar plugin" />
+  <meta name="orgmode-id" content="2017-11-25-org-agenda-bitbar-plugin" />
 
   <meta name="twitter:card" content="summary" />
   <meta name="twitter:site" content="@yqrashawn" />
   <meta name="twitter:creator" content="@yqrashawn" />
   <meta name="twitter:title" content="infin" />
-  <meta name="twitter:description" content="Halt and Catch Fire" />
+  <meta name="twitter:description" content="org-agenda bitbar plugin" />
   <meta name="twitter:image" content="//yqrashawn.com/public/img/YQ_logo.png" />
 
   <meta property="og:type" content="article" />
   <meta property="og:title" content="infin" />
-  <meta property="og:description" content="Halt and Catch Fire" />
+  <meta property="og:description" content="org-agenda bitbar plugin" />
   <meta property="og:image" content="//yqrashawn.com/public/img/YQ_logo.png" />
   <meta property="og:site_name" content="infin - Web-page of yqrashawn">
-  <meta property="article:published_time" content="2017-10-22T08:51+08:00" />
+  <meta property="article:published_time" content="2017-11-25T11:57+08:00" />
   <meta property="article:author" content="yqrashawn" />
 
   <link rel="stylesheet" title="infin Standard CSS Style"
@@ -38,7 +38,7 @@
   <!-- WARNING: This page is written in HTML5 and might not be displayed correctly in old browsers. -->
 
       <!-- link rel="stylesheet" type="text/css" href="../../../../style.css" / -->
-      <title>Halt and Catch Fire</title>
+      <title>org-agenda bitbar plugin</title>
 
   </head>  <body>
 
@@ -49,16 +49,19 @@
 	  <nav class="temporal-article-header-nav">
 	    <span class="breadcrumbs">
 	      <a href="../../../../">infin</a><span style="padding-top:1em;">&nbsp;&nbsp;&nbsp;&nbsp;&raquo;
-	      <a href="../../../">2017</a>&nbsp;&ndash;&nbsp;<a href="../../">10</a>&nbsp;&ndash;&nbsp;<a href="../">22</a></span>
+	      <a href="../../../">2017</a>&nbsp;&ndash;&nbsp;<a href="../../">11</a>&nbsp;&ndash;&nbsp;<a href="../">25</a></span>
 	    </span>
 	  </nav>
 	  <aside class="common-tags">
 	    <ul>
-                <li><a class="usertag" href="//yqrashawn.com/tags/watching/">watching</a></li>
+                <li><a class="usertag" href="//yqrashawn.com/tags/ruby/">ruby</a></li>
+                <li><a class="usertag" href="//yqrashawn.com/tags/agenda/">agenda</a></li>
+                <li><a class="usertag" href="//yqrashawn.com/tags/org/">org</a></li>
+                <li><a class="usertag" href="//yqrashawn.com/tags/emacs/">emacs</a></li>
 	    </ul>
 	  </aside>
 
-	  <h1 class="common-article-header-title">Halt and Catch Fire</h1>
+	  <h1 class="common-article-header-title">org-agenda bitbar plugin</h1>
 
 	</header>
 
@@ -114,30 +117,136 @@
 
 <p>
 
-Just finish the Halt and Catch Fire, really great show. It makes me think about that everyone is full of story in their life, amazing to others but definitely not to themselves, like Joe in the series.
+<a href="https://github.com/matryer/bitbar">Bitbar</a> is a macos application that can add custom menu bar buttons. I'm recently learning managing projects with org-mode. And we all know that org-agenda is great.
 
 </p>
 
 <p>
 
-It's just that I think Joe is "right" in some way. The right is some kind of his every decision of fresh start, it's so decisive. It makes the character fear nothing. He desires success so much but go through his failer and go for the fresh start so quick. But on the other hand, he is so emotional, about his failer, about Gordon's die.
+So I write a bitbar plugin, <a href="https://github.com/yqrashawn/bitbar-plugin-agenda">agenda</a> to display some of my agenda in menu bar.
+
+</p>
+<div class="orgmode-hr" ></div>
+	  <header><h2 class="section-title">feature</h2></header>
+
+<p>
+
+It can display your chosen org-agenda-custom-commands in menu bar. Support customize color for priority. Support different color for filter. Make item with links clickable(only support http/https url).
 
 </p>
 
 <p>
 
-These characters normally can't be on the same person. Maybe that's why it makes me think Joe is "right".
+Like this.
+
+</p>
+
+<figure class="image-center">
+<img src="2017-11-25_bitbar-ext-org-agenda%20-%20scaled%20width%20500.png" alt="bitbar agenda plugin image" width="500" />
+<figcaption>bitbar-agenda-image</figcaption>
+</figure>
+
+	  <header><h2 class="section-title">usage</h2></header>
+
+<p>
+
+User need to specify the command to export the agenda-view to txt file.
+
+</p>
+
+<p>
+
+I'm using emacs <a href="https://www.emacswiki.org/emacs/BatchMode">--batch</a> feature to generate the txt file silently. There may better way for doing this, like <code>org-batch-agenda</code> (<a href="http://orgmode.org/manual/Extracting-agenda-information.html">check out here</a>). But when my emacs configuration piles up, there's lots of initializing message which makes it hard to extract the agenda-view data. So I just use the <code>org-agenda-write</code> command to write agenda-view to disk.
+
+</p>
+
+	  <div class="example_code">
+	  <pre>
+    <code>emacs --batch -l ~/.emacs.d/init.el --eval "(run-hooks 'emacs-startup-hook)" \
+      --eval '(progn (org-agenda nil "r") (org-agenda-write "~/agendas/work/todos.txt") (spacemacs/kill-emacs))'    </code>
+	  </pre>
+    </div>
+
+<p>
+
+Note: for <a href="https://github.com/syl20bnr/spacemacs">spacemacs</a> user, you need to add <code>(run-hooks 'emacs-startup-hook)</code> to let emacs read your  <code>dotspacemacs/user-config</code> (<a href="https://github.com/syl20bnr/spacemacs/issues/4504">issue#4504</a>).
+
+</p>
+
+<p>
+
+For using this plugin. You need to specify <code>agenda_directory</code> ~agenda_file_name~.
+
+</p>
+
+	  <div class="example_code">
+	  <pre>
+    <code># Change to your todo directory path
+agenda_directory = "#{Dir.home}/agendas/work/"
+agenda_name = 'todos.txt'    </code>
+	  </pre>
+    </div>
+
+<p>
+
+You can also change colors of filter line and lines with priority.
+
+</p>
+
+	  <div class="example_code">
+	  <pre>
+    <code># Change priority color here
+tag_color = 'orange'
+
+# Customise label color-code here (these colors are optimised for a dark theme menubar)
+labels = {
+  '[#A]' =&gt; 'red',
+  '[#B]' =&gt; 'yellow',
+  '[#C]' =&gt; 'violet'
+}    </code>
+	  </pre>
+    </div>
+
+<p>
+
+If you use pacakges that will change filters' format in agenda view, you need to specify  <code>tag_indicator</code> .
+
+</p>
+
+	  <div class="example_code">
+	  <pre>
+    <code>tag_indicator = 'Headlines with TAGS match: '    </code>
+	  </pre>
+    </div>
+
+	  <header><h2 class="section-title">limitation</h2></header>
+
+<p>
+
+Current version don't support <code>agenda-view</code> when you add, say
+
+</p>
+
+	  <div class="example_code">
+	  <pre>
+    <code>(agenda ((org-agenda-ndays 7)))    </code>
+	  </pre>
+    </div>
+
+<p>
+
+in <code>org-agenda-custom-commands</code>.
 
 </p>
 
 
   </article>
 	  <aside class="published-on">
-	    Published on <time datetime="2017-10-22T08:51+08:00">2017-10-22T08:51</time>
+	    Published on <time datetime="2017-11-25T11:57+08:00">2017-11-25T11:57</time>
 	  </aside>
 
    <p class="email-comment">
-      <a href="mailto:namy.19@gmail.com?subject=2017-10-22-after-watching-halt-and-catch-fire%20comment:%20&body=Please%20do%20not%20remove%20'2017-10-22-after-watching-halt-and-catch-fire%20comment:'%20in%20subject%20and%20please%20tell%20me%20whether%20or%20not%20it%20is%20OK%20to%20add%20your%20comment%20and%2For%20your%20email%20address%20to%20the%20blog%20entry!">Comment via email</a> or via <a href="//disqus.com">Disqus</a> comments below:
+      <a href="mailto:namy.19@gmail.com?subject=2017-11-25-org-agenda-bitbar-plugin%20comment:%20&body=Please%20do%20not%20remove%20'2017-11-25-org-agenda-bitbar-plugin%20comment:'%20in%20subject%20and%20please%20tell%20me%20whether%20or%20not%20it%20is%20OK%20to%20add%20your%20comment%20and%2For%20your%20email%20address%20to%20the%20blog%20entry!">Comment via email</a> or via <a href="//disqus.com">Disqus</a> comments below:
    </p>
 
     <div id="disqus_thread"></div>
@@ -151,7 +260,7 @@ These characters normally can't be on the same person. Maybe that's why it makes
           dsq.type = 'text/javascript';
           dsq.async = true;
           dsq.src = "//yqrashawn.disqus.com/embed.js";
-          var disqus_identifier = '2017-10-22-after-watching-halt-and-catch-fire';
+          var disqus_identifier = '2017-11-25-org-agenda-bitbar-plugin';
           (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
           var ldr = document.getElementById('disqus_loader');
           ldr.parentNode.removeChild(ldr);
@@ -167,7 +276,7 @@ These characters normally can't be on the same person. Maybe that's why it makes
 
 	 	&nbsp;&bull;&nbsp; <a href="mailto:namy.19@gmail.com">Mail</a>
 
-	 	&nbsp;&bull;&nbsp; <a href="https://web.archive.org/web/*/yqrashawn.com/2017/10/22/after-watching-halt-and-catch-fire/">Archive</a>
+	 	&nbsp;&bull;&nbsp; <a href="https://web.archive.org/web/*/yqrashawn.com/2017/11/25/org-agenda-bitbar-plugin/">Archive</a>
       </p>
     </footer>
 

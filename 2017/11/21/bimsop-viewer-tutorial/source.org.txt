@@ -1,0 +1,21 @@
+** DONE bimsop viewer 使用指南            :hidden:chinese:work:company:blog:
+CLOSED: [2017-11-21 Tue 21:05]
+:PROPERTIES:
+:ID:       2017-11-21-bimsop-viewer-tutorial
+:CREATED:  <2017-11-21 Tue 21:04>
+:END:
+:LOGBOOK:
+- State "DONE"       from "TODO"       [2017-11-21 Tue 21:05]
+:END:
+
+公司 Bimsop Viewer 使用指南
+
+-------
+*** 公司 Bimsop Viewer 使用指南
+[[http://yqrashawn.com/2017/11/20/bimsop-viewer-toolbar-introduction/][工具栏(toolbar)介绍]]
+
+**** for developer specific 开发人员查看(API相关)
+[[http://yqrashawn.com/2017/11/21/bimsop-viewer-adjust-opacity/][调整半透明(ghosting)图元透明度]]
+
+[[http://yqrashawn.com/2017/11/21/bimsop-viewer-adjust-fittoview-box-size/][修改fitToView缩放距离]]
+
