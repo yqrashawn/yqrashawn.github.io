@@ -7,11 +7,7 @@
   <id>http://yqrashawn.com/</id>
   <link href="http://yqrashawn.com" />
   <icon>/favicon.ico</icon>
-<<<<<<< HEAD
-  <updated>2017-11-27T20:59:04+08:00</updated>
-=======
-  <updated>2017-11-25T22:12:01+08:00</updated>
->>>>>>> bd7f20680782684c1c96dc6f5086d9ad17dbe244
+  <updated>2017-11-27T20:59:54+08:00</updated>
   <author>
     <name>yqrashawn</name>
   </author>
@@ -23,11 +19,7 @@
     <title type="text">org-agenda bitbar plugin</title>
     <link href='http://yqrashawn.com/2017/11/25/org-agenda-bitbar-plugin' />
     <published>2017-11-25T11:57:00+08:00</published>
-<<<<<<< HEAD
     <updated>2017-11-25T22:12:00+08:00</updated>
-=======
-    <updated>2017-11-25T17:08:00+08:00</updated>
->>>>>>> bd7f20680782684c1c96dc6f5086d9ad17dbe244
     <category scheme='http://yqrashawn.com/tags/ruby' term='ruby' />
     <category scheme='http://yqrashawn.com/tags/agenda' term='agenda' />
     <category scheme='http://yqrashawn.com/tags/org' term='org' />

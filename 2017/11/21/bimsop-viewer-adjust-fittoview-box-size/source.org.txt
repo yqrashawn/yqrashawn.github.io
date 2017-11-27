@@ -21,8 +21,5 @@ Bimsop.Viewing.Navigation.FIT_TO_VIEW_BOUNDS_SCALE = 1.5
 
 # Local Variables:
 # eval: (add-hook 'org-insert-heading-hook 'sr-org-id-insert-maybe)
-<<<<<<< HEAD
 # End:
 
-=======
->>>>>>> bd7f20680782684c1c96dc6f5086d9ad17dbe244

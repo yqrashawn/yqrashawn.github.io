@@ -5,10 +5,7 @@ CLOSED: [2017-11-25 Sat 17:08]
 :CREATED:  <2017-11-25 Sat 11:57>
 :END:
 :LOGBOOK:
-<<<<<<< HEAD
 - State "DONE"       from "DONE"       [2017-11-25 Sat 22:12]
-=======
->>>>>>> bd7f20680782684c1c96dc6f5086d9ad17dbe244
 - State "DONE"       from "TODO"       [2017-11-25 Sat 17:08]
 - State "TODO"       from "DONE"       [2017-11-25 Sat 11:57]
 - State "DONE"       from              [2017-11-25 Sat 11:57]
