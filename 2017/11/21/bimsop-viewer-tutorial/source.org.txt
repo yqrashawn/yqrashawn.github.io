@@ -19,3 +19,7 @@ CLOSED: [2017-11-21 Tue 21:05]
 
 [[http://yqrashawn.com/2017/11/21/bimsop-viewer-adjust-fittoview-box-size/][修改fitToView缩放距离]]
 
+[[http://yqrashawn.com/build/blog/2017/11/27/bimsop-viewer-keywords/][viewer中的一下关键词]]
+
+[[http://yqrashawn.com/build/blog/2017/11/27/bimsop-viewer-multi-model/][多模型API]]
+

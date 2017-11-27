@@ -1,4 +1,3 @@
-** DONE bimsop viewer 中一些常用的量, 持续更新 :api:hidden:chinese:documentation:company:blog:
 CLOSED: [2017-11-27 Mon 20:53]
 :PROPERTIES:
 :ID:       2017-11-27-bimsop-viewer-keywords
@@ -38,5 +37,22 @@ CLOSED: [2017-11-27 Mon 20:53]
 - dbId viewer 运行时 模型中node的唯一标识, 可能每次加载都不相同(模型更新后可能会改变)
 - externalId 模型中node对应revit中构件的唯一id
 
-注意: 不只是node有 ~dbId~ 和 ~externalId~, 模型中一类node也有它们的 ~dbId~ 和
+*注意*: 不只是node有 ~dbId~ 和 ~externalId~, 模型中一类node也有它们的 ~dbId~ 和
 ~externalId~, 不同的是, 两个模型中, 同样是 /基础墙/ 这一类别, 两个模型对应该类别的
+dbId可能不同, 但 ~externalId~ 一定是相同的.
+
+- dbId externalId 转换
+  两者可以通过模型的 ~InstanceTree~ 转换.
+
+#+BEGIN_SRC javascript
+const modelId = 0;
+const dbId = 5;
+const model = viewer.getModelById(0);
+const externalId = model.myData.instanceTree.gBimExternalIdFromDbId(dbId);
+#+END_SRC
+
+#+BEGIN_SRC javascript
+const modelId = 0;
+const externalId = -200010;
+const model = viewer.getModelById(0);
+const dbId = model.myData.instanceTree.gBimExternalIdFromDbId(externalId);

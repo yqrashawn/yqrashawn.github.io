@@ -160,9 +160,30 @@
 
 <p>
 
-注意: 不只是node有 <code>dbId</code> 和 <code>externalId</code>, 模型中一类node也有它们的 <code>dbId</code> 和 <code>externalId</code>, 不同的是, 两个模型中, 同样是 /基础墙/ 这一类别, 两个模型对应该类别的 dbId可能不同, 但 <code>externalId</code> 一定是相同的.
+<b>注意</b>: 不只是node有 <code>dbId</code> 和 <code>externalId</code>, 模型中一类node也有它们的 <code>dbId</code> 和 <code>externalId</code>, 不同的是, 两个模型中, 同样是 /基础墙/ 这一类别, 两个模型对应该类别的 dbId可能不同, 但 <code>externalId</code> 一定是相同的.
 
 </p>
+<ul>
+<li>dbId externalId 转换 两者可以通过模型的 <code>InstanceTree</code> 转换.</li>
+</ul>
+
+	  <div class="example_code">
+	  <pre>
+    <code>const modelId = 0;
+const dbId = 5;
+const model = viewer.getModelById(0);
+const externalId = model.myData.instanceTree.gBimExternalIdFromDbId(dbId);    </code>
+	  </pre>
+    </div>
+
+	  <div class="example_code">
+	  <pre>
+    <code>const modelId = 0;
+const externalId = -200010;
+const model = viewer.getModelById(0);
+const dbId = model.myData.instanceTree.gBimExternalIdFromDbId(externalId);    </code>
+	  </pre>
+    </div>
 
 
   </article>
