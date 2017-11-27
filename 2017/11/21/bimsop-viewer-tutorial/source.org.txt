@@ -15,6 +15,8 @@ CLOSED: [2017-11-21 Tue 21:05]
 [[http://yqrashawn.com/2017/11/20/bimsop-viewer-toolbar-introduction/][工具栏(toolbar)介绍]]
 
 **** for developer specific 开发人员查看(API相关)
+[[http://gb9.bimsop.com/bimsopviewer/test/v0.2/release/docs/index.html][viewer 的文档, 不是很全, 有问题或者改进的建议跟我说]]
+
 [[http://yqrashawn.com/2017/11/21/bimsop-viewer-adjust-opacity/][调整半透明(ghosting)图元透明度]]
 
 [[http://yqrashawn.com/2017/11/21/bimsop-viewer-adjust-fittoview-box-size/][修改fitToView缩放距离]]
