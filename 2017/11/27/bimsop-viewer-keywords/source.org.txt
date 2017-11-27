@@ -1,0 +1,42 @@
+** DONE bimsop viewer 中一些常用的量, 持续更新 :api:hidden:chinese:documentation:company:blog:
+CLOSED: [2017-11-27 Mon 20:53]
+:PROPERTIES:
+:ID:       2017-11-27-bimsop-viewer-keywords
+:CREATED:  <2017-11-27 Mon 20:08>
+:END:
+:LOGBOOK:
+- State "DONE"       from "TODO"       [2017-11-27 Mon 20:53]
+:END:
+
+*** 类的实例
+- viewer GuiViewer3D 的实例, 表示当前viewer
+
+#+BEGIN_SRC javascript
+-> viewer
+<- GuiViewer3D...
+#+END_SRC
+
+- model RenderModel 的实例, 表示一个模型实例
+
+#+BEGIN_SRC javascript
+-> viewer.mdoels
+<- [RenderModel, null, RenderModel]
+-> viewer.currentModel
+<- RenderModel...
+-> viewer
+<- GuiViewer3D...
+#+END_SRC
+
+- instanceTree InstanceTree 的实例, 表示一个模型的构件索引
+
+#+BEGIN_SRC javascript
+-> viewer.currentModel.myData.instanceTree
+<- InstanceTree...
+#+END_SRC
+
+*** 属性
+- dbId viewer 运行时 模型中node的唯一标识, 可能每次加载都不相同(模型更新后可能会改变)
+- externalId 模型中node对应revit中构件的唯一id
+
+注意: 不只是node有 ~dbId~ 和 ~externalId~, 模型中一类node也有它们的 ~dbId~ 和
+~externalId~, 不同的是, 两个模型中, 同样是 /基础墙/ 这一类别, 两个模型对应该类别的
