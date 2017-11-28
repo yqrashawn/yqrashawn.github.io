@@ -245,7 +245,7 @@ const externalId = nodeToBeIsolated.externalId;
 viewer.hideAll(); // 隐藏所有node
 
 // 遍历models
-Object.keys(nodeToBeIsolated).forEach(modelId =&gt; {
+Object.keys(nodeToBeIsolated.models).forEach(modelId =&gt; {
   const model = viewer.getModelById(modelId);
 
   // 将externalId转换为dbId
