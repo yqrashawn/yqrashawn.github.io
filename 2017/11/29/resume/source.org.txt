@@ -23,6 +23,7 @@ CLOSED: [2017-11-29 Wed 21:27]
 ** 技能
 - javascript 工作语言, 熟练掌握, 熟悉 threejs, 提过PR, webpack熟练使用, 前端框架
   都能快速进入开发.
+- typescript 部分项目中使用, 较熟练
 - emasc lisp 配置emacs用, js之外日常接触最多.
 - ruby 写简单脚本插件.
 - c++ 公司VR项目传感器用到过, 能看懂阶段.
