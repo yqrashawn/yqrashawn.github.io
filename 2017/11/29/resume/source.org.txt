@@ -58,3 +58,7 @@ CLOSED: [2017-11-29 Wed 21:27]
 [[https://github.com/pqrs-org/KE-complex_modifications][KE-complex_modifications]], manOS改键软件 [[https://github.com/tekezo/Karabiner-Elements][Karabiner-Elements ]]的配置.
 
 ** github
+[[https://github.com/yqrashawn][yqrashawn]]
+** 下载PDF
+#+BEGIN_EXPORT HTML
+&nbsp;&nbsp;&nbsp;<a class="pdf-url" download href="https://raw.githubusercontent.com/yqrashawn/yqrashawn.github.io/master/about/resume.pdf">generated pdf resume</a>
