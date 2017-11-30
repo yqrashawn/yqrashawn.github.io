@@ -18,7 +18,7 @@ CLOSED: [2017-11-29 Wed 21:27]
 
 ** 联系方式
 #+BEGIN_EXPORT HTML
-&nbsp;&nbsp;&nbsp;<a href="mailto:namy.19@gmail.com">gmail</a>
+&nbsp;&nbsp;&nbsp;<a class="mail-address" href="mailto:namy.19@gmail.com">gmail</a>
 #+END_EXPORT
 
 ** 技能
@@ -57,4 +57,4 @@ CLOSED: [2017-11-29 Wed 21:27]
 ** 参与维护的开源项目
 [[https://github.com/pqrs-org/KE-complex_modifications][KE-complex_modifications]], manOS改键软件 [[https://github.com/tekezo/Karabiner-Elements][Karabiner-Elements ]]的配置.
 
-** 附github地址
+** github
