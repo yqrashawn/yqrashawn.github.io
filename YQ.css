@@ -373,7 +373,8 @@ a {
 
 .section-title {
   color: #252525;
-  margin-left: 1em; }
+  /* margin-left: 1em; */
+}
 
 .orgmode-hr {
   margin-top: 3em; }
