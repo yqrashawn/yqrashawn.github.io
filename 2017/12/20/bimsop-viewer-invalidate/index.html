@@ -5,22 +5,22 @@
 
   <meta name="author" content="yqrashawn" />
   <meta name="generator" content="lazyblorg" />
-  <meta name="description" content="bimsop viewer 使用指南" />
-  <meta name="orgmode-id" content="2017-11-21-bimsop-viewer-tutorial" />
+  <meta name="description" content="viewer.impl.invalidate, 主动使viewer渲染一帧" />
+  <meta name="orgmode-id" content="2017-12-20-bimsop-viewer-invalidate" />
 
   <meta name="twitter:card" content="summary" />
   <meta name="twitter:site" content="@yqrashawn" />
   <meta name="twitter:creator" content="@yqrashawn" />
   <meta name="twitter:title" content="infin" />
-  <meta name="twitter:description" content="bimsop viewer 使用指南" />
+  <meta name="twitter:description" content="viewer.impl.invalidate, 主动使viewer渲染一帧" />
   <meta name="twitter:image" content="//yqrashawn.com/public/img/YQ_logo.png" />
 
   <meta property="og:type" content="article" />
   <meta property="og:title" content="infin" />
-  <meta property="og:description" content="bimsop viewer 使用指南" />
+  <meta property="og:description" content="viewer.impl.invalidate, 主动使viewer渲染一帧" />
   <meta property="og:image" content="//yqrashawn.com/public/img/YQ_logo.png" />
   <meta property="og:site_name" content="infin - Web-page of yqrashawn">
-  <meta property="article:published_time" content="2017-11-21T21:05+08:00" />
+  <meta property="article:published_time" content="2017-12-20T11:45+08:00" />
   <meta property="article:author" content="yqrashawn" />
 
   <link rel="stylesheet" title="infin Standard CSS Style"
@@ -38,7 +38,7 @@
   <!-- WARNING: This page is written in HTML5 and might not be displayed correctly in old browsers. -->
 
       <!-- link rel="stylesheet" type="text/css" href="../../../../style.css" / -->
-      <title>bimsop viewer 使用指南</title>
+      <title>viewer.impl.invalidate, 主动使viewer渲染一帧</title>
 
   </head>  <body>
 
@@ -49,19 +49,20 @@
 	  <nav class="temporal-article-header-nav">
 	    <span class="breadcrumbs">
 	      <a href="../../../../">infin</a><span style="padding-top:1em;">&nbsp;&nbsp;&nbsp;&nbsp;&raquo;
-	      <a href="../../../">2017</a>&nbsp;&ndash;&nbsp;<a href="../../">11</a>&nbsp;&ndash;&nbsp;<a href="../">21</a></span>
+	      <a href="../../../">2017</a>&nbsp;&ndash;&nbsp;<a href="../../">12</a>&nbsp;&ndash;&nbsp;<a href="../">20</a></span>
 	    </span>
 	  </nav>
 	  <aside class="common-tags">
 	    <ul>
+                <li><a class="usertag" href="//yqrashawn.com/tags/api/">api</a></li>
                 <li><a class="usertag" href="//yqrashawn.com/tags/hidden/">hidden</a></li>
                 <li><a class="usertag" href="//yqrashawn.com/tags/chinese/">chinese</a></li>
-                <li><a class="usertag" href="//yqrashawn.com/tags/work/">work</a></li>
+                <li><a class="usertag" href="//yqrashawn.com/tags/documentation/">documentation</a></li>
                 <li><a class="usertag" href="//yqrashawn.com/tags/company/">company</a></li>
 	    </ul>
 	  </aside>
 
-	  <h1 class="common-article-header-title">bimsop viewer 使用指南</h1>
+	  <h1 class="common-article-header-title">viewer.impl.invalidate, 主动使viewer渲染一帧</h1>
 
 	</header>
 
@@ -117,64 +118,36 @@
 
 <p>
 
-公司 Bimsop Viewer 使用指南
-
-</p>
-<div class="orgmode-hr" ></div>
-	  <header><h2 class="section-title">公司 Bimsop Viewer 使用指南</h2></header>
-
-<p>
-
-<a href="http://yqrashawn.com/2017/11/20/bimsop-viewer-toolbar-introduction/">工具栏(toolbar)介绍</a>
-
-</p>
-
-	  <header><h3 class="section-title">for developer specific 开发人员查看(API相关)</h3></header>
-
-<p>
-
-<a href="http://gb9.bimsop.com/bimsopviewer/test/v0.2/release/docs/index.html">viewer 的文档, 不是很全, 有问题或者改进的建议跟我说</a>
+在使用viewer时, 如果用户没有操作, viewer中也没有动画时, viewer不会进行渲染, 只有 用户有交互操作时(比如改变视角), viewer才会渲染.
 
 </p>
 
 <p>
 
-<a href="http://yqrashawn.com/2017/12/20/bimsop-viewer-invalidate/">让viewer主动渲染一次的方法</a>
+但是有时在开发过程中在调用了改变模型材质, 颜色或增加overlay后, viewer不会自动渲 染使改变呈现在屏幕上. 这时需要手动调用 <code>viewer.impl.invalidate</code> 让viewer主动渲染 一次.
 
 </p>
 
-<p>
-
-<a href="http://yqrashawn.com/2017/11/21/bimsop-viewer-adjust-opacity/">调整半透明(ghosting)图元透明度</a>
-
-</p>
-
-<p>
-
-<a href="http://yqrashawn.com/2017/11/21/bimsop-viewer-adjust-fittoview-box-size/">修改fitToView缩放距离</a>
-
-</p>
+	  <div class="example_code">
+	  <pre>
+    <code>viewer.impl.invalidate(true, true, true);    </code>
+	  </pre>
+    </div>
 
 <p>
 
-<a href="http://yqrashawn.com/2017/11/27/bimsop-viewer-keywords/">viewer中的一下关键词</a>
-
-</p>
-
-<p>
-
-<a href="http://yqrashawn.com/2017/11/27/bimsop-viewer-multi-model/">多模型API</a>
+其中, 第一个参数为 <code>needsClear</code>, 表示需要这次渲染进行某些清除操作, 一般改变都需 要清除, 一般设为true. 第二个参数为 <code>needsRender</code>, 表示是否需要渲染新的内容到屏幕上. 第三个参数为 <code>overlayDirty</code>, 表示是否需要更新overlay, 当给模型增加或改变overlay 时, 需要设为true
 
 </p>
 
 
   </article>
 	  <aside class="published-on">
-	    Published on <time datetime="2017-11-21T21:05+08:00">2017-11-21T21:05</time>
+	    Published on <time datetime="2017-12-20T11:45+08:00">2017-12-20T11:45</time>
 	  </aside>
 
    <p class="email-comment">
-      <a href="mailto:namy.19@gmail.com?subject=2017-11-21-bimsop-viewer-tutorial%20comment:%20&body=Please%20do%20not%20remove%20'2017-11-21-bimsop-viewer-tutorial%20comment:'%20in%20subject%20and%20please%20tell%20me%20whether%20or%20not%20it%20is%20OK%20to%20add%20your%20comment%20and%2For%20your%20email%20address%20to%20the%20blog%20entry!">Comment via email</a> or via <a href="//disqus.com">Disqus</a> comments below:
+      <a href="mailto:namy.19@gmail.com?subject=2017-12-20-bimsop-viewer-invalidate%20comment:%20&body=Please%20do%20not%20remove%20'2017-12-20-bimsop-viewer-invalidate%20comment:'%20in%20subject%20and%20please%20tell%20me%20whether%20or%20not%20it%20is%20OK%20to%20add%20your%20comment%20and%2For%20your%20email%20address%20to%20the%20blog%20entry!">Comment via email</a> or via <a href="//disqus.com">Disqus</a> comments below:
    </p>
 
     <div id="disqus_thread"></div>
@@ -188,7 +161,7 @@
           dsq.type = 'text/javascript';
           dsq.async = true;
           dsq.src = "//yqrashawn.disqus.com/embed.js";
-          var disqus_identifier = '2017-11-21-bimsop-viewer-tutorial';
+          var disqus_identifier = '2017-12-20-bimsop-viewer-invalidate';
           (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
           var ldr = document.getElementById('disqus_loader');
           ldr.parentNode.removeChild(ldr);
@@ -204,7 +177,7 @@
 
 	 	&nbsp;&bull;&nbsp; <a href="mailto:namy.19@gmail.com">Mail</a>
 
-	 	&nbsp;&bull;&nbsp; <a href="https://web.archive.org/web/*/yqrashawn.com/2017/11/21/bimsop-viewer-tutorial/">Archive</a>
+	 	&nbsp;&bull;&nbsp; <a href="https://web.archive.org/web/*/yqrashawn.com/2017/12/20/bimsop-viewer-invalidate/">Archive</a>
       </p>
     </footer>
 

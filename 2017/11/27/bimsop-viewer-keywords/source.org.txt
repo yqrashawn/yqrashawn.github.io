@@ -57,4 +57,3 @@ const externalId = -200010;
 const model = viewer.getModelById(0);
 const dbId = model.myData.instanceTree.gBimExternalIdFromDbId(externalId);
 #+END_SRC
-
