@@ -160,6 +160,19 @@ viewer.impl.fadeMaterial.needsUpdate = true; // 修改材质后需要设置其ne
 
 <p>
 
+下面是通过修改ghosting材质的不透明度来改变ghosting效果
+
+</p>
+
+	  <div class="example_code">
+	  <pre>
+    <code>viewer.impl.fadeMaterial.opacity = 0.2; // 设置材质不透明度
+viewer.impl.fadeMaterial.needsUpdate = true; // 修改材质后需要设置其needsUpdate为true    </code>
+	  </pre>
+    </div>
+
+<p>
+
 更多关于材质信息可参考threejs官网<a href="https://threejs.org/docs/index.html#api/materials/Material">文档</a>和<a href="https://threejs.org/examples/?q=material#webgl_materials">示例</a>.
 
 </p>

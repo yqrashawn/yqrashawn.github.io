@@ -18,7 +18,7 @@ CLOSED: [2017-11-27 Mon 20:53]
 - model RenderModel 的实例, 表示一个模型实例
 
 #+BEGIN_SRC javascript
--> viewer.mdoels
+-> viewer.models
 <- [RenderModel, null, RenderModel]
 -> viewer.currentModel
 <- RenderModel...
@@ -56,3 +56,5 @@ const modelId = 0;
 const externalId = -200010;
 const model = viewer.getModelById(0);
 const dbId = model.myData.instanceTree.gBimExternalIdFromDbId(externalId);
+#+END_SRC
+
