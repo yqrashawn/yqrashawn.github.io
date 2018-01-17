@@ -29,5 +29,12 @@ viewer.impl.fadeMaterial.color = new THREE.Color(0x999999); // 设置材质颜�
 viewer.impl.fadeMaterial.needsUpdate = true; // 修改材质后需要设置其needsUpdate为true
 #+END_SRC
 
+下面是通过修改ghosting材质的不透明度来改变ghosting效果
+
+#+BEGIN_SRC javascript
+viewer.impl.fadeMaterial.opacity = 0.2; // 设置材质不透明度
+viewer.impl.fadeMaterial.needsUpdate = true; // 修改材质后需要设置其needsUpdate为true
+#+END_SRC
+
 更多关于材质信息可参考threejs官网[[https://threejs.org/docs/index.html#api/materials/Material][文档]]和[[https://threejs.org/examples/?q=material#webgl_materials][示例]].
 

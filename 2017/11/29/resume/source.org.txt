@@ -1,0 +1,65 @@
+* DONE 简历                                      :chinese:hidden:resume:blog:
+CLOSED: [2017-11-29 Wed 21:27]
+:PROPERTIES:
+:CREATED:  <2017-11-29 Wed 21:16>
+:ID:       2017-11-29-resume
+:END:
+:LOGBOOK:
+- State "DONE"       from              [2017-11-29 Wed 21:27]
+:END:
+
+** 简介
+- 姓名 张雨潇
+- 性别 男
+- 学历 本科 2016年毕业于国际关系学院
+- 专业 信息管理与信息系统
+- 工作经验 一年半
+- 居住 北京海淀
+
+** 联系方式
+#+BEGIN_EXPORT HTML
+&nbsp;&nbsp;&nbsp;<a class="mail-address" href="mailto:namy.19@gmail.com">gmail</a>
+#+END_EXPORT
+
+** 技能
+- 熟悉前端三维开发, 熟悉threejs, Cesium, [[https://github.com/WhitestormJS/whs.js][whs.js]] 项目之初被邀请参与开发, 热衷开源
+- javascript 工作语言, 熟练掌握, 熟悉 threejs, 提过PR, webpack熟练使用, 前端框架
+  都能快速进入开发, 前端框架熟悉 react 和 vue.
+- typescript 部分项目中使用, 较熟练
+- lisp 配置emacs用
+- ruby 写简单脚本插件.
+- c++ 公司VR项目传感器用到过, 能看懂阶段.
+- 无障碍阅读英文技术文章.
+- 熟练使用 emacs vim.
+- 熟悉Linux开发环境, 熟悉git等工具
+- 熟悉开源社区
+
+后端方面, 负责公司部分后端项目调试维护, 都是nodejs+docker+阿里云, 框架用loopback express
+
+** 工作经历
+| 公司                       | 时间         | 职位       |
+|----------------------------+--------------+------------|
+| 北京毕加索智能科技有限公司 | 2016-02 至今 | 研发工程师 |
+
+** 主要工作内容
+个人负责网页三维数据展示, 以BIM(带详细信息的建筑模型)为主, 网页端主要内容是三维
+模型查看, 偶尔跟其他公司合作会有特殊需求.
+1. 公司网页端三维部分重构, 性能优化.
+2. 公司三维模型格式loader.
+3. 三维模型diff, 后端diff, 前端对比效果.
+4. 三维部分增加多模型支持.
+5. 跟北斗羲和合作室内外定位, 室外用的Cesium, 室内用公司三维引擎.
+6. 三维部分增加测试, 用的puppeteer.
+7. 根据需求增加三维部分的功能和API.
+8. VR项目传感器数据分析处理.
+9. 跟霍尼韦尔合作, 三维场景内管廊模型交互和传感器数据显示.
+
+** 参与维护的开源项目
+[[https://github.com/pqrs-org/KE-complex_modifications][KE-complex_modifications]], manOS改键软件 [[https://github.com/tekezo/Karabiner-Elements][Karabiner-Elements ]]的配置和配置页面.
+
+** github
+[[https://github.com/yqrashawn][yqrashawn]]
+
+# ** 下载PDF
+# #+BEGIN_EXPORT HTML
+# &nbsp;&nbsp;&nbsp;<a class="pdf-url" download href="https://raw.githubusercontent.com/yqrashawn/yqrashawn.github.io/master/about/resume.pdf">generated pdf resume</a>
