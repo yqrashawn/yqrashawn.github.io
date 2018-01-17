@@ -9,7 +9,7 @@ CLOSED: [2017-11-29 Wed 21:27]
 :END:
 
 ** 简介
-- 姓名 张雨潇
+- 姓名 --
 - 性别 男
 - 学历 本科 2016年毕业于国际关系学院
 - 专业 信息管理与信息系统
@@ -18,7 +18,8 @@ CLOSED: [2017-11-29 Wed 21:27]
 
 ** 联系方式
 #+BEGIN_EXPORT HTML
-<li><a class="mail-address" href="mailto:namy.19@gmail.com">gmail</a></li>
+<li class="mail-address">mail:&nbsp;<a href="mailto:namy.19@gmail.com">gmail</a></li>
+<li class="phone-number">phone:&nbsp;---</li>
 #+END_EXPORT
 
 ** 技能
