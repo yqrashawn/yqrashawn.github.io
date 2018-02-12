@@ -7,7 +7,7 @@
   <id>http://yqrashawn.com/</id>
   <link href="http://yqrashawn.com" />
   <icon>/favicon.ico</icon>
-  <updated>2018-01-17T21:41:06+08:00</updated>
+  <updated>2018-02-12T21:02:19+08:00</updated>
   <author>
     <name>yqrashawn</name>
   </author>
@@ -28,6 +28,13 @@
 <div xmlns='http://www.w3.org/1999/xhtml'>
 <p>
 
+UPDATE: The agenda plugin has been merged into the official plugin repo. You can now find the plugin <a href="https://getbitbar.com/plugins/Lifestyle/org-agenda.30m.rb">here</a>.
+
+</p>
+
+
+<p>
+
 <a href="https://github.com/matryer/bitbar">Bitbar</a> is a macos application that can add custom menu bar buttons. I'm recently learning managing projects with org-mode. And we all know that org-agenda is great.
 
 </p>
@@ -42,6 +49,13 @@ So I write a bitbar plugin, <a href="https://github.com/yqrashawn/bitbar-plugin-
     </summary>    <content type='xhtml'>
       <div xmlns='http://www.w3.org/1999/xhtml'>
 	
+<p>
+
+UPDATE: The agenda plugin has been merged into the official plugin repo. You can now find the plugin <a href="https://getbitbar.com/plugins/Lifestyle/org-agenda.30m.rb">here</a>.
+
+</p>
+
+
 <p>
 
 <a href="https://github.com/matryer/bitbar">Bitbar</a> is a macos application that can add custom menu bar buttons. I'm recently learning managing projects with org-mode. And we all know that org-agenda is great.
@@ -107,7 +121,7 @@ I'm using emacs <a href="https://www.emacswiki.org/emacs/BatchMode">--batch</a> 
 
 <p>
 
-Note: for <a href="https://github.com/syl20bnr/spacemacs">spacemacs</a> user, you need to add <code>(run-hooks 'emacs-startup-hook)</code> to let emacs read your  <code>dotspacemacs/user-config</code> (<a href="https://github.com/syl20bnr/spacemacs/issues/4504">issue#4504</a>).
+Note: for <a href="https://github.com/syl20bnr/spacemacs">spacemacs</a> user, you need to add <code>(run-hooks 'emacs-startup-hook)</code> to let emacs read your  <code>dotspacemacs/user-config</code> (<a href="https://github.com/syl20bnr/spacemacs/issues/4504">issue#4504</a>). Or you can extract your org-agenda configuration into a seperate file and <code>--eval</code> it alone.
 
 </p>
 

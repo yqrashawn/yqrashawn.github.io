@@ -18,8 +18,7 @@ CLOSED: [2017-11-29 Wed 21:27]
 
 ** 联系方式
 #+BEGIN_EXPORT HTML
-<li class="mail-address">mail:&nbsp;<a href="mailto:namy.19@gmail.com">gmail</a></li>
-<li class="phone-number">phone:&nbsp;---</li>
+>
 #+END_EXPORT
 
 ** 技能

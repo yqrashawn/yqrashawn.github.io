@@ -7,7 +7,7 @@
   <id>http://yqrashawn.com/</id>
   <link href="http://yqrashawn.com" />
   <icon>/favicon.ico</icon>
-  <updated>2018-01-17T21:41:06+08:00</updated>
+  <updated>2018-02-12T21:02:19+08:00</updated>
   <author>
     <name>yqrashawn</name>
   </author>
@@ -26,6 +26,13 @@
     <category scheme='http://yqrashawn.com/tags/emacs' term='emacs' />
     <summary type='xhtml'>
 <div xmlns='http://www.w3.org/1999/xhtml'>
+<p>
+
+UPDATE: The agenda plugin has been merged into the official plugin repo. You can now find the plugin <a href="https://getbitbar.com/plugins/Lifestyle/org-agenda.30m.rb">here</a>.
+
+</p>
+
+
 <p>
 
 <a href="https://github.com/matryer/bitbar">Bitbar</a> is a macos application that can add custom menu bar buttons. I'm recently learning managing projects with org-mode. And we all know that org-agenda is great.

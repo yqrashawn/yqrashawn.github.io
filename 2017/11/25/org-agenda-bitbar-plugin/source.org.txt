@@ -11,6 +11,9 @@ CLOSED: [2017-11-25 Sat 17:08]
 - State "DONE"       from              [2017-11-25 Sat 11:57]
 :END:
 
+UPDATE: The agenda plugin has been merged into the official plugin repo. You
+can now find the plugin [[https://getbitbar.com/plugins/Lifestyle/org-agenda.30m.rb][here]].
+
 [[https://github.com/matryer/bitbar][Bitbar]] is a macos application that can add custom menu bar buttons.
 I'm recently learning managing projects with org-mode. And we all know that
 org-agenda is great.
@@ -45,7 +48,8 @@ emacs --batch -l ~/.emacs.d/init.el --eval "(run-hooks 'emacs-startup-hook)" \
 #+END_SRC
 
 Note: for [[https://github.com/syl20bnr/spacemacs][spacemacs]] user, you need to add ~(run-hooks 'emacs-startup-hook)~ to
-let emacs read your  ~dotspacemacs/user-config~ ([[https://github.com/syl20bnr/spacemacs/issues/4504][issue#4504]]).
+let emacs read your  ~dotspacemacs/user-config~ ([[https://github.com/syl20bnr/spacemacs/issues/4504][issue#4504]]). Or you can extract
+your org-agenda configuration into a seperate file and ~--eval~ it alone.
 
 For using this plugin. You need to specify ~agenda_directory~ ~agenda_file_name~.
 
@@ -101,5 +105,4 @@ code in the chosen ~org-agenda-custom-commands~.
 #+BEGIN_SRC lisp
 (agenda ((org-agenda-ndays 7)))
 #+END_SRC
-
 
