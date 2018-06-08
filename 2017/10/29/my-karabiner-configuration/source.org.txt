@@ -33,4 +33,3 @@ Update: The old download link is broken and I don't have time to maintain all
 these workflows up to date. Now that the core thing here is to use alfred
 workflow's external trigger feature, I create a [[https://github.com/yqrashawn/alfred-launcher-workflow][app launcher workflow]] as a sample.
 
-
