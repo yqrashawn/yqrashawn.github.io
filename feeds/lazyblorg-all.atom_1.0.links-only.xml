@@ -7,13 +7,24 @@
   <id>http://yqrashawn.com/</id>
   <link href="http://yqrashawn.com" />
   <icon>/favicon.ico</icon>
-  <updated>2018-06-08T14:22:49+08:00</updated>
+  <updated>2018-06-11T15:06:57+08:00</updated>
   <author>
     <name>yqrashawn</name>
   </author>
   <subtitle type="text">infin</subtitle>
   <rights>All content written by yqrashawn</rights>
   <generator uri='https://github.com/novoid/lazyblorg'>Generated from Org-mode source code using lazyblorg which is written in Python. Industrial-strength technology, baby.</generator>
+<!-- ############################################################################################# -->
+<entry>
+    <title type="text">bimsop viewer 中, getFloorInfo得到的数据结构介绍</title>
+    <link href='http://yqrashawn.com/2018/06/11/bimsop-viewer-getFloorInfo' />
+    <published>2018-06-11T15:03:00+08:00</published>
+    <updated>2018-06-11T15:03:00+08:00</updated>
+    <category scheme='http://yqrashawn.com/tags/documentation' term='documentation' />
+    <category scheme='http://yqrashawn.com/tags/company' term='company' />
+    <category scheme='http://yqrashawn.com/tags/chinese' term='chinese' />
+    <id>http://yqrashawn.com/2018/06/11/bimsop-viewer-getFloorInfo-from-feed-with-links</id>
+</entry>
 <!-- ############################################################################################# -->
 <entry>
     <title type="text">My Karabiner Elements configuration</title>

@@ -5,22 +5,22 @@
 
   <meta name="author" content="yqrashawn" />
   <meta name="generator" content="lazyblorg" />
-  <meta name="description" content="Tag page for tag karabiner" />
-  <meta name="orgmode-id" content="lb_tag-karabiner" />
+  <meta name="description" content="bimsop viewer 中, getFloorInfo得到的数据结构介绍" />
+  <meta name="orgmode-id" content="2018-06-11-bimsop-viewer-getFloorInfo" />
 
   <meta name="twitter:card" content="summary" />
   <meta name="twitter:site" content="@yqrashawn" />
   <meta name="twitter:creator" content="@yqrashawn" />
   <meta name="twitter:title" content="infin" />
-  <meta name="twitter:description" content="Tag page for tag karabiner" />
+  <meta name="twitter:description" content="bimsop viewer 中, getFloorInfo得到的数据结构介绍" />
   <meta name="twitter:image" content="//yqrashawn.com/public/img/YQ_logo.png" />
 
   <meta property="og:type" content="article" />
   <meta property="og:title" content="infin" />
-  <meta property="og:description" content="Tag page for tag karabiner" />
+  <meta property="og:description" content="bimsop viewer 中, getFloorInfo得到的数据结构介绍" />
   <meta property="og:image" content="//yqrashawn.com/public/img/YQ_logo.png" />
   <meta property="og:site_name" content="infin - Web-page of yqrashawn">
-  <meta property="article:published_time" content="2017-01-01T00:00+08:00" />
+  <meta property="article:published_time" content="2018-06-11T15:03+08:00" />
   <meta property="article:author" content="yqrashawn" />
 
   <link rel="stylesheet" title="infin Standard CSS Style"
@@ -38,7 +38,7 @@
   <!-- WARNING: This page is written in HTML5 and might not be displayed correctly in old browsers. -->
 
       <!-- link rel="stylesheet" type="text/css" href="../../../../style.css" / -->
-      <title>The Tag &laquo;karabiner&raquo;</title>
+      <title>bimsop viewer 中, getFloorInfo得到的数据结构介绍</title>
 
   </head>  <body>
 
@@ -48,15 +48,19 @@
 
 	  <nav class="temporal-article-header-nav">
 	    <span class="breadcrumbs">
-	      <a href="../../../../">infin</a><span style="padding-top:1em;">&nbsp;&nbsp;&nbsp;&nbsp;&raquo;<a href="../">Tags</a>&nbsp;&nbsp;&nbsp;&nbsp;&raquo;karabiner</span>
+	      <a href="../../../../">infin</a><span style="padding-top:1em;">&nbsp;&nbsp;&nbsp;&nbsp;&raquo;
+	      <a href="../../../">2018</a>&nbsp;&ndash;&nbsp;<a href="../../">06</a>&nbsp;&ndash;&nbsp;<a href="../">11</a></span>
 	    </span>
 	  </nav>
 	  <aside class="common-tags">
 	    <ul>
+                <li><a class="usertag" href="//yqrashawn.com/tags/documentation/">documentation</a></li>
+                <li><a class="usertag" href="//yqrashawn.com/tags/company/">company</a></li>
+                <li><a class="usertag" href="//yqrashawn.com/tags/chinese/">chinese</a></li>
 	    </ul>
 	  </aside>
 
-	  <h1 class="common-article-header-title">Tag Page for the Tag "karabiner"</h1>
+	  <h1 class="common-article-header-title">bimsop viewer 中, getFloorInfo得到的数据结构介绍</h1>
 
 	</header>
 
@@ -110,27 +114,55 @@
 
   <article class="common-article">
 
-  <hr />
+<p>
 
-  <p>
-  All articles tagged with karabiner <span class="minor-contrast">(sorted by last update, oldest on top)</span>:
-  </p>
+在viewer中, 使用 viewer.getFloorInfo() 可以得到当前视图中所有模型的楼层信息集合, 数据示例如下. 数据结构在注释中说明.
 
-  <p>
-  
-<ul class='tag-pages-link-list'>
-  <li> <span class='timestamp'>2017-10-29T20:45</span> <a href="../../2017/10/29/my-karabiner-configuration">My Karabiner Elements configuration</a></li>
-</ul>
+</p>
 
-  </p>
+	  <div class="example_code">
+	  <pre>
+    <code>{
+  "0.000": { // 楼层高度
+    "name": "01 - Entry Level", // 楼层名字
+    "elevation": 0, // 楼层高度
+    "area": 2068.112738724505, // 楼层面积
+    "elementCount": 4670, // 楼层节点个数
+    "ids": { 1: undefined, 2: undefined } // 表明该楼层在, modelId为 1 和 2 的模型中都存在
+  },
+  "3.800": {
+    "name": "02 - Floor",
+    "elevation": 3.8000000000015093,
+    "area": 1624.8336244087127,
+    "elementCount": 504,
+    "ids": {1: undefined } // 表明该楼层在, modelId为 1 的模型中都存在
+  },
+  "7.600": {
+    "name": "03 - Floor",
+    "elevation": 7.599999999999941,
+    "area": 1619.091099483658,
+    "elementCount": 310,
+    "ids": {1: undefined, 2: undefined }
+  },
+  "12.171": {
+    "name": "Roof",
+    "elevation": 12.170917927214216,
+    "area": 0,
+    "elementCount": 21,
+    "ids": { 2: undefined } // 表明该楼层在, modelId为 2 的模型中都存在
+  }
+}    </code>
+	  </pre>
+    </div>
+
 
   </article>
 	  <aside class="published-on">
-	    Published on <time datetime="2017-01-01T00:00+08:00">2017-01-01T00:00</time>
+	    Published on <time datetime="2018-06-11T15:03+08:00">2018-06-11T15:03</time>
 	  </aside>
 
    <p class="email-comment">
-      <a href="mailto:namy.19@gmail.com?subject=lb_tag-karabiner%20comment:%20&body=Please%20do%20not%20remove%20'lb_tag-karabiner%20comment:'%20in%20subject%20and%20please%20tell%20me%20whether%20or%20not%20it%20is%20OK%20to%20add%20your%20comment%20and%2For%20your%20email%20address%20to%20the%20blog%20entry!">Comment via email</a> or via <a href="//disqus.com">Disqus</a> comments below:
+      <a href="mailto:namy.19@gmail.com?subject=2018-06-11-bimsop-viewer-getFloorInfo%20comment:%20&body=Please%20do%20not%20remove%20'2018-06-11-bimsop-viewer-getFloorInfo%20comment:'%20in%20subject%20and%20please%20tell%20me%20whether%20or%20not%20it%20is%20OK%20to%20add%20your%20comment%20and%2For%20your%20email%20address%20to%20the%20blog%20entry!">Comment via email</a> or via <a href="//disqus.com">Disqus</a> comments below:
    </p>
 
     <div id="disqus_thread"></div>
@@ -144,7 +176,7 @@
           dsq.type = 'text/javascript';
           dsq.async = true;
           dsq.src = "//yqrashawn.disqus.com/embed.js";
-          var disqus_identifier = 'lb_tag-karabiner';
+          var disqus_identifier = '2018-06-11-bimsop-viewer-getFloorInfo';
           (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
           var ldr = document.getElementById('disqus_loader');
           ldr.parentNode.removeChild(ldr);
@@ -160,7 +192,7 @@
 
 	 	&nbsp;&bull;&nbsp; <a href="mailto:namy.19@gmail.com">Mail</a>
 
-	 	&nbsp;&bull;&nbsp; <a href="https://web.archive.org/web/*/yqrashawn.com/tags/karabiner/">Archive</a>
+	 	&nbsp;&bull;&nbsp; <a href="https://web.archive.org/web/*/yqrashawn.com/2018/06/11/bimsop-viewer-getFloorInfo/">Archive</a>
       </p>
     </footer>
 

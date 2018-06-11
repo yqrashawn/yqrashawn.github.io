@@ -7,13 +7,115 @@
   <id>http://yqrashawn.com/</id>
   <link href="http://yqrashawn.com" />
   <icon>/favicon.ico</icon>
-  <updated>2018-06-08T14:22:49+08:00</updated>
+  <updated>2018-06-11T15:06:57+08:00</updated>
   <author>
     <name>yqrashawn</name>
   </author>
   <subtitle type="text">infin</subtitle>
   <rights>All content written by yqrashawn</rights>
   <generator uri='https://github.com/novoid/lazyblorg'>Generated from Org-mode source code using lazyblorg which is written in Python. Industrial-strength technology, baby.</generator>
+<!-- ############################################################################################# -->
+<entry>
+    <title type="text">bimsop viewer 中, getFloorInfo得到的数据结构介绍</title>
+    <link href='http://yqrashawn.com/2018/06/11/bimsop-viewer-getFloorInfo' />
+    <published>2018-06-11T15:03:00+08:00</published>
+    <updated>2018-06-11T15:03:00+08:00</updated>
+    <category scheme='http://yqrashawn.com/tags/documentation' term='documentation' />
+    <category scheme='http://yqrashawn.com/tags/company' term='company' />
+    <category scheme='http://yqrashawn.com/tags/chinese' term='chinese' />
+    <summary type='xhtml'>
+<div xmlns='http://www.w3.org/1999/xhtml'>
+<p>
+
+在viewer中, 使用 viewer.getFloorInfo() 可以得到当前视图中所有模型的楼层信息集合, 数据示例如下. 数据结构在注释中说明.
+
+</p>
+
+
+	  <div class="example_code">
+	  <pre>
+    <code>{
+  "0.000": { // 楼层高度
+    "name": "01 - Entry Level", // 楼层名字
+    "elevation": 0, // 楼层高度
+    "area": 2068.112738724505, // 楼层面积
+    "elementCount": 4670, // 楼层节点个数
+    "ids": { 1: undefined, 2: undefined } // 表明该楼层在, modelId为 1 和 2 的模型中都存在
+  },
+  "3.800": {
+    "name": "02 - Floor",
+    "elevation": 3.8000000000015093,
+    "area": 1624.8336244087127,
+    "elementCount": 504,
+    "ids": {1: undefined } // 表明该楼层在, modelId为 1 的模型中都存在
+  },
+  "7.600": {
+    "name": "03 - Floor",
+    "elevation": 7.599999999999941,
+    "area": 1619.091099483658,
+    "elementCount": 310,
+    "ids": {1: undefined, 2: undefined }
+  },
+  "12.171": {
+    "name": "Roof",
+    "elevation": 12.170917927214216,
+    "area": 0,
+    "elementCount": 21,
+    "ids": { 2: undefined } // 表明该楼层在, modelId为 2 的模型中都存在
+  }
+}    </code>
+	  </pre>
+    </div>
+</div>
+    </summary>    <content type='xhtml'>
+      <div xmlns='http://www.w3.org/1999/xhtml'>
+	
+<p>
+
+在viewer中, 使用 viewer.getFloorInfo() 可以得到当前视图中所有模型的楼层信息集合, 数据示例如下. 数据结构在注释中说明.
+
+</p>
+
+
+	  <div class="example_code">
+	  <pre>
+    <code>{
+  "0.000": { // 楼层高度
+    "name": "01 - Entry Level", // 楼层名字
+    "elevation": 0, // 楼层高度
+    "area": 2068.112738724505, // 楼层面积
+    "elementCount": 4670, // 楼层节点个数
+    "ids": { 1: undefined, 2: undefined } // 表明该楼层在, modelId为 1 和 2 的模型中都存在
+  },
+  "3.800": {
+    "name": "02 - Floor",
+    "elevation": 3.8000000000015093,
+    "area": 1624.8336244087127,
+    "elementCount": 504,
+    "ids": {1: undefined } // 表明该楼层在, modelId为 1 的模型中都存在
+  },
+  "7.600": {
+    "name": "03 - Floor",
+    "elevation": 7.599999999999941,
+    "area": 1619.091099483658,
+    "elementCount": 310,
+    "ids": {1: undefined, 2: undefined }
+  },
+  "12.171": {
+    "name": "Roof",
+    "elevation": 12.170917927214216,
+    "area": 0,
+    "elementCount": 21,
+    "ids": { 2: undefined } // 表明该楼层在, modelId为 2 的模型中都存在
+  }
+}    </code>
+	  </pre>
+    </div>
+
+      </div>
+    </content>
+    <id>http://yqrashawn.com/2018/06/11/bimsop-viewer-getFloorInfo-from-feed-with-content</id>
+</entry>
 <!-- ############################################################################################# -->
 <entry>
     <title type="text">My Karabiner Elements configuration</title>

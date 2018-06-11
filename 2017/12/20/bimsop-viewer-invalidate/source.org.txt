@@ -23,3 +23,5 @@ viewer.impl.invalidate(true, true, true);
 要清除, 一般设为true.
 第二个参数为 ~needsRender~, 表示是否需要渲染新的内容到屏幕上.
 第三个参数为 ~overlayDirty~, 表示是否需要更新overlay, 当给模型增加或改变overlay
+时, 需要设为true
+
