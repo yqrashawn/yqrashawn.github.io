@@ -6,7 +6,7 @@
   <meta name="author" content="yqrashawn" />
   <meta name="generator" content="lazyblorg" />
   <meta name="description" content="bimsop viewer 中, getFloorInfo得到的数据结构介绍" />
-  <meta name="orgmode-id" content="2018-06-11-bimsop-viewer-getFloorInfo" />
+  <meta name="orgmode-id" content="2018-06-13-bimsop-viewer-getFloorInfo" />
 
   <meta name="twitter:card" content="summary" />
   <meta name="twitter:site" content="@yqrashawn" />
@@ -54,6 +54,7 @@
 	  </nav>
 	  <aside class="common-tags">
 	    <ul>
+                <li><a class="usertag" href="//yqrashawn.com/tags/api/">api</a></li>
                 <li><a class="usertag" href="//yqrashawn.com/tags/documentation/">documentation</a></li>
                 <li><a class="usertag" href="//yqrashawn.com/tags/company/">company</a></li>
                 <li><a class="usertag" href="//yqrashawn.com/tags/chinese/">chinese</a></li>
@@ -129,28 +130,28 @@
     "elevation": 0, // 楼层高度
     "area": 2068.112738724505, // 楼层面积
     "elementCount": 4670, // 楼层节点个数
-    "ids": { 1: undefined, 2: undefined } // 表明该楼层在, modelId为 1 和 2 的模型中都存在
+    "ids": { 1: 311, 2: 311 } // 表明该楼层在, modelId为 1 和 2 的模型中都存在, 311表明该楼层在两个模型中的 floorId 都为 311
   },
   "3.800": {
     "name": "02 - Floor",
     "elevation": 3.8000000000015093,
     "area": 1624.8336244087127,
     "elementCount": 504,
-    "ids": {1: undefined } // 表明该楼层在, modelId为 1 的模型中都存在
+    "ids": {1: 22311 } // 表明该楼层在, modelId为 1 的模型中都存在, 22311表明该楼层在模型1中的 floorId 为 22311
   },
   "7.600": {
     "name": "03 - Floor",
     "elevation": 7.599999999999941,
     "area": 1619.091099483658,
     "elementCount": 310,
-    "ids": {1: undefined, 2: undefined }
+    "ids": {1: 694, 2: 694 }
   },
   "12.171": {
     "name": "Roof",
     "elevation": 12.170917927214216,
     "area": 0,
     "elementCount": 21,
-    "ids": { 2: undefined } // 表明该楼层在, modelId为 2 的模型中都存在
+    "ids": { 2: 13542 } // 表明该楼层在, modelId为 2 的模型中都存在
   }
 }    </code>
 	  </pre>
@@ -163,7 +164,7 @@
 	  </aside>
 
    <p class="email-comment">
-      <a href="mailto:namy.19@gmail.com?subject=2018-06-11-bimsop-viewer-getFloorInfo%20comment:%20&body=Please%20do%20not%20remove%20'2018-06-11-bimsop-viewer-getFloorInfo%20comment:'%20in%20subject%20and%20please%20tell%20me%20whether%20or%20not%20it%20is%20OK%20to%20add%20your%20comment%20and%2For%20your%20email%20address%20to%20the%20blog%20entry!">Comment via email</a> or via <a href="//disqus.com">Disqus</a> comments below:
+      <a href="mailto:namy.19@gmail.com?subject=2018-06-13-bimsop-viewer-getFloorInfo%20comment:%20&body=Please%20do%20not%20remove%20'2018-06-13-bimsop-viewer-getFloorInfo%20comment:'%20in%20subject%20and%20please%20tell%20me%20whether%20or%20not%20it%20is%20OK%20to%20add%20your%20comment%20and%2For%20your%20email%20address%20to%20the%20blog%20entry!">Comment via email</a> or via <a href="//disqus.com">Disqus</a> comments below:
    </p>
 
     <div id="disqus_thread"></div>
@@ -177,7 +178,7 @@
           dsq.type = 'text/javascript';
           dsq.async = true;
           dsq.src = "//yqrashawn.disqus.com/embed.js";
-          var disqus_identifier = '2018-06-11-bimsop-viewer-getFloorInfo';
+          var disqus_identifier = '2018-06-13-bimsop-viewer-getFloorInfo';
           (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
           var ldr = document.getElementById('disqus_loader');
           ldr.parentNode.removeChild(ldr);

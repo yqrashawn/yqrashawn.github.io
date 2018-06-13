@@ -5,22 +5,22 @@
 
   <meta name="author" content="yqrashawn" />
   <meta name="generator" content="lazyblorg" />
-  <meta name="description" content="bimsop viewer 中一些常用的量, 持续更新" />
-  <meta name="orgmode-id" content="2017-11-27-bimsop-viewer-keywords" />
+  <meta name="description" content="bimsop viewer, 加载模型的格式说明" />
+  <meta name="orgmode-id" content="2018-06-13-bimsop-viewer-loadModel" />
 
   <meta name="twitter:card" content="summary" />
   <meta name="twitter:site" content="@yqrashawn" />
   <meta name="twitter:creator" content="@yqrashawn" />
   <meta name="twitter:title" content="infin" />
-  <meta name="twitter:description" content="bimsop viewer 中一些常用的量, 持续更新" />
+  <meta name="twitter:description" content="bimsop viewer, 加载模型的格式说明" />
   <meta name="twitter:image" content="//yqrashawn.com/public/img/YQ_logo.png" />
 
   <meta property="og:type" content="article" />
   <meta property="og:title" content="infin" />
-  <meta property="og:description" content="bimsop viewer 中一些常用的量, 持续更新" />
+  <meta property="og:description" content="bimsop viewer, 加载模型的格式说明" />
   <meta property="og:image" content="//yqrashawn.com/public/img/YQ_logo.png" />
   <meta property="og:site_name" content="infin - Web-page of yqrashawn">
-  <meta property="article:published_time" content="2017-11-27T20:53+08:00" />
+  <meta property="article:published_time" content="2018-06-13T11:04+08:00" />
   <meta property="article:author" content="yqrashawn" />
 
   <link rel="stylesheet" title="infin Standard CSS Style"
@@ -38,7 +38,7 @@
   <!-- WARNING: This page is written in HTML5 and might not be displayed correctly in old browsers. -->
 
       <!-- link rel="stylesheet" type="text/css" href="../../../../style.css" / -->
-      <title>bimsop viewer 中一些常用的量, 持续更新</title>
+      <title>bimsop viewer, 加载模型的格式说明</title>
 
   </head>  <body>
 
@@ -49,20 +49,20 @@
 	  <nav class="temporal-article-header-nav">
 	    <span class="breadcrumbs">
 	      <a href="../../../../">infin</a><span style="padding-top:1em;">&nbsp;&nbsp;&nbsp;&nbsp;&raquo;
-	      <a href="../../../">2017</a>&nbsp;&ndash;&nbsp;<a href="../../">11</a>&nbsp;&ndash;&nbsp;<a href="../">27</a></span>
+	      <a href="../../../">2018</a>&nbsp;&ndash;&nbsp;<a href="../../">06</a>&nbsp;&ndash;&nbsp;<a href="../">13</a></span>
 	    </span>
 	  </nav>
 	  <aside class="common-tags">
 	    <ul>
                 <li><a class="usertag" href="//yqrashawn.com/tags/api/">api</a></li>
-                <li><a class="usertag" href="//yqrashawn.com/tags/hidden/">hidden</a></li>
-                <li><a class="usertag" href="//yqrashawn.com/tags/chinese/">chinese</a></li>
                 <li><a class="usertag" href="//yqrashawn.com/tags/documentation/">documentation</a></li>
                 <li><a class="usertag" href="//yqrashawn.com/tags/company/">company</a></li>
+                <li><a class="usertag" href="//yqrashawn.com/tags/chinese/">chinese</a></li>
+                <li><a class="usertag" href="//yqrashawn.com/tags/hidden/">hidden</a></li>
 	    </ul>
 	  </aside>
 
-	  <h1 class="common-article-header-title">bimsop viewer 中一些常用的量, 持续更新</h1>
+	  <h1 class="common-article-header-title">bimsop viewer, 加载模型的格式说明</h1>
 
 	</header>
 
@@ -116,83 +116,62 @@
 
   <article class="common-article">
 
-	  <header><h2 class="section-title">类的实例</h2></header>
-<ul>
-<li>viewer GuiViewer3D 的实例, 表示当前viewer</li>
-</ul>
-
-	  <div class="example_code">
-	  <pre>
-    <code>  -&gt; viewer
-&lt;- GuiViewer3D...    </code>
-	  </pre>
-    </div>
-<ul>
-<li>model RenderModel 的实例, 表示一个模型实例</li>
-</ul>
-
-	  <div class="example_code">
-	  <pre>
-    <code>  -&gt; viewer.models
-&lt;- [RenderModel, null, RenderModel]
-  -&gt; viewer.currentModel
-&lt;- RenderModel...
-  -&gt; viewer
-&lt;- GuiViewer3D...    </code>
-	  </pre>
-    </div>
-<ul>
-<li>instanceTree InstanceTree 的实例, 表示一个模型的构件索引</li>
-</ul>
-
-	  <div class="example_code">
-	  <pre>
-    <code>  -&gt; viewer.currentModel.myData.instanceTree
-&lt;- InstanceTree...    </code>
-	  </pre>
-    </div>
-
-	  <header><h2 class="section-title">属性</h2></header>
-<ul>
-<li>dbId viewer 运行时 模型中node的唯一标识, 可能每次加载都不相同(模型更新后可能会改变)</li>
-<li>externalId 模型中node对应revit中构件的唯一id</li>
-</ul>
-
 <p>
 
-<b>注意</b>: 不只是node有 <code>dbId</code> 和 <code>externalId</code>, 模型中一类node也有它们的 <code>dbId</code> 和 <code>externalId</code>, 不同的是, 两个模型中, 同样是 /基础墙/ 这一类别, 两个模型对应该类别的 dbId可能不同, 但 <code>externalId</code> 一定是相同的.
+viewer 中加载模型使用 viewer.load 函数, 参数有一下几种形式
 
 </p>
-<ul>
-<li>dbId externalId 转换 两者可以通过模型的 <code>InstanceTree</code> 转换.</li>
-</ul>
 
 	  <div class="example_code">
 	  <pre>
-    <code>const modelId = 0;
-const dbId = 5;
-const model = viewer.getModelById(0);
-const externalId = model.myData.instanceTree.gBimExternalIdFromDbId(dbId);    </code>
-	  </pre>
-    </div>
+    <code>// 加载单个模型, 模型modelId为1.
+viewer.load(
+  "http://localhost:1111/example.gbim",
+  {},
+  onSuccessCallback,
+  onErrorCallback
+);
 
-	  <div class="example_code">
-	  <pre>
-    <code>const modelId = 0;
-const externalId = -200010;
-const model = viewer.getModelById(0);
-const dbId = model.myData.instanceTree.gBimExternalIdFromDbId(externalId);    </code>
+// 加载单个模型, 模型 modelId 为1, 模型 fileId 为 fileId1.
+viewer.load(
+  {fileId1: "http://localhost:1111/example.gbim" },
+  {},
+  onSuccessCallback,
+  onErrorCallback
+);
+
+// 加载两个模型, 模型 modelId 无法确定, 取决于那个模型先加载完, 受模型大小, 模型资源下载速度影响.
+// modelName 合并后模型名字, 用于在模型结构树面板显示.
+viewer.load(
+  ["http://localhost:1111/example.gbim",
+   "http://localhost:1111/example2.gbim"],
+  {modelName: "merged model"},
+  onSuccessCallback,
+  onErrorCallback
+);
+
+// 加载两个模型, 模型 modelId 无法确定, 取决于那个模型先加载完, 受模型大小, 模型资源下载速度影响.
+// 模型 fileId 分别为 model1 和 model2
+viewer.load(
+  {
+    model1: "http://localhost:1111/example.gbim",
+    model2: "http://localhost:1111/example2.gbim"
+  },
+  {modelName: "合并后的模型"},
+  onSuccessCallback,
+  onErrorCallback
+);    </code>
 	  </pre>
     </div>
 
 
   </article>
 	  <aside class="published-on">
-	    Published on <time datetime="2017-11-27T20:53+08:00">2017-11-27T20:53</time>
+	    Published on <time datetime="2018-06-13T11:04+08:00">2018-06-13T11:04</time>
 	  </aside>
 
    <p class="email-comment">
-      <a href="mailto:namy.19@gmail.com?subject=2017-11-27-bimsop-viewer-keywords%20comment:%20&body=Please%20do%20not%20remove%20'2017-11-27-bimsop-viewer-keywords%20comment:'%20in%20subject%20and%20please%20tell%20me%20whether%20or%20not%20it%20is%20OK%20to%20add%20your%20comment%20and%2For%20your%20email%20address%20to%20the%20blog%20entry!">Comment via email</a> or via <a href="//disqus.com">Disqus</a> comments below:
+      <a href="mailto:namy.19@gmail.com?subject=2018-06-13-bimsop-viewer-loadModel%20comment:%20&body=Please%20do%20not%20remove%20'2018-06-13-bimsop-viewer-loadModel%20comment:'%20in%20subject%20and%20please%20tell%20me%20whether%20or%20not%20it%20is%20OK%20to%20add%20your%20comment%20and%2For%20your%20email%20address%20to%20the%20blog%20entry!">Comment via email</a> or via <a href="//disqus.com">Disqus</a> comments below:
    </p>
 
     <div id="disqus_thread"></div>
@@ -206,7 +185,7 @@ const dbId = model.myData.instanceTree.gBimExternalIdFromDbId(externalId);    </
           dsq.type = 'text/javascript';
           dsq.async = true;
           dsq.src = "//yqrashawn.disqus.com/embed.js";
-          var disqus_identifier = '2017-11-27-bimsop-viewer-keywords';
+          var disqus_identifier = '2018-06-13-bimsop-viewer-loadModel';
           (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
           var ldr = document.getElementById('disqus_loader');
           ldr.parentNode.removeChild(ldr);
@@ -222,7 +201,7 @@ const dbId = model.myData.instanceTree.gBimExternalIdFromDbId(externalId);    </
 
 	 	&nbsp;&bull;&nbsp; <a href="mailto:namy.19@gmail.com">Mail</a>
 
-	 	&nbsp;&bull;&nbsp; <a href="https://web.archive.org/web/*/yqrashawn.com/2017/11/27/bimsop-viewer-keywords/">Archive</a>
+	 	&nbsp;&bull;&nbsp; <a href="https://web.archive.org/web/*/yqrashawn.com/2018/06/13/bimsop-viewer-loadModel/">Archive</a>
       </p>
     </footer>
 

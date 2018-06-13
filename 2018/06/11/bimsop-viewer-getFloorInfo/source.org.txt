@@ -1,9 +1,11 @@
-CLOSED: [2018-06-11 Mon 15:03]
+CLOSED: [2018-06-13 Wed 10:52]
 :PROPERTIES:
 :CREATED:  <2018-06-11 Mon 14:53>
-:ID:       2018-06-11-bimsop-viewer-getFloorInfo
+:ID:       2018-06-13-bimsop-viewer-getFloorInfo
 :END:
 :LOGBOOK:
+- State "DONE"       from "TODO"       [2018-06-13 Wed 10:52]
+- State "TODO"       from "DONE"       [2018-06-13 Wed 10:52]
 - State "DONE"       from "TODO"       [2018-06-11 Mon 15:03]
 :END:
 
@@ -17,27 +19,29 @@ CLOSED: [2018-06-11 Mon 15:03]
     "elevation": 0, // 楼层高度
     "area": 2068.112738724505, // 楼层面积
     "elementCount": 4670, // 楼层节点个数
-    "ids": { 1: undefined, 2: undefined } // 表明该楼层在, modelId为 1 和 2 的模型中都存在
+    "ids": { 1: 311, 2: 311 } // 表明该楼层在, modelId为 1 和 2 的模型中都存在, 311表明该楼层在两个模型中的 floorId 都为 311
   },
   "3.800": {
     "name": "02 - Floor",
     "elevation": 3.8000000000015093,
     "area": 1624.8336244087127,
     "elementCount": 504,
-    "ids": {1: undefined } // 表明该楼层在, modelId为 1 的模型中都存在
+    "ids": {1: 22311 } // 表明该楼层在, modelId为 1 的模型中都存在, 22311表明该楼层在模型1中的 floorId 为 22311
   },
   "7.600": {
     "name": "03 - Floor",
     "elevation": 7.599999999999941,
     "area": 1619.091099483658,
     "elementCount": 310,
-    "ids": {1: undefined, 2: undefined }
+    "ids": {1: 694, 2: 694 }
   },
   "12.171": {
     "name": "Roof",
     "elevation": 12.170917927214216,
     "area": 0,
     "elementCount": 21,
-    "ids": { 2: undefined } // 表明该楼层在, modelId为 2 的模型中都存在
+    "ids": { 2: 13542 } // 表明该楼层在, modelId为 2 的模型中都存在
   }
 }
+#+END_SRC
+

@@ -132,7 +132,7 @@ viewer 对于多模型的api与单模型有些不同. 主要体现在对构件(n
 
 	  <div class="example_code">
 	  <pre>
-    <code>-&gt; viewer.models
+    <code>  -&gt; viewer.models
 &lt;- [null, RenderModel, RenderModel]    </code>
 	  </pre>
     </div>
@@ -142,11 +142,11 @@ viewer 对于多模型的api与单模型有些不同. 主要体现在对构件(n
 
 	  <div class="example_code">
 	  <pre>
-    <code>-&gt; viewer.models
+    <code>  -&gt; viewer.models
 &lt;- [RenderModel, null, RenderModel]
--&gt; viewer.models[0].id
+  -&gt; viewer.models[0].id
 &lt;- 1
--&gt; viewer.models[2].id
+  -&gt; viewer.models[2].id
 &lt;- 3    </code>
 	  </pre>
     </div>
@@ -187,8 +187,8 @@ viewer.load({土建: [ 'model1  url', 'model2 url'], 给排水: ['model3 url', '
 
 	  <div class="example_code">
 	  <pre>
-    <code>-&gt; const modelId = 0;
--&gt; viewer.getModelById(0)
+    <code>  -&gt; const modelId = 0;
+  -&gt; viewer.getModelById(0)
 &lt;- RenderModel    </code>
 	  </pre>
     </div>
@@ -201,7 +201,7 @@ viewer.load({土建: [ 'model1  url', 'model2 url'], 给排水: ['model3 url', '
 
 	  <div class="example_code">
 	  <pre>
-    <code>-&gt; viewer.isolate(20, viewer.getModelById(0))    </code>
+    <code>  -&gt; viewer.isolate(20, viewer.getModelById(0))    </code>
 	  </pre>
     </div>
 

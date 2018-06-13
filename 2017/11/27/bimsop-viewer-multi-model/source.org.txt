@@ -16,18 +16,18 @@ viewer 对于多模型的api与单模型有些不同. 主要体现在对构件(n
 - 当使用 ~viewer.unload~ unload模型时, 数组的某些项(被unload的模型)可能为空
 
 #+BEGIN_SRC javascript
--> viewer.models
+  -> viewer.models
 <- [null, RenderModel, RenderModel]
 #+END_SRC
 
 - 数组的第一项(如果有的话), 其 ~id~ 为 ~1~ , 以此类推
 
 #+BEGIN_SRC javascript
--> viewer.models
+  -> viewer.models
 <- [RenderModel, null, RenderModel]
--> viewer.models[0].id
+  -> viewer.models[0].id
 <- 1
--> viewer.models[2].id
+  -> viewer.models[2].id
 <- 3
 #+END_SRC
 
@@ -51,15 +51,15 @@ viewer.load({土建: [ 'model1  url', 'model2 url'], 给排水: ['model3 url', '
 使用 [[http://gb9.bimsop.com/bimsopviewer/test/v0.2/release/docs/index.html#Viewer3D#getModelById][viewer.getModelById]] 方法获取, viewer 的其他函数操作.
 
 #+BEGIN_SRC javascript
--> const modelId = 0;
--> viewer.getModelById(0)
+  -> const modelId = 0;
+  -> viewer.getModelById(0)
 <- RenderModel
 #+END_SRC
 
 当有参数名为 ~model~ 时, 均表示通过此方法获取的 ~RenderModel~ 实例. 例如:
 
 #+BEGIN_SRC javascript
--> viewer.isolate(20, viewer.getModelById(0))
+  -> viewer.isolate(20, viewer.getModelById(0))
 #+END_SRC
 
 **** 加载多模型时一些操作, 事件返回的多模型数据结构

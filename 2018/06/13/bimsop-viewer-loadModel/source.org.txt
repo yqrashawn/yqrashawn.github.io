@@ -1,0 +1,49 @@
+CLOSED: [2018-06-13 Wed 11:04]
+:PROPERTIES:
+:CREATED:  <2018-06-13 Wed 10:53>
+:ID:       2018-06-13-bimsop-viewer-loadModel
+:END:
+:LOGBOOK:
+- State "DONE"       from "TODO"       [2018-06-13 Wed 11:04]
+:END:
+
+viewer 中加载模型使用 viewer.load 函数, 参数有一下几种形式
+
+#+BEGIN_SRC js
+// 加载单个模型, 模型modelId为1.
+viewer.load(
+  "http://localhost:1111/example.gbim",
+  {},
+  onSuccessCallback,
+  onErrorCallback
+);
+
+// 加载单个模型, 模型 modelId 为1, 模型 fileId 为 fileId1.
+viewer.load(
+  {fileId1: "http://localhost:1111/example.gbim" },
+  {},
+  onSuccessCallback,
+  onErrorCallback
+);
+
+// 加载两个模型, 模型 modelId 无法确定, 取决于那个模型先加载完, 受模型大小, 模型资源下载速度影响.
+// modelName 合并后模型名字, 用于在模型结构树面板显示.
+viewer.load(
+  ["http://localhost:1111/example.gbim",
+   "http://localhost:1111/example2.gbim"],
+  {modelName: "merged model"},
+  onSuccessCallback,
+  onErrorCallback
+);
+
+// 加载两个模型, 模型 modelId 无法确定, 取决于那个模型先加载完, 受模型大小, 模型资源下载速度影响.
+// 模型 fileId 分别为 model1 和 model2
+viewer.load(
+  {
+    model1: "http://localhost:1111/example.gbim",
+    model2: "http://localhost:1111/example2.gbim"
+  },
+  {modelName: "合并后的模型"},
+  onSuccessCallback,
+  onErrorCallback
+);
