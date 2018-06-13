@@ -29,6 +29,5 @@ CLOSED: [2017-11-21 Tue 21:05]
 
 [[http://yqrashawn.com/2018/06/13/bimsop-viewer-loadModel][viewer.load api说明]]
 
-[[http://yqrashawn.com/2018/06/13/bimsop-viewer-getFloorInfo][楼层api viewer.getFloorInfo api说明]]
-
+[[http://yqrashawn.com/2018/06/11/bimsop-viewer-getFloorInfo][楼层api viewer.getFloorInfo api说明]]
 
