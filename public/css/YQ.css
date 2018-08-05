@@ -7,6 +7,13 @@ html {
     height: auto;
 }
 
+figure {
+    margin-block-end: 0;
+    margin-block-start: 0;
+    margin-inline-end: 0;
+    margin-inline-start: 0;
+}
+
 body {
     height: 100%;
     background: #e8e8e1;
@@ -17,6 +24,7 @@ body {
 
 a {
     text-decoration: none;
+    color: #990000;
 }
 
 #show-sidebar-text {
@@ -530,7 +538,7 @@ footer {
 }
 .persistent-body h1 {
     font-size: 105%;
-    color: black;
+    /* color: black; */
 }
 
 .persistent-body h1 a {
@@ -547,6 +555,7 @@ footer {
     box-shadow: 0 8px 17px 0 rgba(0, 0, 0, 0.2);
     background: white;
 }
+
 .entry-page-article .entry-page-article-tags {
     margin: -1.5em -1em 0px 0px;
 }
