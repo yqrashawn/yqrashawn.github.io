@@ -11,25 +11,25 @@ CLOSED: [2017-11-27 Mon 20:53]
 - viewer GuiViewer3D 的实例, 表示当前viewer
 
 #+BEGIN_SRC javascript
-  -> viewer
+-> viewer
 <- GuiViewer3D...
 #+END_SRC
 
 - model RenderModel 的实例, 表示一个模型实例
 
 #+BEGIN_SRC javascript
-  -> viewer.models
+-> viewer.models
 <- [RenderModel, null, RenderModel]
-  -> viewer.currentModel
+-> viewer.currentModel
 <- RenderModel...
-  -> viewer
+-> viewer
 <- GuiViewer3D...
 #+END_SRC
 
 - instanceTree InstanceTree 的实例, 表示一个模型的构件索引
 
 #+BEGIN_SRC javascript
-  -> viewer.currentModel.myData.instanceTree
+-> viewer.currentModel.myData.instanceTree
 <- InstanceTree...
 #+END_SRC
 

@@ -7,13 +7,105 @@
   <id>http://yqrashawn.com/</id>
   <link href="http://yqrashawn.com" />
   <icon>/favicon.ico</icon>
-  <updated>2018-06-13T11:22:35+08:00</updated>
+  <updated>2018-08-07T16:53:50+08:00</updated>
   <author>
     <name>yqrashawn</name>
   </author>
   <subtitle type="text">infin</subtitle>
   <rights>All content written by yqrashawn</rights>
   <generator uri='https://github.com/novoid/lazyblorg'>Generated from Org-mode source code using lazyblorg which is written in Python. Industrial-strength technology, baby.</generator>
+<!-- ############################################################################################# -->
+<entry>
+    <title type="text">emacs workspace management</title>
+    <link href='http://yqrashawn.com/2018/08/07/emacs-workspace-managment' />
+    <published>2018-08-07T16:46:00+08:00</published>
+    <updated>2018-08-07T16:46:00+08:00</updated>
+    <category scheme='http://yqrashawn.com/tags/emacs' term='emacs' />
+    <category scheme='http://yqrashawn.com/tags/workspace' term='workspace' />
+    <summary type='xhtml'>
+<div xmlns='http://www.w3.org/1999/xhtml'>
+<p>
+
+Recently I'm asked to help on a project. The problem is there're a lot files with same name in different directories and same name with my other project. I'm using <code>ivy-switch-buffer</code> to switch between opened buffer. And it needs more keystrokes in this project to switch to the desired buffer. So I'm looking for some workspace management aproch in emacs to make my finger not that tired after work.
+
+</p>
+
+
+<p>
+
+After googling for a little while, I find there are so many ways to manage workspace in emacs.
+
+</p>
+
+<ul>
+<li>use session: <a href="https://www.emacswiki.org/emacs/Desktop#toc6">use desktop and bookmark+</a></li>
+<li>use multiple emacs instance</li>
+<li><code>persp-mode</code></li>
+<li><code>purpose-mode</code> <code>frame-purpose-mode</code></li>
+<li>also there's <code>ibuffer</code> with <code>ibuffer-vc</code> or <code>ibuffer-projectile</code></li>
+<li>even <code>tabbar</code> with custom filter functions</li>
+</ul>
+
+
+<p>
+
+The cons of the first two is that you need to deliberately switch workspace when you are going to open files in other workspace. The pros is that they provide perfect isolation, no need to tweek buffer switch functions.
+
+</p>
+
+
+<p>
+
+For <code>persp-mode</code>, the pros is that with custom code, maybe it's not hard to implement the workspace auto-switching function. It has eye candy in mode line or title bar if you want them. The cons is that you need to implement the auto-switching function or remember to switch workspace manually.
+
+</p>
+
+
+<p>
+
+For <code>purpose-mode</code>, you may need multiple high resolution screen.
+
+</p>
+
+
+<p>
+
+For <code>ibuffer</code>, it's not typically "workspace". It depends on how many buffers you have and how familiar you are with the ibuffer filter functionality.
+
+</p>
+
+
+<p>
+
+For <code>tabbar</code>, eye candy and custom function is needed.
+
+</p>
+
+
+<p>
+
+So it really depends on
+
+</p>
+
+<ul>
+<li>your currently familiar workflow</li>
+<li>can you tolerate manully switch workspace</li>
+<li>if you can comfortably change your workflow</li>
+<li>how much isolation you want</li>
+<li>screen amount and size</li>
+</ul>
+
+
+<p>
+
+I may try <code>persp-mode</code> first. Wish me luck.
+
+</p>
+</div>
+    </summary>
+    <id>http://yqrashawn.com/2018/08/07/emacs-workspace-managment-from-feed-with-teaser</id>
+</entry>
 <!-- ############################################################################################# -->
 <entry>
     <title type="text">My Karabiner Elements configuration</title>

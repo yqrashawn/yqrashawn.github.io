@@ -5,22 +5,22 @@
 
   <meta name="author" content="yqrashawn" />
   <meta name="generator" content="lazyblorg" />
-  <meta name="description" content="bimsop viewer 修改被隐藏(ghosting)图元透明度" />
-  <meta name="orgmode-id" content="2017-11-21-bimsop-viewer-adjust-opacity" />
+  <meta name="description" content="emacs workspace management" />
+  <meta name="orgmode-id" content="2018-08-07-emacs-workspace-managment" />
 
   <meta name="twitter:card" content="summary" />
   <meta name="twitter:site" content="@yqrashawn" />
   <meta name="twitter:creator" content="@yqrashawn" />
   <meta name="twitter:title" content="infin" />
-  <meta name="twitter:description" content="bimsop viewer 修改被隐藏(ghosting)图元透明度" />
+  <meta name="twitter:description" content="emacs workspace management" />
   <meta name="twitter:image" content="//yqrashawn.com/public/img/YQ_logo.png" />
 
   <meta property="og:type" content="article" />
   <meta property="og:title" content="infin" />
-  <meta property="og:description" content="bimsop viewer 修改被隐藏(ghosting)图元透明度" />
+  <meta property="og:description" content="emacs workspace management" />
   <meta property="og:image" content="//yqrashawn.com/public/img/YQ_logo.png" />
   <meta property="og:site_name" content="infin - Web-page of yqrashawn">
-  <meta property="article:published_time" content="2017-11-21T21:41+08:00" />
+  <meta property="article:published_time" content="2018-08-07T16:46+08:00" />
   <meta property="article:author" content="yqrashawn" />
 
   <link rel="stylesheet" title="infin Standard CSS Style"
@@ -38,7 +38,7 @@
   <!-- WARNING: This page is written in HTML5 and might not be displayed correctly in old browsers. -->
 
       <!-- link rel="stylesheet" type="text/css" href="../../../../style.css" / -->
-      <title>bimsop viewer 修改被隐藏(ghosting)图元透明度</title>
+      <title>emacs workspace management</title>
 
   </head>  <body>
 
@@ -49,20 +49,17 @@
 	  <nav class="temporal-article-header-nav">
 	    <span class="breadcrumbs">
 	      <a href="../../../../">infin</a><span style="padding-top:1em;">&nbsp;&nbsp;&nbsp;&nbsp;&raquo;
-	      <a href="../../../">2017</a>&nbsp;&ndash;&nbsp;<a href="../../">11</a>&nbsp;&ndash;&nbsp;<a href="../">21</a></span>
+	      <a href="../../../">2018</a>&nbsp;&ndash;&nbsp;<a href="../../">08</a>&nbsp;&ndash;&nbsp;<a href="../">07</a></span>
 	    </span>
 	  </nav>
 	  <aside class="common-tags">
 	    <ul>
-                <li><a class="usertag" href="//yqrashawn.com/tags/api/">api</a></li>
-                <li><a class="usertag" href="//yqrashawn.com/tags/hidden/">hidden</a></li>
-                <li><a class="usertag" href="//yqrashawn.com/tags/chinese/">chinese</a></li>
-                <li><a class="usertag" href="//yqrashawn.com/tags/documentation/">documentation</a></li>
-                <li><a class="usertag" href="//yqrashawn.com/tags/company/">company</a></li>
+                <li><a class="usertag" href="//yqrashawn.com/tags/emacs/">emacs</a></li>
+                <li><a class="usertag" href="//yqrashawn.com/tags/workspace/">workspace</a></li>
 	    </ul>
 	  </aside>
 
-	  <h1 class="common-article-header-title">bimsop viewer 修改被隐藏(ghosting)图元透明度</h1>
+	  <h1 class="common-article-header-title">emacs workspace management</h1>
 
 	</header>
 
@@ -118,73 +115,81 @@
 
 <p>
 
-viewer 可以在其设置中让被隐藏的节点半透明显示而不是完全隐藏, 半透明的透明度可以通过API调节.
+Recently I'm asked to help on a project. The problem is there're a lot files with same name in different directories and same name with my other project. I'm using <code>ivy-switch-buffer</code> to switch between opened buffer. And it needs more keystrokes in this project to switch to the desired buffer. So I'm looking for some workspace management aproch in emacs to make my finger not that tired after work.
 
 </p>
 
 <p>
 
-半透明效果(Ghosting)可以通过已有方法切换两种预设的颜色值.
+After googling for a little while, I find there are so many ways to manage workspace in emacs.
 
 </p>
-
-	  <div class="example_code">
-	  <pre>
-    <code>viewer.impl.setGhostingBrightness(true); // 使用深色半透明
-viewer.impl.setGhostingBrightness(false); // 使用浅色半透明    </code>
-	  </pre>
-    </div>
-
-<figure class="image-center">
-<img src="2017-11-21_bimsop-viewer-ghosting-bright%20-%20scaled%20width%20200.png" alt="" width="200" />
-<figcaption>亮色ghosting效果</figcaption>
-</figure>
-
-<figure class="image-center">
-<img src="2017-11-21_bimsop-viewer-ghosting-dark%20-%20scaled%20width%20200.png" alt="" width="200" />
-<figcaption>暗色ghosting效果</figcaption>
-</figure>
+<ul>
+<li>use session: <a href="https://www.emacswiki.org/emacs/Desktop#toc6">use desktop and bookmark+</a></li>
+<li>use multiple emacs instance</li>
+<li><code>persp-mode</code></li>
+<li><code>purpose-mode</code> <code>frame-purpose-mode</code></li>
+<li>also there's <code>ibuffer</code> with <code>ibuffer-vc</code> or <code>ibuffer-projectile</code></li>
+<li>even <code>tabbar</code> with custom filter functions</li>
+</ul>
 
 <p>
 
-也可以通过修改ghosting材质或材质颜色直接修改ghosting效果.
+The cons of the first two is that you need to deliberately switch workspace when you are going to open files in other workspace. The pros is that they provide perfect isolation, no need to tweek buffer switch functions.
 
 </p>
 
-	  <div class="example_code">
-	  <pre>
-    <code>viewer.impl.fadeMaterial.color = new THREE.Color(0x999999); // 设置材质颜色
-viewer.impl.fadeMaterial.needsUpdate = true; // 修改材质后需要设置其needsUpdate为true    </code>
-	  </pre>
-    </div>
-
 <p>
 
-下面是通过修改ghosting材质的不透明度来改变ghosting效果
+For <code>persp-mode</code>, the pros is that with custom code, maybe it's not hard to implement the workspace auto-switching function. It has eye candy in mode line or title bar if you want them. The cons is that you need to implement the auto-switching function or remember to switch workspace manually.
 
 </p>
 
-	  <div class="example_code">
-	  <pre>
-    <code>viewer.impl.fadeMaterial.opacity = 0.2; // 设置材质不透明度
-viewer.impl.fadeMaterial.needsUpdate = true; // 修改材质后需要设置其needsUpdate为true    </code>
-	  </pre>
-    </div>
+<p>
+
+For <code>purpose-mode</code>, you may need multiple high resolution screen.
+
+</p>
 
 <p>
 
-更多关于材质信息可参考threejs官网<a href="https://threejs.org/docs/index.html#api/materials/Material">文档</a>和<a href="https://threejs.org/examples/?q=material#webgl_materials">示例</a>.
+For <code>ibuffer</code>, it's not typically "workspace". It depends on how many buffers you have and how familiar you are with the ibuffer filter functionality.
+
+</p>
+
+<p>
+
+For <code>tabbar</code>, eye candy and custom function is needed.
+
+</p>
+
+<p>
+
+So it really depends on
+
+</p>
+<ul>
+<li>your currently familiar workflow</li>
+<li>can you tolerate manully switch workspace</li>
+<li>if you can comfortably change your workflow</li>
+<li>how much isolation you want</li>
+<li>screen amount and size</li>
+</ul>
+
+<p>
+
+I may try <code>persp-mode</code> first. Wish me luck.
 
 </p>
 
 
   </article>
 	  <aside class="published-on">
-	    Published on <time datetime="2017-11-21T21:41+08:00">2017-11-21T21:41</time>
+	    Published on <time datetime="2018-08-07T16:46+08:00">2018-08-07T16:46</time>
 	  </aside>
 
    <p class="email-comment">
-      <a href="mailto:namy.19@gmail.com?subject=2017-11-21-bimsop-viewer-adjust-opacity%20comment:%20&body=Please%20do%20not%20remove%20'2017-11-21-bimsop-viewer-adjust-opacity%20comment:'%20in%20subject%20and%20please%20tell%20me%20whether%20or%20not%20it%20is%20OK%20to%20add%20your%20comment%20and%2For%20your%20email%20address%20to%20the%20blog%20entry!">Comment via email</a> or via <a href="//disqus.com">Disqus</a> comments below:
+      <a href="mailto:namy.19@gmail.com?subject=2018-08-07-emacs-workspace-managment%20comment:%20&body=Please%20do%20not%20remove%20'2018-08-07-emacs-workspace-managment%20comment:'%20in%20subject%20and%20please%20tell%20me%20whether%20or%20not%20it%20is%20OK%20to%20add%20your%20comment%20and%2For%20your%20email%20address%20to%20the%20blog%20entry!">Comment via email</a> or via <a href="//disqus.com">Disqus</a> comments below:
    </p>
 
     <div id="disqus_thread"></div>
@@ -198,7 +203,7 @@ viewer.impl.fadeMaterial.needsUpdate = true; // 修改材质后需要设置其ne
           dsq.type = 'text/javascript';
           dsq.async = true;
           dsq.src = "//yqrashawn.disqus.com/embed.js";
-          var disqus_identifier = '2017-11-21-bimsop-viewer-adjust-opacity';
+          var disqus_identifier = '2018-08-07-emacs-workspace-managment';
           (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
           var ldr = document.getElementById('disqus_loader');
           ldr.parentNode.removeChild(ldr);
@@ -214,7 +219,7 @@ viewer.impl.fadeMaterial.needsUpdate = true; // 修改材质后需要设置其ne
 
 	 	&nbsp;&bull;&nbsp; <a href="mailto:namy.19@gmail.com">Mail</a>
 
-	 	&nbsp;&bull;&nbsp; <a href="https://web.archive.org/web/*/yqrashawn.com/2017/11/21/bimsop-viewer-adjust-opacity/">Archive</a>
+	 	&nbsp;&bull;&nbsp; <a href="https://web.archive.org/web/*/yqrashawn.com/2018/08/07/emacs-workspace-managment/">Archive</a>
       </p>
     </footer>
 
