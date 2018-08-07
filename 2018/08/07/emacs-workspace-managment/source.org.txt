@@ -26,7 +26,7 @@ in emacs.
 
 The cons of the first two is that you need to deliberately switch workspace when
 you are going to open files in other workspace. The pros is that they provide
-perfect isolation, no need to tweek buffer switch functions.
+perfect isolation, no need to tweak buffer switch functions.
 
 For ~persp-mode~, the pros is that with custom code, maybe it's not hard to
 implement the workspace auto-switching function. It has eye candy in mode
@@ -42,7 +42,7 @@ For ~tabbar~, eye candy and custom function is needed.
 
 So it really depends on
 - your currently familiar workflow
-- can you tolerate manully switch workspace
+- can you tolerate manually switch workspace
 - if you can comfortably change your workflow
 - how much isolation you want
 - screen amount and size
