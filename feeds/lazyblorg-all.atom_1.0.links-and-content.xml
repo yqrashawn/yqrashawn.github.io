@@ -7,7 +7,7 @@
   <id>http://yqrashawn.com/</id>
   <link href="http://yqrashawn.com" />
   <icon>/favicon.ico</icon>
-  <updated>2018-08-07T16:54:37+08:00</updated>
+  <updated>2018-08-11T17:17:27+08:00</updated>
   <author>
     <name>yqrashawn</name>
   </author>
@@ -16,8 +16,93 @@
   <generator uri='https://github.com/novoid/lazyblorg'>Generated from Org-mode source code using lazyblorg which is written in Python. Industrial-strength technology, baby.</generator>
 <!-- ############################################################################################# -->
 <entry>
+    <title type="text">after tring persp-mode</title>
+    <link href='http://yqrashawn.com/2018/08/11/after-tring-persp-mode' />
+    <published>2018-08-11T17:07:00+08:00</published>
+    <updated>2018-08-11T17:07:00+08:00</updated>
+    <category scheme='http://yqrashawn.com/tags/emacs' term='emacs' />
+    <category scheme='http://yqrashawn.com/tags/workspace' term='workspace' />
+    <summary type='xhtml'>
+<div xmlns='http://www.w3.org/1999/xhtml'>
+<p>
+
+After <a href="https://yqrashawn.com/2018/08/07/emacs-workspace-management/">last post about tring emacs workspace management</a>, I tried <code>persp-mode</code>. It comes out that it's not that simple to implement a workspace auto-switch feature. It's not just <code>find-file-hook</code> and advice for <code>switch-buffer</code>. There are too many commands need to advice and hook (<code>select-window</code>, <code>kill-buffer-hook</code> ...). Cause there's no "buffer-focus-in-hook". And it's not easy to build one with <code>persp-mode</code>.
+
+</p>
+
+
+<p>
+
+There is one package in melpa that implement per buffer <code>buffer-focus-in-hook</code> and <code>buffer-focus-out-hook</code> by hacking on <code>buffer-list-update-hook</code>. But <code>persp-mode</code> also manipulate the <code>buffer-list</code>. It won't work out.
+
+</p>
+
+
+<p>
+
+Then I realize that I just want to have workspace on buffer management, like the <code>ibuffer</code> option above. I can easily get that feature. I just rebind my buffer-switch key to <code>counsel-projectile-switch-to-buffer</code> and everything works great.
+
+</p>
+
+
+<p>
+
+It turns out that compared with projectile, persp only offers workspace specific window configuration. So I don't need it if I only want buffer level workspace. And it also add unexpacted behavior when I test my auto-switch implementation (buffer and window configuration switched at the same time), which makes me wonder that workspace auto-switch is a bad idea.
+
+</p>
+
+
+<p>
+
+Although it looks like that I waste bunch of time to find a single rebind. I do find lots useful stuff on these workspace, layout, window management packages and implementations. I might write another post for about that.
+
+</p>
+</div>
+    </summary>    <content type='xhtml'>
+      <div xmlns='http://www.w3.org/1999/xhtml'>
+	
+<p>
+
+After <a href="https://yqrashawn.com/2018/08/07/emacs-workspace-management/">last post about tring emacs workspace management</a>, I tried <code>persp-mode</code>. It comes out that it's not that simple to implement a workspace auto-switch feature. It's not just <code>find-file-hook</code> and advice for <code>switch-buffer</code>. There are too many commands need to advice and hook (<code>select-window</code>, <code>kill-buffer-hook</code> ...). Cause there's no "buffer-focus-in-hook". And it's not easy to build one with <code>persp-mode</code>.
+
+</p>
+
+
+<p>
+
+There is one package in melpa that implement per buffer <code>buffer-focus-in-hook</code> and <code>buffer-focus-out-hook</code> by hacking on <code>buffer-list-update-hook</code>. But <code>persp-mode</code> also manipulate the <code>buffer-list</code>. It won't work out.
+
+</p>
+
+
+<p>
+
+Then I realize that I just want to have workspace on buffer management, like the <code>ibuffer</code> option above. I can easily get that feature. I just rebind my buffer-switch key to <code>counsel-projectile-switch-to-buffer</code> and everything works great.
+
+</p>
+
+
+<p>
+
+It turns out that compared with projectile, persp only offers workspace specific window configuration. So I don't need it if I only want buffer level workspace. And it also add unexpacted behavior when I test my auto-switch implementation (buffer and window configuration switched at the same time), which makes me wonder that workspace auto-switch is a bad idea.
+
+</p>
+
+
+<p>
+
+Although it looks like that I waste bunch of time to find a single rebind. I do find lots useful stuff on these workspace, layout, window management packages and implementations. I might write another post for about that.
+
+</p>
+
+      </div>
+    </content>
+    <id>http://yqrashawn.com/2018/08/11/after-tring-persp-mode-from-feed-with-content</id>
+</entry>
+<!-- ############################################################################################# -->
+<entry>
     <title type="text">emacs workspace management</title>
-    <link href='http://yqrashawn.com/2018/08/07/emacs-workspace-managment' />
+    <link href='http://yqrashawn.com/2018/08/07/emacs-workspace-management' />
     <published>2018-08-07T16:46:00+08:00</published>
     <updated>2018-08-07T16:46:00+08:00</updated>
     <category scheme='http://yqrashawn.com/tags/emacs' term='emacs' />
@@ -187,7 +272,7 @@ I may try <code>persp-mode</code> first. Wish me luck.
 
       </div>
     </content>
-    <id>http://yqrashawn.com/2018/08/07/emacs-workspace-managment-from-feed-with-content</id>
+    <id>http://yqrashawn.com/2018/08/07/emacs-workspace-management-from-feed-with-content</id>
 </entry>
 <!-- ############################################################################################# -->
 <entry>

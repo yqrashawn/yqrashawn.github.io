@@ -68,11 +68,11 @@
            <li id="top-tags">Top <a href="//yqrashawn.com/tags/">tags</a>:</li>
                <ul class="top-tags-list">
                      
-              <li><a class="usertag" href="//yqrashawn.com/tags/emacs">emacs</a> (3)</li>
+              <li><a class="usertag" href="//yqrashawn.com/tags/emacs">emacs</a> (4)</li>
+              <li><a class="usertag" href="//yqrashawn.com/tags/workspace">workspace</a> (2)</li>
               <li><a class="usertag" href="//yqrashawn.com/tags/tool">tool</a> (2)</li>
               <li><a class="usertag" href="//yqrashawn.com/tags/coding">coding</a> (2)</li>
               <li><a class="usertag" href="//yqrashawn.com/tags/shell">shell</a> (1)</li>
-              <li><a class="usertag" href="//yqrashawn.com/tags/workspace">workspace</a> (1)</li>
               <li><a class="usertag" href="//yqrashawn.com/tags/chinese">chinese</a> (1)</li>
               <li><a class="usertag" href="//yqrashawn.com/tags/watching">watching</a> (1)</li>
               <li><a class="usertag" href="//yqrashawn.com/tags/efficient">efficient</a> (1)</li>
@@ -116,11 +116,11 @@
            <li id="top-tags">Top <a href="//yqrashawn.com/tags/">tags</a>:</li>
                <ul class="top-tags-list">
                      
-              <li><a class="usertag" href="//yqrashawn.com/tags/emacs">emacs</a> (3)</li>
+              <li><a class="usertag" href="//yqrashawn.com/tags/emacs">emacs</a> (4)</li>
+              <li><a class="usertag" href="//yqrashawn.com/tags/workspace">workspace</a> (2)</li>
               <li><a class="usertag" href="//yqrashawn.com/tags/tool">tool</a> (2)</li>
               <li><a class="usertag" href="//yqrashawn.com/tags/coding">coding</a> (2)</li>
               <li><a class="usertag" href="//yqrashawn.com/tags/shell">shell</a> (1)</li>
-              <li><a class="usertag" href="//yqrashawn.com/tags/workspace">workspace</a> (1)</li>
               <li><a class="usertag" href="//yqrashawn.com/tags/chinese">chinese</a> (1)</li>
               <li><a class="usertag" href="//yqrashawn.com/tags/watching">watching</a> (1)</li>
               <li><a class="usertag" href="//yqrashawn.com/tags/efficient">efficient</a> (1)</li>
@@ -144,7 +144,52 @@
 
 	    </ul>
 	  </aside>
-<h1><a href="2018/08/07/emacs-workspace-managment">2018-08-07: emacs workspace management</a></h1>
+<h1><a href="2018/08/11/after-tring-persp-mode">2018-08-11: after tring persp-mode</a></h1>
+
+
+<p>
+
+After <a href="https://yqrashawn.com/2018/08/07/emacs-workspace-management/">last post about tring emacs workspace management</a>, I tried <code>persp-mode</code>. It comes out that it's not that simple to implement a workspace auto-switch feature. It's not just <code>find-file-hook</code> and advice for <code>switch-buffer</code>. There are too many commands need to advice and hook (<code>select-window</code>, <code>kill-buffer-hook</code> ...). Cause there's no "buffer-focus-in-hook". And it's not easy to build one with <code>persp-mode</code>.
+
+</p>
+
+
+<p>
+
+There is one package in melpa that implement per buffer <code>buffer-focus-in-hook</code> and <code>buffer-focus-out-hook</code> by hacking on <code>buffer-list-update-hook</code>. But <code>persp-mode</code> also manipulate the <code>buffer-list</code>. It won't work out.
+
+</p>
+
+
+<p>
+
+Then I realize that I just want to have workspace on buffer management, like the <code>ibuffer</code> option above. I can easily get that feature. I just rebind my buffer-switch key to <code>counsel-projectile-switch-to-buffer</code> and everything works great.
+
+</p>
+
+
+<p>
+
+It turns out that compared with projectile, persp only offers workspace specific window configuration. So I don't need it if I only want buffer level workspace. And it also add unexpacted behavior when I test my auto-switch implementation (buffer and window configuration switched at the same time), which makes me wonder that workspace auto-switch is a bad idea.
+
+</p>
+
+
+<p>
+
+Although it looks like that I waste bunch of time to find a single rebind. I do find lots useful stuff on these workspace, layout, window management packages and implementations. I might write another post for about that.
+
+</p>
+
+</article>
+<article class="entry-page-article">
+	  <aside>
+	    <ul class="entry-page-article-tags">                <li><a class="usertag" href="//yqrashawn.com/tags/emacs/">emacs</a></li>
+                <li><a class="usertag" href="//yqrashawn.com/tags/workspace/">workspace</a></li>
+
+	    </ul>
+	  </aside>
+<h1><a href="2018/08/07/emacs-workspace-management">2018-08-07: emacs workspace management</a></h1>
 
 
 <p>
