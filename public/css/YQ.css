@@ -304,6 +304,10 @@ container {
     margin-bottom: 20px;
 }
 
+.temporal-article-header-nav {
+    box-shadow: 0 4px 8px 0 rgba(0,0,0,.2)
+}
+
 .common-orgsource {
     float: right;
     font-size: 120%;
