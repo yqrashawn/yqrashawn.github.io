@@ -23,7 +23,7 @@ one is telling zsh don't do something when it's in emacs.
 #+BEGIN_SRC shell
 if [ -n "$INSIDE_EMACS" ]; then
     ...
-  else
+else
     ...
 fi
 #+END_SRC

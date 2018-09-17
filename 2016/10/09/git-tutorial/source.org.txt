@@ -1,4 +1,3 @@
-** DONE Git 指南                              :blog:coding:git:tool:chinese:
 CLOSED: [2017-10-30 Mon 15:19]
 :PROPERTIES:
 :CREATED:  [2016-10-09 Sun 09:00]
@@ -262,7 +261,6 @@ git fetch --all                                        获取所有远程仓库�
 git pull 远程仓库名 远程分支名                             获取对应远程分支数据并合并
 git pull 实际上就是 git fetch加git merge
 #+END_SRC
-
 
 
 **** 如何高效使用Git
@@ -634,4 +632,3 @@ c65087d..c1fde84  master -> master
 #+END_SRC
 
 上面的指令为另一个用户clone该项目后在 =food.txt=  文件中加入'我也吃了苹果', 加入暂存区并提交, push.
-

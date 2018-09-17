@@ -7,13 +7,135 @@
   <id>http://yqrashawn.com/</id>
   <link href="http://yqrashawn.com" />
   <icon>/favicon.ico</icon>
-  <updated>2018-08-11T17:17:27+08:00</updated>
+  <updated>2018-09-17T22:39:47+08:00</updated>
   <author>
     <name>yqrashawn</name>
   </author>
   <subtitle type="text">infin</subtitle>
   <rights>All content written by yqrashawn</rights>
   <generator uri='https://github.com/novoid/lazyblorg'>Generated from Org-mode source code using lazyblorg which is written in Python. Industrial-strength technology, baby.</generator>
+<!-- ############################################################################################# -->
+<entry>
+    <title type="text">Record Org-mode Recent Activity</title>
+    <link href='http://yqrashawn.com/2018/09/17/record-org-mode-recent-activity' />
+    <published>2018-09-17T22:25:00+08:00</published>
+    <updated>2018-09-17T22:25:00+08:00</updated>
+    <category scheme='http://yqrashawn.com/tags/org-mdoe' term='org-mdoe' />
+    <category scheme='http://yqrashawn.com/tags/emacs' term='emacs' />
+    <summary type='xhtml'>
+<div xmlns='http://www.w3.org/1999/xhtml'>
+<p>
+
+So I checked the <a href="https://www.notion.so/">notion</a> tool recently. It's pretty good if everyone around use it. But as an emacs user, I still prefer org-mode.
+
+</p>
+
+
+<p>
+
+It's just there's one functionality I never thought about when I was using org-mode, the ability to record your activity. Like when you reschedule somthing or change the state of tasks.
+
+</p>
+
+
+<p>
+
+I did some search online and came up with a solution. I'm pretty sure there's better ways to do so. I'll just put the codes here. It leverages the <code>org-agenda-custom-commands</code> and the <code>:LOGBOOK:</code> feature. And the code is mainly from <a href="https://stackoverflow.com/questions/8039416/custom-searches-using-timestamps-in-logbook-in-org-mode">here</a> with some modification.
+
+</p>
+
+
+	  <div class="example_code">
+	  <pre>
+    <code>;; enable the log feature
+(setq org-log-into-drawer t)
+(setq org-log-reschedule 'time)
+(setq org-log-redeadline 'note)
+(setq org-log-note-clock-out t)
+
+;; add T: before timestamp for easy regex search
+(setq org-log-note-headings '((done . "CLOSING NOTE T:%t")
+                              (state . "State %-12s from %-12S T:%t")
+                              (note . "Note taken on T:%t")
+                              (reschedule . "Rescheduled from %S on T:%t")
+                              (delschedule . "Not scheduled, was %S on T:%t")
+                              (redeadline . "New deadline from %S on T:%t")
+                              (deldeadline . "Removed deadline, was %S on T:%t")
+                              (refile . "Refiled on T:%t")
+                              (clock-out . "Clocked out on T:%t")))
+
+(defun +org/find-state (&amp;optional end)
+  "Used to search through the logbook of subtrees.
+
+    Looking for T:[2018-09-14 Fri 10:50] kind of time stamp in logbook."
+  (let* ((closed (re-search-forward "^CLOSED: \\[" end t))
+         (created (if (not closed) (re-search-forward "^:CREATED: \\[" end t)))
+         (logbook (if (not closed) (re-search-forward ".*T:\\[" end t)))
+         (result (or closed logbook created)))
+    result))
+
+(defun +org/date-diff (start end &amp;optional compare)
+  "Calculate difference between  selected timestamp to current date.
+
+  The difference between the dates is calculated in days.
+  START and END define the region within which the timestamp is found.
+  Optional argument COMPARE allows for comparison to a specific date rather than to current date."
+  (let* ((start-date (if compare compare (calendar-current-date))))
+    (- (calendar-absolute-from-gregorian start-date) (org-time-string-to-absolute (buffer-substring-no-properties start end)))))
+
+(defun +org/last-update-before (since)
+  "List Agenda items that updated before SINCE day."
+  (let ((next-headline (save-excursion (or (outline-next-heading) (point-max)))))
+    (let* ((subtree-end (save-excursion (org-end-of-subtree t)))
+           (subtree-valid (save-excursion
+                            (forward-line 1)
+                            (if (and (&lt; (point) subtree-end)
+                                     ;; Find the timestamp to test
+                                     (+org/find-state subtree-end))
+                                (let ((startpoint (point)))
+                                  (forward-word 3)
+                                  ;; Convert timestamp into days difference from today
+                                  (+org/date-diff startpoint (point)))
+                              (point-max)))))
+      (if (and subtree-valid (&gt;= subtree-valid since))
+          next-headline
+        nil))))
+
+(defun +org/has-child-and-last-update-before (day)
+  (if (+org/has-child-p) (point)
+    (+org/last-update-before day)))    </code>
+	  </pre>
+    </div>
+
+
+<p>
+
+So now we can use the <code>+org/last-update-before</code> or <code>+org/has-child-and-last-update-before</code> function in <code>org-agenda-custom-commands</code> to filter activities updated since <code>SINCE</code> days ago. Like this.
+
+</p>
+
+
+	  <div class="example_code">
+	  <pre>
+    <code>(setq org-agenda-custom-commands
+      '(("R" "Recent activity"
+         ((tags "*"
+                ((org-agenda-overriding-header "Recent Activity")
+                 (org-agenda-skip-function '(+org/has-child-and-last-update-before 7)))))
+         nil nil)))    </code>
+	  </pre>
+    </div>
+
+
+<p>
+
+The code will only search for timestamps in ":LOGBOOK:" prefexd with <code>T:</code> or <code>:CREATED:</code> or <code>:CLOSED</code> timestamps. It works fine and helps me sometimes. Maybe I should write a agenda sort function to let them ordered by changed time. Fine for me right now.
+
+</p>
+</div>
+    </summary>
+    <id>http://yqrashawn.com/2018/09/17/record-org-mode-recent-activity-from-feed-with-teaser</id>
+</entry>
 <!-- ############################################################################################# -->
 <entry>
     <title type="text">after tring persp-mode</title>
@@ -266,7 +388,7 @@ When I restructure my zsh configurations, I find the z-shell works fine with wit
 	  <pre>
     <code>if [ -n "$INSIDE_EMACS" ]; then
     ...
-  else
+else
     ...
 fi    </code>
 	  </pre>

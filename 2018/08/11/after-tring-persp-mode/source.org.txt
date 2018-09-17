@@ -1,4 +1,4 @@
-** DONE after tring persp-mode :blog:emacs:workspace:
+** DONE after tring persp-mode                        :blog:emacs:workspace:
 :PROPERTIES:
 :ID:       2018-08-11-after-tring-persp-mode
 :CREATED:  <2018-08-11 Sat 17:04>
