@@ -1,11 +1,12 @@
 ** DONE My Karabiner Elements configuration :blog:coding:tool:efficient:karabiner:
-CLOSED: [2018-02-12 Mon 21:50]
+CLOSED: [2018-09-19 Wed 08:52]
 :PROPERTIES:
 :CREATED:  [2017-10-29 Sun 17:01]
 :ID:       2017-10-29-my-karabiner-configuration
 :END:
 :LOGBOOK:
-- State "DONE"       from "DONE"       T: [2018-09-19 Wed 08:50]
+- State "DONE"       from "TODO"       T: [2018-09-19 Wed 08:52]
+- State "TODO"       from "DONE"       T: [2018-09-19 Wed 08:52]
 - State "DONE"       from "STARTED"    [2017-10-29 Sun 20:45]
 - State "STARTED"    from "DONE"       [2017-10-29 Sun 19:29]
 - State "TODO"       from "STARTED"    [2017-10-29 Sun 19:29]
