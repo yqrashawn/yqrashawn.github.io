@@ -102,4 +102,3 @@ If anyone intrested in automatically recoding changes of headings, you may want
 check [[https://emacs.stackexchange.com/questions/39348/org-auto-add-update-date-of-last-modification-of-heading-and-or-its-body-to#][this]] stackoverflow question. The answer gives a method using hash to
 record last modification time of any changes in headings or even bodys.
 
-
