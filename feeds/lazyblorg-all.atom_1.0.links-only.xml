@@ -7,13 +7,22 @@
   <id>http://yqrashawn.com/</id>
   <link href="http://yqrashawn.com" />
   <icon>/favicon.ico</icon>
-  <updated>2018-09-28T17:16:38+08:00</updated>
+  <updated>2018-09-29T18:29:26+08:00</updated>
   <author>
     <name>yqrashawn</name>
   </author>
   <subtitle type="text">infin</subtitle>
   <rights>All content written by yqrashawn</rights>
   <generator uri='https://github.com/novoid/lazyblorg'>Generated from Org-mode source code using lazyblorg which is written in Python. Industrial-strength technology, baby.</generator>
+<!-- ############################################################################################# -->
+<entry>
+    <title type="text">Fix The Log Folder Permission Problem with Homebrew Services</title>
+    <link href='http://yqrashawn.com/2018/09/29/brew-services-log-permission-probelm' />
+    <published>2018-09-29T18:26:00+08:00</published>
+    <updated>2018-09-29T18:26:00+08:00</updated>
+    <category scheme='http://yqrashawn.com/tags/tool' term='tool' />
+    <id>http://yqrashawn.com/2018/09/29/brew-services-log-permission-probelm-from-feed-with-links</id>
+</entry>
 <!-- ############################################################################################# -->
 <entry>
     <title type="text">Switch Buffer In Emacs</title>

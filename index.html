@@ -69,8 +69,8 @@
                <ul class="top-tags-list">
                      
               <li><a class="usertag" href="//yqrashawn.com/tags/emacs">emacs</a> (6)</li>
+              <li><a class="usertag" href="//yqrashawn.com/tags/tool">tool</a> (3)</li>
               <li><a class="usertag" href="//yqrashawn.com/tags/workspace">workspace</a> (2)</li>
-              <li><a class="usertag" href="//yqrashawn.com/tags/tool">tool</a> (2)</li>
               <li><a class="usertag" href="//yqrashawn.com/tags/coding">coding</a> (2)</li>
               <li><a class="usertag" href="//yqrashawn.com/tags/shell">shell</a> (1)</li>
               <li><a class="usertag" href="//yqrashawn.com/tags/chinese">chinese</a> (1)</li>
@@ -117,8 +117,8 @@
                <ul class="top-tags-list">
                      
               <li><a class="usertag" href="//yqrashawn.com/tags/emacs">emacs</a> (6)</li>
+              <li><a class="usertag" href="//yqrashawn.com/tags/tool">tool</a> (3)</li>
               <li><a class="usertag" href="//yqrashawn.com/tags/workspace">workspace</a> (2)</li>
-              <li><a class="usertag" href="//yqrashawn.com/tags/tool">tool</a> (2)</li>
               <li><a class="usertag" href="//yqrashawn.com/tags/coding">coding</a> (2)</li>
               <li><a class="usertag" href="//yqrashawn.com/tags/shell">shell</a> (1)</li>
               <li><a class="usertag" href="//yqrashawn.com/tags/chinese">chinese</a> (1)</li>
@@ -137,6 +137,50 @@
   </div>
   <container>
 
+<article class="entry-page-article">
+	  <aside>
+	    <ul class="entry-page-article-tags">                <li><a class="usertag" href="//yqrashawn.com/tags/tool/">tool</a></li>
+
+	    </ul>
+	  </aside>
+<h1><a href="2018/09/29/brew-services-log-permission-probelm">2018-09-29: Fix The Log Folder Permission Problem with Homebrew Services</a></h1>
+
+
+<p>
+
+Recently I'm developing this <a href="https://github.com/yqrashawn/GokuRakuJoudo">GokuRakuJoudo</a> tool to enable user config <a href="https://pqrs.org/osx/karabiner/">karabiner</a> with <a href="https://github.com/edn-format/edn">edn</a> file instead of json file.
+
+</p>
+
+
+<p>
+
+I deploy it to the macOS package manager homebrew so that user can install it with homebrew easily. Since the tool is used to watch the edn file and transform it to json file. It's naturally to use homebrew services to run the command.
+
+</p>
+
+
+<p>
+
+Homebrew services uses macOS's launchctl tool to read plist file and run service. The problem is launchctl create the log directory I set in the plist file with system permission, and the program don't need to run under system permission. So the service failed.
+
+</p>
+
+
+<p>
+
+I tried to find ways to create the directory in the brew formula file. But it seems one can't get the HOME env variable in the <code>def install</code> section of the formula. So that I can't create the ~<code>/Library/Logs/goku</code> folder with user ownership. I checked other packages like redis and mongodb. But they all need to run with <code>sudo brew services start</code>.
+
+</p>
+
+
+<p>
+
+When I was about to give up and tell user to create the folder themselves before install the package. I saw there're many other .log files under ~<code>/Library/Logs</code> directory. Then I changed the log file location from <code>...Logs/goku/output.log</code> to <code>.../Logs/goku.log</code>. It works! User do have write permission to file <code>goku.log</code>. It seems that launchctl only create folders with system owner group instead of files. Wired problem. Hope this may help people encountered with the same problem.
+
+</p>
+
+</article>
 <article class="entry-page-article">
 	  <aside>
 	    <ul class="entry-page-article-tags">                <li><a class="usertag" href="//yqrashawn.com/tags/emacs/">emacs</a></li>
