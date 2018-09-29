@@ -7,7 +7,7 @@
   <id>http://yqrashawn.com/</id>
   <link href="http://yqrashawn.com" />
   <icon>/favicon.ico</icon>
-  <updated>2018-09-29T18:29:26+08:00</updated>
+  <updated>2018-09-29T18:30:20+08:00</updated>
   <author>
     <name>yqrashawn</name>
   </author>
@@ -20,6 +20,7 @@
     <link href='http://yqrashawn.com/2018/09/29/brew-services-log-permission-probelm' />
     <published>2018-09-29T18:26:00+08:00</published>
     <updated>2018-09-29T18:26:00+08:00</updated>
+    <category scheme='http://yqrashawn.com/tags/macos' term='macos' />
     <category scheme='http://yqrashawn.com/tags/tool' term='tool' />
     <summary type='xhtml'>
 <div xmlns='http://www.w3.org/1999/xhtml'>
