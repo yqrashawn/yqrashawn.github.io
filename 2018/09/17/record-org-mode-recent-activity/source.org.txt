@@ -14,6 +14,8 @@ It's just there's one functionality I never thought about when I was using
 org-mode, the ability to record your activity. Like when you reschedule somthing
 or change the state of tasks.
 
+-----
+
 I did some search online and came up with a solution. I'm pretty sure there's
 better ways to do so. I'll just put the codes here. It leverages the
 ~org-agenda-custom-commands~ and the ~:LOGBOOK:~ feature. And the code is mainly
