@@ -7,7 +7,7 @@
   <id>http://yqrashawn.com/</id>
   <link href="http://yqrashawn.com" />
   <icon>/favicon.ico</icon>
-  <updated>2018-10-03T02:38:30+08:00</updated>
+  <updated>2018-10-03T02:42:06+08:00</updated>
   <author>
     <name>yqrashawn</name>
   </author>
@@ -78,20 +78,6 @@ I deploy it to the macOS package manager homebrew so that user can install it wi
 Homebrew services uses macOS's launchctl tool to read plist file and run service. The problem is launchctl create the log directory I set in the plist file with system permission, and the program don't need to run under system permission. So the service failed.
 
 </p>
-
-
-<p>
-
-I tried to find ways to create the directory in the brew formula file. But it seems one can't get the HOME env variable in the <code>def install</code> section of the formula. So that I can't create the ~<code>/Library/Logs/goku</code> folder with user ownership. I checked other packages like redis and mongodb. But they all need to run with <code>sudo brew services start</code>.
-
-</p>
-
-
-<p>
-
-When I was about to give up and tell user to create the folder themselves before install the package. I saw there're many other .log files under ~<code>/Library/Logs</code> directory. Then I changed the log file location from <code>...Logs/goku/output.log</code> to <code>.../Logs/goku.log</code>. It works! User do have write permission to file <code>goku.log</code>. It seems that launchctl only create folders with system owner group instead of files. Wired problem. Hope this may help people encountered with the same problem.
-
-</p>
 </div>
     </summary>
     <id>http://yqrashawn.com/2018/09/29/brew-services-log-permission-probelm-from-feed-with-teaser</id>
@@ -115,48 +101,6 @@ Recently there's a <a href="https://www.reddit.com/r/emacs/comments/9hmh8n/whats
 <p>
 
 For me, I use <code>counsel-projectile-switch-to-buffer</code> and <code>ivy-switch-buffer</code> to switch buffer in current project or global. And I have two functions to switch between the two and three most recent buffer.
-
-</p>
-
-
-<p>
-
-It works well if I'm the only one working on this project, which means I name all the files and directries. But if you have this huge react project and there's a component directory with more than twenty components with their own directory and all of their entry files are named <code>index.jsx</code>. Your fingers will have a hard time.
-
-</p>
-
-
-<p>
-
-There's no good solution for, you know, a bad decision. You can only fix it, not solve it. You can set some project local variables and functions to swtich to these <code>index.jsx</code> depends on names of their directories. Or you can get by with it. Either way takes time and won't make it much better in next project.
-
-</p>
-
-
-<p>
-
-Anyway, our emacser will always overcome these kind of things.
-
-</p>
-
-
-<p>
-
-I want to share a new package I found yesterday about swtiching buffer in emacs. And the post end up in complain. My bad.
-
-</p>
-
-
-<p>
-
-The package is <a href="https://github.com/manateelazycat/awesome-tab">awesome-tab</a>. And yes it's based on tabbar. In summary, as the readme says it's a package providing out of box configuration to use tab in emacs. It group tabs by project and hide unwanted buffers by default. The pros is you know clearly which buffer you are switching to (assumming you aren't working on a project like the above one) and you can click on it to switch buffer. It doesn't have functions like switch to nth tab. So I suppose user still need to use fuzzy search to switch buffer if there's a lot buffer in a single project.
-
-</p>
-
-
-<p>
-
-I'll try it for several days and see if I'll keep it.
 
 </p>
 </div>

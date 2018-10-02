@@ -130,7 +130,7 @@ I deploy it to the macOS package manager homebrew so that user can install it wi
 Homebrew services uses macOS's launchctl tool to read plist file and run service. The problem is launchctl create the log directory I set in the plist file with system permission, and the program don't need to run under system permission. So the service failed.
 
 </p>
-
+<div class="orgmode-hr" ></div>
 <p>
 
 I tried to find ways to create the directory in the brew formula file. But it seems one can't get the HOME env variable in the <code>def install</code> section of the formula. So that I can't create the ~<code>/Library/Logs/goku</code> folder with user ownership. I checked other packages like redis and mongodb. But they all need to run with <code>sudo brew services start</code>.

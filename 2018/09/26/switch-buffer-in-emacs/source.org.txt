@@ -17,6 +17,8 @@ For me, I use ~counsel-projectile-switch-to-buffer~ and ~ivy-switch-buffer~ to
 switch buffer in current project or global. And I have two functions to switch
 between the two and three most recent buffer.
 
+-----
+
 It works well if I'm the only one working on this project, which means I name
 all the files and directries. But if you have this huge react project and
 there's a component directory with more than twenty components with their own

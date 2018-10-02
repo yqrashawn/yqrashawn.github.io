@@ -19,6 +19,8 @@ service. The problem is launchctl create the log directory I set in the plist
 file with system permission, and the program don't need to run under system
 permission. So the service failed.
 
+-----
+
 I tried to find ways to create the directory in the brew formula file. But it
 seems one can't get the HOME env variable in the ~def install~ section of the
 formula. So that I can't create the ~~/Library/Logs/goku~ folder with user
