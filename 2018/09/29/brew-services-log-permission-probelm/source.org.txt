@@ -33,4 +33,3 @@ to ~.../Logs/goku.log~. It works! User do have write permission to file
 instead of files. Wired problem. Hope this may help people encountered with the
 same problem.
 
-

@@ -7,13 +7,178 @@
   <id>http://yqrashawn.com/</id>
   <link href="http://yqrashawn.com" />
   <icon>/favicon.ico</icon>
-  <updated>2018-09-29T18:30:20+08:00</updated>
+  <updated>2018-10-03T02:38:30+08:00</updated>
   <author>
     <name>yqrashawn</name>
   </author>
   <subtitle type="text">infin</subtitle>
   <rights>All content written by yqrashawn</rights>
   <generator uri='https://github.com/novoid/lazyblorg'>Generated from Org-mode source code using lazyblorg which is written in Python. Industrial-strength technology, baby.</generator>
+<!-- ############################################################################################# -->
+<entry>
+    <title type="text">Switch Things Faster</title>
+    <link href='http://yqrashawn.com/2018/10/03/switch-things-faster' />
+    <published>2018-10-03T02:30:00+08:00</published>
+    <updated>2018-10-03T02:30:00+08:00</updated>
+    <category scheme='http://yqrashawn.com/tags/karabiner' term='karabiner' />
+    <category scheme='http://yqrashawn.com/tags/emacs' term='emacs' />
+    <category scheme='http://yqrashawn.com/tags/efficient' term='efficient' />
+    <category scheme='http://yqrashawn.com/tags/macos' term='macos' />
+    <summary type='xhtml'>
+<div xmlns='http://www.w3.org/1999/xhtml'>
+<p>
+
+Talking about buffer switching in emacs in the <a href="http://yqrashawn.com/2018/09/26/switch-buffer-in-emacs/">last post</a> , I said that I have keybindings to switch between the two and three most recent used buffers. And the author of the <a href="https://www.reddit.com/r/emacs/comments/9hmh8n/whats_your_preferred_method_of_switching_buffers/">reddit post</a> chose to use <a href="https://github.com/killdash9/buffer-flip.el">buffer-flip</a> package.
+
+</p>
+
+
+<p>
+
+The buffer-flip package makes switching buffer like those switching applications behavior in operating system, like <code>alt-tab</code> in MS Windows and <code>command-tab</code> in macOS. VScode also can switch among opened files with <code>control-tab</code>. The problem of these methods are obvious. They can only switching in a specific order and they all bind to these uncomfortable keys.
+
+</p>
+
+
+<p>
+
+For me there're two solutions.
+
+</p>
+</div>
+    </summary>    <content type='xhtml'>
+      <div xmlns='http://www.w3.org/1999/xhtml'>
+	
+<p>
+
+Talking about buffer switching in emacs in the <a href="http://yqrashawn.com/2018/09/26/switch-buffer-in-emacs/">last post</a> , I said that I have keybindings to switch between the two and three most recent used buffers. And the author of the <a href="https://www.reddit.com/r/emacs/comments/9hmh8n/whats_your_preferred_method_of_switching_buffers/">reddit post</a> chose to use <a href="https://github.com/killdash9/buffer-flip.el">buffer-flip</a> package.
+
+</p>
+
+
+<p>
+
+The buffer-flip package makes switching buffer like those switching applications behavior in operating system, like <code>alt-tab</code> in MS Windows and <code>command-tab</code> in macOS. VScode also can switch among opened files with <code>control-tab</code>. The problem of these methods are obvious. They can only switching in a specific order and they all bind to these uncomfortable keys.
+
+</p>
+
+
+<p>
+
+For me there're two solutions.
+
+</p>
+
+
+	  <header><h2 class="section-title">Search + shortcuts for recent visited item</h2></header>
+
+
+<p>
+
+I already talk about the first solution, switching with packages like <code>ivy</code> or <code>helm</code>, or <code>alfred</code> or <code>contexts</code> on macOS, which you can switching by searching. Plus two shortcuts switching between the most recent two and three item, so that we don't need to press too much to just switch to prev item.
+
+</p>
+
+
+	  <header><h2 class="section-title">home-raw shortcuts + smart trigger</h2></header>
+
+
+<p>
+
+There's another solution. It's very similar to editing text in emacs. When I want to change a word in current line, I got to move my cursor to that word. If the word is in the beginning or end of this line, I use <code>C-a</code> or <code>C-e</code> then maybe <code>C-f</code>, <code>C-b</code> to move to that word (I actually use evil keybindings). If it's in the middle of the line, I use <code>isearch</code>, <code>swiper</code> or <code>evil-fine-char</code> to that word.
+
+</p>
+
+
+<p>
+
+It's the same when we switch buffer. Check the code first.
+
+</p>
+
+
+	  <div class="example_code">
+	  <pre>
+    <code>;; smart trigger function, if not in minibuffer, trigger ivy
+;; if in minibuffer, do ivy actions
+;; (there must be better way to identify if we are in ivy-switch-buffer context)
+(defun +ivy-switch-buffer-next-line ()
+  (interactive)
+  (if (minibufferp) (ivy-next-line)
+    (ivy-switch-buffer)))
+
+(defun +ivy-switch-buffer-prevouse-line ()
+  (interactive)
+  (if (minibufferp) (ivy-previous-line)
+    (ivy-switch-buffer)))
+
+;; then we bind them to some key
+(global-set-key (kbd "C-x C-9 l") #'ivy-alt-done)
+(global-set-key (kbd "C-x C-9 j") '+ivy-switch-buffer-next-line)
+(global-set-key (kbd "C-x C-9 k") '+ivy-switch-buffer-prevouse-line)
+(global-set-key (kbd "C-x C-9 a" ) #'ivy-beginning-of-buffer)
+(global-set-key (kbd "C-x C-9 e" ) #'ivy-end-of-buffer)
+(global-set-key (kbd "C-x C-9 u" ) #'ivy-scroll-down-command)
+(global-set-key (kbd "C-x C-9 d" ) #'ivy-scroll-up-command)    </code>
+	  </pre>
+    </div>
+
+
+<p>
+
+So this is unusable for now. Cause the keybindings are too hard and slow to reach. That's why we don't do these kind of configuration. We don't have enough key for this.
+
+</p>
+
+
+<p>
+
+But what if we can make any key a modifier key like <code>control</code>, <code>alt</code> or <code>command</code>. There's <a href="https://pqrs.org/osx/karabiner/">karabiner</a> on macOS can make this happen. And I think this is doable on other operating systems as well.
+
+</p>
+
+
+	  <div class="example_code">
+	  <pre>
+    <code>{:applications {:Emacs ["^org\\.gnu\\.Emacs$"]} ;; let karabiner know which app is emacs
+ :simlayer {:emacs-s-mode {:key :s :condi :Emacs}} ;; use s as modifer key only in emacs
+ :mains [{:des "s-mode in emacs"
+          :rules [:emacs-s-mode ;; bellow rebinds only works under :emacs-s-mode condition
+                  [:j [:!Tx :!T9 :j]] ;; ivy-next-line or ivy-switch-buffer
+                  [:k [:!Tx :!T9 :k]] ;; prev line
+                  [:l [:!Tx :!T9 :l]] ;; ivy-alt-done
+                  [:i [:!Tx :!T9 :a]] ;; top of ivy buffer
+                  [:o [:!Tx :!T9 :e]] ;; bottom
+                  [:o [:!Tx :!T9 :u]] ;; scroll up
+                  [:o [:!Tx :!T9 :d]]]}]}    </code>
+	  </pre>
+    </div>
+
+
+<p>
+
+I have this <code>emacs-s-mode</code> use <code>s</code> key as a modifier key mapping <code>s+jklaeud</code> to <code>C-x C-9 jklaeud</code>. So when I want to switch buffer, I can just press <code>s+j/k</code> to trigger <code>ivy-switch-buffer</code> and keep pressing either of this key to find my buffer. Or use <code>s + u or d</code> to scroll quicker, <code>s+a/e</code> to go to the top and bottom of the list and <code>s+l</code> to select the buffer. I can always release <code>s</code> key and type to search the right buffer, without fearing releasing keys may select wrong buffer (happens when switching application with <code>command+tab</code>). And it won't switch to buffers between current one and target one making emacs rendering every buffer (buffer-flip behavior).
+
+</p>
+
+
+<p>
+
+Note that the karabiner configuration above needs <a href="https://github.com/yqrashawn/GokuRakuJoudo">GokuRakuJoudo</a> to convert to the json format that karabiner can read, you can't use it directly.
+
+</p>
+
+
+<p>
+
+If you know how to make normal keys as modifier key in other operating system, please let me know. I'll add them to this post.
+
+</p>
+
+      </div>
+    </content>
+    <id>http://yqrashawn.com/2018/10/03/switch-things-faster-from-feed-with-content</id>
+</entry>
 <!-- ############################################################################################# -->
 <entry>
     <title type="text">Fix The Log Folder Permission Problem with Homebrew Services</title>
