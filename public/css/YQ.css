@@ -452,7 +452,6 @@ blockquote br {
 .image-center {
     margin: auto;
     text-align: center;
-    position: relative;
     width: 100%;
 }
 
@@ -461,6 +460,10 @@ figure {
     margin-block-end: none;
     margin-inline-start: none;
     margin-inline-end: none;
+}
+
+figure img {
+    max-width: 100%;
 }
 
 figcaption {
