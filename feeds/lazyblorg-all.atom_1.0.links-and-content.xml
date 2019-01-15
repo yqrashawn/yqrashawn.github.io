@@ -7,7 +7,7 @@
   <id>http://yqrashawn.com/</id>
   <link href="http://yqrashawn.com" />
   <icon>/favicon.ico</icon>
-  <updated>2019-01-15T12:23:50+08:00</updated>
+  <updated>2019-01-15T12:47:59+08:00</updated>
   <author>
     <name>yqrashawn</name>
   </author>
@@ -42,7 +42,7 @@ The package shows buffers as tabs in emacs <a href="http://www.gnu.org/s/emacs/m
 
 <p>
 
-I write a patch for the package to add function to jump to specifc tab recently. So that user can jump to specific tabs with different shortcuts.
+I write a <a href="https://github.com/yqrashawn/awesome-tab">patch</a> for the package to add function to jump to specifc tab recently. So that user can jump to specific tabs with different shortcuts.
 
 </p>
 
@@ -154,7 +154,7 @@ The package shows buffers as tabs in emacs <a href="http://www.gnu.org/s/emacs/m
 
 <p>
 
-I write a patch for the package to add function to jump to specifc tab recently. So that user can jump to specific tabs with different shortcuts.
+I write a <a href="https://github.com/yqrashawn/awesome-tab">patch</a> for the package to add function to jump to specifc tab recently. So that user can jump to specific tabs with different shortcuts.
 
 </p>
 
