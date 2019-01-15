@@ -7,13 +7,25 @@
   <id>http://yqrashawn.com/</id>
   <link href="http://yqrashawn.com" />
   <icon>/favicon.ico</icon>
-  <updated>2018-10-03T02:43:09+08:00</updated>
+  <updated>2019-01-15T12:06:23+08:00</updated>
   <author>
     <name>yqrashawn</name>
   </author>
   <subtitle type="text">infin</subtitle>
   <rights>All content written by yqrashawn</rights>
   <generator uri='https://github.com/novoid/lazyblorg'>Generated from Org-mode source code using lazyblorg which is written in Python. Industrial-strength technology, baby.</generator>
+<!-- ############################################################################################# -->
+<entry>
+    <title type="text">Use Emacs With Home Row</title>
+    <link href='http://yqrashawn.com/2019/01/15/use-emacs-with-home-row' />
+    <published>2019-01-15T11:54:00+08:00</published>
+    <updated>2019-01-15T11:54:00+08:00</updated>
+    <category scheme='http://yqrashawn.com/tags/goku' term='goku' />
+    <category scheme='http://yqrashawn.com/tags/macos' term='macos' />
+    <category scheme='http://yqrashawn.com/tags/karabiner' term='karabiner' />
+    <category scheme='http://yqrashawn.com/tags/emacs' term='emacs' />
+    <id>http://yqrashawn.com/2019/01/15/use-emacs-with-home-row-from-feed-with-links</id>
+</entry>
 <!-- ############################################################################################# -->
 <entry>
     <title type="text">Switch Things Faster</title>

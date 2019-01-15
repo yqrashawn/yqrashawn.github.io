@@ -25,7 +25,7 @@ I already talk about the first solution, switching with packages like ~ivy~ or
 searching. Plus two shortcuts switching between the most recent two and three
 item, so that we don't need to press too much to just switch to prev item.
 
-*** home-raw shortcuts + smart trigger
+*** home-row shortcuts + smart trigger
 There's another solution. It's very similar to editing text in emacs. When I
 want to change a word in current line, I got to move my cursor to that word. If
 the word is in the beginning or end of this line, I use ~C-a~ or ~C-e~ then
@@ -96,3 +96,4 @@ the json format that karabiner can read, you can't use it directly.
 
 If you know how to make normal keys as modifier key in other operating system,
 please let me know. I'll add them to this post.
+

@@ -7,13 +7,250 @@
   <id>http://yqrashawn.com/</id>
   <link href="http://yqrashawn.com" />
   <icon>/favicon.ico</icon>
-  <updated>2018-10-03T02:43:09+08:00</updated>
+  <updated>2019-01-15T12:06:23+08:00</updated>
   <author>
     <name>yqrashawn</name>
   </author>
   <subtitle type="text">infin</subtitle>
   <rights>All content written by yqrashawn</rights>
   <generator uri='https://github.com/novoid/lazyblorg'>Generated from Org-mode source code using lazyblorg which is written in Python. Industrial-strength technology, baby.</generator>
+<!-- ############################################################################################# -->
+<entry>
+    <title type="text">Use Emacs With Home Row</title>
+    <link href='http://yqrashawn.com/2019/01/15/use-emacs-with-home-row' />
+    <published>2019-01-15T11:54:00+08:00</published>
+    <updated>2019-01-15T11:54:00+08:00</updated>
+    <category scheme='http://yqrashawn.com/tags/goku' term='goku' />
+    <category scheme='http://yqrashawn.com/tags/macos' term='macos' />
+    <category scheme='http://yqrashawn.com/tags/karabiner' term='karabiner' />
+    <category scheme='http://yqrashawn.com/tags/emacs' term='emacs' />
+    <summary type='xhtml'>
+<div xmlns='http://www.w3.org/1999/xhtml'>
+<p>
+
+After writing about <a href="http://yqrashawn.com/2018/09/26/switch-buffer-in-emacs/">switching buffers in emacs</a> last year. I keep looking for the way to switch buffer quicker and more comfortably. I mentioned the package <a href="https://github.com/manateelazycat/awesome-tab">awesome-tab</a> in that post and I'm still using it.
+
+</p>
+
+
+<p>
+
+The package shows buffers as tabs in emacs <a href="http://www.gnu.org/s/emacs/manual/html_node/elisp/Header-Lines.html">header line</a>, and provides functions to switch to next/prev, first/last tab. It also groups buffers depends on project and major-mode.
+
+</p>
+
+
+<p>
+
+I write a patch for the package to add function to jump to specifc tab recently. So that user can jump to specific tabs with different shortcuts.
+
+</p>
+
+
+<p>
+
+I also write a <a href="https://github.com/company-mode/company-mode/pull/859">patch</a> for <a href="https://github.com/company-mode/company-mode">company-mode</a> to customize the company candidate numbers when <code>company-show-numbers</code> is set to t.
+
+</p>
+
+
+<p>
+
+Now I can use the home row the way I want in emacs. Check the screenshot below.
+
+</p>
+
+
+<figure class="image-center">
+<img src="http://yqrashawn.com/2019/01/15/use-emacs-with-home-row/http://yqrashawn.com/2019/01/15/use-emacs-with-home-row/2019-01-15_emacs-home-row%20-%20scaled%20width%20500.png" alt="use emacs with home row image" width="500" />
+<figcaption>use emacs with home row</figcaption>
+</figure>
+
+
+<p>
+
+As you can see in the picture, instead of numbers, there're "asdf" for both tabs and completion candidates. Next step is to switch/select tabs/candidates with home row shortcuts.
+
+</p>
+
+
+	  <div class="example_code">
+	  <pre>
+    <code>{:des "Emacs m/v select company candidates"
+ :rules [:emacs-m-mode
+         [:a [:!Tx :!T6 :1]]
+         [:s [:!Tx :!T6 :2]]
+         [:d [:!Tx :!T6 :3]]
+         [:f [:!Tx :!T6 :4]]
+         [:g [:!Tx :!T6 :5]]
+         :emacs-v-mode
+         [:h [:!Tx :!T6 :6]]
+         [:j [:!Tx :!T6 :7]]
+         [:k [:!Tx :!T6 :8]]
+         [:l [:!Tx :!T6 :9]]
+         [:semicolon [:!Tx :!T6 :0]]]}    </code>
+	  </pre>
+    </div>
+
+
+<p>
+
+Above code uses <a href="https://github.com/yqrashawn/GokuRakuJoudo">goku</a> and <a href="https://github.com/tekezo/Karabiner-Elements">karabiner</a> to map <code>m+asdfg</code> and <code>v+hjkl;</code> to <code>C-x C-6 1234567890</code>. That's <code>'m' key down then click 'a'</code> to <code>C-x C-6 1</code> in emacs. Then I map <code>C-x C-6</code> + numbers to functions that switch/select tabs/candidates in emacs.
+
+</p>
+
+
+	  <div class="example_code">
+	  <pre>
+    <code>;; jump to specific in emacs
+(define-key awesome-tab-mode-map (kbd "C-x C-6 1") (lambda () (interactive) (awesome-tab-jump ?a)))
+(define-key awesome-tab-mode-map (kbd "C-x C-6 2") (lambda () (interactive) (awesome-tab-jump ?s)))
+(define-key awesome-tab-mode-map (kbd "C-x C-6 3") (lambda () (interactive) (awesome-tab-jump ?d)))
+
+;; select specific candidates in company-active-map
+(define-key company-active-map (kbd "C-x C-6 1") (kbd "M-1"))
+(define-key company-active-map (kbd "C-x C-6 2") (kbd "M-2"))
+(define-key company-active-map (kbd "C-x C-6 3") (kbd "M-3"))    </code>
+	  </pre>
+    </div>
+
+
+<p>
+
+We can use magic now!
+
+</p>
+
+
+<p>
+
+'ma' switch to first tab. 'mg' select 5th candidates when completing stuff.
+
+</p>
+
+
+<p>
+
+You can find above code in my <a href="https://github.com/yqrashawn/yqdotfiles/blob/master/.config/karabiner.edn">goku config</a> and <a href="https://github.com/yqrashawn/.emacs.d">.emacs.d</a>.
+
+</p>
+</div>
+    </summary>    <content type='xhtml'>
+      <div xmlns='http://www.w3.org/1999/xhtml'>
+	
+<p>
+
+After writing about <a href="http://yqrashawn.com/2018/09/26/switch-buffer-in-emacs/">switching buffers in emacs</a> last year. I keep looking for the way to switch buffer quicker and more comfortably. I mentioned the package <a href="https://github.com/manateelazycat/awesome-tab">awesome-tab</a> in that post and I'm still using it.
+
+</p>
+
+
+<p>
+
+The package shows buffers as tabs in emacs <a href="http://www.gnu.org/s/emacs/manual/html_node/elisp/Header-Lines.html">header line</a>, and provides functions to switch to next/prev, first/last tab. It also groups buffers depends on project and major-mode.
+
+</p>
+
+
+<p>
+
+I write a patch for the package to add function to jump to specifc tab recently. So that user can jump to specific tabs with different shortcuts.
+
+</p>
+
+
+<p>
+
+I also write a <a href="https://github.com/company-mode/company-mode/pull/859">patch</a> for <a href="https://github.com/company-mode/company-mode">company-mode</a> to customize the company candidate numbers when <code>company-show-numbers</code> is set to t.
+
+</p>
+
+
+<p>
+
+Now I can use the home row the way I want in emacs. Check the screenshot below.
+
+</p>
+
+
+<figure class="image-center">
+<img src="http://yqrashawn.com/2019/01/15/use-emacs-with-home-row/http://yqrashawn.com/2019/01/15/use-emacs-with-home-row/2019-01-15_emacs-home-row%20-%20scaled%20width%20500.png" alt="use emacs with home row image" width="500" />
+<figcaption>use emacs with home row</figcaption>
+</figure>
+
+
+<p>
+
+As you can see in the picture, instead of numbers, there're "asdf" for both tabs and completion candidates. Next step is to switch/select tabs/candidates with home row shortcuts.
+
+</p>
+
+
+	  <div class="example_code">
+	  <pre>
+    <code>{:des "Emacs m/v select company candidates"
+ :rules [:emacs-m-mode
+         [:a [:!Tx :!T6 :1]]
+         [:s [:!Tx :!T6 :2]]
+         [:d [:!Tx :!T6 :3]]
+         [:f [:!Tx :!T6 :4]]
+         [:g [:!Tx :!T6 :5]]
+         :emacs-v-mode
+         [:h [:!Tx :!T6 :6]]
+         [:j [:!Tx :!T6 :7]]
+         [:k [:!Tx :!T6 :8]]
+         [:l [:!Tx :!T6 :9]]
+         [:semicolon [:!Tx :!T6 :0]]]}    </code>
+	  </pre>
+    </div>
+
+
+<p>
+
+Above code uses <a href="https://github.com/yqrashawn/GokuRakuJoudo">goku</a> and <a href="https://github.com/tekezo/Karabiner-Elements">karabiner</a> to map <code>m+asdfg</code> and <code>v+hjkl;</code> to <code>C-x C-6 1234567890</code>. That's <code>'m' key down then click 'a'</code> to <code>C-x C-6 1</code> in emacs. Then I map <code>C-x C-6</code> + numbers to functions that switch/select tabs/candidates in emacs.
+
+</p>
+
+
+	  <div class="example_code">
+	  <pre>
+    <code>;; jump to specific in emacs
+(define-key awesome-tab-mode-map (kbd "C-x C-6 1") (lambda () (interactive) (awesome-tab-jump ?a)))
+(define-key awesome-tab-mode-map (kbd "C-x C-6 2") (lambda () (interactive) (awesome-tab-jump ?s)))
+(define-key awesome-tab-mode-map (kbd "C-x C-6 3") (lambda () (interactive) (awesome-tab-jump ?d)))
+
+;; select specific candidates in company-active-map
+(define-key company-active-map (kbd "C-x C-6 1") (kbd "M-1"))
+(define-key company-active-map (kbd "C-x C-6 2") (kbd "M-2"))
+(define-key company-active-map (kbd "C-x C-6 3") (kbd "M-3"))    </code>
+	  </pre>
+    </div>
+
+
+<p>
+
+We can use magic now!
+
+</p>
+
+
+<p>
+
+'ma' switch to first tab. 'mg' select 5th candidates when completing stuff.
+
+</p>
+
+
+<p>
+
+You can find above code in my <a href="https://github.com/yqrashawn/yqdotfiles/blob/master/.config/karabiner.edn">goku config</a> and <a href="https://github.com/yqrashawn/.emacs.d">.emacs.d</a>.
+
+</p>
+
+      </div>
+    </content>
+    <id>http://yqrashawn.com/2019/01/15/use-emacs-with-home-row-from-feed-with-content</id>
+</entry>
 <!-- ############################################################################################# -->
 <entry>
     <title type="text">Switch Things Faster</title>
@@ -80,7 +317,7 @@ I already talk about the first solution, switching with packages like <code>ivy<
 </p>
 
 
-	  <header><h2 class="section-title">home-raw shortcuts + smart trigger</h2></header>
+	  <header><h2 class="section-title">home-row shortcuts + smart trigger</h2></header>
 
 
 <p>
@@ -314,7 +551,7 @@ Anyway, our emacser will always overcome these kind of things.
 
 <p>
 
-I want to share a new package I found yesterday about swtiching buffer in emacs. And the post end up in complain. My bad.
+I want to share a new package I found yesterday about swtiching buffer in emacs. And the post end up in complaints. My bad.
 
 </p>
 

@@ -33,7 +33,7 @@ it. Either way takes time and won't make it much better in next project.
 Anyway, our emacser will always overcome these kind of things.
 
 I want to share a new package I found yesterday about swtiching buffer in emacs.
-And the post end up in complain. My bad.
+And the post end up in complaints. My bad.
 
 The package is [[https://github.com/manateelazycat/awesome-tab][awesome-tab]]. And yes it's based on tabbar. In summary, as the
 readme says it's a package providing out of box configuration to use tab in

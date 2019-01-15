@@ -5,22 +5,22 @@
 
   <meta name="author" content="yqrashawn" />
   <meta name="generator" content="lazyblorg" />
-  <meta name="description" content="Halt and Catch Fire" />
-  <meta name="orgmode-id" content="2017-10-22-after-watching-halt-and-catch-fire" />
+  <meta name="description" content="Use Emacs With Home Row" />
+  <meta name="orgmode-id" content="2019-01-15-use-emacs-with-home-row" />
 
   <meta name="twitter:card" content="summary" />
   <meta name="twitter:site" content="@yqrashawn" />
   <meta name="twitter:creator" content="@yqrashawn" />
   <meta name="twitter:title" content="infin" />
-  <meta name="twitter:description" content="Halt and Catch Fire" />
+  <meta name="twitter:description" content="Use Emacs With Home Row" />
   <meta name="twitter:image" content="//yqrashawn.com/public/img/YQ_logo.png" />
 
   <meta property="og:type" content="article" />
   <meta property="og:title" content="infin" />
-  <meta property="og:description" content="Halt and Catch Fire" />
+  <meta property="og:description" content="Use Emacs With Home Row" />
   <meta property="og:image" content="//yqrashawn.com/public/img/YQ_logo.png" />
   <meta property="og:site_name" content="infin - Web-page of yqrashawn">
-  <meta property="article:published_time" content="2017-10-22T08:51+08:00" />
+  <meta property="article:published_time" content="2019-01-15T11:54+08:00" />
   <meta property="article:author" content="yqrashawn" />
 
   <link rel="stylesheet" title="infin Standard CSS Style"
@@ -38,7 +38,7 @@
   <!-- WARNING: This page is written in HTML5 and might not be displayed correctly in old browsers. -->
 
       <!-- link rel="stylesheet" type="text/css" href="../../../../style.css" / -->
-      <title>Halt and Catch Fire</title>
+      <title>Use Emacs With Home Row</title>
 
   </head>  <body>
 
@@ -49,16 +49,19 @@
 	  <nav class="temporal-article-header-nav">
 	    <span class="breadcrumbs">
 	      <a href="../../../../">infin</a><span style="padding-top:1em;">&nbsp;&nbsp;&nbsp;&nbsp;&raquo;
-	      <a href="../../../">2017</a>&nbsp;&ndash;&nbsp;<a href="../../">10</a>&nbsp;&ndash;&nbsp;<a href="../">22</a></span>
+	      <a href="../../../">2019</a>&nbsp;&ndash;&nbsp;<a href="../../">01</a>&nbsp;&ndash;&nbsp;<a href="../">15</a></span>
 	    </span>
 	  </nav>
 	  <aside class="common-tags">
 	    <ul>
-                <li><a class="usertag" href="//yqrashawn.com/tags/watching/">watching</a></li>
+                <li><a class="usertag" href="//yqrashawn.com/tags/goku/">goku</a></li>
+                <li><a class="usertag" href="//yqrashawn.com/tags/macos/">macos</a></li>
+                <li><a class="usertag" href="//yqrashawn.com/tags/karabiner/">karabiner</a></li>
+                <li><a class="usertag" href="//yqrashawn.com/tags/emacs/">emacs</a></li>
 	    </ul>
 	  </aside>
 
-	  <h1 class="common-article-header-title">Halt and Catch Fire</h1>
+	  <h1 class="common-article-header-title">Use Emacs With Home Row</h1>
 
 	</header>
 
@@ -114,30 +117,109 @@
 
 <p>
 
-Just finish the Halt and Catch Fire, really great show. It makes me think about that everyone is full of story in their life, amazing to others but definitely not to themselves, like Joe in the series.
+After writing about <a href="http://yqrashawn.com/2018/09/26/switch-buffer-in-emacs/">switching buffers in emacs</a> last year. I keep looking for the way to switch buffer quicker and more comfortably. I mentioned the package <a href="https://github.com/manateelazycat/awesome-tab">awesome-tab</a> in that post and I'm still using it.
 
 </p>
 
 <p>
 
-It's just that I think Joe is "right" in some way. The right is some kind of his every decision of fresh start, it's so decisive. It makes the character fear nothing. He desires success so much but go through his failer and go for the fresh start so quick. But on the other hand, he is so emotional, about his failer, about Gordon's die.
+The package shows buffers as tabs in emacs <a href="http://www.gnu.org/s/emacs/manual/html_node/elisp/Header-Lines.html">header line</a>, and provides functions to switch to next/prev, first/last tab. It also groups buffers depends on project and major-mode.
 
 </p>
 
 <p>
 
-These characters normally can't be on the same person. Maybe that's why it makes me think Joe is "right".
+I write a patch for the package to add function to jump to specifc tab recently. So that user can jump to specific tabs with different shortcuts.
+
+</p>
+
+<p>
+
+I also write a <a href="https://github.com/company-mode/company-mode/pull/859">patch</a> for <a href="https://github.com/company-mode/company-mode">company-mode</a> to customize the company candidate numbers when <code>company-show-numbers</code> is set to t.
+
+</p>
+
+<p>
+
+Now I can use the home row the way I want in emacs. Check the screenshot below.
+
+</p>
+
+<figure class="image-center">
+<img src="2019-01-15_emacs-home-row%20-%20scaled%20width%20500.png" alt="use emacs with home row image" width="500" />
+<figcaption>use emacs with home row</figcaption>
+</figure>
+
+<p>
+
+As you can see in the picture, instead of numbers, there're "asdf" for both tabs and completion candidates. Next step is to switch/select tabs/candidates with home row shortcuts.
+
+</p>
+
+	  <div class="example_code">
+	  <pre>
+    <code>{:des "Emacs m/v select company candidates"
+ :rules [:emacs-m-mode
+         [:a [:!Tx :!T6 :1]]
+         [:s [:!Tx :!T6 :2]]
+         [:d [:!Tx :!T6 :3]]
+         [:f [:!Tx :!T6 :4]]
+         [:g [:!Tx :!T6 :5]]
+         :emacs-v-mode
+         [:h [:!Tx :!T6 :6]]
+         [:j [:!Tx :!T6 :7]]
+         [:k [:!Tx :!T6 :8]]
+         [:l [:!Tx :!T6 :9]]
+         [:semicolon [:!Tx :!T6 :0]]]}    </code>
+	  </pre>
+    </div>
+
+<p>
+
+Above code uses <a href="https://github.com/yqrashawn/GokuRakuJoudo">goku</a> and <a href="https://github.com/tekezo/Karabiner-Elements">karabiner</a> to map <code>m+asdfg</code> and <code>v+hjkl;</code> to <code>C-x C-6 1234567890</code>. That's <code>'m' key down then click 'a'</code> to <code>C-x C-6 1</code> in emacs. Then I map <code>C-x C-6</code> + numbers to functions that switch/select tabs/candidates in emacs.
+
+</p>
+
+	  <div class="example_code">
+	  <pre>
+    <code>;; jump to specific in emacs
+(define-key awesome-tab-mode-map (kbd "C-x C-6 1") (lambda () (interactive) (awesome-tab-jump ?a)))
+(define-key awesome-tab-mode-map (kbd "C-x C-6 2") (lambda () (interactive) (awesome-tab-jump ?s)))
+(define-key awesome-tab-mode-map (kbd "C-x C-6 3") (lambda () (interactive) (awesome-tab-jump ?d)))
+
+;; select specific candidates in company-active-map
+(define-key company-active-map (kbd "C-x C-6 1") (kbd "M-1"))
+(define-key company-active-map (kbd "C-x C-6 2") (kbd "M-2"))
+(define-key company-active-map (kbd "C-x C-6 3") (kbd "M-3"))    </code>
+	  </pre>
+    </div>
+
+<p>
+
+We can use magic now!
+
+</p>
+
+<p>
+
+'ma' switch to first tab. 'mg' select 5th candidates when completing stuff.
+
+</p>
+
+<p>
+
+You can find above code in my <a href="https://github.com/yqrashawn/yqdotfiles/blob/master/.config/karabiner.edn">goku config</a> and <a href="https://github.com/yqrashawn/.emacs.d">.emacs.d</a>.
 
 </p>
 
 
   </article>
 	  <aside class="published-on">
-	    Published on <time datetime="2017-10-22T08:51+08:00">2017-10-22T08:51</time>
+	    Published on <time datetime="2019-01-15T11:54+08:00">2019-01-15T11:54</time>
 	  </aside>
 
    <p class="email-comment">
-      <a href="mailto:namy.19@gmail.com?subject=2017-10-22-after-watching-halt-and-catch-fire%20comment:%20&body=Please%20do%20not%20remove%20'2017-10-22-after-watching-halt-and-catch-fire%20comment:'%20in%20subject%20and%20please%20tell%20me%20whether%20or%20not%20it%20is%20OK%20to%20add%20your%20comment%20and%2For%20your%20email%20address%20to%20the%20blog%20entry!">Comment via email</a> or via <a href="//disqus.com">Disqus</a> comments below:
+      <a href="mailto:namy.19@gmail.com?subject=2019-01-15-use-emacs-with-home-row%20comment:%20&body=Please%20do%20not%20remove%20'2019-01-15-use-emacs-with-home-row%20comment:'%20in%20subject%20and%20please%20tell%20me%20whether%20or%20not%20it%20is%20OK%20to%20add%20your%20comment%20and%2For%20your%20email%20address%20to%20the%20blog%20entry!">Comment via email</a> or via <a href="//disqus.com">Disqus</a> comments below:
    </p>
 
     <div id="disqus_thread"></div>
@@ -151,7 +233,7 @@ These characters normally can't be on the same person. Maybe that's why it makes
           dsq.type = 'text/javascript';
           dsq.async = true;
           dsq.src = "//yqrashawn.disqus.com/embed.js";
-          var disqus_identifier = '2017-10-22-after-watching-halt-and-catch-fire';
+          var disqus_identifier = '2019-01-15-use-emacs-with-home-row';
           (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
           var ldr = document.getElementById('disqus_loader');
           ldr.parentNode.removeChild(ldr);
@@ -167,7 +249,7 @@ These characters normally can't be on the same person. Maybe that's why it makes
 
 	 	&nbsp;&bull;&nbsp; <a href="mailto:namy.19@gmail.com">Mail</a>
 
-	 	&nbsp;&bull;&nbsp; <a href="https://web.archive.org/web/*/yqrashawn.com/2017/10/22/after-watching-halt-and-catch-fire/">Archive</a>
+	 	&nbsp;&bull;&nbsp; <a href="https://web.archive.org/web/*/yqrashawn.com/2019/01/15/use-emacs-with-home-row/">Archive</a>
       </p>
     </footer>
 
