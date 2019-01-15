@@ -452,6 +452,7 @@ blockquote br {
 .image-center {
     margin: auto;
     text-align: center;
+    position: relative;
     width: 100%;
 }
 
