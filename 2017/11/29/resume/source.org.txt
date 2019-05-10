@@ -1,10 +1,13 @@
 * DONE 简历                                      :chinese:hidden:resume:blog:
-CLOSED: [2017-11-29 Wed 21:27]
+CLOSED: [2019-05-10 Fri 09:29]
 :PROPERTIES:
 :CREATED:  <2017-11-29 Wed 21:16>
 :ID:       2017-11-29-resume
 :END:
 :LOGBOOK:
+- State "DONE"       from "TODO"       [2019-05-10 Fri 09:29]
+- State "TODO"       from "DONE"       [2019-05-10 Fri 09:29]
+- State "DONE"       from "DONE"       [2019-05-10 Fri 09:29]
 - State "DONE"       from              [2017-11-29 Wed 21:27]
 :END:
 
