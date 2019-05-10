@@ -64,5 +64,5 @@ CLOSED: [2017-11-29 Wed 21:27]
 [[https://github.com/yqrashawn][yqrashawn]]
 
 # ** 下载PDF
-# #+BEGIN_EXPORT HTML
-# &nbsp;&nbsp;&nbsp;<a class="pdf-url" download href="https://raw.githubusercontent.com/yqrashawn/yqrashawn.github.io/master/about/resume.pdf">generated pdf resume</a>
+#+BEGIN_EXPORT HTML
+&nbsp;&nbsp;&nbsp;<a class="pdf-url" download href="https://raw.githubusercontent.com/yqrashawn/yqrashawn.github.io/master/about/resume.pdf">generated pdf resume</a>
