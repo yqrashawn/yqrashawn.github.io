@@ -12,6 +12,7 @@ CLOSED: [2019-05-10 Fri 09:29]
 :END:
 
 ** 简介
+- 姓名 张雨潇
 - 性别 男
 - 学历 本科 2016年毕业于国际关系学院
 - 专业 信息管理与信息系统
@@ -20,17 +21,17 @@ CLOSED: [2019-05-10 Fri 09:29]
 
 ** 联系方式
 #+BEGIN_EXPORT HTML
->
+<p class="phone-number"> - </p>
 #+END_EXPORT
 
 ** 技能
 - 前端三维开发, 熟悉threejs, Cesium
 - 后端熟悉 nodejs, express, loopback, mongo, mocha
-- devops熟悉 jenkins(jenkinsfile编写), docker
+- devops 熟悉 jenkins(jenkinsfile编写), docker
 - javascript 工作语言, 熟练掌握, webpack熟练使用, 前端框架都能快速进入开发, 前端框架熟悉 react
-- clojurescript 工作语言, 较熟练, 写过项目, 熟悉re-frame
+- clojurescript 部分项目中使用, 较熟练, 熟悉re-frame
 - typescript 部分项目中使用, 较熟练
-- clojure 个人项目使用 https://github.com/yqrashawn/GokuRakuJoudo#readme
+- clojure [[https://github.com/yqrashawn/GokuRakuJoudo#readme][个人项目]]使用
 - elisp 配置emacs, 写emacs插件用
 - ruby 写简单脚本插件.
 - 无障碍阅读英文技术文章.
@@ -45,26 +46,18 @@ CLOSED: [2019-05-10 Fri 09:29]
 
 ** 主要工作内容
 个人负责网页三维数据展示, 以BIM(带详细信息的建筑模型)为主, 网页端主要内容是三维
-模型查看, 偶尔跟其他公司合作会有特殊需求.
+模型查看, 偶尔跟其他公司合作完成三维方面的定制化需求.
 1. 公司网页端三维部分重构, 性能优化.
 2. 公司三维模型格式loader.
-3. 三维模型diff, 后端diff, 前端对比效果.
+3. 三维模型diff.
 4. 三维部分增加多模型支持.
-5. 跟北斗羲和合作室内外定位, 室外用的Cesium, 室内用公司三维引擎.
-6. 三维部分增加测试, 用的puppeteer.
-7. 根据需求增加三维部分的功能和API.
-8. VR项目传感器数据分析处理.
-9. 跟霍尼韦尔合作, 三维场景内管廊模型交互和传感器数据显示.
-10. 中建工地项目, 三维场景内加视频展示
-11. 政府项目, 三维楼层内区域高亮租房
-12. 腾讯机房项目, 三维机房内显示设备及管线关系
-13. 普通后端业务逻辑
+5. 三维各种业务逻辑实现, 主要包括三维内的数据展示和交互
+6. 普通后端业务逻辑
 
 ** 参与维护的开源项目
-[[https://github.com/pqrs-org/KE-complex_modifications][KE-complex_modifications]], manOS改键软件 [[https://github.com/tekezo/Karabiner-Elements][Karabiner-Elements ]]的配置和配置页面.
+[[https://github.com/pqrs-org/KE-complex_modifications][KE-complex_modifications]]
 
-** github
-[[https://github.com/yqrashawn][yqrashawn]]
+** [[https://github.com/yqrashawn][github]]
 
 # ** 下载PDF
 #+BEGIN_EXPORT HTML
