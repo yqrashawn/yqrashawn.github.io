@@ -21,7 +21,7 @@ CLOSED: [2019-05-10 Fri 09:29]
 
 ** 联系方式
 #+BEGIN_EXPORT HTML
-<p class="phone-number"> - </p>
+<p class="phone-number"> 13021234545 </p>
 #+END_EXPORT
 
 ** 技能
@@ -49,9 +49,9 @@ CLOSED: [2019-05-10 Fri 09:29]
 模型查看, 偶尔跟其他公司合作完成三维方面的定制化需求.
 1. 公司网页端三维部分重构, 性能优化.
 2. 公司三维模型格式loader.
-3. 三维模型diff.
+3. 三维模型diff和相关数据diff.
 4. 三维部分增加多模型支持.
-5. 三维各种业务逻辑实现, 主要包括三维内的数据展示和交互
+5. 三维各种业务逻辑实现, 主要包括三维场景内的数据可视化, 效果展示和交互
 6. 普通后端业务逻辑
 
 ** 参与维护的开源项目
@@ -60,5 +60,5 @@ CLOSED: [2019-05-10 Fri 09:29]
 ** [[https://github.com/yqrashawn][github]]
 
 # ** 下载PDF
-#+BEGIN_EXPORT HTML
-&nbsp;&nbsp;&nbsp;<a class="pdf-url" download href="https://raw.githubusercontent.com/yqrashawn/yqrashawn.github.io/master/about/resume.pdf">generated pdf resume</a>
+# #+BEGIN_EXPORT HTML
+# &nbsp;&nbsp;&nbsp;<a class="pdf-url" download href="https://raw.githubusercontent.com/yqrashawn/yqrashawn.github.io/master/about/resume.pdf">generated pdf resume</a>
