@@ -1,0 +1,734 @@
+#+hugo_base_dir: ../
+
+* posts
+** after watching
+*** DONE Halt and Catch Fire                                :blog:watching:
+CLOSED: [2017-10-22 Sun 08:51]
+:PROPERTIES:
+:CREATED:  [2017-10-22 Sun 08:53]
+:EXPORT_FILE_NAME:       2017-10-22-after-watching-halt-and-catch-fire
+:ID:       2017-10-22-after-watching-halt-and-catch-fire
+:END:
+:LOGBOOK:
+- State "DONE"       from "DONE"       [2017-10-28 Sat 23:38]
+- State "DONE"       from "TODO"       [2017-10-22 Sun 08:51]
+- Note taken on [2017-10-22 Sun 00:28] \\
+  need sleep, may finish it later, just keep the movies and re watch again.
+:END:
+
+Just finish the Halt and Catch Fire, really great show. It makes me think about
+that everyone is full of story in their life, amazing to others but definitely
+not to themselves, like Joe in the series.
+
+It's just that I think Joe is "right" in some way. The right is some kind of
+his every decision of fresh start, it's so decisive. It makes the character
+fear nothing. He desires success so much but go through his failer and go for
+the fresh start so quick. But on the other hand, he is so emotional, about
+his failer, about Gordon's die.
+
+These characters normally can't be on the same person. Maybe that's why it makes
+me think Joe is "right".
+
+** about work
+*** DONE Thought about company knowledge database    :blog:thoughts:hidden:
+CLOSED: [2017-10-28 Sat 23:55]
+:PROPERTIES:
+:ID:       2017-10-28-company-knowledge-database
+:CREATED:  [2017-10-28 Sat 23:56]
+:END:
+:LOGBOOK:
+- State "DONE"       from "DONE"       [2017-10-28 Sat 23:56]
+- State "DONE"       from "TODO"       [2017-10-28 Sat 23:55]
+:END:
+
+Discussed a lot with my colleague today, mainly about problems we are facing and
+problems our company are facing. There one specific problem caused the majority
+of other problems. That's why our friends don't have time to learn new things,
+or why they won't spend time on improving their skill and knowledge while they
+do feel they need to.
+
+In a word, they lack something to invoke their interests for the entry of the
+adventure to more unknown.
+
+For me, I subscribe blogs using RSS. Those blogs are found through my daily
+question solving or discussing with other developers in open source communities.
+So I'm totally into these articles, and they bring me new things every week, new
+things that I don't know that don't know. That's the most important thing that
+one needs when is buried in daily routine.
+
+So maybe a company knowledge database can solve this problem. A database that
+everyone can contribute to and everyone can vote for his/her favorites.
+Thus, I write this down so that I may build one for my company.
+
+** about coding
+*** DONE after tring persp-mode                      :blog:emacs:workspace:
+CLOSED: [2018-08-11 Sat 17:07]
+:PROPERTIES:
+:EXPORT_FILE_NAME: 2018-08-11-after-tring-persp-mode
+:ID:       2018-08-11-after-tring-persp-mode
+:CREATED:  <2018-08-11 Sat 17:04>
+:END:
+:LOGBOOK:
+- State "DONE"       from "DONE"       [2018-08-11 Sat 17:07]
+:END:
+
+After [[https://yqrashawn.com/2018/08/07/emacs-workspace-management/][last post about tring emacs workspace management]], I tried
+~persp-mode~. It comes out that it's not that simple to implement a workspace
+auto-switch feature. It's not just ~find-file-hook~ and advice for
+~switch-buffer~. There are too many commands need to advice and hook
+(~select-window~, ~kill-buffer-hook~ ...). Cause there's no
+"buffer-focus-in-hook". And it's not easy to build one with ~persp-mode~.
+
+There is one package in melpa that implement per buffer ~buffer-focus-in-hook~
+and ~buffer-focus-out-hook~ by hacking on ~buffer-list-update-hook~. But
+~persp-mode~ also manipulate the ~buffer-list~. It won't work out.
+
+Then I realize that I just want to have workspace on buffer management, like the
+~ibuffer~ option above. I can easily get that feature. I just rebind my buffer-switch
+key to ~counsel-projectile-switch-to-buffer~ and everything works great.
+
+It turns out that compared with projectile, persp only offers workspace specific
+window configuration. So I don't need it if I only want buffer level workspace.
+And it also add unexpacted behavior when I test my auto-switch implementation
+(buffer and window configuration switched at the same time), which makes me
+wonder that workspace auto-switch is a bad idea.
+
+Although it looks like that I waste bunch of time to find a single rebind. I do
+find lots useful stuff on these workspace, layout, window management packages
+and implementations. I might write another post for about that.
+
+*** DONE emacs workspace management                  :blog:emacs:workspace:
+CLOSED: [2018-08-07 Tue 16:46]
+:PROPERTIES:
+:EXPORT_FILE_NAME: 2018-08-07-emacs-workspace-management
+:ID:       2018-08-07-emacs-workspace-management
+:CREATED:  <2018-08-07 Tue 15:47>
+:END:
+:LOGBOOK:
+- State "DONE"       from "TODO"       [2018-08-07 Tue 16:46]
+:END:
+
+Recently I'm asked to help on a project. The problem is there're a lot files
+with same name in different directories and same name with my other project. I'm
+using ~ivy-switch-buffer~ to switch between opened buffer. And it needs more
+keystrokes in this project to switch to the desired buffer. So I'm looking for
+some workspace management aproch in emacs to make my finger not that tired after
+work.
+
+After googling for a little while, I find there are so many ways to manage workspace
+in emacs.
+- use session: [[https://www.emacswiki.org/emacs/Desktop#toc6][use desktop and bookmark+]]
+- use multiple emacs instance
+- ~persp-mode~
+- ~purpose-mode~ ~frame-purpose-mode~
+- also there's ~ibuffer~ with ~ibuffer-vc~ or ~ibuffer-projectile~
+- even ~tabbar~ with custom filter functions
+
+  The cons of the first two is that you need to deliberately switch workspace when
+  you are going to open files in other workspace. The pros is that they provide
+  perfect isolation, no need to tweak buffer switch functions.
+
+  For ~persp-mode~, the pros is that with custom code, maybe it's not hard to
+  implement the workspace auto-switching function. It has eye candy in mode
+  line or title bar if you want them. The cons is that you need to implement the
+  auto-switching function or remember to switch workspace manually.
+
+  For ~purpose-mode~, you may need multiple high resolution screen.
+
+  For ~ibuffer~, it's not typically "workspace". It depends on how many buffers
+  you have and how familiar you are with the ibuffer filter functionality.
+
+  For ~tabbar~, eye candy and custom function is needed.
+
+  So it really depends on
+  - your currently familiar workflow
+  - can you tolerate manually switch workspace
+  - if you can comfortably change your workflow
+  - how much isolation you want
+  - screen amount and size
+
+    I may try ~persp-mode~ first. Wish me luck.
+
+*** DONE org-agenda bitbar plugin              :blog:ruby:agenda:org:emacs:
+CLOSED: [2017-11-25 Sat 17:08]
+:PROPERTIES:
+:EXPORT_FILE_NAME: 2017-11-25-org-agenda-bitbar-plugin
+:ID:       2017-11-25-org-agenda-bitbar-plugin
+:CREATED:  <2017-11-25 Sat 11:57>
+:END:
+:LOGBOOK:
+- State "DONE"       from "DONE"       [2017-11-25 Sat 22:12]
+- State "DONE"       from "TODO"       [2017-11-25 Sat 17:08]
+- State "TODO"       from "DONE"       [2017-11-25 Sat 11:57]
+- State "DONE"       from              [2017-11-25 Sat 11:57]
+:END:
+
+UPDATE: The agenda plugin has been merged into the official plugin repo. You
+can now find the plugin [[https://getbitbar.com/plugins/Lifestyle/org-agenda.30m.rb][here]].
+
+[[https://github.com/matryer/bitbar][Bitbar]] is a macos application that can add custom menu bar buttons.
+I'm recently learning managing projects with org-mode. And we all know that
+org-agenda is great.
+
+So I write a bitbar plugin, [[https://github.com/yqrashawn/bitbar-plugin-agenda][agenda]] to display some of my agenda in menu bar.
+
+--------
+
+**** feature
+It can display your chosen org-agenda-custom-commands in menu bar.
+Support customize color for priority.
+Support different color for filter.
+Make item with links clickable(only support http/https url).
+
+Like this.
+
+#+ATTR_HTML: :alt bitbar agenda plugin image :align center :width 500
+[[file:2017-11-25_bitbar-ext-org-agenda.png]]
+
+**** usage
+User need to specify the command to export the agenda-view to txt file.
+
+I'm using emacs [[https://www.emacswiki.org/emacs/BatchMode][--batch]] feature to generate the txt file silently. There may
+better way for doing this, like ~org-batch-agenda~ ([[http://orgmode.org/manual/Extracting-agenda-information.html][check out here]]). But when my
+emacs configuration piles up, there's lots of initializing message which makes
+it hard to extract the agenda-view data. So I just use the ~org-agenda-write~
+command to write agenda-view to disk.
+
+#+BEGIN_SRC shell
+  emacs --batch -l ~/.emacs.d/init.el --eval "(run-hooks 'emacs-startup-hook)" \
+        --eval '(progn (org-agenda nil "r") (org-agenda-write "~/agendas/work/todos.txt") (spacemacs/kill-emacs))'
+#+END_SRC
+
+Note: for [[https://github.com/syl20bnr/spacemacs][spacemacs]] user, you need to add ~(run-hooks 'emacs-startup-hook)~ to
+let emacs read your  ~dotspacemacs/user-config~ ([[https://github.com/syl20bnr/spacemacs/issues/4504][issue#4504]]). Or you can extract
+your org-agenda configuration into a seperate file and ~--eval~ it alone.
+
+For using this plugin. You need to specify ~agenda_directory~ ~agenda_file_name~.
+
+#+BEGIN_SRC ruby
+  # Change to your todo directory path
+  agenda_directory = "#{Dir.home}/agendas/work/"
+  agenda_name = 'todos.txt'
+#+END_SRC
+
+And also the agenda custom command key, you may in your configuration file, you
+can find your setting using ~(describe-variable 'org-agenda-custom-commands)~.
+
+#+BEGIN_SRC ruby
+  # the agenda custome command which brings the agenda view that you want to export
+  agenda_custome_command = 'B'
+#+END_SRC
+
+The problem of using ~--batch~ is to [[https://emacs.stackexchange.com/questions/5451/how-do-i-force-kill-emacs/5456][really kill emacs]].
+
+#+BEGIN_SRC ruby
+  # function to REALLY kill emacs
+  # for spacemacs user use (spacemacs/kill-emacs)
+  # kill_emacs_function = '(spacemacs/kill-emacs)'
+  kill_emacs_function = '(let (kill-emacs-hook) (kill-emacs))'
+#+END_SRC
+
+You can also change colors of filter line and lines with priority.
+
+#+BEGIN_SRC ruby
+  # Change priority color here
+  tag_color = 'orange'
+
+  # Customise label color-code here (these colors are optimised for a dark theme menubar)
+  labels = {
+    '[#A]' => 'red',
+    '[#B]' => 'yellow',
+    '[#C]' => 'violet'
+  }
+#+END_SRC
+
+If you use pacakges that will change filters' format in agenda view, you need to
+specify  ~tag_indicator~ .
+
+#+BEGIN_SRC ruby
+  tag_indicator = 'Headlines with TAGS match: '
+#+END_SRC
+
+**** limitation
+
+Current version don't support ~agenda-view~ when you add, say you add the below
+code in the chosen ~org-agenda-custom-commands~.
+
+#+BEGIN_SRC lisp
+  (agenda ((org-agenda-ndays 7)))
+#+END_SRC
+
+*** DONE Use zsh in emacs                            :shell:blog:zsh:emacs:
+CLOSED: [2017-11-09 Thu 21:55]
+:PROPERTIES:
+:CREATED:  [2017-10-31 Tue 16:27]
+:EXPORT_FILE_NAME: 2017-10-31-use-zsh-in-emacs
+:ID:       2017-10-31-use-zsh-in-emacs
+:END:
+:LOGBOOK:
+- State "DONE"       from "TODO"       [2017-11-09 Thu 21:55]
+:END:
+
+I used to use vim with tmux in a terminal emulator. After changing to emacs. It
+didn't take much time for me to realize that emacs in GUI works better.
+
+The problem is I still want the old behavior. I tried about three times using
+my zsh shell in emacs. I'm not here telling those failed attempts. I want to
+write it down because of a recent discovery.
+
+When I restructure my zsh configurations, I find the z-shell works fine with
+with zero config. That's when I finally discover that it's the plugins and
+configurations that make zsh and emacs incompatible. What's more, I find these
+lines. They must come from some emacs package's readme instruction. The original
+one is telling zsh don't do something when it's in emacs.
+
+#+BEGIN_SRC shell
+  if [ -n "$INSIDE_EMACS" ]; then
+    ...
+  else
+    ...
+  fi
+#+END_SRC
+
+So I thought, I can just use these line with my zsh configuration([[https://github.com/sorin-ionescu/prezto][prezto]]). It
+works fine now after some little test. It turns out the default
+[[https://github.com/zsh-users/zsh-completions][zsh-autocompletion]] is not playing well with emacs. I use the ~if...else~ code
+telling zsh don't load autosugestion while in emacs. And everything is fine now.
+
+That's it. Maybe I'll dig in for getting autocompletion back in emacs someday.
+
+*** CANCELLED Emacs auto-completion for javascript with tsserver  :ARCHIVE:
+CLOSED: [2018-08-29 Wed 15:27]
+:PROPERTIES:
+:CREATED:  [2017-10-31 Tue 15:53]
+:ID:       2017-10-31-emacs-javascript-auto-completion
+:END:
+:LOGBOOK:
+- State "CANCELLED"  from "TODO"       [2018-08-29 Wed 15:27] \\
+  now there's lsp
+:END:
+*** DONE My Karabiner Elements configuration :blog:coding:tool:efficient:karabiner:
+CLOSED: [2018-09-19 Wed 08:52]
+:PROPERTIES:
+:CREATED:  [2017-10-29 Sun 17:01]
+:EXPORT_FILE_NAME: 2017-10-29-my-karabiner-configuration
+:ID:       2017-10-29-my-karabiner-configuration
+:END:
+:LOGBOOK:
+- State "DONE"       from "TODO"       T: [2018-09-19 Wed 08:52]
+- State "TODO"       from "DONE"       T: [2018-09-19 Wed 08:52]
+- State "DONE"       from "STARTED"    [2017-10-29 Sun 20:45]
+- State "STARTED"    from "DONE"       [2017-10-29 Sun 19:29]
+- State "TODO"       from "STARTED"    [2017-10-29 Sun 19:29]
+- State "DONE"       from "DONE"       [2018-02-12 Mon 21:51]
+:END:
+
+UPDATE 2018-09-19 Wed
+
+My config in [[https://github.com/pqrs-org/KE-complex_modifications][KE-complex-modifications]] is outdated. I'm now using [[https://github.com/yqrashawn/GokuRakuJoudo][GokuRakuJoudo]]
+to config karabiner. It enables user to write the configuration in a much more
+compact karabiner.edn file, you can check out [[https://github.com/yqrashawn/yqdotfiles/blob/master/.config/karabiner.edn][mine]].  I'll write a post about it
+soon. If your karabiner.json is bloated, you may want to try it. Recommend to
+check the [[https://github.com/yqrashawn/GokuRakuJoudo/blob/master/Tutorial.org][tutorial]] first.
+
+ORIGINAL
+
+This post are descriptions and tutorial of my [[https://github.com/yqrashawn/yqdotfiles/blob/master/.config/karabiner/karabiner.json][personal KE complex modification]].
+
+I [[https://github.com/pqrs-org/KE-complex_modifications/pull/162][merged]] my personal [[https://github.com/tekezo/Karabiner-Elements][Karabiner Elements]] configuration into the [[https://github.com/pqrs-org/KE-complex_modifications][official repo]]
+several days ago. You can import my personal rules [[https://pqrs-org.github.io/KE-complex_modifications/][here]]. To achieve efficiency,
+I use karabiner with [[https://www.alfredapp.com/][Alfred]] mainly through [[https://www.alfredapp.com/help/workflows/triggers/external/][alfred workflow external trigger]] and
+[[https://developer.apple.com/legacy/library/documentation/Darwin/Reference/ManPages/man1/osascript.1.html][osascript]] (command line tool for calling AppleScript code).
+Here are these configurations. Please note that I update my configurations every
+day. So I  can't keep this post up to date. The key here is to introduce a
+system for launching apps, invoking scripts and all stuffs that can be done with
+shell (everything). When you can get anything you want with few key strokes, *it
+feels great*.
+
++[[https://www.dropbox.com/s/qepdfdu0djyed7v/workflows.zip?dl=0][Download all my workflow from dropbox ]], please contact [[https://github.com/yqrashawn][me]] when this link broken.+
+I may update this post for each specific config if I have time in the future (may
+not happen). If you have any problems or ideas, please [[https://github.com/yqrashawn/yqdotfiles/issues/new][open an issue]] in my dotfile
+repo. And you can also check [[https://github.com/pqrs-org/KE-complex_modifications][KE-complex_modifications]] official repo for more rules
+and discussion.
+
+Update: The old download link is broken and I don't have time to maintain all
+these workflows up to date. Now that the core thing here is to use alfred
+workflow's external trigger feature, I create a [[https://github.com/yqrashawn/alfred-launcher-workflow][app launcher workflow]] as a sample.
+
+*** DONE Record Org-mode Recent Activity                 :org-mdoe:emacs:blog:
+CLOSED: [2018-09-17 Mon 22:25]
+:PROPERTIES:
+:CREATED:  <2018-09-17 Mon 22:20>
+:EXPORT_FILE_NAME: 2018-09-17-record-org-mode-recent-activity
+:ID:       2018-09-17-record-org-mode-recent-activity
+:END:
+:LOGBOOK:
+- State "DONE"       from "TODO"       [2018-09-17 Mon 22:25]
+:END:
+
+So I checked the [[https://www.notion.so/][notion]] tool recently. It's pretty good if everyone around use
+it. But as an emacs user, I still prefer org-mode.
+
+It's just there's one functionality I never thought about when I was using
+org-mode, the ability to record your activity. Like when you reschedule somthing
+or change the state of tasks.
+
+-----
+
+I did some search online and came up with a solution. I'm pretty sure there's
+better ways to do so. I'll just put the codes here. It leverages the
+~org-agenda-custom-commands~ and the ~:LOGBOOK:~ feature. And the code is mainly
+from [[https://stackoverflow.com/questions/8039416/custom-searches-using-timestamps-in-logbook-in-org-mode][here]] with some modification.
+
+#+begin_src elisp
+  ;; enable the log feature
+  (setq org-log-into-drawer t)
+  (setq org-log-reschedule 'time)
+  (setq org-log-redeadline 'note)
+  (setq org-log-note-clock-out t)
+
+  ;; add T: before timestamp for easy regex search
+  (setq org-log-note-headings '((done . "CLOSING NOTE T:%t")
+                                (state . "State %-12s from %-12S T:%t")
+                                (note . "Note taken on T:%t")
+                                (reschedule . "Rescheduled from %S on T:%t")
+                                (delschedule . "Not scheduled, was %S on T:%t")
+                                (redeadline . "New deadline from %S on T:%t")
+                                (deldeadline . "Removed deadline, was %S on T:%t")
+                                (refile . "Refiled on T:%t")
+                                (clock-out . "Clocked out on T:%t")))
+
+  (defun +org/find-state (&optional end)
+    "Used to search through the logbook of subtrees.
+
+      Looking for T:[2018-09-14 Fri 10:50] kind of time stamp in logbook."
+    (let* ((closed (re-search-forward "^CLOSED: \\[" end t))
+           (created (if (not closed) (re-search-forward "^:CREATED: \\[" end t)))
+           (logbook (if (not closed) (re-search-forward ".*T:\\[" end t)))
+           (result (or closed logbook created)))
+      result))
+
+  (defun +org/date-diff (start end &optional compare)
+    "Calculate difference between  selected timestamp to current date.
+
+    The difference between the dates is calculated in days.
+    START and END define the region within which the timestamp is found.
+    Optional argument COMPARE allows for comparison to a specific date rather than to current date."
+    (let* ((start-date (if compare compare (calendar-current-date))))
+      (- (calendar-absolute-from-gregorian start-date) (org-time-string-to-absolute (buffer-substring-no-properties start end)))))
+
+  (defun +org/last-update-before (since)
+    "List Agenda items that updated before SINCE day."
+    (let ((next-headline (save-excursion (or (outline-next-heading) (point-max)))))
+      (let* ((subtree-end (save-excursion (org-end-of-subtree t)))
+             (subtree-valid (save-excursion
+                              (forward-line 1)
+                              (if (and (< (point) subtree-end)
+                                       ;; Find the timestamp to test
+                                       (+org/find-state subtree-end))
+                                  (let ((startpoint (point)))
+                                    (forward-word 3)
+                                    ;; Convert timestamp into days difference from today
+                                    (+org/date-diff startpoint (point)))
+                                (point-max)))))
+        (if (and subtree-valid (>= subtree-valid since))
+            next-headline
+          nil))))
+
+  (defun +org/has-child-and-last-update-before (day)
+    (if (+org/has-child-p) (point)
+      (+org/last-update-before day)))
+#+end_src
+
+So now we can use the ~+org/last-update-before~ or
+~+org/has-child-and-last-update-before~ function in ~org-agenda-custom-commands~
+to filter activities updated since ~SINCE~ days ago. Like this.
+
+#+begin_src elisp
+  (setq org-agenda-custom-commands
+        '(("R" "Recent activity"
+           ((tags "*"
+                  ((org-agenda-overriding-header "Recent Activity")
+                   (org-agenda-skip-function '(+org/has-child-and-last-update-before 7)))))
+           nil nil)))
+#+end_src
+
+The code will only search for timestamps in ":LOGBOOK:" prefexd with ~T:~ or
+~:CREATED:~ or ~:CLOSED~ timestamps. It works fine and helps me sometimes. Maybe
+I should write a agenda sort function to let them ordered by changed time. Fine
+for me right now.
+
+UPDATE: 2018-09-24
+If anyone intrested in automatically recoding changes of headings, you may want
+check [[https://emacs.stackexchange.com/questions/39348/org-auto-add-update-date-of-last-modification-of-heading-and-or-its-body-to#][this]] stackoverflow question. The answer gives a method using hash to
+record last modification time of any changes in headings or even bodys.
+
+*** DONE Switch Buffer In Emacs                                :blog:emacs:
+CLOSED: [2018-09-26 Wed 07:59]
+:PROPERTIES:
+:EXPORT_FILE_NAME: 2018-09-26-switch-buffer-in-emacs
+:ID:       2018-09-26-switch-buffer-in-emacs
+:CREATED:  <2018-09-26 Wed 07:11>
+:END:
+:LOGBOOK:
+- State "DONE"       from "TODO"       [2018-09-26 Wed 07:59]
+:END:
+
+Recently there's a [[https://www.reddit.com/r/emacs/comments/9hmh8n/whats_your_preferred_method_of_switching_buffers/][new post]] on r/emacs discussing about swithcing buffer in
+emacs. As I posted before, I have that kind of problem as well. It's just most
+of us use ~ibuffer~, ~helm~ or ~ivy~ and we use them for a long time. Yet we
+still interest in these discussions. Cause maybe all of us want it to be faster
+or more convenient.
+
+For me, I use ~counsel-projectile-switch-to-buffer~ and ~ivy-switch-buffer~ to
+switch buffer in current project or global. And I have two functions to switch
+between the two and three most recent buffer.
+
+-----
+
+It works well if I'm the only one working on this project, which means I name
+all the files and directries. But if you have this huge react project and
+there's a component directory with more than twenty components with their own
+directory and all of their entry files are named ~index.jsx~. Your fingers will
+have a hard time.
+
+There's no good solution for, you know, a bad decision. You can only fix it, not
+solve it. You can set some project local variables and functions to swtich to
+these ~index.jsx~ depends on names of their directories. Or you can get by with
+it. Either way takes time and won't make it much better in next project.
+
+Anyway, our emacser will always overcome these kind of things.
+
+I want to share a new package I found yesterday about swtiching buffer in emacs.
+And the post end up in complaints. My bad.
+
+The package is [[https://github.com/manateelazycat/awesome-tab][awesome-tab]]. And yes it's based on tabbar. In summary, as the
+readme says it's a package providing out of box configuration to use tab in
+emacs. It group tabs by project and hide unwanted buffers by default. The pros
+is you know clearly which buffer you are switching to (assumming you aren't
+working on a project like the above one) and you can click on it to switch
+buffer. It doesn't have functions like switch to nth tab. So I suppose user
+still need to use fuzzy search to switch buffer if there's a lot buffer in a
+single project.
+
+I'll try it for several days and see if I'll keep it.
+
+*** DONE Fix The Log Folder Permission Problem with Homebrew Services :macos:tool:blog:
+CLOSED: [2018-09-29 Sat 18:26]
+:PROPERTIES:
+:EXPORT_FILE_NAME: 2018-09-29-brew-services-log-permission-probelm
+:ID:       2018-09-29-brew-services-log-permission-probelm
+:CREATED:  <2018-09-29 Sat 18:02>
+:END:
+:LOGBOOK:
+- State "DONE"       from "TODO"        [2018-09-29 Sat 18:26]
+:END:
+
+Recently I'm developing this [[https://github.com/yqrashawn/GokuRakuJoudo][GokuRakuJoudo]] tool to enable user config [[https://pqrs.org/osx/karabiner/][karabiner]]
+with [[https://github.com/edn-format/edn][edn]] file instead of json file.
+
+I deploy it to the macOS package manager homebrew so that user can install it
+with homebrew easily. Since the tool is used to watch the edn file and transform
+it to json file. It's naturally to use homebrew services to run the command.
+
+Homebrew services uses macOS's launchctl tool to read plist file and run
+service. The problem is launchctl create the log directory I set in the plist
+file with system permission, and the program don't need to run under system
+permission. So the service failed.
+
+-----
+
+I tried to find ways to create the directory in the brew formula file. But it
+seems one can't get the HOME env variable in the ~def install~ section of the
+formula. So that I can't create the ~~/Library/Logs/goku~ folder with user
+ownership. I checked other packages like redis and mongodb. But they all need to
+run with ~sudo brew services start~.
+
+When I was about to give up and tell user to create the folder themselves before
+install the package. I saw there're many other .log files under ~~/Library/Logs~
+directory. Then I changed the log file location from ~...Logs/goku/output.log~
+to ~.../Logs/goku.log~. It works! User do have write permission to file
+~goku.log~. It seems that launchctl only create folders with system owner group
+instead of files. Wired problem. Hope this may help people encountered with the
+same problem.
+
+*** DONE Switch Things Faster        :karabiner:emacs:efficient:macos:blog:
+CLOSED: [2018-10-03 Wed 02:30]
+:PROPERTIES:
+:EXPORT_FILE_NAME: 2018-10-03-switch-things-faster
+:ID:       2018-10-03-switch-things-faster
+:CREATED:  <2018-10-03 Wed 01:28>
+:END:
+:LOGBOOK:
+- State "DONE"       from "TODO"       [2018-10-03 Wed 02:30]
+:END:
+
+Talking about buffer switching in emacs in the [[http://yqrashawn.com/2018/09/26/switch-buffer-in-emacs/][last post]] , I said that I have
+keybindings to switch between the two and three most recent used buffers. And
+the author of the [[https://www.reddit.com/r/emacs/comments/9hmh8n/whats_your_preferred_method_of_switching_buffers/][reddit post]] chose to use [[https://github.com/killdash9/buffer-flip.el][buffer-flip]] package.
+
+The buffer-flip package makes switching buffer like those switching applications
+behavior in operating system, like ~alt-tab~ in MS Windows and ~command-tab~ in
+macOS. VScode also can switch among opened files with ~control-tab~. The problem
+of these methods are obvious. They can only switching in a specific order and
+they all bind to these uncomfortable keys.
+
+For me there're two solutions.
+
+**** Search + shortcuts for recent visited item
+I already talk about the first solution, switching with packages like ~ivy~ or
+~helm~, or ~alfred~ or ~contexts~ on macOS, which you can switching by
+searching. Plus two shortcuts switching between the most recent two and three
+item, so that we don't need to press too much to just switch to prev item.
+
+**** home-row shortcuts + smart trigger
+There's another solution. It's very similar to editing text in emacs. When I
+want to change a word in current line, I got to move my cursor to that word. If
+the word is in the beginning or end of this line, I use ~C-a~ or ~C-e~ then
+maybe ~C-f~, ~C-b~ to move to that word (I actually use evil
+keybindings). If it's in the middle of the line, I use ~isearch~, ~swiper~ or
+~evil-fine-char~ to that word.
+
+It's the same when we switch buffer. Check the code first.
+
+#+begin_src elisp
+  ;; smart trigger function, if not in minibuffer, trigger ivy
+  ;; if in minibuffer, do ivy actions
+  ;; (there must be better way to identify if we are in ivy-switch-buffer context)
+  (defun +ivy-switch-buffer-next-line ()
+    (interactive)
+    (if (minibufferp) (ivy-next-line)
+      (ivy-switch-buffer)))
+
+  (defun +ivy-switch-buffer-prevouse-line ()
+    (interactive)
+    (if (minibufferp) (ivy-previous-line)
+      (ivy-switch-buffer)))
+
+  ;; then we bind them to some key
+  (global-set-key (kbd "C-x C-9 l") #'ivy-alt-done)
+  (global-set-key (kbd "C-x C-9 j") '+ivy-switch-buffer-next-line)
+  (global-set-key (kbd "C-x C-9 k") '+ivy-switch-buffer-prevouse-line)
+  (global-set-key (kbd "C-x C-9 a" ) #'ivy-beginning-of-buffer)
+  (global-set-key (kbd "C-x C-9 e" ) #'ivy-end-of-buffer)
+  (global-set-key (kbd "C-x C-9 u" ) #'ivy-scroll-down-command)
+  (global-set-key (kbd "C-x C-9 d" ) #'ivy-scroll-up-command)
+#+end_src
+
+So this is unusable for now. Cause the keybindings are too hard and slow to
+reach. That's why we don't do these kind of configuration. We don't have enough
+key for this.
+
+But what if we can make any key a modifier key like ~control~, ~alt~ or
+~command~. There's [[https://pqrs.org/osx/karabiner/][karabiner]] on macOS can make this happen. And I think this is
+doable on other operating systems as well.
+
+#+begin_src clojure
+  {:applications {:Emacs ["^org\\.gnu\\.Emacs$"]} ;; let karabiner know which app is emacs
+   :simlayer {:emacs-s-mode {:key :s :condi :Emacs}} ;; use s as modifer key only in emacs
+   :mains [{:des "s-mode in emacs"
+            :rules [:emacs-s-mode ;; bellow rebinds only works under :emacs-s-mode condition
+                    [:j [:!Tx :!T9 :j]] ;; ivy-next-line or ivy-switch-buffer
+                    [:k [:!Tx :!T9 :k]] ;; prev line
+                    [:l [:!Tx :!T9 :l]] ;; ivy-alt-done
+                    [:i [:!Tx :!T9 :a]] ;; top of ivy buffer
+                    [:o [:!Tx :!T9 :e]] ;; bottom
+                    [:o [:!Tx :!T9 :u]] ;; scroll up
+                    [:o [:!Tx :!T9 :d]]]}]}
+#+end_src
+
+I have this ~emacs-s-mode~ use ~s~ key as a modifier key mapping ~s+jklaeud~ to
+~C-x C-9 jklaeud~. So when I want to switch buffer, I can just press ~s+j/k~
+to trigger ~ivy-switch-buffer~ and keep pressing either of this key to find my
+buffer. Or use ~s + u or d~ to scroll quicker, ~s+a/e~ to go to the top
+and bottom of the list and ~s+l~ to select the buffer. I can always release
+~s~ key and type to search the right buffer, without fearing releasing keys may
+select wrong buffer (happens when switching application with ~command+tab~). And
+it won't switch to buffers between current one and target one making emacs
+rendering every buffer (buffer-flip behavior).
+
+Note that the karabiner configuration above needs [[https://github.com/yqrashawn/GokuRakuJoudo][GokuRakuJoudo]] to convert to
+the json format that karabiner can read, you can't use it directly.
+
+If you know how to make normal keys as modifier key in other operating system,
+please let me know. I'll add them to this post.
+
+*** DONE Use Emacs With Home Row          :goku:blog:macos:karabiner:emacs:
+CLOSED: [2019-01-15 Tue 11:54]
+:PROPERTIES:
+:EXPORT_FILE_NAME: 2019-01-15-use-emacs-with-home-raw
+:ID:       2019-01-15-use-emacs-with-home-row
+:CREATED:  <2019-01-15 Tue 11:19>
+:END:
+:LOGBOOK:
+- State "DONE"       from "TODO"       [2019-01-15 Tue 11:54]
+:END:
+
+After writing about [[http://yqrashawn.com/2018/09/26/switch-buffer-in-emacs/][switching buffers in emacs]] last year. I keep looking for the
+way to switch buffer quicker and more comfortably. I mentioned the package
+[[https://github.com/manateelazycat/awesome-tab][awesome-tab]] in that post and I'm still using it.
+
+The package shows buffers as tabs in emacs [[http://www.gnu.org/s/emacs/manual/html_node/elisp/Header-Lines.html][header line]], and provides functions
+to switch to next/prev, first/last tab. It also groups buffers depends on
+project and major-mode.
+
+I write a [[https://github.com/yqrashawn/awesome-tab][patch]] for the package to add function to jump to specifc tab recently.
+So that user can jump to specific tabs with different shortcuts.
+
+I also write a [[https://github.com/company-mode/company-mode/pull/859][patch]] for [[https://github.com/company-mode/company-mode][company-mode]] to customize the company candidate numbers
+when ~company-show-numbers~ is set to t.
+
+Now I can use the home row the way I want in emacs. Check the screenshot below.
+
+#+attr_html: :alt use emacs with home row image :align center :width 800
+[[file:2019-01-15_emacs-home-row.png]]
+
+As you can see in the picture, instead of numbers, there're "asdf" for both tabs
+and completion candidates. Next step is to switch/select tabs/candidates with
+home row shortcuts.
+
+#+begin_src clojure
+  {:des "Emacs m/v select company candidates"
+   :rules [:emacs-m-mode
+           [:a [:!Tx :!T6 :1]]
+           [:s [:!Tx :!T6 :2]]
+           [:d [:!Tx :!T6 :3]]
+           [:f [:!Tx :!T6 :4]]
+           [:g [:!Tx :!T6 :5]]
+           :emacs-v-mode
+           [:h [:!Tx :!T6 :6]]
+           [:j [:!Tx :!T6 :7]]
+           [:k [:!Tx :!T6 :8]]
+           [:l [:!Tx :!T6 :9]]
+           [:semicolon [:!Tx :!T6 :0]]]}
+#+end_src
+
+Above code uses [[https://github.com/yqrashawn/GokuRakuJoudo][goku]] and [[https://github.com/tekezo/Karabiner-Elements][karabiner]] to map ~m+asdfg~ and ~v+hjkl;~ to ~C-x C-6
+1234567890~. That's ~'m' key down then click 'a'~ to ~C-x C-6 1~ in emacs. Then I
+map ~C-x C-6~ + numbers to functions that switch/select tabs/candidates in
+emacs.
+
+#+begin_src elisp
+  ;; jump to specific in emacs
+  (define-key awesome-tab-mode-map (kbd "C-x C-6 1") (lambda () (interactive) (awesome-tab-jump ?a)))
+  (define-key awesome-tab-mode-map (kbd "C-x C-6 2") (lambda () (interactive) (awesome-tab-jump ?s)))
+  (define-key awesome-tab-mode-map (kbd "C-x C-6 3") (lambda () (interactive) (awesome-tab-jump ?d)))
+
+  ;; select specific candidates in company-active-map
+  (define-key company-active-map (kbd "C-x C-6 1") (kbd "M-1"))
+  (define-key company-active-map (kbd "C-x C-6 2") (kbd "M-2"))
+  (define-key company-active-map (kbd "C-x C-6 3") (kbd "M-3"))
+#+end_src
+
+We can use magic now!
+
+'ma' switch to first tab. 'mg' select 5th candidates when completing stuff.
+
+You can find above code in my [[https://github.com/yqrashawn/yqdotfiles/blob/master/.config/karabiner.edn][goku config]] and [[https://github.com/yqrashawn/.emacs.d][.emacs.d]].
+
+
+* Footnotes
+
+# Local Variables:
+# eval: (org-hugo-auto-export-mode)
+# End:

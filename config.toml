@@ -1,0 +1,4 @@
+baseURL = "https://yqrashawn.com/"
+languageCode = "en-us"
+title = "infin"
+theme = "starter"
