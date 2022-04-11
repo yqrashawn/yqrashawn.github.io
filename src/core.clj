@@ -1,6 +1,6 @@
 (ns core
   (:require
-   [clj-time.core :as t]
+   ;; [clj-time.core :as t]
    [selmer.parser :as selmer]
    [selmer.util]
    [clojure.string :as str]
@@ -10,6 +10,9 @@
    [babashka.fs :as fs]))
 
 (defonce blog-f (atom nil))
+
+(defn- get-pwd []
+  (System/getProperty "user.dir"))
 
 (defn- is-mac []
   (let [n (System/getProperty "os.name")]
@@ -25,7 +28,7 @@
 
 (defn paint [lang code]
   (let [lang       (paint-lang-map lang)
-        user-dir   (System/getProperty "user.dir")
+        user-dir   (get-pwd)
         file-name  (if is-mac "./paint-macos" "./paint-linux")
         paint-path (-> user-dir
                        (fs/file file-name)
@@ -42,7 +45,7 @@
   (slurp (paint "javascript" "const a = 100")))
 
 (defn -main
-  ([] (-main (str (System/getProperty "user.dir") "/posts")))
+  ([] (-main (str (get-pwd) "/posts")))
   ([path]
    (let [path (fs/expand-home path)]
      (assert (fs/readable? path) (str "Non-readable path " path))
@@ -144,27 +147,35 @@
             data))
         files))
 
-(defonce article-template-cache (atom nil))
+(defonce templates-cache (atom nil))
 
-(defn get-article-template []
+(defn get-templates [template-key]
   (comment
-    (reset! article-template-cache nil))
-  (if @article-template-cache @article-template-cache
-      (reset! article-template-cache
-              (-> (System/getProperty "user.dir")
-                  (fs/file "./src/templates/article.cljs")
-                  slurp
-                  (str/replace "\"{{article}}\"" "{{article}}")
-                  ;; (str/replace "\"{{title}}\"" "{{title}}")
-                  ))))
+    (reset! templates-cache nil))
+  (if @templates-cache (get @templates-cache template-key)
+      (let [pwd (get-pwd)]
+        (swap! templates-cache
+               #(assoc % :article
+                       (-> pwd
+                           (fs/file "./src/templates/article.cljs")
+                           slurp
+                           (str/replace "\"{{article}}\"" "{{article}}"))))
+        (swap! templates-cache
+               #(assoc % :home
+                       (-> pwd
+                           (fs/file "./src/templates/home.cljs")
+                           slurp
+                           (str/replace "\"{{posts}}\"" "{{posts}}"))))
+        (get @templates-cache template-key))))
 
 (defn process-files-for-reagent-template [files]
   (mapv
    (fn [{:keys [body title] :as f}]
      (assoc f :reagent
             (selmer.util/without-escaping
-             (selmer/render (get-article-template) {:article body
-                                                    :title   title}))))
+             (selmer/render
+              (get-templates :article)
+              {:article body :title title}))))
    files))
 
 (defn spit-cljs-files [files]
@@ -190,29 +201,62 @@
 (defn process-files-for-post-list [files]
   (mapv
    (fn [{:keys [year month day file-name title]}]
-     {:href  (format
-              "/posts/%04d/%02d/%02d/%s"
-              year month day
-              (str/replace
-               file-name
-               #"\.(md|org)$"
-               ".html"))
-      :title title})
+     {:href     (format
+                 "/posts/%04d/%02d/%02d/%s"
+                 year month day
+                 (str/replace
+                  file-name
+                  #"\.(md|org)$"
+                  ".html"))
+      :date     [year month day]
+      :date-str (format "%04d-%02d-%02d" year month day)
+      :title    title})
    files))
+
+(defn process-for-home-cljs [{:keys [posts] :as data}]
+  (let [home-cljs-str
+        (selmer.util/without-escaping
+         (selmer/render
+          (get-templates :home)
+          {:posts posts}))]
+    (assoc data :home-cljs-str home-cljs-str)))
+
+(defn spit-home-cljs [{:keys [home-cljs-str]}]
+  (let [pwd (get-pwd)]
+    (spit (fs/file pwd "./index.cljs") home-cljs-str)))
+
+(defn process-home-html [data]
+  (let [pwd (get-pwd)
+        f   (fs/file pwd "./index.cljs")
+
+        rst (get-html f)
+        home-html-str (-> rst :out slurp)]
+    (when (= home-html-str "") (println (-> rst :err slurp)))
+    (assoc data :home-html-str home-html-str)))
+
+(defn spit-home-html [{:keys [home-html-str]}]
+  (spit (fs/file (get-pwd) "./index.html") home-html-str))
 
 #_{:clj-kondo/ignore [:invalid-arity]}
 (comment
-  (reset! article-template-cache nil)
+  (reset! templates-cache nil)
   (-main)
   (do
-    (def fff (fs/expand-home (str (System/getProperty "user.dir") "/posts")))
+    (def fff (fs/expand-home (str (get-pwd) "/posts")))
     (def ffff (get-all-md-file))
     (def ff (process-files-for-hicuup (sort-by :creation-time (process-for-metadata ffff))))
     (def ss (process-files-for-reagent-template ff))
     (spit-cljs-files ss)
     (def sss (process-files-for-html ss))
     (spit-html-files sss)
-    (def ll (process-files-for-post-list ff)))
+    (reset! templates-cache nil)
+    (do
+      (def ll {:posts (process-files-for-post-list ff)
+               :files ff})
+      (def lll (process-for-home-cljs ll))
+      (spit-home-cljs lll)
+      (def llll (process-home-html lll))
+      (spit-home-html llll)))
   (first (first ffff))
   (first ff)
   (map :creation-time ff)

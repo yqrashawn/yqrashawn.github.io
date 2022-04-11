@@ -7,3 +7,5 @@
 /node_modules
 .Ulysses-*
 /posts/*/**/*[.js, .html, .cljs]
+/index.cljs
+/index.html

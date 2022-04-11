@@ -5,7 +5,9 @@
 
 (defn nav []
   [:nav
-   [:a {:href "/"} "Home"]])
+   [:a {:href "/"} "Home"]
+   [:a {:href "/"} "About"]
+   [:a {:href "/"} "RSS"]])
 
 (defn header []
   [:header [nav]])
@@ -13,19 +15,21 @@
 (defn footer []
   [:footer])
 
-(defn post-entry [{:keys [href title]}]
-  [:a {:href href} title])
+(defn post-entry [{:keys [href title date-str]}]
+  [:li
+   [:pre>time {:datetime date-str} date-str]
+   [:a {:href href} title]])
 
 (defn posts []
-  (mapv
-   post-entry
-   "{{posts}}"))
+  (into [:ul.post-entries] (mapv post-entry "{{posts}}")))
 
-(defn main []
-  [:main
-   [:section.posts-section
-    [:h2 "Posts"]
-    (posts)]])
+(defn body []
+  [:body
+   [:link {:rel "stylesheet" :href "https://cdn.jsdelivr.net/npm/water.css@2/out/water.min.css"}]
+   [:style {:type "text/css"} "ul.post-entries li pre {display: inline;}"]
+   [:main
+    [:section.posts-section
+     [:h3 "Posts"] (posts)]]])
 
 (defn head []
   [:head
@@ -42,7 +46,16 @@
 
 (defn html []
   [:html
+   [head]
    [header]
-   [main]
+   [body]
    ;; [footer]
    ])
+
+;; (defn init []
+;;   (rdom/render [article] (.getElementById js/document "main")))
+
+(defn srender []
+  (reagent.dom.server/render-to-string [html]))
+
+(js/console.log (srender))
