@@ -10,4 +10,26 @@
              com.kiranshila/cybermonday  {:mvn/version "0.4.182"}
              clj-rss/clj-rss             {:mvn/version "0.3.0"}
              clj-time/clj-time           {:mvn/version "0.15.2"}}
- :main-opts ["-e" "(require,'hashp.core)"]}
+ :main-opts ["-e" "(require,'hashp.core)"]
+
+ :aliases
+ {:css-home
+  {:extra-deps {girouette/processor {:mvn/version "0.0.7"}}
+   :ns-default girouette.processor
+   :exec-fn    process
+   :exec-args  {:css          {:output-file "public/index.css"}
+                :file-filters ["home.cljs"]
+                :preflight?   false
+                :watch?       true
+                ;; :dry-run? true
+                }}
+  :css-article
+  {:extra-deps {girouette/processor {:mvn/version "0.0.7"}}
+   :ns-default girouette.processor
+   :exec-fn    process
+   :exec-args  {:css          {:output-file "public/article.css"}
+                :file-filters ["article.cljs"]
+                :preflight?   false
+                :watch?       true
+                ;; :dry-run? true
+                }}}}

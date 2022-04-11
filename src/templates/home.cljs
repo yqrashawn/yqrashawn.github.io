@@ -5,9 +5,10 @@
 
 (defn nav []
   [:nav
-   [:a {:href "/"} "Home"]
-   [:a {:href "/"} "About"]
-   [:a {:href "/"} "RSS"]])
+   [:ul.list-none.pl-0
+    [:li.inline.mr-4 [:a {:href "/"} "Home"]]
+    [:li.inline.mr-4 [:a {:href "/"} "About"]]
+    [:li.inline [:a {:href "/"} "RSS"]]]])
 
 (defn header []
   [:header [nav]])
@@ -17,7 +18,7 @@
 
 (defn post-entry [{:keys [href title date-str]}]
   [:li
-   [:pre>time {:datetime date-str} date-str]
+   [:pre.inline [:time {:datetime date-str} date-str]]
    [:a {:href href} title]])
 
 (defn posts []
@@ -26,8 +27,10 @@
 (defn body []
   [:body
    [:link {:rel "stylesheet" :href "https://cdn.jsdelivr.net/npm/water.css@2/out/water.min.css"}]
-   [:style {:type "text/css"} "ul.post-entries li pre {display: inline;}"]
+   [:link {:rel "stylesheet" :href "/public/index.css"}]
    [:main
+    [:h1 "Rashawn Zhang"]
+    [:p "This is my personal website: a place where you can read things about emacs, clojure, software development and blockchain."]
     [:section.posts-section
      [:h3 "Posts"] (posts)]]])
 
@@ -42,7 +45,8 @@
    [:meta {:property "twitter:site" :content "@yqrashawn"}]
    [:meta {:property "twitter:card" :content "summary_large_image"}]
    [:meta {:property "twitter:title" :content "Rashawn Zhang's personal site"}]
-   [:link {:rel "canonical" :href "https://yqrashawn.com"}]])
+   [:link {:rel "canonical" :href "https://yqrashawn.com"}]
+   [:meta {:name "viewport" :content "width=device-width, initial-scale=1"}]])
 
 (defn html []
   [:html

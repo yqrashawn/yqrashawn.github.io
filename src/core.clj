@@ -242,7 +242,6 @@
   (reset! templates-cache nil)
   (-main)
   (do
-    (def fff (fs/expand-home (str (get-pwd) "/posts")))
     (def ffff (get-all-md-file))
     (def ff (process-files-for-hicuup (sort-by :creation-time (process-for-metadata ffff))))
     (def ss (process-files-for-reagent-template ff))

@@ -9,3 +9,5 @@
 /posts/*/**/*[.js, .html, .cljs]
 /index.cljs
 /index.html
+/public/article.css
+/public/index.css

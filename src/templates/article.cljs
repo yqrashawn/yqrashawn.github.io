@@ -10,6 +10,7 @@
   [:body
    [:link
     {:rel "stylesheet" :href "https://cdn.jsdelivr.net/npm/water.css@2/out/water.min.css"}]
+   [:link {:rel "stylesheet" :href "/public/index.css"}]
    [:style {:type "text/css"}
     "div.embedded tbody tr:nth-child(2n) {background-color: unset;}"]
    [:main [article]]
@@ -28,7 +29,8 @@
    [:meta {:property "twitter:site" :content "@yqrashawn"}]
    [:meta {:property "twitter:card" :content "summary_large_image"}]
    [:meta {:property "twitter:title" :content "{{title}} - Rashawn Zhang"}]
-   [:link {:rel "canonical" :href "https://yqrashawn.com"}]])
+   [:link {:rel "canonical" :href "https://yqrashawn.com"}]
+   [:meta {:name "viewport" :content "width=device-width, initial-scale=1"}]])
 
 (defn html []
   [:html {:lang "en"}
