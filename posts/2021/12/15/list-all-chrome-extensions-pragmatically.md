@@ -1,4 +1,6 @@
-Tags: chrome, extension
+---
+tags: chrome, extension
+---
 
 # List all chrome extensions pragmatically
 

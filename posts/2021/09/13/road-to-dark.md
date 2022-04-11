@@ -1,4 +1,6 @@
-Tags: dark mode
+---
+tags: dark mode
+---
 
 # My road to dark mode
 

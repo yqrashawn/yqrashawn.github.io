@@ -1,4 +1,6 @@
-Tags: macOS
+---
+tags: macOS
+---
 
 # Reset macOS notification setting
 
@@ -16,5 +18,5 @@ Here’s what I find that works on macOS 11.4.
 1. Remove the apps section in `~/Library/Preferences/com.apple.ncprefs.plist`. ( You can use a [PrefsEditor][1] or the [macOS defaults cli][2])
 2. Run `sudo run killall NotificationCenter && killall usernoted`
 
-[1]:	https://apps.tempel.org/PrefsEditor/#download
-[2]:	https://www.wikiwand.com/en/Defaults_(software)
+[1]: https://apps.tempel.org/PrefsEditor/#download
+[2]: https://www.wikiwand.com/en/Defaults_(software)

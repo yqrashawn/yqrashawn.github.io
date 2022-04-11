@@ -1,3 +1,7 @@
+---
+tags: macOS
+---
+
 # macOS keychain
 
 1. there're passwords with type `internet-password`, `application password`, `web form password` stored in macOS keychain

@@ -1,4 +1,6 @@
-Tags: web extension, frontend
+---
+tags: web extension, frontend
+---
 
 # Inject script into pages as early as possible with web extension content script
 

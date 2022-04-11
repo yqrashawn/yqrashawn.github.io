@@ -1,4 +1,6 @@
-Tags: emacs
+---
+tags: emacs
+---
 
 # Unprettify ligatures with idle timer in emacs
 
