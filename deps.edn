@@ -1,0 +1,13 @@
+{:paths     ["src" "dev"]
+ :deps      {thheller/shadow-cljs        {:mvn/version "2.18.0"}
+             markdown-clj/markdown-clj   {:mvn/version "1.11.0"}
+             selmer/selmer               {:mvn/version "1.12.50"}
+             babashka/process            {:mvn/version "RELEASE"}
+             babashka/fs                 {:mvn/version "0.1.4"}
+             hiccup-bridge/hiccup-bridge {:mvn/version "1.0.1"}
+             hashp/hashp                 {:mvn/version "0.2.1"}
+             reagent/reagent             {:mvn/version "1.1.1"}
+             com.kiranshila/cybermonday  {:mvn/version "0.4.182"}
+             clj-rss/clj-rss             {:mvn/version "0.3.0"}
+             clj-time/clj-time           {:mvn/version "0.15.2"}}
+ :main-opts ["-e" "(require,'hashp.core)"]}

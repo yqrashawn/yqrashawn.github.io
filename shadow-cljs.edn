@@ -1,0 +1,8 @@
+{:deps true
+
+ :source-paths ["hahaha"]
+
+ :builds
+ {:article
+  {:target :node-script
+   :main 'app/srender}}}

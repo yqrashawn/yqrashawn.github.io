@@ -1,0 +1,9 @@
+/.cpcache/
+/.nrepl-port
+/.clj-kondo/
+/.lsp/
+/.shadow-cljs
+/*/**/*.html
+/node_modules
+.Ulysses-*
+/posts/*/**/*[.js, .html, .cljs]
